@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try! 日本語達陣 - 自學門戶</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .jlpt-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .jlpt-card:not(.disabled):hover { transform: translateY(-10px); }
+        .disabled { cursor: not-allowed; opacity: 0.7; filter: grayscale(0.5); }
+        .bg-pattern {
+            background-color: #f8fafc;
+            background-image: radial-gradient(#e2e8f0 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-pattern min-h-screen flex flex-col">
+
+    <!-- Hero Section -->
+    <header class="bg-indigo-700 text-white py-16 px-4 shadow-lg">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Try! 日本語達陣</h1>
+            <p class="text-indigo-100 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+                從日檢文法展開全方位學習，系統化掌握 N1 至 N5 核心能力。
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-16 flex-grow">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            
+            <!-- N1 Card (Under Construction) -->
+            <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N1</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N1</h2>
+                <span class="px-4 py-1 bg-slate-200 text-slate-500 rounded-full text-xs font-black uppercase tracking-widest">製作中</span>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">針對高級日語，涵蓋抽象議題、新聞評論及深層文化理解。</p>
+            </div>
+
+            <!-- N2 Card (Under Construction) -->
+            <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N2</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N2</h2>
+                <span class="px-4 py-1 bg-slate-200 text-slate-500 rounded-full text-xs font-black uppercase tracking-widest">製作中</span>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">具備日常場景及更廣泛議題的理解能力，邁向職場必備。</p>
+            </div>
+
+            <!-- N3 Card (Under Construction) -->
+            <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N3</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N3</h2>
+                <span class="px-4 py-1 bg-slate-200 text-slate-500 rounded-full text-xs font-black uppercase tracking-widest">製作中</span>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">銜接基礎與進階的關鍵等級，強化日常交流深度。</p>
+            </div>
+
+            <!-- N4 Card (Under Construction) -->
+            <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
+                <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N4</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N4</h2>
+                <span class="px-4 py-1 bg-slate-200 text-slate-500 rounded-full text-xs font-black uppercase tracking-widest">製作中</span>
+                <p class="mt-4 text-slate-400 text-sm leading-relaxed">理解基礎日語，能夠應付基本的日常對話與書寫。</p>
+            </div>
+
+            <!-- N5 Card (Active) -->
+            <a href="jp_n5.html" class="jlpt-card bg-white rounded-[2.5rem] shadow-xl border-2 border-indigo-100 p-8 flex flex-col items-center text-center hover:shadow-indigo-200 hover:border-indigo-500 ring-4 ring-indigo-50 group">
+                <div class="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center text-3xl font-black mb-6 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform">N5</div>
+                <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N5</h2>
+                <span class="px-4 py-1 bg-green-100 text-green-700 rounded-full text-xs font-black uppercase tracking-widest">立即學習</span>
+                <p class="mt-4 text-slate-500 text-sm leading-relaxed italic">「基礎中的基礎。完整收錄核心文法、600+ 單字與智能練習卡。」</p>
+                <div class="mt-6 flex items-center text-indigo-600 font-bold text-sm">
+                    開始挑戰 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-500 py-12 px-4">
+        <div class="container mx-auto text-center text-sm font-medium">
+            <p class="mb-4">© 2024 Try! 日本語達陣學習計畫 - 致力於提供最高品質的自學資源</p>
+            <div class="flex justify-center gap-6 text-xs uppercase tracking-widest">
+                <span class="hover:text-white transition cursor-pointer">關於我們</span>
+                <span class="hover:text-white transition cursor-pointer">隱私政策</span>
+                <span class="hover:text-white transition cursor-pointer">聯絡小組</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
