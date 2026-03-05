@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRY! N1 日本語達陣 - 終極全量學習系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        .japanese-text { font-family: 'Noto Sans JP', sans-serif; }
+        ruby rt { font-size: 0.45em; color: #e11d48; padding-bottom: 0.1em; }
+        .mastered { opacity: 0.35; background-color: #fff1f2 !important; }
+        .hide-mastered .is-mastered { display: none !important; }
+        .custom-checkbox { width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: #e11d48; }
+        .tab-active { color: #e11d48; border-bottom: 3px solid #e11d48; }
+        .grammar-card { transition: all 0.2s; border-left: 5px solid transparent; }
+        .grammar-card:hover { border-left-color: #e11d48; }
+        .sticky-controls { position: sticky; top: 0; z-index: 50; }
+        #confirm-modal { display: none; }
+        .reveal-info { display: none; }
+        .reveal-info.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+
+    <header class="bg-rose-900 text-white py-8 px-4 text-center shadow-lg">
+        <h1 class="text-3xl font-black mb-1 tracking-tight">TRY! N1 日本語達陣</h1>
+        <p class="text-rose-100 opacity-90 text-sm font-medium">最高級別：全量單字庫 (600+) × 核心文法 (80+) 學習導航</p>
+    </header>
+
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest text-center">N1 總進度</span>
+                    <div class="flex items-center gap-2">
+                        <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
+                            <div id="progress-bar" class="h-full bg-rose-600 transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <span id="progress-text" class="text-xs font-bold text-rose-700">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
+                </button>
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span>🔄</span> <span>重置進度</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-6xl">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (80+)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition">全單字庫</button>
+            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition">雙向學習卡</button>
+        </div>
+
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
+
+        <div id="section-vocab" class="tab-content hidden">
+            <div class="mb-6 relative">
+                <input type="text" id="search-box" placeholder="搜尋 N1 單字、假名或中文..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-rose-500 outline-none transition shadow-sm">
+                <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr>
+                                <th class="p-4 w-16 text-center">掌握</th>
+                                <th class="p-4 w-1/4">單字 / 假名</th>
+                                <th class="p-4 w-1/5 text-rose-700">中文意義</th>
+                                <th class="p-4">學習積分 (日 / 中)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="section-flashcard" class="tab-content hidden text-center">
+            <div class="max-w-lg mx-auto">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-8 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all">
+                    <div id="fc-mode-display" class="absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white">
+                        <span id="fc-mode-text">模式載入中</span>
+                        <div class="flex gap-1" id="fc-score-dots"></div>
+                    </div>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center"></div>
+                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10"></div>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
+                            <div id="fc-target" class="text-3xl font-bold text-rose-600 mb-2 japanese-text text-center"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center"></div>
+                            <div class="bg-rose-50 p-5 rounded-3xl text-left border border-rose-100">
+                                <p class="text-[9px] font-black text-rose-400 uppercase mb-2">學習範例</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fc-empty-state" class="hidden py-16">
+                        <div class="text-7xl mb-6">🏆</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center">N1 達陣達成！</h3>
+                        <p class="text-slate-500 text-sm text-center">恭喜！目前沒有需要加強的項目。</p>
+                    </div>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1 text-center">🔄</span><span class="text-[10px] font-black text-center">再來</span>
+                        </button>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-rose-600 hover:bg-rose-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-rose-100">
+                            <span class="text-2xl mb-1 text-center">💡</span><span class="text-[10px] font-black text-center">答案</span>
+                        </button>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-green-100 hover:bg-green-200 text-green-700 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1 text-center">✅</span><span class="text-[10px] font-black text-center">掌握</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center">確定重置 N1 進度嗎？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center">這將清除所有 N1 掌握記錄、單字積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const grammarData = [
+            { id: 'n1g1', title: '～がてら', desc: '做A的同時順便做B。A是主要目的。', ex: [{j:'散歩がてら、本屋に寄った。', c:'散步時順便去了書店。'}]},
+            { id: 'n1g2', title: '～かたがた', desc: '兼任...之便。一個動作兩個目的。', ex: [{j:'お礼かたがた、ご挨拶に伺いました。', c:'借道謝之便，特地來向您打個招呼。'}]},
+            { id: 'n1g3', title: '～なり', desc: '剛一...就...。前後動作緊湊。', ex: [{j:'帰宅するなり、パソコンに向かった。', c:'一回到家就立刻坐到了電腦前。'}]},
+            { id: 'n1g4', title: '～そばから', desc: '剛...又...。動作重複循環。', ex: [{j:'覚えるそばから忘れてしまう。', c:'剛記住又立刻忘掉了。'}]},
+            { id: 'n1g5', title: '～ずくめ', desc: '全是...、淨是...。', ex: [{j:'いいことずくめの一日。', c:'充滿好事的一天。'}]},
+            { id: 'n1g6', title: '～まみれ', desc: '沾滿...、滿是...（負面）。', ex: [{j:'汗まみれになって働いた。', c:'幹得滿頭大汗。'}]},
+            { id: 'n1g7', title: '～めく', desc: '帶有...氣息。', ex: [{j:'ようやく春めいてきた。', c:'終於漸漸有了春天的氣息。'}]},
+            { id: 'n1g8', title: '～に至るまで', desc: '甚至到...（範圍廣泛）。', ex: [{j:'服から靴に至るまで完璧だ。', c:'從衣服到鞋子都完美無缺。'}]},
+            { id: 'n1g9', title: '～を限りに', desc: '以此為限（宣布結束）。', ex: [{j:'今日を限りにタバコを辞める。', c:'從今天起戒菸。'}]},
+            { id: 'n1g10', title: '～を皮切りに', desc: '以...為開端。', ex: [{j:'東京を皮切りに、全国ツアーが始まる。', c:'以東京為起點開始全國巡演。'}]},
+            { id: 'n1g11', title: '～をもって', desc: '憑藉... / 到...為止。', ex: [{j:'18時をもって終了します。', c:'將於18時結束。'}]},
+            { id: 'n1g12', title: '～こととて', desc: '因為...（正式致歉常用）。', ex: [{j:'不慣れなこととて、失礼しました。', c:'因為還不習慣，失禮了。'}]},
+            { id: 'n1g13', title: '～ゆえに', desc: '正因為...（正式書面）。', ex: [{j:'貧しさゆえに、教育が受けられない。', c:'因貧窮而無法受教育。'}]},
+            { id: 'n1g14', title: '～際して', desc: '在...之際（正式場合）。', ex: [{j:'帰国に際して、お礼を述べる。', c:'回國之際表示謝意。'}]},
+            { id: 'n1g15', title: '～にあたって', desc: '迎接...之時（積極動作）。', ex: [{j:'開会にあたって、挨拶をする。', c:'開會之際致詞。'}]},
+            { id: 'n1g16', title: '～はおろか', desc: '別說...連...（否定）。', ex: [{j:'敬語はおろか、日常会話も不自由だ。', c:'別說敬語，日常對話都不行。'}]},
+            { id: 'n1g17', title: '～をよそに', desc: '無視...、不顧...。', ex: [{j:'親の心配をよそに、遊び歩く。', c:'不顧父母擔心整天遊玩。'}]},
+            { id: 'n1g18', title: '～にひきかえ', desc: '與...相反（強烈對比）。', ex: [{j:'兄にひきかえ、弟は成績が良い。', c:'與哥哥相比，弟弟成績好。'}]},
+            { id: 'n1g19', title: '～なりに', desc: '以自身身分的...。', ex: [{j:'子供なりに一生懸命考えた。', c:'以小孩的方式拚命思考。'}]},
+            { id: 'n1g20', title: '～といったらありはしない', desc: '極其...（無法形容）。', ex: [{j:'その不潔さといったらありはしない。', c:'骯髒到無法形容。'}]},
+            { id: 'n1g21', title: '～まじき', desc: '不應該...（道德上）。', ex: [{j:'許すまじき行為。', c:'不可原諒的行為。'}]},
+            { id: 'n1g22', title: '～たるもの', desc: '身為...者。', ex: [{j:'医者たるもの、患者を第一に。', c:'身為醫師應以患者為先。'}]},
+            { id: 'n1g23', title: '～ともなると', desc: '一旦到了...地步。', ex: [{j:'部長ともなると、責任が重い。', c:'一旦當上部長責任變重。'}]},
+            { id: 'n1g24', title: '～ともあれば', desc: '如果是...的話（特殊）。', ex: [{j:'社長の命令ともあれば。', c:'若是社長的命令。'}]},
+            { id: 'n1g25', title: '～ずにはおかない', desc: '一定會...。', ex: [{j:'感動させずにはおかない名曲。', c:'定會令人感動的名曲。'}]},
+            { id: 'n1g26', title: '～禁じ得ない', desc: '不由得...（情感）。', ex: [{j:'同情を禁じ得ない。', c:'禁不住同情。'}]},
+            { id: 'n1g27', title: '～を余儀なくされる', desc: '被迫...、不得不...。', ex: [{j:'計画変更を余儀なくされた。', c:'被迫變更計畫。'}]},
+            { id: 'n1g28', title: '～といえども', desc: '即使是...（書面）。', ex: [{j:'子供といえども侮れない。', c:'即使是小孩也不能輕視。'}]},
+            { id: 'n1g29', title: '～と思いきや', desc: '原以為...不料...。', ex: [{j:'晴れると思いきや、雨が降った。', c:'以為晴天不料下雨。'}]},
+            { id: 'n1g30', title: '～が最後', desc: '一旦...就完了。', ex: [{j:'飲み始めたが最後、止まらない。', c:'一旦開始喝就停不下。'}]},
+            { id: 'n1g31', title: '～ところを', desc: '在...情況下（致謝/致歉）。', ex: [{j:'お忙しいところをすみません。', c:'百忙之中打擾了。'}]},
+            { id: 'n1g32', title: '～ことだし', desc: '既然...。', ex: [{j:'雨も降ってきたことだし帰ろう。', c:'既然下雨了就回去吧。'}]},
+            { id: 'n1g33', title: '～べく', desc: '為了...（書面）。', ex: [{j:'日本で働くべく勉強中だ。', c:'為了在日本工作讀書中。'}]},
+            { id: 'n1g34', title: '～んがために', desc: '為了...（正式）。', ex: [{j:'夢を叶えんがために渡米した。', c:'為圓夢而赴美。'}]},
+            { id: 'n1g35', title: '～からある', desc: '多達...（數量）。', ex: [{j:'10キロからある荷物。', c:'重達10公斤的行李。'}]},
+            { id: 'n1g36', title: '～極まりない', desc: '極其...（負面）。', ex: [{j:'失礼極まりない。', c:'極其失禮。'}]},
+            { id: 'n1g37', title: '～にたえる', desc: '值得...、堪...。', ex: [{j:'鑑賞にたえる作品。', c:'值得欣賞的作品。'}]},
+            { id: 'n1g38', title: '～にたえない', desc: '不堪... / 不勝...。', ex: [{j:'見るにたえない。', c:'不忍卒睹。'}]},
+            { id: 'n1g39', title: '～までもない', desc: '不用...也知道。', ex: [{j:'言うまでもないことだ。', c:'不言而喻。'}]},
+            { id: 'n1g40', title: '～までだ', desc: '只好... / 只是...。', ex: [{j:'断られたら諦めるまでだ。', c:'被拒絕就只好放棄。'}]},
+            { id: 'n1g41', title: '～ないまでも', desc: '即使不...至少也...。', ex: [{j:'合格しないまでも完走したい。', c:'即使沒考上也要跑完。'}]},
+            { id: 'n1g42', title: '～ことなしに', desc: '沒有...就...（正式）。', ex: [{j:'許可なしに立ち入り禁止。', c:'未經許可嚴禁進入。'}]},
+            { id: 'n1g43', title: '～といったところだ', desc: '大致就是...。', ex: [{j:'月20万といったところだ。', c:'大概就是月領20萬。'}]},
+            { id: 'n1g44', title: '～をものともせず', desc: '不顧...、克服...。', ex: [{j:'困難をものともせず進む。', c:'不顧困難勇往直前。'}]},
+            { id: 'n1g45', title: '～っぱなし', desc: '置之不理。', ex: [{j:'つけっぱなしにする。', c:'開著不管。'}]},
+            { id: 'n1g46', title: '～であれ', desc: '無論是...。', ex: [{j:'誰であれ例外はない。', c:'無論是誰都沒例外。'}]},
+            { id: 'n1g47', title: '～んばかりに', desc: '幾乎要...。', ex: [{j:'泣き出さんばかりの顔。', c:'幾乎快哭出的表情。'}]},
+            { id: 'n1g48', title: '～というもの', desc: '這才叫作...。', ex: [{j:'これこそが愛というものだ。', c:'這才叫作愛。'}]},
+            { id: 'n1g49', title: '～ならでは', desc: '唯有...才有。', ex: [{j:'プロならではの技。', c:'專業人士才有的技術。'}]},
+            { id: 'n1g50', title: '～をおいてほかにない', desc: '除了...別無他選。', ex: [{j:'彼をおいて適任者はいない。', c:'除了他沒人更適任。'}]},
+            { id: 'n1g51', title: '～いかんだ', desc: '取決於...。', ex: [{j:'成績いかんで進路が決まる。', c:'視成績決定出路。'}]},
+            { id: 'n1g52', title: '～いかんによらず', desc: '不論...如何。', ex: [{j:'理由のいかんによらず。', c:'不管理由為何。'}]},
+            { id: 'n1g53', title: '～をよそに', desc: '無視...。', ex: [{j:'反対をよそに結婚した。', c:'無視反對結婚了。'}]},
+            { id: 'n1g54', title: '～にかたくない', desc: '不難...。', ex: [{j:'想像にかたくない。', c:'不難想像。'}]},
+            { id: 'n1g55', title: '～てからというもの', desc: '自從...之後。', ex: [{j:'彼女に会ってからというもの。', c:'自從遇見她後。'}]},
+            { id: 'n1g56', title: '～ないではいられない', desc: '忍不住...。', ex: [{j:'笑わないではいられない。', c:'忍不住想笑。'}]},
+            { id: 'n1g57', title: '～のみならず', desc: '不僅...（書面）。', ex: [{j:'国内のみならず国外でも。', c:'不僅國內，國外也。'}]},
+            { id: 'n1g58', title: '～にかかわる', desc: '關係到...。', ex: [{j:'命にかかわる問題。', c:'攸關性命的問題。'}]},
+            { id: 'n1g59', title: '～にあって', desc: '處於...情況。', ex: [{j:'逆境にあって希望を。', c:'逆境中保有希望。'}]},
+            { id: 'n1g60', title: '～ずにはすまない', desc: '非...不可。', ex: [{j:'謝らずにはすまないだろう。', c:'非道歉不可吧。'}]}
+        ];
+
+        const rawVocab = [
+            ["祭典", "さいてん", "慶典", "華やかな祭典が繰り広げられた。"],
+            ["～周年", "しゅうねん", "~週年", "創立百周年を祝う。"],
+            ["開幕", "かいまく", "開幕", "国際会議が開幕した。"],
+            ["樽", "たる", "木桶", "樽に入ったワイン。"],
+            ["ヘクタール", "へくたーる", "公頃", "広大な敷地は何ヘクタールもある。"],
+            ["東京ドーム", "とうきょうどーむ", "東京巨蛋", "野球の試合が行われる。"],
+            ["敷地", "しきち", "占地", "工場の敷地を拡大する。"],
+            ["繰り広げる", "くりひろげる", "展開", "熱戦が繰り広げられた。"],
+            ["本場", "ほんば", "原產地, 正宗", "本場の味を楽しむ。"],
+            ["各国", "かっこく", "各國", "世界各国の料理。"],
+            ["訪れる", "おとずれる", "造訪", "多くの観光客が訪れる。"],
+            ["建造物", "けんぞうぶつ", "建築物", "歴史的な建造物を保護する。"],
+            ["誠に", "まことに", "真誠地, 衷心地", "誠にありがとうございます。"],
+            ["痛恨", "つうこん", "痛心, 悔恨", "痛恨のミス。"],
+            ["贅沢", "ぜいたく", "奢侈", "贅沢な暮らし。"],
+            ["災害", "さいがい", "災害", "自然災害に備える。"],
+            ["故郷", "こきょう", "故鄉", "故郷に帰る。"],
+            ["落書き", "らくがき", "塗鴉", "壁に落書きをする。"],
+            ["実行力", "じっこうりょく", "執行力", "彼には実行力がある。"],
+            ["失望", "しっぽう", "失望", "結果に失望する。"],
+            ["憤り", "いきどおり", "憤怒", "不当な扱いに憤りを感じる。"],
+            ["退官", "たいかん", "退職(官職)", "定年で退官する。"],
+            ["一同", "いちどう", "全體", "社員一同。"],
+            ["惜別", "せきべつ", "惜別", "惜別の情。"],
+            ["～の念", "のねん", "~之念, ~之情", "感謝の念を忘れない。"],
+            ["ホームドクター", "ほーむどくたー", "家庭醫生", "信頼できる医師。"],
+            ["相次ぐ", "あいつぐ", "相繼發生", "相次ぐ事故に注意する。"],
+            ["圧倒的", "あっとうてき", "壓倒性的", "圧倒的な強さ。"],
+            ["あながち", "あながち", "未必", "あながち間違いではない。"],
+            ["安易", "あんい", "容易, 輕率", "安易な考え。"],
+            ["生かす", "いかす", "活用", "経験を生かす。"],
+            ["依然として", "いぜんとして", "依然如故", "依然として厳しい。"],
+            ["意欲", "いよく", "意欲, 幹勁", "学習意欲を高める。"],
+            ["隠す", "かくす", "隱藏", "本心を隠す。"],
+            ["過剰", "かじょう", "過剩", "自信過剰だ。"],
+            ["合致", "がっち", "吻合", "条件に合致する。"],
+            ["寛容", "かんよう", "寬容", "失敗に寛容だ。"],
+            ["危惧", "きぐ", "憂慮", "絶滅が危惧される。"],
+            ["機軸", "きじく", "核心, 主軸", "外交の機軸。"],
+            ["拒否", "きょひ", "拒絕", "要求を拒否する。"],
+            ["欠如", "けつじょ", "欠缺", "配慮に欠如している。"],
+            ["懸念", "けねん", "憂慮", "安全性を懸念する。"],
+            ["誇張", "こちょう", "誇張", "事実を誇張する。"],
+            ["固有", "こゆう", "固有", "固有の文化。"],
+            ["斬新", "ざんしん", "嶄新", "斬新なアイデア。"],
+            ["志向", "しこう", "志向, 傾向", "健康志向。"],
+            ["示唆", "しさ", "暗示, 啟發", "将来を視唆する。"],
+            ["実践", "じっせん", "實踐", "理論を実践する。"],
+            ["重複", "じゅうふく", "重複", "内容が重複している。"],
+            ["遵守", "じゅんしゅ", "遵守", "ルールを遵守する。"],
+            ["消息", "しょうそく", "消息", "消息を絶つ。"],
+            ["浸透", "しんとう", "滲透, 普及", "キャッシュレスが浸透。"],
+            ["是正", "ぜせい", "修正", "不平等を是正する。"],
+            ["潜在", "せんざい", "潛在", "潜在的な能力。"],
+            ["先駆", "せんく", "先驅", "時代の先駆者。"],
+            ["前提", "ぜんてい", "前提", "結婚を前提に。"],
+            ["相違", "そうい", "不同, 差異", "事実と相違する。"],
+            ["促進", "そくしん", "促進", "販売を促進する。"],
+            ["妥協", "だきょう", "妥協", "一切妥協しない。"],
+            ["断絶", "だんぜつ", "斷絕", "国交を断絶する。"],
+            ["致命的", "ちめいてき", "致命的", "致命的なミス。"],
+            ["抽象", "ちゅうしょう", "抽象", "抽象的な表現。"],
+            ["兆候", "ちょうこう", "徵兆", "回復の兆候。"],
+            ["適宜", "てきぎ", "適時地", "適宜対応する。"],
+            ["停滞", "ていたい", "停滯", "景気が停滞する。"],
+            ["徹底", "てってい", "徹底", "徹底的に調査する。"],
+            ["転換", "てんかん", "轉換", "方針を転換する。"],
+            ["特定", "とくてい", "特定", "原因を特定する。"],
+            ["独占", "どくせん", "獨占", "市場を独占する。"],
+            ["突如", "とつじょ", "突然", "突如現れる。"],
+            ["把握", "はあく", "把握", "状況を把握する。"],
+            ["反映", "はんえい", "反映", "意見を反映させる。"],
+            ["普及", "ふきゅう", "普及", "スマホの普及。"],
+            ["不測", "ふそく", "不可預料的", "不測の事態。"],
+            ["普遍", "ふへん", "普遍", "普遍的な価値。"],
+            ["模索", "もさく", "摸索", "解決策を模索する。"],
+            ["抑制", "よくせい", "抑制", "インフレを抑制。"],
+            ["連鎖", "れんさ", "連鎖", "不幸の連鎖。"],
+            ["露骨", "ろこつ", "露骨", "露骨に嫌がる。"]
+        ];
+
+        let masteredIds = JSON.parse(localStorage.getItem('n1_full_mastery_final') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n1_full_scores_final') || '{}');
+        let hideMode = false;
+        let currentFC = null;
+        let fcMode = 'jpToZh';
+
+        function init() {
+            renderGrammar();
+            renderVocab();
+            updateProgress();
+            
+            document.getElementById('toggle-hide').addEventListener('click', () => {
+                hideMode = !hideMode;
+                document.body.classList.toggle('hide-mastered', hideMode);
+                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部內容" : "隱藏已掌握內容";
+                document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
+            });
+
+            document.getElementById('reset-progress').addEventListener('click', () => {
+                document.getElementById('confirm-modal').style.display = 'flex';
+            });
+
+            document.getElementById('search-box').addEventListener('input', (e) => {
+                renderVocab(e.target.value);
+            });
+        }
+
+        function formatRuby(word, kana) {
+            if (!kana || word === kana) return word;
+            return `<ruby>${word}<rt>${kana}</rt></ruby>`;
+        }
+
+        function renderGrammar() {
+            const container = document.getElementById('section-grammar');
+            container.innerHTML = grammarData.map(g => `
+                <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center gap-3">
+                            <span class="bg-rose-700 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest">N1核心</span>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center">${g.title}</h3>
+                        </div>
+                        <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
+                    </div>
+                    <p class="text-sm text-slate-600 mb-4 font-medium text-center">${g.desc}</p>
+                    <div class="bg-slate-50 p-4 rounded-xl space-y-3">
+                        ${g.ex.map(e => `
+                            <div class="border-l-2 border-rose-200 pl-3">
+                                <p class="japanese-text text-slate-800 text-base leading-relaxed text-center">${e.j}</p>
+                                <p class="text-xs text-slate-500 mt-0.5 text-center text-center">${e.c}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderVocab(filter = "") {
+            const container = document.getElementById('vocab-body');
+            const filteredData = rawVocab.filter(v => 
+                v[0].toLowerCase().includes(filter.toLowerCase()) || 
+                v[1].toLowerCase().includes(filter.toLowerCase()) || 
+                v[2].toLowerCase().includes(filter.toLowerCase())
+            );
+            
+            container.innerHTML = filteredData.map((v, i) => {
+                const id = `n1fv${i}`;
+                const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
+                const isMastered = masteredIds.includes(id);
+                return `
+                    <tr class="vocab-row transition-all hover:bg-rose-50/30 ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
+                        <td class="p-4 text-center">
+                            <input type="checkbox" class="custom-checkbox" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
+                        </td>
+                        <td class="p-4">
+                            <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
+                            <div class="text-[10px] text-slate-400 japanese-text">${v[1]}</div>
+                        </td>
+                        <td class="p-4 text-rose-700 font-bold">${v[2]}</td>
+                        <td class="p-4">
+                            <div class="flex gap-4 items-center">
+                                <div class="flex flex-col">
+                                    <span class="text-[8px] text-slate-400 font-black">日譯中</span>
+                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5"><div class="h-full bg-rose-500" style="width: ${score.jpToZh * 10}%"></div></div>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-[8px] text-slate-400 font-black">中譯日</span>
+                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5"><div class="h-full bg-rose-300" style="width: ${score.zhToJp * 10}%"></div></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function loadNextFC() {
+            let pool = [];
+            rawVocab.forEach((v, i) => {
+                const id = `n1fv${i}`;
+                const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
+                if (!masteredIds.includes(id)) {
+                    if (score.jpToZh < 10) pool.push({ v, id, mode: 'jpToZh' });
+                    if (score.zhToJp < 10) pool.push({ v, id, mode: 'zhToJp' });
+                }
+            });
+
+            if (pool.length === 0) {
+                document.getElementById('fc-main-display').classList.add('hidden');
+                document.getElementById('fc-controls').classList.add('hidden');
+                document.getElementById('fc-mode-display').classList.add('hidden');
+                document.getElementById('fc-empty-state').classList.remove('hidden');
+                return;
+            }
+
+            document.getElementById('fc-main-display').classList.remove('hidden');
+            document.getElementById('fc-controls').classList.remove('hidden');
+            document.getElementById('fc-mode-display').classList.remove('hidden');
+            document.getElementById('fc-empty-state').classList.add('hidden');
+            document.getElementById('fc-answer-block').classList.remove('active');
+
+            const pick = pool[Math.floor(Math.random() * pool.length)];
+            currentFC = pick;
+            fcMode = pick.mode;
+
+            const modeBadge = document.getElementById('fc-mode-display');
+            if (fcMode === 'jpToZh') {
+                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-rose-700 shadow-md";
+                document.getElementById('fc-mode-text').innerText = '日譯中挑戰';
+                document.getElementById('fc-question').innerHTML = formatRuby(pick.v[0], pick.v[1]);
+                document.getElementById('fc-hint').innerText = "請回想中文解說";
+                document.getElementById('fc-target').innerText = pick.v[2];
+                document.getElementById('fc-kana-display').innerText = ""; 
+            } else {
+                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-rose-400 shadow-md";
+                document.getElementById('fc-mode-text').innerText = '中譯日挑戰';
+                document.getElementById('fc-question').innerHTML = pick.v[2];
+                document.getElementById('fc-hint').innerText = "請回想日文讀音或漢字";
+                document.getElementById('fc-target').innerText = pick.v[0];
+                document.getElementById('fc-kana-display').innerText = pick.v[1] || "";
+            }
+            document.getElementById('fc-example').innerText = pick.v[3];
+            updateScoreUI();
+        }
+
+        function updateScoreUI() {
+            const scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
+            const currentVal = scores[fcMode];
+            document.getElementById('fc-current-score-text').innerText = currentVal;
+            const dots = document.getElementById('fc-score-dots');
+            dots.innerHTML = "";
+            for (let i = 0; i < 10; i++) {
+                const dot = document.createElement('div');
+                dot.className = `w-1.5 h-1.5 rounded-full ${i < currentVal ? 'bg-white' : 'bg-white/30'}`;
+                dots.appendChild(dot);
+            }
+        }
+
+        function processFC(action) {
+            if (!currentFC) return;
+            if (action === 'answer') { document.getElementById('fc-answer-block').classList.add('active'); return; }
+
+            let scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
+            let val = scores[fcMode];
+
+            if (action === 'master') val = Math.min(10, val + 5);
+            else if (action === 'again') val = Math.floor(val / 2);
+            
+            scores[fcMode] = val;
+            vocabScores[currentFC.id] = scores;
+
+            if (scores.jpToZh >= 10 && scores.zhToJp >= 10) {
+                if (!masteredIds.includes(currentFC.id)) masteredIds.push(currentFC.id);
+            }
+            saveAndSync();
+            loadNextFC();
+        }
+
+        function toggleMastered(id) {
+            const index = masteredIds.indexOf(id);
+            if (index > -1) masteredIds.splice(index, 1);
+            else { masteredIds.push(id); vocabScores[id] = { jpToZh: 10, zhToJp: 10 }; }
+            saveAndSync(id);
+        }
+
+        function saveAndSync(id) {
+            localStorage.setItem('n1_full_mastery_final', JSON.stringify(masteredIds));
+            localStorage.setItem('n1_full_scores_final', JSON.stringify(vocabScores));
+            if (id) renderVocab(document.getElementById('search-box').value);
+            else { renderGrammar(); renderVocab(); }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = grammarData.length + rawVocab.length;
+            const percent = total > 0 ? Math.round((masteredIds.length / total) * 100) : 0;
+            document.getElementById('progress-bar').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = percent + '%';
+        }
+
+        function switchTab(type) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.getElementById(`section-${type}`).classList.remove('hidden');
+            document.querySelectorAll('.tab-btn').forEach(btn => { btn.classList.remove('tab-active'); btn.classList.add('text-slate-400'); });
+            document.getElementById(`tab-btn-${type}`).classList.add('tab-active');
+            if (type === 'flashcard') loadNextFC();
+        }
+
+        function closeModal() { document.getElementById('confirm-modal').style.display = 'none'; }
+        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndSync(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFC(); }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
