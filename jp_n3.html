@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRY! N3 日本語達陣 - 終極全量學習系統</title>
+    <title>Meow! N3 日本語達陣 - 終極全量學習系統</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -27,200 +27,202 @@
 <body class="bg-slate-50 text-slate-800 pb-20">
 
     <header class="bg-emerald-700 text-white py-8 px-4 text-center shadow-lg">
-        <h1 class="text-3xl font-black mb-1 tracking-tight">TRY! N3 日本語達陣</h1>
-        <p class="text-emerald-100 opacity-90 text-sm font-medium">全量單字庫 (600+) × 完整文法 (60項) 學習導航</p>
+        <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N3 日本語達陣</h1>
+        <p class="text-emerald-100 opacity-90 text-sm font-medium text-center">中級程度：全量單字庫 (600+) × 核心文法 (60項) 學習導航</p>
     </header>
 
-    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center gap-4">
-                <div class="flex flex-col">
-                    <span class="text-[9px] text-slate-500 font-black uppercase tracking-widest text-center">N3 總進度</span>
-                    <div class="flex items-center gap-2">
-                        <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4 text-center">
+            <div class="flex items-center gap-4 text-center">
+                <div class="flex flex-col text-center">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest text-center">N3 總進度</span>
+                    <div class="flex items-center gap-2 text-center">
+                        <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden text-center">
                             <div id="progress-bar" class="h-full bg-emerald-500 transition-all duration-500" style="width: 0%"></div>
                         </div>
-                        <span id="progress-text" class="text-xs font-bold text-emerald-700">0%</span>
+                        <span id="progress-text" class="text-sm font-bold text-emerald-700">0%</span>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center gap-2">
-                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2">
-                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
+            <div class="flex items-center gap-2 text-center">
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握內容</span>
                 </button>
-                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2">
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-semibold transition flex items-center gap-2 shadow-sm">
                     <span>🔄</span> <span>重置進度</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-8 max-w-6xl">
-        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+    <main class="container mx-auto px-4 py-8 max-w-6xl text-center">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (60)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">全單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">雙向學習卡</button>
         </div>
 
         <!-- Grammar Section -->
-        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- JS Rendered -->
-        </div>
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6 text-center"></div>
 
         <!-- Vocab Section -->
-        <div id="section-vocab" class="tab-content hidden">
+        <div id="section-vocab" class="tab-content hidden text-center">
             <div class="mb-6 relative">
-                <input type="text" id="search-box" placeholder="搜尋 N3 單字、假名或中文..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition shadow-sm">
+                <input type="text" id="search-box" placeholder="搜尋 N3 單字、假名、中文..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition shadow-sm">
                 <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
             </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200">
-                            <tr>
-                                <th class="p-4 w-16 text-center">掌握</th>
-                                <th class="p-4 w-1/4">單字 / 假名</th>
-                                <th class="p-4 w-1/5 text-emerald-700">中文意義</th>
-                                <th class="p-4">學習積分 (日譯中 / 中譯日)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm">
-                            <!-- JS Rendered -->
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center">
+                <table class="w-full text-left border-collapse text-center">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-center">
+                        <tr>
+                            <th class="p-4 w-16 text-center">掌握</th>
+                            <th class="p-4 w-1/4 text-center">單字 / 假名</th>
+                            <th class="p-4 w-1/4 text-emerald-700 text-center">中文意義</th>
+                            <th class="p-4 text-center">積分 (日/中)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center"></tbody>
+                </table>
             </div>
         </div>
 
         <!-- Flashcard Section -->
-        <div id="section-flashcard" class="tab-content hidden">
-            <div class="max-w-lg mx-auto">
-                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-8 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all">
+        <div id="section-flashcard" class="tab-content hidden text-center">
+            <div class="max-w-lg mx-auto text-center">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all text-center">
                     <div id="fc-mode-display" class="absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white">
                         <span id="fc-mode-text">模式載入中</span>
                         <div class="flex gap-1" id="fc-score-dots"></div>
                     </div>
-                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
-                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center"></div>
-                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10 text-center"></div>
-                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
-                            <div id="fc-target" class="text-3xl font-bold text-emerald-600 mb-2 japanese-text text-center"></div>
-                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center"></div>
-                            <div class="bg-emerald-50 p-5 rounded-3xl text-left border border-emerald-100">
-                                <p class="text-[9px] font-black text-emerald-400 uppercase mb-2">學習範例</p>
-                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8 text-center text-center">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center text-center"></div>
+                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10 text-center text-center"></div>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6 text-center text-center">
+                            <div id="fc-target" class="text-3xl font-bold text-emerald-600 mb-2 japanese-text text-center text-center text-center"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center text-center text-center"></div>
+                            <div class="bg-emerald-50 p-5 rounded-3xl text-left border border-emerald-100 text-center">
+                                <p class="text-[9px] font-black text-emerald-400 uppercase mb-2 text-center text-center">學習範例</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center text-center"></p>
                             </div>
                         </div>
                     </div>
-                    <div id="fc-empty-state" class="hidden py-16">
-                        <div class="text-7xl mb-6">🏆</div>
-                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center">N3 達陣達成！</h3>
-                        <p class="text-slate-500 text-sm text-center">恭喜！目前沒有需要加強的項目。</p>
+                    <div id="fc-empty-state" class="hidden py-16 text-center text-center">
+                        <div class="text-7xl mb-6 text-center text-center">🏆</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center text-center text-center text-center">Meow! N3 達陣達成！</h3>
+                        <p class="text-slate-500 text-sm text-center text-center text-center">恭喜！目前沒有需要練習的單字囉。</p>
                     </div>
-                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
-                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
-                            <span class="text-2xl mb-1 text-center">🔄</span><span class="text-[10px] font-black text-center">再來</span>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8 text-center text-center">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95 text-center">
+                            <span class="text-2xl mb-1 text-center">🔄</span><span class="text-[10px] font-black text-center text-center text-center">再來</span>
                         </button>
-                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-emerald-100">
-                            <span class="text-2xl mb-1 text-center">💡</span><span class="text-[10px] font-black text-center">答案</span>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-emerald-100 text-center">
+                            <span class="text-2xl mb-1 text-center text-center text-center">💡</span><span class="text-[10px] font-black text-center text-center text-center text-center">答案</span>
                         </button>
-                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-green-100 hover:bg-green-200 text-green-700 rounded-3xl transition-all active:scale-95">
-                            <span class="text-2xl mb-1 text-center">✅</span><span class="text-[10px] font-black text-center">掌握</span>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-green-100 hover:bg-green-200 text-green-700 rounded-3xl transition-all active:scale-95 text-center text-center">
+                            <span class="text-2xl mb-1 text-center text-center text-center">✅</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center">掌握</span>
                         </button>
                     </div>
+                </div>
+                <div class="mt-6 text-center text-center">
+                    <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest text-center text-center">目前項面積分: <span id="fc-current-score-text">0</span> / 10</p>
                 </div>
             </div>
         </div>
     </main>
 
-    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
-            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center">確定重置進度嗎？</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center">這將清除所有 N3 掌握記錄、單字積分。動作無法復原。</p>
-            <div class="flex flex-col gap-3">
-                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
-                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消</button>
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center text-center text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-center text-center text-center">⚠️</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center text-center text-center">重置 Meow! N3 進度嗎？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center text-center text-center">這將永久清除所有 N3 掌握記錄與單字積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3 text-center">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200 text-center">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center text-center">取消返回</button>
             </div>
         </div>
     </div>
 
+    <footer class="bg-slate-900 text-slate-500 py-12 px-4 text-center">
+        <div class="container mx-auto">
+            <p class="mb-4">© 2026 Meow! 日本語達陣學習計畫 - 致力於提供最高品質的自學資源</p>
+        </div>
+    </footer>
+
     <script>
-        // --- 完整 60 項 N3 文法 ---
         const grammarData = [
-            { id: 'n3g1', title: 'あいだ (間)', desc: '在~期間「一直」持續。', ex: [{j:'講演のあいだ、皆熱心に話を聞いていた。', c:'在演講期間，大家一直熱心地聽著。'}]},
-            { id: 'n3g2', title: 'あいだに (間に)', desc: '在~期間「發生了某次」動作。', ex: [{j:'授業のあいだに3回質問をした。', c:'上課期間發問了三次。'}]},
-            { id: 'n3g3', title: 'あがる (上がる)', desc: '完成~ / 起來、向上。', ex: [{j:'企画書が出来あがった。', c:'企劃書完成了。'}]},
-            { id: 'n3g4', title: 'いつか', desc: '找機會、未來想~。', ex: [{j:'いつか京都を観光したい。', c:'想找機會到京都觀光。'}]},
+            { id: 'n3g1', title: 'あいだ (間)', desc: '在~期間「一直」持續。後面接續的動作是持續性的。', ex: [{j:'山田先生の講演のあいだ、皆熱心に話を聞いていた。', c:'在山田老師演講的過程中，大家都專心地聽著。'}]},
+            { id: 'n3g2', title: 'あいだに (間に)', desc: '在~期間「發生過某次」動作。後面接續的是瞬間動作。', ex: [{j:'授業のあいだに3回質問をした。', c:'在上課期間曾發問了三次。'}]},
+            { id: 'n3g3', title: 'あがる (上がる)', desc: '動作的完成、起來、向上。', ex: [{j:'やっと企画書が出来あがった。', c:'企劃書終於完成了。'}]},
+            { id: 'n3g4', title: 'いつか', desc: '找出機會、未來想做某事。', ex: [{j:'いつか京都をゆっくり観光したい。', c:'想找機會到京都慢慢觀光。'}]},
             { id: 'n3g5', title: 'いつのまにか', desc: '不知不覺間。', ex: [{j:'いつのまにか5時間も経ってしまった。', c:'不知不覺過了5個小時。'}]},
-            { id: 'n3g6', title: '一方(で)', desc: '一方面~，另一方面~。', ex: [{j:'疲れた一方で達成感がある。', c:'一方面很累，另一方面也很有成就感。'}]},
-            { id: 'n3g7', title: '一方だ', desc: '趨勢不斷發展。', ex: [{j:'人口は増える一方だ。', c:'人口一直在增加。'}]},
-            { id: 'n3g8', title: '上に (うえに)', desc: '不僅~而且~。', ex: [{j:'道に迷った上に雨に降られた。', c:'不但迷路還被雨淋。'}]},
-            { id: 'n3g9', title: 'うちに', desc: '趁著~ / 發生變化。', ex: [{j:'雨が強くならないうちに帰りましょう。', c:'趁雨還沒變大快回去吧。'}]},
-            { id: 'n3g10', title: 'おかげで', desc: '託~的福（好結果）。', ex: [{j:'先生のおかげで合格しました。', c:'多虧老師才及格了。'}]},
+            { id: 'n3g6', title: '一方(で)', desc: '一方面~，另一方面~（對比）。', ex: [{j:'疲れた一方で、達成感がある。', c:'一方面很累，另一方面也很有成就感。'}]},
+            { id: 'n3g7', title: '一方だ', desc: '趨勢不斷向某一方向發展。', ex: [{j:'人口は増える一方だ。', c:'人口一直在增加。'}]},
+            { id: 'n3g8', title: '上に (うえに)', desc: '不僅~而且~（累加）。', ex: [{j:'道に迷った上に雨に降られた。', c:'不僅迷路還被雨淋。'}]},
+            { id: 'n3g9', title: 'うちに', desc: '趁著~ / 在~期間發生變化。', ex: [{j:'雨が強くならないうちに帰りましょう。', c:'趁雨還沒變大快回去吧。'}]},
+            { id: 'n3g10', title: 'おかげで', desc: '多虧了~（用於好的結果）。', ex: [{j:'先生が丁寧に教えてくださったおかげです。', c:'多虧老師耐心地教導。'}]},
             { id: 'n3g11', title: 'おきに', desc: '每隔~（時間或距離）。', ex: [{j:'バスは20分おきに発車する。', c:'巴士每隔20分鐘發車。'}]},
-            { id: 'n3g12', title: '恐れがある', desc: '恐怕~、有可能。', ex: [{j:'台風が来る恐れがある。', c:'颱風有可能侵襲。'}]},
-            { id: 'n3g13', title: 'がかり(で)', desc: '花費~人力或時間。', ex: [{j:'5人がかりで運んだ。', c:'花了5個人力才搬走。'}]},
-            { id: 'n3g14', title: 'がする', desc: '感到~（氣味、聲音）。', ex: [{j:'いい匂いがする。', c:'聞到好香的味道。'}]},
-            { id: 'n3g15', title: 'か何か', desc: '~之類的、什麼的。', ex: [{j:'冷たいものかなにか飲みませんか。', c:'要喝點冷的東西之類的嗎？'}]},
-            { id: 'n3g16', title: '～から～にかけて', desc: '從~到~（範圍）。', ex: [{j:'九州から四国にかけて。', c:'從九州到四國一帶。'}]},
-            { id: 'n3g17', title: 'がる', desc: '感到~（第三人稱）。', ex: [{j:'彼は嫌がっている。', c:'他感到很討厭。'}]},
-            { id: 'n3g18', title: 'きる / きれる', desc: '~完、完成。', ex: [{j:'使いきってしまった。', c:'全部用光了。'}]},
-            { id: 'n3g19', title: 'くくせに', desc: '明明~卻~（責難）。', ex: [{j:'知らないくせに。', c:'明明不知道卻（裝懂）。'}]},
-            { id: 'n3g20', title: 'くらい / ほど', desc: '大約 / 程度。', ex: [{j:'死ぬほど疲れた。', c:'累得要命。'}]},
-            { id: 'n3g21', title: 'こそ', desc: '正是、才是。', ex: [{j:'今年こそ合格する。', c:'今年一定要考上。'}]},
-            { id: 'n3g22', title: 'ことか', desc: '多麼~啊。', ex: [{j:'どんなにうれしかったことか。', c:'是多麼高興啊。'}]},
-            { id: 'n3g23', title: 'ことから', desc: '起源於~。', ex: [{j:'このことからわかる。', c:'由這件事可以明白。'}]},
-            { id: 'n3g24', title: 'ことに(は)', desc: '令人~的是。', ex: [{j:'驚いたことに。', c:'令人驚訝的是。'}]},
-            { id: 'n3g25', title: 'ことになっている', desc: '規定、約定。', ex: [{j:'会うことになっている。', c:'約好了要見面。'}]},
-            { id: 'n3g26', title: 'ことになる', desc: '決定為~。', ex: [{j:'行くことになりました。', c:'決定要去了。'}]},
-            { id: 'n3g27', title: 'ことはない', desc: '沒必要。', ex: [{j:'泣くことはない。', c:'沒必要哭。'}]},
-            { id: 'n3g28', title: '最中に', desc: '正當~之時。', ex: [{j:'勉強している最中に。', c:'正在讀書時。'}]},
-            { id: 'n3g29', title: 'さえ', desc: '甚至、連。', ex: [{j:'名前さえ書けない。', c:'連名字都不會寫。'}]},
-            { id: 'n3g30', title: 'せいだ / せいで', desc: '歸咎於（壞結果）。', ex: [{j:'雨のせいで遅れた。', c:'因為下雨才遲到。'}]},
-            { id: 'n3g31', title: 'そうだ', desc: '好像 / 聽說。', ex: [{j:'雨が降りそうだ。', c:'好像要下雨了。'}]},
-            { id: 'n3g32', title: 'ぞ', desc: '語氣詞（男）。', ex: [{j:'行くぞ！', c:'走吧！'}]},
-            { id: 'n3g33', title: 'たがる', desc: '想要（第三人稱）。', ex: [{j:'行きたがっている。', c:'他正想要去。'}]},
-            { id: 'n3g34', title: 'だけ', desc: '只有。', ex: [{j:'これだけです。', c:'只有這個。'}]},
-            { id: 'n3g35', title: 'ところに', desc: '正當那時。', ex: [{j:'来たところに。', c:'正當來到時。'}]},
-            { id: 'n3g36', title: 'ところが', desc: '然而。', ex: [{j:'ところが失敗した。', c:'然而卻失敗了。'}]},
-            { id: 'n3g37', title: 'どころか', desc: '豈止。', ex: [{j:'静かどころか。', c:'哪裡安靜了。'}]},
-            { id: 'n3g38', title: 'ところで', desc: '順便一提。', ex: [{j:'ところで、元気？', c:'對了，你好嗎？'}]},
-            { id: 'n3g39', title: 'ように (比喻)', desc: '像~一樣。', ex: [{j:'花のように。', c:'像花一樣。'}]},
-            { id: 'n3g40', title: 'ように (目的)', desc: '為了。', ex: [{j:'合格するように。', c:'為了能及格。'}]},
-            { id: 'n3g41', title: 'ように (祈願)', desc: '祈禱。', ex: [{j:'幸せであるように。', c:'願能幸福。'}]},
-            { id: 'n3g42', title: 'ようにする', desc: '努力做到。', ex: [{j:'食べるようにする。', c:'努力去吃。'}]},
-            { id: 'n3g43', title: 'ようになる', desc: '變得會。', ex: [{j:'わかるようになった。', c:'變得明白了。'}]},
-            { id: 'n3g44', title: 'ようがない', desc: '沒辦法。', ex: [{j:'直しようがない。', c:'沒法修了。'}]},
-            { id: 'n3g45', title: 'ようなら', desc: '如果是那樣。', ex: [{j:'嫌ならやめろ。', c:'不喜歡就住手。'}]},
-            { id: 'n3g46', title: 'わけ', desc: '理由、道理。', ex: [{j:'わけを話す。', c:'說明理由。'}]},
-            { id: 'n3g47', title: 'わけではない', desc: '並非。', ex: [{j:'嫌いなわけではない。', c:'並非討厭。'}]},
-            { id: 'n3g48', title: 'わけにはいかない', desc: '不能。', ex: [{j:'休むわけにはいかない。', c:'不能休息。'}]},
-            { id: 'n3g49', title: 'べきだ', desc: '應該。', ex: [{j:'守るべきだ。', c:'應該遵守。'}]},
-            { id: 'n3g50', title: 'ものだ', desc: '真理、感嘆。', ex: [{j:'速いものだ。', c:'真快啊。'}]},
-            { id: 'n3g51', title: '尊敬語', desc: 'お～になります。', ex: [{j:'お帰りになります。', c:'回來了（尊）。'}]},
-            { id: 'n3g52', title: '謙讓語', desc: 'お～します。', ex: [{j:'お持ちします。', c:'讓我拿（謙）。'}]},
-            { id: 'n3g53', title: '敬語特殊', desc: 'いらっしゃる。', ex: [{j:'先生がいらっしゃる。', c:'老師來了（尊）。'}]},
-            { id: 'n3g54', title: '敬語特殊', desc: '召し上がる。', ex: [{j:'召し上がれ。', c:'請用。'}]},
-            { id: 'n3g55', title: '謙讓特殊', desc: '参る。', ex: [{j:'参ります。', c:'來了（謙）。'}]},
-            { id: 'n3g56', title: '謙讓特殊', desc: '申す。', ex: [{j:'田中と申します。', c:'我叫田中（謙）。'}]},
-            { id: 'n3g57', title: 'ちゃう', desc: '口語 ～てしまう。', ex: [{j:'忘れちゃう。', c:'會忘掉喔。'}]},
-            { id: 'n3g58', title: 'なきゃ', desc: '口語 ～なければ。', ex: [{j:'行かなきゃ。', c:'得走了。'}]},
-            { id: 'n3g59', title: 'じゃん', desc: '口語 ～じゃないか。', ex: [{j:'いいじゃん。', c:'不是很好嗎。'}]},
-            { id: 'n3g60', title: 'とく', desc: '口語 ～ておく。', ex: [{j:'買っとく。', c:'先買好。'}]}
+            { id: 'n3g12', title: '恐れがある', desc: '恐怕~、有可能發生不好的事。', ex: [{j:'台風が来る恐れがある。', c:'颱風有可能侵襲。'}]},
+            { id: 'n3g13', title: '～かける / かけの', desc: '動作剛開始、尚未結束。', ex: [{j:'読みかけの本を置く。', c:'放下讀到一半的書。'}]},
+            { id: 'n3g14', title: 'がかり(で)', desc: '花費了~人力或時間。', ex: [{j:'5人がかりで運んだ。', c:'動用了5個人才搬走。'}]},
+            { id: 'n3g15', title: 'がする', desc: '感到、聞到、聽到（氣味、聲音、感覺）。', ex: [{j:'いい匂いがする。', c:'聞到香味。'}]},
+            { id: 'n3g16', title: 'か何か', desc: '~之類的、什麼的。', ex: [{j:'冷たいものかなにか召し上がりませんか。', c:'要喝點冷的東西之類的嗎？'}]},
+            { id: 'n3g17', title: '～から～にかけて', desc: '從~到~（大概的範圍）。', ex: [{j:'九州から四国にかけて大雨が降っている。', c:'從九州到四國一帶正降下大雨。'}]},
+            { id: 'n3g18', title: 'がる', desc: '感到、覺得（用於第三人稱的感情）。', ex: [{j:'妹は最初、水泳を嫌がっていた。', c:'妹妹一開始很討厭游泳。'}]},
+            { id: 'n3g19', title: 'きり', desc: '自從~後就再也沒（動作停止）。', ex: [{j:'彼に会ったのは、一年前が最後きりだ。', c:'上次見面是一年前最後一次了。'}]},
+            { id: 'n3g20', title: 'きる / きれる', desc: '完全做完、完成。', ex: [{j:'お小遣いを使いきってしまった。', c:'零用錢全部花光了。'}]},
+            { id: 'n3g21', title: 'くせに', desc: '明明~卻~（帶有輕蔑、責難語氣）。', ex: [{j:'知らないくせに、知っているふりをする。', c:'明明不知道卻裝懂。'}]},
+            { id: 'n3g22', title: 'くらい / ほど', desc: '大約 / 程度（非常~）。', ex: [{j:'死ぬほど疲れた。', c:'累得要命。'}]},
+            { id: 'n3g23', title: 'こそ', desc: '正是、才是（強調）。', ex: [{j:'今年こそ合格するぞ。', c:'今年一定要考上。'}]},
+            { id: 'n3g24', title: 'ことか', desc: '多麼~啊（感嘆）。', ex: [{j:'どんなにうれしかったことか。', c:'是多麼高興啊。'}]},
+            { id: 'n3g25', title: 'ことから', desc: '因為、起源於（理由）。', ex: [{j:'形が似ていることから、その名がついた。', c:'因為形狀很像，所以起了那個名字。'}]},
+            { id: 'n3g26', title: 'ことに(は)', desc: '令人~的是（強調心情）。', ex: [{j:'嬉しいことに、N3に合格した。', c:'令人高興的是，考過了N3。'}]},
+            { id: 'n3g27', title: 'ことになっている', desc: '規定、約定。', ex: [{j:'東京駅で友達と会うことになっている。', c:'約好了要在東京車站跟朋友見面。'}]},
+            { id: 'n3g28', title: 'ことになる', desc: '結果變成、決定為。', ex: [{j:'来月から大阪支社に行くことになりました。', c:'決定下個月要去大阪分社了。'}]},
+            { id: 'n3g29', title: 'ことはない', desc: '沒有必要做。', ex: [{j:'泣くことはないですよ。', c:'不需要哭喔。'}]},
+            { id: 'n3g30', title: '最中に (さいちゅうに)', desc: '正當~的時候（發生突發狀況）。', ex: [{j:'買い物している最中に彼に会った。', c:'正在購物途中遇到了他。'}]},
+            { id: 'n3g31', title: 'さえ', desc: '甚至、連~都。', ex: [{j:'子供さえわかる問題だ。', c:'是連小孩都懂的問題。'}]},
+            { id: 'n3g32', title: 'さえ～ば', desc: '只要~的話就（唯一條件）。', ex: [{j:'お金さえあれば幸せになれる。', c:'只要有錢就能幸福。'}]},
+            { id: 'n3g33', title: 'せいだ / せいで', desc: '都怪~（不好的原因結果）。', ex: [{j:'雨のせいで遅れた。', c:'因為下雨所以遲到了。'}]},
+            { id: 'n3g34', title: '～たがる', desc: '想要（第三人稱的慾望）。', ex: [{j:'彼は新しい車を買いたがっている。', c:'他正想要買新車。'}]},
+            { id: 'n3g35', title: '～たところ', desc: '剛做了~結果。', ex: [{j:'先生に聞いたところ、もうすぐ始まる。', c:'問了老師後得知快開始了。'}]},
+            { id: 'n3g36', title: '～たとたんに', desc: '一~就立刻（瞬間變化）。', ex: [{j:'窓を開けたとたん、風が入ってきた。', c:'一打開窗，風就進來了。'}]},
+            { id: 'n3g37', title: 'たびに', desc: '每次、每當。', ex: [{j:'写真を見るたびに、故郷を思い出す。', c:'每次看照片都會想起故鄉。'}]},
+            { id: 'n3g38', title: '～だらけ', desc: '滿是~（不好的事物，如泥巴、錯誤）。', ex: [{j:'間違いだらけのテスト。', c:'滿是錯誤的考試。'}]},
+            { id: 'n3g39', title: 'ついでに', desc: '順便（做主要動作時帶上次要動作）。', ex: [{j:'買い物に行くついでに、手紙を出した。', c:'去買東西順便寄了信。'}]},
+            { id: 'n3g40', title: 'っけ', desc: '是不是~來著？（確認）。', ex: [{j:'テストは明日だっけ？', c:'考試是明天來著嗎？'}]},
+            { id: 'n3g41', title: 'っぱなし', desc: '放著不管、持續某狀態。', ex: [{j:'テレビをつけっぱなしにする。', c:'電視開著不管。'}]},
+            { id: 'n3g42', title: 'つもりで', desc: '抱著~的心態。', ex: [{j:'旅行に行ったつもりで貯金する。', c:'當作去旅行了的心情存錢。'}]},
+            { id: 'n3g43', title: 'ところに', desc: '正當~的時候。', ex: [{j:'寝ようとしたところに電話がきた。', c:'正要睡覺時電話響了。'}]},
+            { id: 'n3g44', title: 'ところが', desc: '然而、可是。', ex: [{j:'うまくいくと思っていた。ところが失敗した。', c:'原以為會順利，沒想到失敗了。'}]},
+            { id: 'n3g45', title: 'どころか', desc: '豈止、根本。', ex: [{j:'静かどころか、うるさくて眠れない。', c:'哪裡安靜了，吵到睡不著。'}]},
+            { id: 'n3g46', title: 'ところで', desc: '轉換話題 / 即使~也。', ex: [{j:'ところで、君たちはいつ結婚するの？', c:'對了，你們何時要結婚？'}]},
+            { id: 'n3g47', title: '～なさい', desc: '命令（長輩對晚輩、柔和的命令）。', ex: [{j:'早く寝なさい。', c:'快點去睡。'}]},
+            { id: 'n3g48', title: '～のように (比喻)', desc: '像~一樣。', ex: [{j:'彼女は花のようだ。', c:'她像花一樣。'}]},
+            { id: 'n3g49', title: '～ように (目的)', desc: '為了。', ex: [{j:'合格できるように頑張ります。', c:'為了及格會加油。'}]},
+            { id: 'n3g50', title: '～ように (祈願)', desc: '祈禱、希望。', ex: [{j:'幸せであるように。', c:'願能幸福。'}]},
+            { id: 'n3g51', title: '～ようになる', desc: '變得、化為。', ex: [{j:'日本語が話せるようになった。', c:'變得會說日語了。'}]},
+            { id: 'n3g52', title: '～ようにする', desc: '努力做到、習慣。', ex: [{j:'毎日運動するようにしている。', c:'努力維持每天運動。'}]},
+            { id: 'n3g53', title: 'ようがない', desc: '沒辦法、缺乏手段。', ex: [{j:'直しようがない。', c:'沒法修了。'}]},
+            { id: 'n3g54', title: 'ようなら', desc: '如果是那樣的話。', ex: [{j:'嫌ならやめろ。', c:'不喜歡就住手。'}]},
+            { id: 'n3g55', title: 'わけ (道理/理由)', desc: '理由、道理。', ex: [{j:'わけを話してください。', c:'請說明理由。'}]},
+            { id: 'n3g56', title: 'わけではない', desc: '並非。', ex: [{j:'嫌いなわけではない。', c:'並非討厭。'}]},
+            { id: 'n3g57', title: 'わけにはいかない', desc: '不能、無法（常識）。', ex: [{j:'休むわけにはいかない。', c:'不能休息。'}]},
+            { id: 'n3g58', title: 'べきだ', desc: '應該（義務）。', ex: [{j:'守るべきだ。', c:'應該遵守。'}]},
+            { id: 'n3g59', title: '尊敬語 (お/ご～になります)', desc: '提高對方地位。', ex: [{j:'お帰りになりますか。', c:'您要回去了嗎？'}]},
+            { id: 'n3g60', title: '謙讓語 (お/ご～します)', desc: '降低自身地位。', ex: [{j:'お持ちします。', c:'讓我幫您拿。'}]}
         ];
 
-        // --- 全量單字資料 (從 PDF 一字不漏提取) ---
         const rawVocab = [
             ["愛情", "あいじょう", "情感,愛", "家族への愛情を大切にする。"],
             ["アイディア", "", "主意,點子", "いいアイディアが浮かんだ。"],
             ["空き地", "あきち", "空地", "空き地で子供が遊んでいる。"],
-            ["明らかになる", "あきらかになる", "弄清楚", "真実が明らかになった。"],
+            ["明らかになる", "あきらかになる", "弄清楚,變清晰", "真実が明らかになった。"],
             ["あきらめる", "", "放棄", "最後まであきらめない。"],
-            ["あきれる", "", "驚訝,愕然", "彼の行動にあきれてしまった。"],
-            ["空く", "あく", "空", "席が空いています。"],
+            ["あきれる", "", "吃驚,愕然", "彼の行動にあきれてしまった。"],
+            ["空く", "あく", "空(時間/位子)", "席が空いています。"],
             ["あくび", "", "哈欠", "授業中にあくびをする。"],
             ["あこがれる", "", "嚮往,憧憬", "日本での生活にあこがれる。"],
+            ["浅い", "あさい", "淺的", "川が浅いです。"],
             ["朝市", "あさいち", "早市", "朝市で新鮮な野菜を買う。"],
             ["朝寝坊", "あさねぼう", "睡懶覺", "休みの日は朝寝坊をする。"],
             ["足跡", "あしあと", "腳印", "砂浜に足跡が残っている。"],
@@ -228,41 +230,41 @@
             ["足元", "あしもと", "腳下", "足元に注意してください。"],
             ["あせる", "", "慌張,焦躁", "時間がなくてあせっている。"],
             ["頭に浮かぶ", "あたまにうかぶ", "腦海浮現", "いい方法が頭に浮かんだ。"],
-            ["当たる", "あたる", "獲得(獎賞)", "宝くじに当たった。"],
+            ["当たる", "あたる", "獲得(獎賞),中獎", "宝くじに当たった。"],
             ["あちこち", "", "到處", "あちこち探し回った。"],
             ["あっという間に", "あっというまに", "轉眼之間", "時間はあっという間に過ぎる。"],
             ["宛先", "あてさき", "收信人", "宛先を間違えた。"],
             ["アドバイス", "", "建議", "先生にアドバイスをもらう。"],
             ["アニメ", "", "動畫", "日本のアニメが大好きだ。"],
-            ["あまくち", "甘口", "甜味", "このお酒は甘口だ。"],
+            ["甘口", "あまくち", "甜味,微甜", "このお酒は甘口だ。"],
             ["甘やかす", "あまやかす", "縱容,溺愛", "子供を甘やかしてはいけない。"],
             ["編む", "あむ", "編織", "セーターを編む。"],
             ["謝る", "あやまる", "道歉", "素直に謝ることが大切だ。"],
-            ["洗い流す", "あらいながす", "沖掉", "汚れを洗い流す。"],
+            ["洗い流す", "あらいながす", "沖掉,洗掉", "汚れを洗い流す。"],
             ["改めて", "あらためて", "重新,再次", "改めて連絡します。"],
-            ["表れる", "あらわれる", "出現", "顔に喜びが表れている。"],
+            ["表れる", "あらわれる", "出現,表現", "顔に喜びが表れている。"],
             ["アレルギー", "", "過敏", "猫アレルギーがある。"],
             ["あわてる", "", "慌張", "あわてて家を出た。"],
             ["胃", "い", "胃", "胃が痛い。"],
             ["委員", "いいん", "委員", "学級委員に選ばれた。"],
             ["意外", "いがい", "意外", "試験の結果は意外だった。"],
             ["医学", "いがく", "醫學", "大学で医学を学ぶ。"],
-            ["生かす", "いかす", "活用", "経験を生かして働く。"],
+            ["生かす", "いかす", "活用,發揮", "経験を生かして働く。"],
             ["息が切れる", "いきがきれる", "氣喘", "階段を上って息が切れる。"],
-            ["息が止まる", "いきがとまる", "窒息", "驚きで息が止まりそうだ。"],
+            ["息が止まる", "いきがとまる", "窒息,憋氣", "驚きで息が止まりそうだ。"],
             ["育児", "いくじ", "育兒", "育児と仕事を両立させる。"],
-            ["言い合う", "いいあう", "分享看法", "意見を言い合う。"],
+            ["言い合う", "いいあう", "分享看法,爭論", "意見を言い合う。"],
             ["いじめる", "", "欺負", "弱い人をいじめてはいけない。"],
             ["異常", "いじょう", "異常", "機械に異常がある。"],
             ["意地悪", "いじわる", "壞心眼", "意地悪なことを言うな。"],
             ["以前", "いぜん", "以前", "以前ここに来たことがある。"],
             ["いたずら", "", "惡作劇", "子供がいたずらをする。"],
-            ["いたむ", "", "腐壞,傷害", "食べ物がいたみやすい。"],
+            ["いたむ", "", "腐壞,疼痛,損害", "食べ物がいたみやすい。"],
             ["いちご", "", "草莓", "いちご狩りに行く。"],
             ["一流", "いちりゅう", "一流", "一流の料理人。"],
             ["一気に", "いっきに", "一口氣", "一気に飲み干す。"],
             ["いっせいに", "", "同時", "いっせいに走り出す。"],
-            ["一定", "いってい", "一定程度", "一定の距離を保つ。"],
+            ["一定", "いってい", "一定", "一定の距離を保つ。"],
             ["一般常識", "いっぱんじょうしき", "一般常識", "一般常識を身につける。"],
             ["一般の", "いっぱんの", "一般的", "一般の方は入れません。"],
             ["一歩も歩けない", "いっぽもあるけない", "一步也走不動", "疲れすぎて一歩も歩けない。"],
@@ -270,17 +272,17 @@
             ["イベント", "", "活動", "週末にイベントがある。"],
             ["いやな", "", "討厭的", "いやな夢を見た。"],
             ["印象", "いんしょう", "印象", "第一印象が大切だ。"],
-            ["実習", "インターンシップ", "實習", "インターンシップに参加する。"],
+            ["インターンシップ", "", "實習", "インターンシップに参加する。"],
             ["引退", "いんたい", "引退", "選手を引退する。"],
             ["ウイルス", "", "病毒", "ウイルスに感染する。"],
             ["受かる", "うかる", "通過考試", "試験に受かってうれしい。"],
-            ["受け付ける", "うけつける", "接待", "受付は2階です。"],
+            ["受け付ける", "うけつける", "受理,接待", "受付は2階です。"],
             ["ウサギ", "", "兔子", "ウサギを飼っている。"],
             ["失う", "うしなう", "失去", "自信を失う。"],
-            ["薄い", "うすい", "稀薄", "山の上は空気が薄い。"],
+            ["薄い", "うすい", "薄的,淡的", "山の上は空気が薄い。"],
             ["うそをつく", "", "說謊", "うそをついてはいけない。"],
-            ["撃つ", "うつ", "開槍", "銃で的を撃つ。"],
-            ["写す", "うつす", "影印,複寫", "ノートを写す。"],
+            ["撃つ", "うつ", "射擊", "銃で的を撃つ。"],
+            ["写す", "うつす", "影印,抄寫", "ノートを写す。"],
             ["うつる", "", "傳染", "風邪がうつった。"],
             ["うどん", "", "烏龍麵", "うどんを食べる。"],
             ["うなぎ", "", "鰻魚", "うなぎを食べて元気出す。"],
@@ -289,14 +291,14 @@
             ["生まれつき", "うまれつき", "天生", "彼女は生まれつき目が大きい。"],
             ["占い", "うらない", "占卜", "占いの結果を信じる。"],
             ["売上", "うりあげ", "銷售額", "今月の売上が伸びた。"],
-            ["上着", "うわぎ", "外套", "上着を脱ぐ。"],
-            ["うわさ", "", "流言", "変なうわさを聞く。"],
-            ["上回る", "うわまわる", "超越", "予想を上回る結果。"],
+            ["上着", "うわぎ", "外套", "上着を脫ぐ。"],
+            ["うわさ", "", "流言", "變なうわさを聞く。"],
+            ["上回る", "うわまわる", "超過", "予想を上回る結果。"],
             ["影響", "えいきょう", "影響", "環境に影響を与える。"],
             ["營業時間", "えいぎょうじかん", "營業時間", "営業時間は10時からです。"],
             ["營養", "えいよう", "營養", "栄養バランスを考える。"],
             ["エネルギー", "", "能量", "太陽エネルギーを利用する。"],
-            ["明信片", "えはがき", "明信片", "旅先から絵はがきを送る。"],
+            ["絵はがき", "えはがき", "明信片", "旅先から絵はがきを送る。"],
             ["えび", "", "蝦", "えびのアレルギーがある。"],
             ["演技", "えんぎ", "演技", "素晴らしい演技。"],
             ["演劇", "えんげき", "戲劇", "演劇を鑑賞する。"],
@@ -305,11 +307,11 @@
             ["演奏", "えんそう", "演奏", "ピアノの演奏を聴く。"],
             ["延長", "えんちょう", "延長", "試合時間が延長された。"],
             ["遠慮", "えんりょ", "客氣", "遠慮しないで食べて。"],
-            ["祈禱", "いのり", "祈禱", "平和を祈る。"],
-            ["負う", "おう", "負(傷)", "大けがを負った。"],
-            ["應援", "おうえん", "支持", "好きなチームを応援する。"],
-            ["接待室", "おうせつしつ", "接待室", "お客様を応接室へ。"],
-            ["報名", "おうぼ", "應徵", "仕事に応募する。"],
+            ["祈り", "いのり", "祈禱", "平和を祈る。"],
+            ["負う", "おう", "負(傷),承擔", "大けがを負った。"],
+            ["応援", "おうえん", "支持", "好きなチームを応援する。"],
+            ["応接室", "おうせつしつ", "接待室", "お客様を応接室へ。"],
+            ["応募", "おうぼ", "應徵", "仕事に応募する。"],
             ["大雨", "おおあめ", "大雨", "大雨で電車が止まる。"],
             ["大型", "おおがた", "大型", "大型連休が楽しみだ。"],
             ["大声", "おおごえ", "大聲", "大声で叫ぶ。"],
@@ -321,22 +323,22 @@
             ["屋上", "おくじょう", "屋頂", "屋上で昼ご飯。"],
             ["贈る", "おくる", "贈送", "花束を贈る。"],
             ["おしゃべり", "", "聊天", "友達とおしゃべりする。"],
-            ["令媛", "おじょうさん", "女兒", "お嬢さんはお元気ですか。"],
-            ["相撲", "おすもうさん", "相撲選手", "お相撲さんは体が大きい。"],
+            ["お嬢さん", "おじょうさん", "女兒", "お嬢さんはお元気ですか。"],
+            ["お相撲さん", "おすもうさん", "相撲選手", "お相撲さんは体が大きい。"],
             ["お互い", "おたがい", "互相", "お互いに助け合おう。"],
             ["落ち込む", "おちこむ", "失落", "失敗して落ち込む。"],
-            ["年寄り", "としより", "老人", "お年寄りを大切にする。"],
-            ["訪れる", "おとずれる", "造訪", "京都を訪れる。"],
+            ["お年寄り", "おとしより", "老人", "お年寄りを大切にする。"],
+            ["訪れる", "おトズレル", "造訪", "京都を訪れる。"],
             ["お見舞い", "おみまい", "探病", "病院へお見舞いに行く。"],
             ["思い通り", "おもいどおり", "稱心如意", "思い通りにいかない。"],
             ["おもちゃ", "", "玩具", "子供におもちゃを買う。"],
-            ["奧運", "オリンピック", "奧運", "オリンピックに出場。"],
+            ["オリンピック", "", "奧運", "オリンピックに出場。"],
             ["おわび", "", "致歉", "深くおわび申し上げます。"],
             ["温暖な", "おんだんな", "溫暖", "温暖な気候。"],
             ["会員", "かいいん", "會員", "会員登録をする。"],
             ["開花", "かいか", "開花", "桜が開花した。"],
             ["海外研修", "かいがいけんしゅう", "海外培訓", "海外研修に参加する。"],
-            ["召開", "かいさい", "舉辦", "会議を開催する。"],
+            ["開催", "かいさい", "舉辦", "会議を開催する。"],
             ["解消", "かいしょう", "取消", "ストレスを解消する。"],
             ["快適な", "かいてきな", "舒適的", "快適な部屋。"],
             ["開発", "かいはつ", "開發", "新商品を開発する。"],
@@ -347,21 +349,21 @@
             ["加工", "かこう", "加工", "木を加工する。"],
             ["歌手", "かしゅ", "歌手", "人気の歌手。"],
             ["画像", "がぞう", "圖片", "画像を送る。"],
-            ["數", "かぞえる", "數", "数を数える。"],
+            ["数える", "かぞえる", "數", "数を数える。"],
             ["片思い", "かたおもい", "單戀", "片思いをしている。"],
             ["語る", "かたる", "講述", "夢を語る。"],
             ["勝手な", "かってな", "隨便的", "勝手な行動。"],
             ["活動", "かつどう", "活動", "ボランティア活動。"],
             ["活躍", "かつやく", "活躍", "世界で活躍する。"],
-            ["花粉症", "かふん症", "花粉症", "花粉症で目が赤い。"],
+            ["花粉症", "かふんしょう", "花粉症", "花粉症で目が赤い。"],
             ["髪型", "かみがた", "髮型", "髪型を変える。"],
             ["画面", "がめん", "畫面", "テレビの画面。"],
             ["科目", "かもく", "科目", "好きな科目。"],
-            ["癢", "かゆい", "癢", "虫に刺されてかゆい。"],
+            ["かゆい", "", "癢", "虫に刺されてかゆい。"],
             ["カロリー", "", "熱量", "カロリーを気にする。"],
             ["眼科", "がんか", "眼科", "眼科へ行く。"],
             ["観客", "かんきゃく", "觀眾", "観客が沸く。"],
-            ["觀光地", "かんこうち", "景點", "観光地を巡る。"],
+            ["観光地", "かんこうち", "景點", "観光地を巡る。"],
             ["看護師", "かんごし", "護理師", "看護師を目指す。"],
             ["完成", "かんせい", "完成", "作品が完成した。"],
             ["管理", "かんり", "管理", "マンションの管理。"],
@@ -377,277 +379,277 @@
             ["休暇", "きゅうか", "休假", "休暇を取る。"],
             ["休館日", "きゅうかんび", "休館日", "今日は休館日だ。"],
             ["休憩", "きゅうけい", "休息", "10分休憩する。"],
-            ["特快", "きゅうこう", "特快", "急行電車に乗る。"],
-            ["突然", "きゅうに", "突然", "急に雨が降ってきた。"],
+            ["急行", "きゅうこう", "特快", "急行電車に乗る。"],
+            ["急に", "きゅうに", "突然", "急に雨が降ってきた。"],
             ["休養", "きゅうよう", "休養", "家で休養する。"],
-            ["黃瓜", "キュウリ", "黃瓜", "キュウリを食べる。"],
-            ["競爭", "きょうそう", "競爭", "激しい競争。"],
+            ["キュウリ", "", "黃瓜", "キュウリを食べる。"],
+            ["競争", "きょうそう", "競爭", "激しい競争。"],
             ["共通", "きょうつう", "共通", "共通の趣味。"],
             ["協力", "きょうりょく", "協助", "みんなで協力する。"],
             ["禁煙", "きんえん", "禁菸", "ここは禁煙です。"],
             ["緊張", "きんちょう", "緊張", "スピーチで緊張する。"],
             ["勤務", "きんむ", "上班", "銀行に勤務する。"],
             ["具合", "ぐあい", "情況", "体の具合が悪い。"],
-            ["具體的", "ぐたいてきな", "具體的", "具体的な例。"],
+            ["具体的な", "ぐたいてきな", "具體的", "具体的な例。"],
             ["工夫", "くふう", "花功夫", "工夫して作る。"],
-            ["區公所", "くやくしょ", "區公所", "区役所へ行く。"],
-            ["懊惱", "くやしい", "懊惱", "負けてくやしい。"],
-            ["操場", "グラウンド", "操場", "グラウンドを走る。"],
-            ["古典", "クラシック", "古典", "クラシック音楽。"],
-            ["反覆", "くりかえす", "反覆", "同じミスを繰り返す。"],
-            ["小組討論", "ディスカッション", "討論", "グループ討論。"],
-            ["經營", "けいえい", "經營", "会社を経営する。"],
-            ["計畫的", "けいかくてきな", "有計畫的", "計画的に勉強する。"],
+            ["区役所", "くやくしょ", "區公所", "区役所へ行く。"],
+            ["くやしい", "", "懊惱", "負けてくやしい。"],
+            ["グラウンド", "", "操場", "グラウンドを走る。"],
+            ["クラシック", "", "古典", "クラシック音楽。"],
+            ["繰り返す", "くりかえす", "反覆", "同じミスを繰り返す。"],
+            ["グループディスカッション", "", "小組討論", "議論を交わす。"],
+            ["経営", "けいえい", "經營", "会社を経営する。"],
+            ["計画的な", "けいかくてきな", "有計畫的", "計画的に勉強する。"],
             ["敬語", "けいご", "敬語", "敬語を正しく使う。"],
-            ["繼續", "けいぞく", "繼續", "継続は力なり。"],
+            ["継続", "けいぞく", "繼續", "継続は力なり。"],
             ["契約", "けいやく", "合約", "契約を結ぶ。"],
             ["化粧品", "けしょうひん", "化妝品", "化粧品を買う。"],
             ["欠席", "けっせき", "缺席", "会議を欠席する。"],
-            ["玄關", "げんかん", "玄關", "玄関で靴を脱ぐ。"],
+            ["玄関", "げんかん", "玄關", "玄関で靴を脫ぐ。"],
             ["現在", "げんざい", "現在", "現在は3時です。"],
-            ["現實", "げんじつ", "現實", "現実は厳しい。"],
+            ["現実", "げんじつ", "現實", "現実は厳しい。"],
             ["建設", "けんせつ", "建設", "ダムを建設する。"],
             ["現場", "げんば", "現場", "事故の現場。"],
-            ["光榮的", "こうえいな", "光榮的", "お会いできて光栄です。"],
+            ["光栄な", "こうえいな", "光榮的", "お会いできて光栄です。"],
             ["公演", "こうえん", "公演", "舞台の公演。"],
-            ["效果", "こうか", "效果", "薬の効果。"],
-            ["及格者", "ごうかくしゃ", "及格者", "合格者を発表する。"],
-            ["豪華的", "ごうかな", "豪華的", "豪華なホテル。"],
+            ["効果", "こうか", "效果", "薬の効果。"],
+            ["合格者", "ごうかくしゃ", "及格者", "合格者を発表する。"],
+            ["豪華な", "ごうかな", "豪華的", "豪華なホテル。"],
             ["工業", "こうぎょう", "工業", "工業が盛んだ。"],
             ["洪水", "こうずい", "洪水", "洪水に注意。"],
-            ["交通工具", "こうつうきかん", "交通工具", "公共交通機関。"],
+            ["交通機関", "こうつうきかん", "交通工具", "公共交通機関。"],
             ["交流", "こうりゅう", "交流", "留学生と交流する。"],
-            ["超過", "こえる", "超過", "100人を超える。"],
+            ["超える", "こえる", "超過", "100人を超える。"],
             ["誤解", "ごかい", "誤解", "誤解を解く。"],
-            ["故鄉", "こきょう", "故鄉", "故郷へ帰る。"],
-            ["國民", "こくみん", "國民", "国民の義務。"],
+            ["故郷", "こきょう", "故鄉", "故郷へ帰る。"],
+            ["国民", "こくみん", "國民", "国民の義務。"],
             ["心細い", "こころぼそい", "無助", "一人は心細い。"],
-            ["拒絕", "ことわる", "拒絕", "誘いを断る。"],
-            ["喜好", "このみ", "愛好", "好みが分かれる。"],
-            ["喜劇", "コメディー", "喜劇", "コメディーを見る。"],
-            ["跌倒", "ころぶ", "跌倒", "道で転んだ。"],
-            ["尺寸", "サイズ", "尺寸", "サイズが合わない。"],
-            ["錢包", "さいふ", "錢包", "財布を忘れた。"],
+            ["断る", "ことわる", "拒絕", "誘いを断る。"],
+            ["好み", "このみ", "愛好", "好みが分かれる。"],
+            ["コメディー", "", "喜劇", "コメディーを見る。"],
+            ["転ぶ", "ころぶ", "跌倒", "道で転んだ。"],
+            ["サイズ", "", "尺寸", "サイズが合わない。"],
+            ["財布", "さいふ", "錢包", "財布を忘れた。"],
             ["災害", "さいがい", "災害", "災害に備える。"],
             ["最高", "さいこう", "最高", "気分が最高だ。"],
             ["再度", "さいど", "再次", "再度確認する。"],
             ["作業", "さぎょう", "工作", "作業を続ける。"],
             ["作品", "さくひん", "作品", "芸術作品。"],
-            ["刪除", "さくじょ", "刪除", "データを削除する。"],
-            ["寂寞", "さびしい", "寂寞", "一人で寂しい。"],
-            ["沙拉", "サラダ", "沙拉", "サラダを食べる。"],
-            ["猴子", "さる", "猴子", "山で猿を見た。"],
-            ["撫摸", "さわら", "撫摸", "猫を撫でる。"],
-            ["殘業", "ざんぎょう", "加班", "残業が多い。"],
-            ["參考書", "さんこうしょ", "參考書", "参考書を買う。"],
+            ["削除", "さくじょ", "刪除", "データを削除する。"],
+            ["さびしい", "", "寂寞", "一人でさびしい。"],
+            ["サラダ", "", "沙拉", "サラダを食べる。"],
+            ["猿", "さる", "猴子", "山で猿を見た。"],
+            ["触る", "さわる", "撫摸", "猫を撫でる。"],
+            ["残業", "ざんぎょう", "加班", "残業が多い。"],
+            ["参考書", "さんこうしょ", "參考書", "参考書を買う。"],
             ["山頂", "さんちょう", "山頂", "山頂に着いた。"],
-            ["購入", "しいれる", "採購", "商品を仕入れる。"],
+            ["仕入れる", "しいれる", "採購", "商品を仕入れる。"],
             ["資格", "しかく", "資格", "資格を取る。"],
-            ["時薪", "じきゅう", "時薪", "時給が高い。"],
+            ["時給", "じきゅう", "時薪", "時給が高い。"],
             ["事件", "じけん", "事件", "事件が起きた。"],
             ["指示", "しじ", "指示", "指示に従う。"],
-            ["分公司", "ししゃ", "分公司", "支社を設立する。"],
+            ["支社", "ししゃ", "分公司", "支社を設立する。"],
             ["自信", "じしん", "自信", "自信を持つ。"],
             ["自然", "しぜん", "自然", "自然を保護する。"],
-            ["事先", "じぜん", "事前", "事前に知らせる。"],
-            ["實現", "じっかん", "感受到", "幸せを実感する。"],
-            ["濕度", "しつど", "濕度", "湿度が高い。"],
+            ["事前に", "じぜんに", "事前", "事前に知らせる。"],
+            ["実感する", "じっかんする", "感受到", "幸せを実感する。"],
+            ["湿度", "しつど", "濕度", "湿度が高い。"],
             ["失敗", "しっぱい", "失敗", "失敗を恐れない。"],
-            ["支付", "しはらい", "支付", "支払いを済ませる。"],
+            ["支払い", "しはらい", "支付", "支払いを済ませる。"],
             ["市民", "しみん", "市民", "市民の意見。"],
-            ["截止", "しめきり", "截止", "締め切りを守る。"],
+            ["締め切り", "しめきり", "截止", "締め切りを守る。"],
             ["視野", "しや", "視野", "視野を広げる。"],
             ["就職", "しゅうしょく", "就職", "会社に就職する。"],
-            ["塞車", "じゅうたい", "塞車", "渋滞に巻き込まれる。"],
-            ["末班車", "しゅうでん", "末班車", "終電に遅れる。"],
-            ["足夠", "じゅうぶん", "充足", "十分に準備する。"],
-            ["居民", "じゅうみん", "居民", "住民の生活。"],
-            ["考試", "じゅけん", "參加考試", "大学を受験する。"],
+            ["渋滞", "じゅうたい", "塞車", "渋滞に巻き込まれる。"],
+            ["終電", "しゅうでん", "末班車", "終電に遅れる。"],
+            ["十分に", "じゅうぶんに", "充足", "十分に準備する。"],
+            ["住民", "じゅうみん", "居民", "住民の生活。"],
+            ["受験", "じゅけん", "參加考試", "大学を受験する。"],
             ["取材", "しゅざい", "取材", "記者が取材する。"],
             ["手術", "しゅじゅつ", "手術", "手術を受ける。"],
-            ["演出", "しゅつえん", "演出", "映画に出演する。"],
-            ["壽命", "じゅみょう", "壽命", "寿命が延びる。"],
-            ["順利", "じゅんちょう", "順利", "順調に進んでいる。"],
+            ["出演", "しゅつえん", "演出", "映画に出演する。"],
+            ["寿命", "じゅみょう", "壽命", "寿命が延びる。"],
+            ["順調な", "じゅんちょうな", "順利的", "順調に進んでいる。"],
             ["正月", "しょうがつ", "正月", "お正月を祝う。"],
             ["上司", "じょうし", "上司", "上司に報告する。"],
             ["少子化", "しょうしか", "少子化", "少子化が進む。"],
-            ["正直", "しょうじき", "誠實", "正直に話す。"],
-            ["玩笑", "じょうだん", "玩笑", "冗談を言う。"],
+            ["正直に", "しょうじきに", "誠實地", "正直に話す。"],
+            ["冗談", "じょうだん", "玩笑", "冗談を言う。"],
             ["消費者", "しょうひしゃ", "消費者", "消費者の権利。"],
-            ["證明", "しょうめい", "證明", "身分を証明する。"],
+            ["証明", "しょうめい", "證明", "身分を証明する。"],
             ["食材", "しょくざい", "食材", "新鮮な食材。"],
             ["職場", "しょくば", "職場", "明るい職場。"],
-            ["初學者", "しょしんしゃ", "初學者", "初心者に教える。"],
-            ["熟人", "しりあい", "認識的人", "知り合いに会う。"],
-            ["認真", "しんけん", "認真", "真剣な表情。"],
-            ["深刻", "しんこく", "嚴重", "深刻な問題。"],
-            ["進步", "しんぽ", "進步", "技術が進歩した。"],
-            ["摯友", "しんゆう", "好友", "親友と遊ぶ。"],
-            ["信賴", "しんらい", "信賴", "彼を信頼する。"],
+            ["初心者", "しょしんしゃ", "初學者", "初心者に教える。"],
+            ["知り合い", "しりあい", "認識的人", "知り合いに会う。"],
+            ["真剣な", "しんけんな", "認真的", "真剣な表情。"],
+            ["深刻な", "しんこくな", "嚴重的", "深刻な問題。"],
+            ["進歩", "しんぽ", "進步", "技術が進歩した。"],
+            ["親友", "しんゆう", "好友", "親友と遊ぶ。"],
+            ["信頼", "しんらい", "信賴", "彼を信頼する。"],
             ["人類", "じんるい", "人類", "人類の歴史。"],
             ["新郎", "しんろう", "新郎", "幸せそうな新郎。"],
             ["水分", "すいぶん", "水分", "水分を補給する。"],
-            ["相當", "ずいぶん", "非常", "ずいぶん昔の話。"],
+            ["ずいぶん", "", "非常", "ずいぶん昔の話。"],
             ["頭痛", "ずつう", "頭疼", "頭痛がする。"],
-            ["完全", "すっかり", "完全", "すっかり忘れた。"],
-            ["壓力", "ストレス", "壓力", "ストレスを溜める。"],
-            ["義大利麵", "スパゲティ", "義大利麵", "パスタを食べる。"],
-            ["速度", "スピード", "速度", "スピードを出す。"],
+            ["すっかり", "", "完全", "すっかり忘れた。"],
+            ["ストレス", "", "壓力", "ストレスを溜める。"],
+            ["スパゲティ", "", "義大利麵", "パスタを食べる。"],
+            ["スピード", "", "速度", "スピードを出す。"],
             ["性能", "せいのう", "性能", "機械の性能。"],
             ["生物", "せいぶつ", "生物", "生物の多様性。"],
-            ["配音", "せいゆう", "聲優", "声優になりたい。"],
+            ["声優", "せいゆう", "聲優", "声優になりたい。"],
             ["積雪", "せきせつ", "積雪", "積雪がひどい。"],
-            ["特意", "せっかく", "難得", "せっかくの休み。"],
+            ["せっかく", "", "特意,難得", "せっかくの休み。"],
             ["背中", "せなか", "背", "背中が痛い。"],
-            ["宣傳", "せんでん", "宣傳", "商品を宣傳する。"],
-            ["專家", "せんもんか", "專家", "専門家に聞く。"],
-            ["噪音", "そうおん", "噪音", "騒音がうるさい。"],
+            ["宣伝", "せんでん", "宣傳", "商品を宣伝する。"],
+            ["専門家", "せんもんか", "專家", "専門家に聞く。"],
+            ["騒音", "そうおん", "噪音", "騒音がうるさい。"],
             ["操作", "そうさ", "操作", "リモコンの操作。"],
             ["想像", "そうぞう", "想像", "想像力が豊かだ。"],
             ["早退", "そうたい", "早退", "体調不良で早退。"],
-            ["送別會", "そうべつかい", "送別會", "部長の送別会。"],
+            ["送別会", "そうべつかい", "送別會", "部長の送別会。"],
             ["速達", "そくたつ", "快捷郵件", "速達で送る。"],
-            ["畢業論文", "そつぎょうろんぶん", "畢業論文", "論文を書く。"],
-            ["沙發", "ソファー", "沙發", "ソファーで寝る。"],
-            ["染色", "そめる", "染色", "髪を染める。"],
+            ["卒業論文", "そつぎょうろんぶん", "畢業論文", "論文を書く。"],
+            ["ソファー", "", "沙發", "ソファーで寝る。"],
+            ["染める", "そめる", "染色", "髪を染める。"],
             ["退院", "たいいん", "出院", "無事に退院した。"],
-            ["減肥", "ダイエット", "減肥", "ダイエットを始める。"],
-            ["對應", "たいおう", "回應", "クレームに対応。"],
+            ["ダイエット", "", "減肥", "ダイエットを始める。"],
+            ["対応", "たいおう", "回應,對應", "クレームに対応。"],
             ["大企業", "だいきぎょう", "大企業", "大企業で働く。"],
-            ["體重計", "たいじゅうけい", "體重計", "体重計に乗る。"],
-            ["體操", "たいそう", "體操", "ラジオ体操。"],
-            ["狀態", "たいちょう", "身體狀況", "体調を崩す。"],
+            ["体重計", "たいじゅうけい", "體重計", "体重計に乗る。"],
+            ["体操", "たいそう", "體操", "ラジオ体操。"],
+            ["体調", "たいちょう", "身體狀況", "体調を崩す。"],
             ["態度", "たいど", "態度", "態度が悪い。"],
-            ["廚房", "だいどころ", "廚房", "台所で料理。"],
-            ["標題", "タイトル", "標題", "本のタイトル。"],
+            ["台所", "だいどころ", "廚房", "台所で料理。"],
+            ["タイトル", "", "標題", "本のタイトル。"],
             ["太陽", "たいよう", "太陽", "太陽が昇る。"],
-            ["體力", "たいりょく", "體力", "体力をつける。"],
-            ["擁抱", "だく", "擁抱", "子供を抱く。"],
-            ["拜訪", "たずねる", "拜訪", "友達を訪ねる。"],
-            ["免費", "ただ", "免費", "ここはタダだ。"],
-            ["敲擊", "たたかく", "敲擊", "手をたたく。"],
-            ["保證", "たもつ", "維持", "健康を保つ。"],
-            ["負責", "たんとう", "擔任", "受付を担当。"],
+            ["体力", "たいりょく", "體力", "体力をつける。"],
+            ["抱く", "だく", "擁抱", "子供を抱く。"],
+            ["訪ねる", "たずねる", "拜訪", "友達を訪ねる。"],
+            ["タダ", "", "免費", "ここはタダだ。"],
+            ["たたく", "", "敲擊", "手をたたく。"],
+            ["保つ", "たもつ", "維持", "健康を保つ。"],
+            ["担当", "たんとう", "負責", "受付を担当。"],
             ["地域", "ちいき", "地區", "地域の活動。"],
-            ["門鈴", "チャイム", "門鈴", "チャイムが鳴る。"],
-            ["抽籤", "ちゅうせん", "抽獎", "抽選で当たる。"],
+            ["チャイム", "", "門鈴", "チャイムが鳴る。"],
+            ["抽選", "ちゅうせん", "抽獎", "抽選で当たる。"],
             ["朝食", "ちょうしょく", "早餐", "朝食を食べる。"],
             ["治療", "ちりょう", "治療", "虫歯を治療。"],
             ["通勤", "つうきん", "上下班", "電車で通勤。"],
-            ["轉告", "つたえる", "傳達", "用件を伝える。"],
-            ["交往", "つきあう", "陪伴", "買い物に付き合う。"],
-            ["海嘯", "つなみ", "海嘯", "津波警報。"],
-            ["痛苦", "つらい", "痛苦", "別れはつらい。"],
-            ["討論", "ディスカッション", "討論", "議論を交わす。"],
-            ["約會", "デート", "約會", "遊園地でデート。"],
-            ["熬夜", "てつや", "徹夜", "徹夜で勉強。"],
+            ["伝える", "つたえる", "傳達", "用件を伝える。"],
+            ["付き合う", "つきあう", "交往,陪伴", "買い物に付き合う。"],
+            ["津波", "つなみ", "海嘯", "津波警報。"],
+            ["つらい", "", "痛苦,艱辛", "別れはつらい。"],
+            ["ディスカッション", "", "討論", "議論を交わす。"],
+            ["デート", "", "約會", "遊園地でデート。"],
+            ["徹夜", "てつや", "熬夜", "徹夜で勉強。"],
             ["電池", "でんち", "電池", "電池を替える。"],
-            ["傳統", "でんとう", "傳統", "伝統文化。"],
-            ["倒閉", "とうさん", "破產", "会社が倒産。"],
-            ["登場", "とうじょう", "出場", "ヒーローが登場。"],
-            ["到達", "とうちゃく", "抵達", "空港に到着。"],
+            ["伝統", "でんとう", "傳統", "伝統文化。"],
+            ["倒産", "とうさん", "倒閉", "会社が倒産。"],
+            ["登場", "とうじょう", "出場,登場", "ヒーローが登場。"],
+            ["到着", "とうちゃく", "抵達", "空港に到着。"],
             ["投票", "とうひょう", "投票", "選挙で投票。"],
-            ["同事", "どうりょう", "同事", "同僚とランチ。"],
-            ["解決", "とく", "解開", "問題を解く。"],
-            ["擅長", "とくい", "拿手", "料理が得意。"],
-            ["單身", "どくしん", "單身", "独身生活を楽しむ。"],
-            ["特別的", "とくべつな", "特別的", "特別な日。"],
-            ["融化", "とける", "融化", "氷が溶ける。"],
+            ["同僚", "どうりょう", "同事", "同僚とランチ。"],
+            ["解く", "とく", "解決,解開", "問題を解く。"],
+            ["得意な", "とくいな", "擅長", "料理が得意。"],
+            ["独身", "どくしん", "單身", "独身生活を楽しむ。"],
+            ["特別な", "とくべつな", "特別的", "特別な日。"],
+            ["溶ける", "とける", "融化", "氷が溶ける。"],
             ["努力", "どりょく", "努力", "努力が実る。"],
-            ["訓練", "トレーニング", "訓練", "毎日トレーニング。"],
-            ["不斷地", "どんどん", "接二連三", "どんどん食べる。"],
-            ["分機", "ないせん", "內線", "内線にかける。"],
-            ["和好", "なかなおり", "和好", "友達と仲直り。"],
-            ["習慣", "なれる", "習慣", "日本の生活に慣れる。"],
-            ["偽物", "にせもの", "仿冒品", "これは偽物だ。"],
-            ["日間", "にちじ", "日期時刻", "日時を指定する。"],
-            ["入會", "にゅうかい", "入會", "ジムに入会。"],
-            ["胡蘿蔔", "にんじん", "胡蘿蔔", "人参が嫌いだ。"],
-            ["價格", "ねだん", "價格", "値段が高い。"],
-            ["熱心", "ねっしん", "熱誠", "熱心に教える。"],
-            ["睡眠不足", "ねぶそく", "睡眠不足", "寝不足で頭が痛い。"],
-            ["年末", "nenmatsu", "年末", "年末は大忙し。"],
+            ["トレーニング", "", "訓練", "毎日トレーニング。"],
+            ["どんどん", "", "不斷地", "どんどん食べる。"],
+            ["内線", "ないせん", "分機", "内線にかける。"],
+            ["仲直り", "なかなおり", "和好", "友達と仲直り。"],
+            ["慣れる", "なれる", "習慣", "日本の生活に慣れる。"],
+            ["にせ物", "にせもの", "仿冒品", "これは偽物だ。"],
+            ["日時", "にちじ", "日期時刻", "日時を指定する。"],
+            ["入会", "にゅうかい", "入會", "ジムに入会。"],
+            ["人参", "にんじん", "胡蘿蔔", "人参が嫌いだ。"],
+            ["値段", "ねだん", "價格", "値段が高い。"],
+            ["熱心な", "ねっしんな", "熱心的", "熱心に教える。"],
+            ["寝不足", "ねぶそく", "睡眠不足", "寝不足で頭が痛い。"],
+            ["年末", "ねんまつ", "年末", "年末は大忙し。"],
             ["農家", "のうか", "農家", "農家を訪ねる。"],
-            ["剩餘", "のこり", "剩餘", "残りを食べる。"],
-            ["口渴", "のどがかわく", "口渴", "喉が渇いた。"],
-            ["舒舒服服", "のんびり", "悠閒", "家でのんびり。"],
-            ["劇烈", "はげしい", "強烈", "激しい雨。"],
-            ["害羞", "はずかしい", "難為情", "失敗して恥ずかしい。"],
-            ["清楚", "はっきり", "明確", "はっきり話す。"],
-            ["發售", "はつばい", "發售", "新発売の商品。"],
+            ["残り", "のこり", "剩餘", "残りを食べる。"],
+            ["のどがかわく", "", "口渴", "喉が渇いた。"],
+            ["のんびり", "", "悠閒地", "家でのんびり。"],
+            ["激しい", "はげしい", "劇烈,強烈", "激しい雨。"],
+            ["はずかしい", "", "害羞", "失敗して恥ずかしい。"],
+            ["はっきり", "", "清楚,明確", "はっきり話す。"],
+            ["発売", "はつばい", "發售", "新発売の商品。"],
             ["幅", "はば", "寬度", "道幅が狭い。"],
-            ["生氣", "はらがたつ", "惱怒", "嘘をつかれて腹が立つ。"],
-            ["平衡", "バランス", "平衡", "バランスがいい。"],
-            ["半價", "はんがく", "半價", "半額セール。"],
-            ["節目", "ばんぐみ", "節目", "テレビ番組。"],
+            ["腹が立つ", "はらがたつ", "生氣", "嘘をつかれて腹が立つ。"],
+            ["バランス", "", "平衡", "バランスがいい。"],
+            ["半額", "はんがく", "半價", "半額セール。"],
+            ["番組", "ばんぐみ", "節目", "テレビ番組。"],
             ["犯人", "はんにん", "犯人", "犯人が捕まる。"],
-            ["日照", "ひあたり", "日光", "日当たりがいい部屋。"],
-            ["非常", "ひじょうに", "非常", "非常に難しい。"],
-            ["一句話", "ひとこと", "一句話", "一言お礼を言う。"],
-            ["人群", "ひとごみ", "人多", "人混みは疲れる。"],
-            ["祕密", "ひみつ", "祕密", "秘密を守る。"],
+            ["日当たり", "ひあたり", "日照", "日当たりがいい部屋。"],
+            ["非常に", "ひじょうに", "非常", "非常に難しい。"],
+            ["一言", "ひとこと", "一句話", "一言お礼を言う。"],
+            ["人混み", "ひとごみ", "人群", "人混みは疲れる。"],
+            ["秘密", "ひみつ", "祕密", "秘密を守る。"],
             ["美容院", "びよういん", "美髮店", "美容院を予約。"],
-            ["蔓延", "ひろまる", "擴散", "噂が広まる。"],
-            ["不景氣", "ふけいき", "不景氣", "不景気が続く。"],
-            ["平安無事", "ぶじに", "平安", "無事に帰る。"],
-            ["平時", "ふだん", "平時", "普段の生活。"],
-            ["不要的", "ふような", "不需要的", "不要な物を捨てる。"],
-            ["匯款", "ふりこみ", "匯款", "銀行で振り込む。"],
-            ["稱讚", "ほめる", "表揚", "先生に褒められた。"],
-            ["翻譯", "ほんやく", "翻譯", "本を翻訳する。"],
-            ["迷路的人", "まいご", "走失者", "迷子を探す。"],
-            ["兒孫", "まご", "孫子", "孫と遊ぶ。"],
-            ["口罩", "マスク", "口罩", "マスクをつける。"],
-            ["模仿", "まね", "效法", "先生の真似をする。"],
-            ["盛夏", "まなつ", "盛夏", "真夏の太陽。"],
-            ["滿開", "まんかい", "盛開", "桜が満開だ。"],
-            ["滿足", "まんぞく", "滿足", "結果に満足する。"],
-            ["向上看", "みあげる", "仰視", "空を見上げる。"],
-            ["港口", "みなと", "港口", "港に船がある。"],
+            ["広まる", "ひろまる", "擴散", "噂が広まる。"],
+            ["不景気", "ふけいき", "不景氣", "不景気が続く。"],
+            ["無事に", "ぶじに", "平安無事", "無事に帰る。"],
+            ["普段", "ふだん", "平時", "普段の生活。"],
+            ["不要な", "ふような", "不需要的", "不要な物を捨てる。"],
+            ["振り込み", "ふりこみ", "匯款", "銀行で振り込む。"],
+            ["褒める", "ほめる", "稱讚", "先生に褒められた。"],
+            ["翻訳", "ほんやく", "翻譯", "本を翻訳する。"],
+            ["迷子", "まいご", "迷路的人", "迷子を探す。"],
+            ["孫", "まご", "兒孫", "孫と遊ぶ。"],
+            ["マスク", "", "口罩", "マスクをつける. "],
+            ["真似", "まね", "模仿", "先生の真似をする。"],
+            ["真夏", "まなつ", "盛夏", "真夏の太陽。"],
+            ["満開", "まんかい", "滿開", "櫻花が滿開だ。"],
+            ["満足", "まんぞく", "滿足", "結果に満足する。"],
+            ["見上げる", "みあげる", "向上看", "空を見上げる。"],
+            ["港", "みなと", "港口", "港に船がある。"],
             ["身分", "みぶん", "身分", "身分を明かす。"],
-            ["熱衷", "むちゅう", "入迷", "ゲームに夢中だ。"],
-            ["勉強", "むり", "無理", "無理をしないで。"],
-            ["免費", "むりょう", "免費", "入場は無料だ。"],
-            ["上司", "めうえ", "長輩", "目上の人を敬う。"],
-            ["醒來", "めがさめる", "醒", "目が覚めた。"],
-            ["目標", "めざす", "以…為目標", "合格を目指す。"],
-            ["好處", "メリット", "優點", "メリットが多い。"],
+            ["夢中", "むちゅう", "熱衷", "遊戲に夢中だ。"],
+            ["無理な", "むりな", "勉強,無理", "無理をしないで。"],
+            ["無料", "むりょう", "免費", "入場は無料だ。"],
+            ["目上", "めうえ", "上司,長輩", "目上の人を敬う。"],
+            ["目が覚める", "めがさめる", "醒來", "目が覚めた。"],
+            ["目指す", "めざす", "以…為目標", "合格を目指す。"],
+            ["メリット", "", "好處", "メリットが多い。"],
             ["目的", "もくてき", "目的", "目的を達成する。"],
-            ["回歸", "もどる", "回到", "家に戻る。"],
-            ["抱怨", "もんく", "不滿", "文句を言う。"],
-            ["角色", "やく", "職務", "主役を演じる。"],
-            ["家賃", "やちん", "房租", "家賃を払う。"],
-            ["果然", "やっぱり", "還是", "やっぱり雨だ。"],
-            ["有幹勁", "やるきがでる", "有幹勁", "やる気が出る。"],
-            ["有薪休假", "ゆうきゅうきゅうか", "有薪假", "有給休暇を取る。"],
+            ["戻る", "もどる", "回歸", "家に戻る。"],
+            ["文句", "もんく", "抱怨", "文句を言う。"],
+            ["役", "やく", "角色", "主役を演じる。"],
+            ["家賃", "やちん", "家賃,房租", "家賃を払う。"],
+            ["やっぱり", "", "果然", "やっぱり雨だ。"],
+            ["やる気が出る", "やるきがでる", "有幹勁", "やる気が出る。"],
+            ["有給休暇", "ゆうきゅうきゅうか", "有薪休假", "有給休暇を取る。"],
             ["優先", "ゆうせん", "優先", "時間を優先する。"],
-            ["昨晚", "ゆうべ", "昨晚", "ゆうべはよく寝た。"],
-            ["原諒", "ゆるす", "允許", "失敗を許す。"],
-            ["用件", "ようけん", "事情", "用件を伝える。"],
-            ["優格", "ヨーグルト", "優格", "ヨーグルトを食べる。"],
-            ["多餘的", "よけいな", "多餘的", "余計な心配。"],
-            ["預算", "よさん", "預算", "予算を立てる。"],
-            ["世上", "よのなか", "世上", "世の中は複雑だ。"],
-            ["預約制", "よやくせい", "預約制", "ここは予約制だ。"],
-            ["到日本", "らいにち", "到日本", "来日する有名人。"],
-            ["競爭對手", "ライバル", "競爭對手", "ライバルに勝つ。"],
-            ["跑步", "ランニング", "跑步", "毎朝ランニング。"],
-            ["理解", "りかい", "懂", "意味を理解する。"],
-            ["公升", "リットル", "公升", "水1リットル。"],
-            ["不在家", "るす", "不在家", "家を留守にする。"],
+            ["ゆうべ", "", "昨晚", "ゆうべはよく寢た。"],
+            ["許す", "ゆるす", "原諒", "失敗を許す。"],
+            ["用件", "ようけん", "用件,事情", "用件を伝える。"],
+            ["ヨーグルト", "", "優格", "ヨーグルトを食べる。"],
+            ["余計な", "よけいな", "多餘的", "余計な心配。"],
+            ["予算", "よさん", "預算", "予算を立てる。"],
+            ["世の中", "よのなか", "世上", "世の中は複雜だ。"],
+            ["予約制", "よやくせい", "預約制", "ここは予約制だ。"],
+            ["来日", "らいにち", "到日本", "来日する有名人。"],
+            ["ライバル", "", "競爭對手", "ライバルに勝つ。"],
+            ["ランニング", "", "跑步", "毎朝ランニング。"],
+            ["理解", "りかい", "理解", "意味を理解する。"],
+            ["リットル", "", "公升", "水1リットル。"],
+            ["留守", "るす", "不在家", "家を留守にする。"],
             ["冷凍庫", "れいとうこ", "冷凍庫", "アイスを冷凍庫へ。"],
-            ["食譜", "レシピ", "食譜", "レシピを見る。"],
-            ["出租", "レンタル", "租賃", "ビデオをレンタル。"],
+            ["レシピ", "", "食譜", "レシピを見る。"],
+            ["レンタル", "", "出租", "ビデオをレンタル。"],
             ["論文", "ろんぶん", "論文", "卒業論文。"],
-            ["敝公司", "わがしゃ", "敝公司", "わが社の製品。"],
-            ["特地", "わざわざ", "特地", "わざわざ来てくれた。"],
-            ["壞話", "わるくち", "惡言", "人の悪口を言う。"],
-            ["一個房間", "ワンルーム", "單間", "ワンルームで一人暮らし。"]
+            ["わが社", "わがしゃ", "敝公司", "わが社の製品。"],
+            ["わざわざ", "", "特地", "わざわざ來てくれた。"],
+            ["悪口", "わるくち", "壞話", "人の悪口を言う。"],
+            ["ワンルーム", "", "一個房間", "ワンルームで一人暮らし。"]
         ];
 
         // --- 核心邏輯 ---
-        let masteredIds = JSON.parse(localStorage.getItem('n3_dual_mastered_v3') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n3_dual_scores_v3') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n3_full_mastery_meow_v1') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n3_dual_scores_meow_v1') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -683,16 +685,16 @@
             container.innerHTML = grammarData.map(g => `
                 <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
                     <div class="flex justify-between items-start mb-4">
-                        <div class="flex items-center gap-3">
-                            <span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest">N3文法</span>
-                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center">${g.title}</h3>
+                        <div class="flex items-center gap-3 text-center">
+                            <span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest text-center">N3文法</span>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center text-center">${g.title}</h3>
                         </div>
-                        <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
+                        <input type="checkbox" class="custom-checkbox text-center" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
                     </div>
-                    <p class="text-sm text-slate-600 mb-4 font-medium text-center">${g.desc}</p>
-                    <div class="bg-slate-50 p-4 rounded-xl space-y-3">
+                    <p class="text-sm text-slate-600 mb-4 font-medium text-center text-center">${g.desc}</p>
+                    <div class="bg-slate-50 p-4 rounded-xl space-y-3 text-center">
                         ${g.ex.map(e => `
-                            <div class="border-l-2 border-emerald-200 pl-3">
+                            <div class="border-l-2 border-emerald-200 pl-3 text-center">
                                 <p class="japanese-text text-slate-800 text-base leading-relaxed text-center">${e.j}</p>
                                 <p class="text-xs text-slate-500 mt-0.5 text-center">${e.c}</p>
                             </div>
@@ -712,27 +714,32 @@
             
             container.innerHTML = filteredData.map((v, i) => {
                 const id = `n3v${i}`;
-                const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
-                const isMastered = masteredIds.includes(id);
+                const scores = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 return `
-                    <tr class="vocab-row transition-all hover:bg-emerald-50/30 ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
+                    <tr class="vocab-row transition-all hover:bg-slate-50 ${masteredIds.includes(id) ? 'is-mastered mastered' : ''}" data-id="${id}">
                         <td class="p-4 text-center">
-                            <input type="checkbox" class="custom-checkbox" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
+                            <input type="checkbox" class="custom-checkbox text-center" ${masteredIds.includes(id) ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4">
-                            <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text">${v[1]}</div>
+                        <td class="p-4 text-center">
+                            <div class="japanese-text font-bold text-lg text-slate-900 text-center">${v[0]}</div>
+                            <div class="text-[11px] text-slate-400 japanese-text text-center">${v[1]}</div>
                         </td>
-                        <td class="p-4 text-emerald-700 font-bold">${v[2]}</td>
-                        <td class="p-4">
-                            <div class="flex gap-4 items-center">
-                                <div class="flex flex-col">
-                                    <span class="text-[8px] text-slate-400 font-black">日譯中</span>
-                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5"><div class="h-full bg-emerald-500" style="width: ${score.jpToZh * 10}%"></div></div>
+                        <td class="p-4 text-center text-center">
+                            <span class="font-bold text-emerald-700 text-center text-center">${v[2]}</span>
+                        </td>
+                        <td class="p-4 text-center text-center">
+                            <div class="flex gap-4 items-center justify-center text-center">
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 font-black text-center text-center">日</span>
+                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center text-center">
+                                        <div class="h-full bg-emerald-500 text-center" style="width: ${scores.jpToZh * 10}%"></div>
+                                    </div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <span class="text-[8px] text-slate-400 font-black">中譯日</span>
-                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5"><div class="h-full bg-amber-500" style="width: ${score.zhToJp * 10}%"></div></div>
+                                <div class="flex flex-col text-center text-center">
+                                    <span class="text-[8px] text-slate-400 font-black text-center text-center text-center">中</span>
+                                    <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
+                                        <div class="h-full bg-amber-500 text-center text-center" style="width: ${scores.zhToJp * 10}%"></div>
+                                    </div>
                                 </div>
                             </div>
                         </td>
@@ -741,69 +748,58 @@
             }).join('');
         }
 
-        function loadNextFC() {
+        function loadNextFlashcard() {
             let pool = [];
             rawVocab.forEach((v, i) => {
                 const id = `n3v${i}`;
                 const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 if (!masteredIds.includes(id)) {
-                    if (score.jpToZh < 10) pool.push({ v, id, mode: 'jpToZh' });
-                    if (score.zhToJp < 10) pool.push({ v, id, mode: 'zhToJp' });
+                    if (score.jpToZh < 10) pool.push({ word: v, id, mode: 'jpToZh' });
+                    if (score.zhToJp < 10) pool.push({ word: v, id, mode: 'zhToJp' });
                 }
             });
 
             if (pool.length === 0) {
                 document.getElementById('fc-main-display').classList.add('hidden');
                 document.getElementById('fc-controls').classList.add('hidden');
-                document.getElementById('fc-mode-display').classList.add('hidden');
                 document.getElementById('fc-empty-state').classList.remove('hidden');
                 return;
             }
 
             document.getElementById('fc-main-display').classList.remove('hidden');
             document.getElementById('fc-controls').classList.remove('hidden');
-            document.getElementById('fc-mode-display').classList.remove('hidden');
             document.getElementById('fc-empty-state').classList.add('hidden');
             document.getElementById('fc-answer-block').classList.remove('active');
 
-            const pick = pool[Math.floor(Math.random() * pool.length)];
-            currentFC = pick;
-            fcMode = pick.mode;
+            currentFC = pool[Math.floor(Math.random() * pool.length)];
+            fcMode = currentFC.mode;
 
-            const modeBadge = document.getElementById('fc-mode-display');
-            const qEl = document.getElementById('fc-question');
-            const hintEl = document.getElementById('fc-hint');
-            const targetEl = document.getElementById('fc-target');
-            const kanaEl = document.getElementById('fc-kana-display');
-
+            const modeText = document.getElementById('fc-mode-text');
             if (fcMode === 'jpToZh') {
-                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-emerald-600 shadow-md";
-                document.getElementById('fc-mode-text').innerText = '日譯中挑戰';
-                qEl.innerHTML = formatRuby(pick.v[0], pick.v[1]);
-                hintEl.innerText = "請回答中文解釋";
-                targetEl.innerText = pick.v[2];
-                kanaEl.innerText = ""; 
+                modeText.innerText = '日譯中挑戰';
+                document.getElementById('fc-question').innerHTML = formatRuby(currentFC.word[0], currentFC.word[1]);
+                document.getElementById('fc-hint').innerText = "請回答中文解釋";
+                document.getElementById('fc-target').innerText = currentFC.word[2];
+                document.getElementById('fc-kana-display').innerText = ""; 
             } else {
-                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-amber-600 shadow-md";
-                document.getElementById('fc-mode-text').innerText = '中譯日挑戰';
-                qEl.innerHTML = pick.v[2];
-                hintEl.innerText = "請回答日文讀音或漢字";
-                targetEl.innerText = pick.v[0];
-                kanaEl.innerText = pick.v[1] || "";
+                modeText.innerText = '中譯日挑戰';
+                document.getElementById('fc-question').innerHTML = currentFC.word[2];
+                document.getElementById('fc-hint').innerText = "請回答日文讀音或漢字";
+                document.getElementById('fc-target').innerText = currentFC.word[0];
+                document.getElementById('fc-kana-display').innerText = currentFC.word[1] || "";
             }
-            document.getElementById('fc-example').innerText = pick.v[3];
+            document.getElementById('fc-example').innerText = currentFC.word[3];
             updateScoreUI();
         }
 
         function updateScoreUI() {
-            const scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
-            const currentVal = scores[fcMode];
-            document.getElementById('fc-current-score-text').innerText = currentVal;
+            const val = (vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 })[fcMode];
+            document.getElementById('fc-current-score-text').innerText = val;
             const dots = document.getElementById('fc-score-dots');
             dots.innerHTML = "";
             for (let i = 0; i < 10; i++) {
                 const dot = document.createElement('div');
-                dot.className = `w-1.5 h-1.5 rounded-full ${i < currentVal ? 'bg-white' : 'bg-white/30'}`;
+                dot.className = `w-1.5 h-1.5 rounded-full ${i < val ? 'bg-white' : 'bg-white/30'}`;
                 dots.appendChild(dot);
             }
         }
@@ -813,31 +809,27 @@
             if (action === 'answer') { document.getElementById('fc-answer-block').classList.add('active'); return; }
 
             let scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
-            let val = scores[fcMode];
-
-            if (action === 'master') val = Math.min(10, val + 5);
-            else if (action === 'again') val = Math.floor(val / 2);
+            if (action === 'master') scores[fcMode] = Math.min(10, scores[fcMode] + 5);
+            else if (action === 'again') scores[fcMode] = Math.floor(scores[fcMode] / 2);
             
-            scores[fcMode] = val;
             vocabScores[currentFC.id] = scores;
-
             if (scores.jpToZh >= 10 && scores.zhToJp >= 10) {
                 if (!masteredIds.includes(currentFC.id)) masteredIds.push(currentFC.id);
             }
-            saveAndSync();
-            loadNextFC();
+            saveAndRefresh();
+            loadNextFlashcard();
         }
 
         function toggleMastered(id) {
             const index = masteredIds.indexOf(id);
             if (index > -1) masteredIds.splice(index, 1);
             else { masteredIds.push(id); vocabScores[id] = { jpToZh: 10, zhToJp: 10 }; }
-            saveAndSync(id);
+            saveAndRefresh(id);
         }
 
-        function saveAndSync(id) {
-            localStorage.setItem('n3_dual_mastered_v3', JSON.stringify(masteredIds));
-            localStorage.setItem('n3_dual_scores_v3', JSON.stringify(vocabScores));
+        function saveAndRefresh(id) {
+            localStorage.setItem('n3_full_mastery_meow_v1', JSON.stringify(masteredIds));
+            localStorage.setItem('n3_dual_scores_meow_v1', JSON.stringify(vocabScores));
             if (id) renderVocab(document.getElementById('search-box').value);
             else { renderGrammar(); renderVocab(); }
             updateProgress();
@@ -855,11 +847,11 @@
             document.getElementById(`section-${type}`).classList.remove('hidden');
             document.querySelectorAll('.tab-btn').forEach(btn => { btn.classList.remove('tab-active'); btn.classList.add('text-slate-400'); });
             document.getElementById(`tab-btn-${type}`).classList.add('tab-active');
-            if (type === 'flashcard') loadNextFC();
+            if (type === 'flashcard') loadNextFlashcard();
         }
 
         function closeModal() { document.getElementById('confirm-modal').style.display = 'none'; }
-        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndSync(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFC(); }
+        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndRefresh(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFlashcard(); }
 
         window.onload = init;
     </script>
