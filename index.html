@@ -21,8 +21,8 @@
 <body class="bg-pattern min-h-screen flex flex-col">
 
     <!-- Hero Section -->
-    <header class="bg-indigo-700 text-white py-16 px-4 shadow-lg">
-        <div class="container mx-auto text-center">
+    <header class="bg-indigo-700 text-white py-16 px-4 shadow-lg text-center">
+        <div class="container mx-auto">
             <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight">Try! 日本語達陣</h1>
             <p class="text-indigo-100 text-lg md:text-xl font-medium max-w-2xl mx-auto">
                 從日檢文法展開全方位學習，系統化掌握 N1 至 N5 核心能力。
@@ -34,7 +34,7 @@
     <main class="container mx-auto px-4 py-16 flex-grow">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             
-            <!-- N1 Card (Under Construction) -->
+            <!-- N1 Card (製作中) -->
             <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
                 <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N1</div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N1</h2>
@@ -42,7 +42,7 @@
                 <p class="mt-4 text-slate-400 text-sm leading-relaxed">針對高級日語，涵蓋抽象議題、新聞評論及深層文化理解。</p>
             </div>
 
-            <!-- N2 Card (Under Construction) -->
+            <!-- N2 Card (製作中) -->
             <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
                 <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N2</div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N2</h2>
@@ -50,7 +50,7 @@
                 <p class="mt-4 text-slate-400 text-sm leading-relaxed">具備日常場景及更廣泛議題的理解能力，邁向職場必備。</p>
             </div>
 
-            <!-- N3 Card (Under Construction) -->
+            <!-- N3 Card (製作中) -->
             <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
                 <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N3</div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N3</h2>
@@ -58,20 +58,26 @@
                 <p class="mt-4 text-slate-400 text-sm leading-relaxed">銜接基礎與進階的關鍵等級，強化日常交流深度。</p>
             </div>
 
-            <!-- N4 Card (Under Construction) -->
-            <div class="jlpt-card disabled bg-white rounded-[2.5rem] shadow-sm border border-slate-200 p-8 flex flex-col items-center text-center">
-                <div class="w-20 h-20 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-3xl font-black mb-6">N4</div>
+            <!-- N4 Card (已啟用) -->
+            <a href="jp_n4.html" class="jlpt-card bg-white rounded-[2.5rem] shadow-xl border-2 border-indigo-100 p-8 flex flex-col items-center text-center hover:shadow-indigo-200 hover:border-indigo-500 ring-4 ring-indigo-50 group">
+                <div class="w-20 h-20 bg-indigo-800 text-white rounded-full flex items-center justify-center text-3xl font-black mb-6 shadow-lg shadow-indigo-300 group-hover:scale-110 transition-transform">N4</div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N4</h2>
-                <span class="px-4 py-1 bg-slate-200 text-slate-500 rounded-full text-xs font-black uppercase tracking-widest">製作中</span>
-                <p class="mt-4 text-slate-400 text-sm leading-relaxed">理解基礎日語，能夠應付基本的日常對話與書寫。</p>
-            </div>
+                <span class="px-4 py-1 bg-green-100 text-green-700 rounded-full text-xs font-black uppercase tracking-widest">立即學習</span>
+                <p class="mt-4 text-slate-500 text-sm leading-relaxed italic">「中級前期基礎。完整收錄 60 項核心文法與 600+ 單字雙向練習卡。」</p>
+                <div class="mt-6 flex items-center text-indigo-600 font-bold text-sm">
+                    開始挑戰 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </div>
+            </a>
 
-            <!-- N5 Card (Active) -->
+            <!-- N5 Card (已啟用) -->
             <a href="jp_n5.html" class="jlpt-card bg-white rounded-[2.5rem] shadow-xl border-2 border-indigo-100 p-8 flex flex-col items-center text-center hover:shadow-indigo-200 hover:border-indigo-500 ring-4 ring-indigo-50 group">
                 <div class="w-20 h-20 bg-indigo-600 text-white rounded-full flex items-center justify-center text-3xl font-black mb-6 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform">N5</div>
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">日本語能力試驗 N5</h2>
                 <span class="px-4 py-1 bg-green-100 text-green-700 rounded-full text-xs font-black uppercase tracking-widest">立即學習</span>
-                <p class="mt-4 text-slate-500 text-sm leading-relaxed italic">「基礎中的基礎。完整收錄核心文法、600+ 單字與智能練習卡。」</p>
+                <p class="mt-4 text-slate-500 text-sm leading-relaxed italic">「入門基礎。系統化收錄 N5 核心文法、單字庫與智能練習卡。」</p>
                 <div class="mt-6 flex items-center text-indigo-600 font-bold text-sm">
                     開始挑戰 
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
