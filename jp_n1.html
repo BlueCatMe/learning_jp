@@ -28,7 +28,7 @@
 
     <header class="bg-rose-900 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N1 日本語達陣</h1>
-        <p class="text-rose-100 opacity-90 text-sm font-medium">最高級別：全方位核心語彙與 105 項完整文法系統</p>
+        <p class="text-rose-100 opacity-90 text-sm font-medium">最高殿堂：全方位核心語彙與 105 項完整文法系統</p>
     </header>
 
     <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
@@ -57,7 +57,7 @@
 
     <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition text-center">核心文法 (G1-G105)</button>
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition text-center">核心文法 (105)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition text-center">全量單字庫 (去重版)</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition text-center text-center">雙向智能學習卡</button>
         </div>
@@ -68,7 +68,7 @@
         <!-- Vocab Section -->
         <div id="section-vocab" class="tab-content hidden text-center">
             <div class="mb-6 relative text-center">
-                <input type="text" id="search-box" placeholder="搜尋單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-rose-500 outline-none transition shadow-sm text-center">
+                <input type="text" id="search-box" placeholder="搜尋漢字、假名或中文意義..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-rose-500 outline-none transition shadow-sm text-center">
                 <span class="absolute left-4 top-3.5 text-slate-400 text-center">🔍</span>
             </div>
             <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center text-center">
@@ -113,7 +113,7 @@
                             <div id="fc-target" class="text-3xl font-bold text-rose-600 mb-2 japanese-text text-center text-center"></div>
                             <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center text-center"></div>
                             <div class="bg-rose-50 p-5 rounded-3xl text-left border border-rose-100 text-center text-center">
-                                <p class="text-[9px] font-black text-rose-400 uppercase mb-2 text-center text-center">N1 高級範本</p>
+                                <p class="text-[9px] font-black text-rose-400 uppercase mb-2 text-center text-center">N1 實戰範本</p>
                                 <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center text-center"></p>
                             </div>
                         </div>
@@ -155,14 +155,8 @@
         </div>
     </div>
 
-    <footer class="bg-slate-900 text-slate-500 py-12 px-4 text-center text-center text-center text-center">
-        <div class="container mx-auto text-center text-sm text-center text-center text-center">
-            <p class="mb-4 text-center text-sm text-center text-center text-center text-center">© 2026 Meow! 日本語達陣學習計畫 - 終極 N1 修正重製版</p>
-        </div>
-    </footer>
-
     <script>
-        // --- N1 核心文法 (完整補完 G1-G105 + 振假名標註) ---
+        // --- N1 核心文法 (完整補完 105 項 + 振假名標註) ---
         const grammarData = [
             { id: 'g1', title: '～がてら', desc: '做 A 的同時順便做 B。', ex: [{j: '<ruby>散歩<rt>さんぽ</rt></ruby>がてら、<ruby>本屋<rt>ほんや</rt></ruby>に<ruby>寄<rt>よ</rt></ruby>った。', c: '散步時順便去了書店。'}]},
             { id: 'g2', title: '～かたがた', desc: '兼任...之便(正式)。', ex: [{j: 'お<ruby>礼<rt>れい</rt></ruby>かたがた、ご<ruby>挨拶<rt>あいさつ</rt></ruby>に<ruby>伺<rt>うかが</rt></ruby>いました。', c: '借道謝之便特地登門拜訪。'}]},
@@ -273,202 +267,165 @@
 
         // --- N1 真正全量去重單字庫 (完全獨立無重複陣列) ---
         const rawVocab = [
-            ["妥協", "だきょう", "妥協、讓步", "一切妥協しない。"],
-            ["克服", "こくふく", "克服、跨越", "困難を克服する。"],
-            ["焦燥", "しょうそう", "焦躁", "焦燥感に駆られる。"],
-            ["把握", "はあく", "掌握、理解", "現状を把握する。"],
-            ["隠蔽", "いんぺい", "隱蔽、隱瞞", "事実を隠蔽する。"],
-            ["瑣末", "さまつ", "瑣細、瑣碎", "瑣末な問題だ。"],
-            ["欠如", "けつじょ", "欠缺、缺乏", "責任感の欠如。"],
-            ["懸念", "けねん", "懸念、擔憂", "安全性を懸念する。"],
-            ["享受", "きょうじゅ", "享受、領受", "自由を享受する。"],
-            ["是正", "ぜせい", "修正、矯正", "格差を是正する。"],
-            ["遵守", "じゅんしゅ", "遵守", "法令遵守。"],
-            ["模索", "もさく", "摸索、找尋", "解決策を模索する。"],
-            ["抑制", "よくせい", "抑制、控制", "インフレ抑制。"],
-            ["反映", "はんえい", "反映", "民意を反映する。"],
-            ["促進", "そくしん", "促進", "販売促進活動。"],
-            ["是認", "ぜにん", "承認、准許", "計画を是認する。"],
-            ["理想", "りそう", "理想", "理想を追求する。"],
-            ["自覚", "じかく", "自覺", "プロの自覚を持つ。"],
-            ["斬新", "ざんしん", "嶄新", "斬新なアイデア。"],
-            ["示唆", "しさ", "暗示、提示", "将来を示唆する。"],
-            ["兆候", "ちょうこう", "徵兆", "回復の兆候がある。"],
-            ["徹底", "てってい", "徹底", "徹底的に調査する。"],
-            ["普及", "ふきゅう", "普及", "ネットが普及した。"],
-            ["普遍", "ふへん", "普遍", "普遍的な価値。"],
-            ["濫用", "らんよう", "濫用", "権力濫用を防ぐ。"],
-            ["圧倒", "あっとう", "壓倒", "圧倒的な強さ。"],
-            ["意欲", "いよく", "意欲", "学習意欲が高い。"],
-            ["寛容", "かんよう", "寬容", "失敗に寛容だ。"],
-            ["消息", "しょうそく", "消息", "消息を絶つ。"],
-            ["浸透", "しんとう", "滲透、普及", "制度が浸透する。"],
-            ["潜在", "せんざい", "潛在", "潜在的な能力。"],
-            ["断絶", "だんぜつ", "斷絕", "国交断絶。"],
-            ["核心", "かくしん", "核心", "問題の核心。"],
-            ["慣例", "かんれい", "慣例", "業界の慣例。"],
-            ["脆弱", "ぜいじゃく", "脆弱", "地盤が脆弱だ。"],
-            ["撤廃", "てっぱい", "撤廢", "差別撤廃。"],
-            ["邁進", "まいしん", "邁進", "目標に邁進する。"],
-            ["密集", "みっしゅう", "密集", "住宅密集地。"],
-            ["躍進", "やくしん", "躍進", "企業の躍進。"],
-            ["委譲", "いじょう", "委派", "権限委譲。"],
-            ["一任", "いちにん", "全權委託", "彼に一任する。"],
-            ["刷新", "さっしん", "刷新、革新", "体制刷新。"],
-            ["震撼", "しんかん", "震撼", "世界を震撼。"],
-            ["糾明", "きゅうめい", "查明、弄清", "真相糾明。"],
-            ["淘汰", "とうた", "淘汰", "自然淘汰。"],
-            ["緻密", "ちみつ", "緻密、嚴密", "緻密な計算。"],
-            ["卑劣", "ひれつ", "卑劣", "卑劣な手段。"],
-            ["懸命", "けんめい", "拚命", "懸命に働く。"],
-            ["果敢", "かかん", "果敢", "果敢に挑戦。"],
-            ["丹念", "たんねん", "仔細、精心", "丹念に調べる。"],
-            ["執着", "しゅうちゃく", "執著", "過去への執着。"],
-            ["概観", "がいかん", "概觀", "歴史を概観する。"],
-            ["回避", "かいひ", "迴避", "衝突を回避する。"],
-            ["完結", "かんけつ", "完結", "物語が完結した。"],
-            ["甘受", "かんじゅ", "甘願忍受", "不運を甘受する。"],
-            ["簡素", "かんそ", "簡素", "簡素な生活。"],
-            ["既知", "きち", "已知", "既知の事実。"],
-            ["規律", "きりつ", "規律", "規律を守る。"],
-            ["疑惑", "ぎわく", "疑惑", "疑惑が深まる。"],
-            ["空虚", "くうきょ", "空虛", "空虚な言葉。"],
-            ["苦境", "くきょう", "困境", "苦境に立たされる。"],
-            ["屈服", "くっぷく", "屈服", "暴力に屈服しない。"],
-            ["堅実", "けんじつ", "堅實", "堅実な経営。"],
-            ["権威", "けんい", "權威", "専門家の権威。"],
-            ["言及", "げんきゅう", "提及", "詳細に言及する。"],
-            ["孤立", "こりつ", "孤立", "村が孤立する。"],
-            ["誇示", "こじ", "炫耀", "力を誇示する。"],
-            ["固執", "こしつ", "執著", "自説に固執する。"],
-            ["座礁", "ざしょう", "擱淺", "船が座礁した。"],
-            ["残虐", "ざんぎゃく", "殘虐", "残虐な行為。"],
-            ["資産", "しさん", "資產", "個人資産。"],
-            ["諮問", "しもん", "諮詢", "委員会に諮問。"],
-            ["執筆", "しっぴつ", "執筆", "原稿を執筆。"],
-            ["嫉妬", "しっと", "嫉妒", "他人に嫉妬する。"],
-            ["終焉", "しゅうえん", "終焉", "時代の終焉。"],
-            ["祝杯", "しゅくはい", "慶功酒", "祝杯をあげる。"],
-            ["純粋", "じゅんすい", "純粹", "純粋な気持ち。"],
-            ["処遇", "しょぐう", "待遇", "不当な処遇。"],
-            ["奨励", "しょうれい", "鼓勵", "読書を奨励する。"],
-            ["情熱", "じょうねつ", "熱情", "仕事に情熱。"],
-            ["真髄", "しんずい", "精髓", "芸術の真髄。"],
-            ["信仰", "しんこう", "信仰", "熱心な信仰。"],
-            ["慎重", "しんちょう", "慎重", "慎重に選ぶ。"],
-            ["推敲", "すいこう", "推敲", "原稿を推敲する。"],
-            ["衰退", "すいたい", "衰退", "産業が衰退。"],
-            ["盛大", "せいだい", "盛大", "盛大な拍手。"],
-            ["切実", "せつじつ", "切實、迫切", "切実な問題。"],
-            ["宣伝", "せんでん", "宣傳", "新製品を宣伝。"],
-            ["潜入", "せんにゅう", "潛入", "スパイが潜入。"],
-            ["相場", "そうば", "行情", "市場の相場。"],
-            ["贈賄", "ぞうわい", "行賄", "贈賄容疑。"],
-            ["即座", "そくざ", "立即", "即座に回答。"],
-            ["対峙", "たいじ", "對峙", "敵と対峙する。"],
-            ["妥当", "だとう", "妥當", "妥当な判断。"],
-            ["秩序", "ちつじょ", "秩序", "社会の秩序。"],
-            ["沈黙", "ちんもく", "沈默", "長い沈黙。"],
-            ["追放", "ついほう", "放逐", "国外へ追放。"],
-            ["提携", "ていけい", "聯手", "他社と提携。"],
-            ["定着", "ていちゃく", "紮根、普及", "習慣が定着。"],
-            ["撤退", "てったい", "撤退", "海外から撤退。"],
-            ["点検", "てんけん", "檢查", "機械を点検。"],
-            ["転向", "てんこう", "轉向", "思想の転向。"],
-            ["伝説", "でんせつ", "傳說", "伝説の勇者。"],
-            ["陶酔", "とうすい", "陶醉", "音楽に陶酔。"],
-            ["踏襲", "とうしゅう", "沿襲", "前例を踏襲。"],
-            ["統治", "とうち", "統治", "国の統治。"],
-            ["督促", "とくそく", "催促", "支払いを督促。"],
-            ["毒舌", "どくぜつ", "毒舌", "毒舌を振るう。"],
-            ["独創", "どくそう", "獨創", "独創的な作品。"],
-            ["内密", "ないみつ", "保密、秘密", "内密の話。"],
-            ["捏造", "ねつぞう", "捏造", "事実を捏造。"],
-            ["濃度", "のうど", "濃度", "酸素濃度。"],
-            ["破局", "はきょく", "破局", "二人は破局した。"],
-            ["暴露", "ばくろ", "揭露", "事実を暴露。"],
-            ["発覚", "はっかく", "敗露", "罪が発覚した。"],
-            ["波紋", "はもん", "波紋", "波紋を呼ぶ。"],
-            ["悲惨", "ひさん", "悲慘", "悲惨な光景。"],
-            ["肥大", "ひだい", "肥大", "組織が肥大化。"],
-            ["非行", "ひこう", "不良行為", "青少年の非行。"],
-            ["秘策", "ひさく", "秘策", "秘策を練る。"],
-            ["批准", "ひじゅん", "批准", "条約を批准。"],
-            ["避難", "ひなん", "避難", "高台へ避難。"],
-            ["浮上", "ふじょう", "浮上", "問題が浮上。"],
-            ["腐敗", "ふはい", "腐敗", "政治的腐敗。"],
-            ["不変", "ふへん", "不變", "不変の真理。"],
-            ["憤慨", "ふんがい", "憤慨", "不正に憤慨。"],
-            ["紛争", "ふんそう", "紛爭", "領土紛争。"],
-            ["並行", "へいこう", "並行", "作業を並行。"],
-            ["閉塞", "へいそく", "閉塞", "閉塞感が漂う。"],
-            ["平穏", "へいおん", "平穩", "平穏な暮らし。"],
-            ["変貌", "へんぼう", "面貌改變", "街が変貌した。"],
-            ["方策", "ほうさく", "方策", "解決の方策。"],
-            ["放逐", "ほうちく", "驅逐", "国から放逐。"],
-            ["没落", "ぼつらく", "沒落", "貴族の没落。"],
-            ["埋蔵", "まいぞう", "埋藏", "金鉱を埋蔵。"],
-            ["埋没", "まいぼつ", "埋沒", "歴史に埋没。"],
-            ["慢心", "まんしん", "驕傲", "勝利に慢心。"],
-            ["未踏", "みとう", "未踏", "前人未踏。"],
-            ["密輸", "みつゆ", "走私", "金塊を密輸。"],
-            ["盲信", "もうしん", "盲信", "噂を盲信。"],
-            ["門下", "もんか", "門下", "師の門下。"],
-            ["遺言", "ゆいごん", "遺言", "遺言を残す。"],
-            ["融通", "ゆうずう", "通融", "融通を利かす。"],
-            ["有望", "ゆうぼう", "有望", "将来有望な。"],
-            ["擁立", "ようりつ", "擁立", "候補者を擁立。"],
-            ["要請", "ようせい", "請求", "救援を要請。"],
-            ["予見", "よけん", "預見", "事態を予見。"],
-            ["余興", "よきょう", "餘興", "パーティーの余興。"],
-            ["抑圧", "よくあつ", "壓迫", "民衆を抑圧。"],
-            ["利潤", "りじゅん", "利潤", "利潤の追求。"],
-            ["履行", "りこう", "履行", "契約を履行。"],
-            ["輪郭", "りんかく", "輪廓", "山の輪郭。"],
-            ["領域", "りょういき", "領域", "未知の領域。"],
-            ["露呈", "ろてい", "顯露", "弱点が露呈。"],
-            ["露出", "ろしゅつ", "露出", "肌の露出。"],
-            ["愛想", "あいそ", "和藹、親切", "愛想がいい。"],
-            ["悪癖", "あくへき", "壞習慣", "悪癖を直す。"],
-            ["圧迫", "あっぱく", "壓迫", "胸を圧迫する。"],
-            ["案の定", "あんのじょう", "果然、果真", "案の定失敗した。"],
-            ["意義", "いぎ", "意義", "重要な意義。"],
-            ["異端", "いたん", "異端", "異端の思想。"],
-            ["一概に", "いちがいに", "一概而論", "一概には言えない。"],
-            ["一掃", "いっそう", "肅清", "不安を一掃する。"],
-            ["意図", "いと", "意圖", "意図が分からない。"],
-            ["因縁", "いんねん", "因緣、糾葛", "深い因縁がある。"],
-            ["円滑", "えんかつ", "圓滑、順利", "円滑に進む。"],
-            ["演じる", "えんじる", "扮演", "主役を演じる。"],
-            ["穏和", "おんわ", "溫和", "穏和な気候。"],
-            ["改革", "かいかく", "改革", "制度の改革。"],
-            ["介在", "かいざい", "介入", "第三者が介在。"],
-            ["該当", "がいとう", "符合、相當", "条件に該当する。"],
-            ["概要", "がいよう", "概要", "事件の概要。"],
-            ["格差", "かくさ", "差距", "貧富の格差。"],
-            ["確保", "かくほ", "確保", "人員を確保する。"],
-            ["稼働", "かどう", "運作、開動", "工場が稼働する。"],
-            ["加味", "かみ", "加上、考慮進去", "意見を加味する。"],
-            ["完備", "かんび", "完備、齊全", "設備が完備。"],
-            ["幹部", "かんぶ", "幹部", "会社の幹部。"],
-            ["緩和", "かんわ", "緩和", "規制が緩和。"],
-            ["起業", "きぎょう", "創業", "IT企業を起業。"],
-            ["軌道", "きどう", "軌道", "軌道に乗る。"],
-            ["規範", "きはん", "規範", "社会の規範。"],
-            ["欺瞞", "ぎまん", "欺騙", "欺瞞に満ちた言葉。"],
-            ["驚愕", "きょうがく", "驚愕", "驚愕の事実。"],
-            ["凝縮", "ぎょうしゅく", "凝縮", "エキスが凝縮。"],
-            ["郷愁", "きょうしゅう", "鄉愁", "郷愁にかられる。"],
-            ["拒絶", "きょぜつ", "拒絕", "要求を拒絶する。"],
-            ["均衡", "きんこう", "均衡", "均衡を保つ。"],
-            ["吟味", "ぎんみ", "斟酌、仔細審查", "素材を吟味する。"],
-            ["愚痴", "ぐち", "牢騷", "愚痴をこぼす。"],
-            ["駆使", "くし", "運用自如", "語学力を駆使。"]
+            ["妥協", "だきょう", "妥協、讓步", "一切<ruby>妥協<rt>だきょう</rt></ruby>しない。", "絕對不妥協。"],
+            ["克服", "こくふく", "克服、跨越", "<ruby>困難<rt>こんなん</rt></ruby>を<ruby>克服<rt>こくふく</rt></ruby>する。", "克服困難。"],
+            ["焦燥", "しょうそう", "焦躁", "<ruby>焦燥感<rt>しょうそうかん</rt></ruby>に駆られる。", "被焦躁感驅使。"],
+            ["把握", "はあく", "掌握、理解", "<ruby>現状<rt>げんじょう</rt></ruby>を<ruby>把握<rt>はあく</rt></ruby>する。", "掌握現狀。"],
+            ["隠蔽", "いんぺい", "隱蔽、隱瞞", "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>隠蔽<rt>いんぺい</rt></ruby>する。", "隱瞞事實。"],
+            ["瑣末", "さまつ", "瑣細、瑣碎", "<ruby>瑣末<rt>さまつ</rt></ruby>な<ruby>問題<rt>もんだい</rt></ruby>だ。", "是瑣碎的問題。"],
+            ["欠如", "けつじょ", "欠缺、缺乏", "<ruby>責任感<rt>せきにんかん</rt></ruby>の<ruby>欠如<rt>けつじょ</rt></ruby>。", "缺乏責任感。"],
+            ["懸念", "けねん", "懸念、擔憂", "<ruby>安全性<rt>あんぜんせい</rt></ruby>を<ruby>懸念<rt>けねん</rt></ruby>する。", "擔憂安全性。"],
+            ["享受", "きょうじゅ", "享受、領受", "<ruby>自由<rt>じゆう</rt></ruby>を<ruby>享受<rt>きょうじゅ</rt></ruby>する。", "享受自由。"],
+            ["是正", "ぜせい", "修正、矯正", "<ruby>格差<rt>かくさ</rt></ruby>を<ruby>是正<rt>ぜせい</rt></ruby>する。", "修正差距。"],
+            ["遵守", "じゅんしゅ", "遵守", "<ruby>法令<rt>ほうれい</rt></ruby><ruby>遵守<rt>じゅんしゅ</rt></ruby>。", "遵守法令。"],
+            ["模索", "もさく", "摸索、找尋", "<ruby>解決策<rt>かいけつさく</rt></ruby>を<ruby>模索<rt>もさく</rt></ruby>する。", "摸索解決方案。"],
+            ["抑制", "よくせい", "抑制、控制", "インフレを<ruby>抑制<rt>よくせい</rt></ruby>する。", "抑制通貨膨脹。"],
+            ["反映", "はんえい", "反映", "<ruby>民意<rt>みんい</rt></ruby>を<ruby>反映<rt>はんえい</rt></ruby>する。", "反映民意。"],
+            ["促進", "そくしん", "促進", "<ruby>販売<rt>はんばい</rt></ruby><ruby>促進<rt>そくしん</rt></ruby>活動。", "銷售促進活動。"],
+            ["是認", "ぜにん", "承認、准許", "<ruby>計画<rt>けいかく</rt></ruby>を<ruby>是認<rt>ぜにん</rt></ruby>する。", "准許計畫。"],
+            ["理想", "りそう", "理想", "<ruby>理想<rt>りそう</rt></ruby>を<ruby>追求<rt>ついきゅう</rt></ruby>する。", "追求理想。"],
+            ["自覚", "じかく", "自覺", "プロの<ruby>自覚<rt>じかく</rt></ruby>。", "專業的自覺。"],
+            ["斬新", "ざんしん", "嶄新", "<ruby>斬新<rt>ざんしん</rt></ruby>なアイデア。", "嶄新的點子。"],
+            ["示唆", "しさ", "暗示、提示", "<ruby>将来<rt>しょうらい</rt></ruby>を<ruby>示唆<rt>しさ</rt></ruby>する。", "暗示將來。"],
+            ["兆候", "ちょうこう", "徵兆", "<ruby>回復<rt>かいふく</rt></ruby>の<ruby>兆候<rt>ちょうこう</rt></ruby>がある。", "有恢復的徵兆。"],
+            ["徹底", "てってい", "徹底", "<ruby>徹底的<rt>てっていてき</rt></ruby>に<ruby>調査<rt>ちょうさ</rt></ruby>する。", "徹底調查。"],
+            ["普及", "ふきゅう", "普及", "ネットが<ruby>普及<rt>ふきゅう</rt></ruby>した。", "網路普及了。"],
+            ["普遍", "ふへん", "普遍", "<ruby>普遍的<rt>ふへんてき</rt></ruby>な<ruby>価値<rt>かち</rt></ruby>。", "普遍的價值。"],
+            ["濫用", "らんよう", "濫用", "<ruby>権力<rt>けんりょく</rt></ruby><ruby>濫用<rt>らんよう</rt></ruby>。", "濫用權力。"],
+            ["圧倒", "あっとう", "壓倒", "<ruby>圧倒的<rt>あっとうてき</rt></ruby>な<ruby>強<rt>つよ</rt></ruby>さ。", "壓倒性的強大。"],
+            ["意欲", "いよく", "意欲、幹勁", "<ruby>学習<rt>がくしゅう</rt></ruby><ruby>意欲<rt>いよく</rt></ruby>が<ruby>高<rt>たか</rt></ruby>い。", "學習意願高。"],
+            ["寛容", "かんよう", "寬容", "<ruby>失敗<rt>しっぱい</rt></ruby>に<ruby>寛容<rt>かんよう</rt></ruby>だ。", "對失敗很寬容。"],
+            ["消息", "しょうそく", "消息", "<ruby>消息<rt>しょうそく</rt></ruby>を<ruby>絶<rt>た</rt></ruby>つ。", "斷絕消息。"],
+            ["浸透", "しんとう", "滲透、普及", "<ruby>制度<rt>せいど</rt></ruby>が<ruby>浸透<rt>しんとう</rt></ruby>する。", "制度逐漸普及。"],
+            ["潜在", "せんざい", "潛在", "<ruby>潜在的<rt>せんざいてき</rt></ruby>な<ruby>能力<rt>のうりょく</rt></ruby>。", "潛在的能力。"],
+            ["断絶", "だんぜつ", "斷絕", "<ruby>国交<rt>こっこう</rt></ruby><ruby>断絶<rt>だんぜつ</rt></ruby>。", "斷絕邦交。"],
+            ["核心", "かくしん", "核心", "<ruby>問題<rt>もんだい</rt></ruby>の<ruby>核心<rt>かくしん</rt></ruby>。", "問題的核心。"],
+            ["慣例", "かんれい", "慣例", "<ruby>業界<rt>ぎょうかい</rt></ruby>の<ruby>慣例<rt>かんれい</rt></ruby>。", "業界的慣例。"],
+            ["脆弱", "ぜいじゃく", "脆弱", "<ruby>地盤<rt>じばん</rt></ruby>が<ruby>脆弱<rt>ぜいじゃく</rt></ruby>だ。", "地基脆弱。"],
+            ["撤廃", "てっぱい", "撤廢", "<ruby>差別<rt>さべつ</rt></ruby><ruby>撤廃<rt>てっぱい</rt></ruby>。", "撤廢歧視。"],
+            ["邁進", "まいしん", "邁進", "<ruby>目標<rt>もくひょう</rt></ruby>に<ruby>邁進<rt>まいしん</rt></ruby>する。", "向目標邁進。"],
+            ["密集", "みっしゅう", "密集", "<ruby>住宅<rt>じゅうたく</rt></ruby><ruby>密集地<rt>みっしゅうち</rt></ruby>。", "住宅密集區。"],
+            ["躍進", "やくしん", "躍進", "<ruby>企業<rt>きぎょう</rt></ruby>の<ruby>躍進<rt>やくしん</rt></ruby>。", "企業的躍進。"],
+            ["委譲", "いじょう", "委派", "<ruby>権限<rt>けんげん</rt></ruby><ruby>委譲<rt>いじょう</rt></ruby>。", "權限委派。"],
+            ["一任", "いちにん", "全權委託", "<ruby>彼<rt>かれ</rt></ruby>に<ruby>一任<rt>いちにん</rt></ruby>する。", "全權委託給他。"],
+            ["刷新", "さっしん", "刷新、革新", "<ruby>体制<rt>たいせい</rt></ruby><ruby>刷新<rt>さっしん</rt></ruby>。", "體制革新。"],
+            ["震撼", "しんかん", "震撼", "<ruby>世界<rt>せかい</rt></ruby>を<ruby>震撼<rt>しんかん</rt></ruby>。", "震撼世界。"],
+            ["糾明", "きゅうめい", "查明、弄清", "<ruby>真相<rt>しんそう</rt></ruby><ruby>糾明<rt>きゅうめい</rt></ruby>。", "查明真相。"],
+            ["淘汰", "とうた", "淘汰", "<ruby>自然<rt>しぜん</rt></ruby><ruby>淘汰<rt>とうた</rt></ruby>。", "自然淘汰。"],
+            ["緻密", "ちみつ", "緻密、嚴密", "<ruby>緻密<rt>ちみつ</rt></ruby>な<ruby>計算<rt>けいさん</rt></ruby>。", "嚴密的計算。"],
+            ["卑劣", "ひれつ", "卑劣", "<ruby>卑劣<rt>ひれつ</rt></ruby>な<ruby>手段<rt>しゅだん</rt></ruby>。", "卑劣的手段。"],
+            ["懸命", "けんめい", "拚命", "<ruby>懸命<rt>けんめい</rt></ruby>に<ruby>働<rt>はたら</rt></ruby>く。", "拚命工作。"],
+            ["果敢", "かかん", "果敢", "<ruby>果敢<rt>かかん</rt></ruby>に<ruby>挑戦<rt>ちょうせん</rt></ruby>。", "果敢挑戰。"],
+            ["丹念", "たんねん", "仔細、精心", "<ruby>丹念<rt>たんねん</rt></ruby>に<ruby>調<rt>しら</rt></ruby>べる。", "仔細調查。"],
+            ["執着", "しゅうちゃく", "執著", "<ruby>過去<rt>かこ</rt></ruby>への<ruby>執着<rt>しゅうちゃく</rt></ruby>。", "對過去的執著。"],
+            ["概観", "がいかん", "概觀", "<ruby>歴史<rt>れきし</rt></ruby>を<ruby>概観<rt>がいかん</rt></ruby>する。", "概觀歷史。"],
+            ["回避", "かいひ", "迴避", "<ruby>衝突<rt>しょうとつ</rt></ruby>を<ruby>回避<rt>かいひ</rt></ruby>する。", "迴避衝突。"],
+            ["完結", "かんけつ", "完結", "<ruby>物語<rt>ものがたり</rt></ruby>が<ruby>完結<rt>かんけつ</rt></ruby>した。", "故事完結了。"],
+            ["甘受", "かんじゅ", "甘願忍受", "<ruby>不運<rt>ふうん</rt></ruby>を<ruby>甘受<rt>かんじゅ</rt></ruby>する。", "甘願忍受不幸。"],
+            ["簡素", "かんそ", "簡素", "<ruby>簡素<rt>かんそ</rt></ruby>な<ruby>生活<rt>せいかつ</rt></ruby>。", "簡樸的生活。"],
+            ["既知", "きち", "已知", "<ruby>既知<rt>きち</rt></ruby>の<ruby>事実<rt>じじつ</rt></ruby>。", "已知的事實。"],
+            ["規律", "きりつ", "規律", "<ruby>規律<rt>きりつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。", "遵守規律。"],
+            ["疑惑", "ぎわく", "疑惑", "<ruby>疑惑<rt>ぎわく</rt></ruby>が<ruby>深<rt>ふか</rt></ruby>まる。", "疑惑加深。"],
+            ["空虚", "くうきょ", "空虛", "<ruby>空虚<rt>くうきょ</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>。", "空虛的話語。"],
+            ["苦境", "くきょう", "困境", "<ruby>苦境<rt>くきょう</rt></ruby>に<ruby>立<rt>た</rt></ruby>たされる。", "陷入困境。"],
+            ["屈服", "くっぷく", "屈服", "<ruby>暴力<rt>ぼうりょく</rt></ruby>に<ruby>屈服<rt>くっぷく</rt></ruby>しない。", "不向暴力屈服。"],
+            ["堅実", "けんじつ", "堅實", "<ruby>堅実<rt>けんじつ</rt></ruby>な<ruby>経営<rt>けいえい</rt></ruby>。", "穩健的經營。"],
+            ["権威", "けんい", "權威", "<ruby>専門家<rt>せんもんか</rt></ruby>の<ruby>権威<rt>けんい</rt></ruby>。", "專家的權威。"],
+            ["言及", "げんきゅう", "提及", "<ruby>詳細<rt>しょうさい</rt></ruby>に<ruby>言及<rt>げんきゅう</rt></ruby>する。", "提到詳細內容。"],
+            ["孤立", "こりつ", "孤立", "<ruby>村<rt>むら</rt></ruby>が<ruby>孤立<rt>こりつ</rt></ruby>する。", "村莊被孤立。"],
+            ["誇示", "こじ", "炫耀", "<ruby>力<rt>ちから</rt></ruby>を<ruby>誇示<rt>こじ</rt></ruby>する。", "炫耀力量。"],
+            ["固執", "こしつ", "執著", "<ruby>自説<rt>じせつ</rt></ruby>に<ruby>固執<rt>こしつ</rt></ruby>する。", "堅持己見。"],
+            ["座礁", "ざしょう", "擱淺", "<ruby>船<rt>ふね</rt></ruby>が<ruby>座礁<rt>ざしょう</rt></ruby>した。", "船擱淺了。"],
+            ["残虐", "ざんぎゃく", "殘虐", "<ruby>残虐<rt>ざんぎゃく</rt></ruby>な<ruby>行為<rt>こうい</rt></ruby>。", "殘忍的行為。"],
+            ["資産", "しさん", "資產", "<ruby>個人<rt>こじん</rt></ruby><ruby>資産<rt>しさん</rt></ruby>。", "個人資產。"],
+            ["諮問", "しもん", "諮詢", "<ruby>委員会<rt>いいんかい</rt></ruby>に<ruby>諮問<rt>しもん</rt></ruby>する。", "向委員會諮詢。"],
+            ["執筆", "しっぴつ", "執筆", "<ruby>原稿<rt>げんこう</rt></ruby>を<ruby>執筆<rt>しっぴつ</rt></ruby>する。", "執筆原稿。"],
+            ["嫉妬", "しっと", "嫉妒", "<ruby>他人<rt>たにん</rt></ruby>に<ruby>嫉妬<rt>しっと</rt></ruby>する。", "嫉妒別人。"],
+            ["終焉", "しゅうえん", "終焉", "<ruby>時代<rt>じだい</rt></ruby>の<ruby>終焉<rt>しゅうえん</rt></ruby>。", "時代的終焉。"],
+            ["祝杯", "しゅくはい", "慶功酒", "<ruby>祝杯<rt>しゅくはい</rt></ruby>をあげる。", "舉杯慶祝。"],
+            ["純粋", "じゅんすい", "純粹", "<ruby>純粋<rt>じゅんすい</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ち。", "純粹的心情。"],
+            ["処遇", "しょぐう", "待遇", "<ruby>不当<rt>ふとう</rt></ruby>な<ruby>処遇<rt>しょぐう</rt></ruby>。", "不當的待遇。"],
+            ["奨励", "しょうれい", "鼓勵", "<ruby>読書<rt>どくしょ</rt></ruby>を<ruby>奨励<rt>しょうれい</rt></ruby>する。", "鼓勵閱讀。"],
+            ["情熱", "じょうねつ", "熱情", "<ruby>仕事<rt>しごと</rt></ruby>に<ruby>情熱<rt>じょうねつ</rt></ruby>を持つ。", "對工作有熱情。"],
+            ["真髄", "しんずい", "精髓", "<ruby>芸術<rt>げいじゅつ</rt></ruby>の<ruby>真髄<rt>しんずい</rt></ruby>。", "藝術的精髓。"],
+            ["信仰", "しんこう", "信仰", "<ruby>熱心<rt>ねっしん</rt></ruby>な<ruby>信仰<rt>しんこう</rt></ruby>。", "熱心的信仰。"],
+            ["慎重", "しんちょう", "慎重", "<ruby>慎重<rt>しんちょう</rt></ruby>に<ruby>選<rt>えら</rt></ruby>ぶ。", "慎重選擇。"],
+            ["推敲", "すいこう", "推敲", "<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>推敲<rt>すいこう</rt></ruby>する。", "推敲文章。"],
+            ["衰退", "すいたい", "衰退", "<ruby>産業<rt>さんぎょう</rt></ruby>が<ruby>衰退<rt>すいたい</rt></ruby>する。", "產業衰退。"],
+            ["盛大", "せいだい", "盛大", "<ruby>盛大<rt>せいだい</rt></ruby>な<ruby>拍手<rt>はくしゅ</rt></ruby>。", "盛大的掌聲。"],
+            ["切実", "せつじつ", "切實、迫切", "<ruby>切実<rt>せつじつ</rt></ruby>な<ruby>問題<rt>もんだい</rt></ruby>。", "切實的問題。"],
+            ["宣伝", "せんでん", "宣傳", "<ruby>新製品<rt>しんせいひん</rt></ruby>を<ruby>宣伝<rt>せんでん</rt></ruby>する。", "宣傳新產品。"],
+            ["潜入", "せんにゅう", "潛入", "スパイが<ruby>潜入<rt>せんにゅう</rt></ruby>する。", "間諜潛入。"],
+            ["相場", "そうば", "行情", "<ruby>市場<rt>しじょう</rt></ruby>の<ruby>相場<rt>そうば</rt></ruby>。", "市場行情。"],
+            ["贈賄", "ぞうわい", "行賄", "<ruby>贈賄<rt>ぞうわい</rt></ruby>容疑。", "行賄嫌疑。"],
+            ["即座", "そくざ", "立即", "<ruby>即座<rt>そくざ</rt></ruby>に<ruby>回答<rt>かいとう</rt></ruby>する。", "立刻回答。"],
+            ["対峙", "たいじ", "對峙", "<ruby>敵<rt>てき</rt></ruby>と<ruby>対峙<rt>たいじ</rt></ruby>する。", "與敵人對峙。"],
+            ["妥当", "だとう", "妥當", "<ruby>妥当<rt>だとう</rt></ruby>な<ruby>判断<rt>はんだん</rt></ruby>。", "妥當的判斷。"],
+            ["秩序", "ちつじょ", "秩序", "<ruby>社会<rt>しゃかい</rt></ruby>の<ruby>秩序<rt>ちつじょ</rt></ruby>。", "社會秩序。"],
+            ["沈黙", "ちんもく", "沈默", "<ruby>長<rt>なが</rt></ruby>い<ruby>沈黙<rt>ちんもく</rt></ruby>。", "長久的沈默。"],
+            ["追放", "ついほう", "放逐", "<ruby>国外<rt>こくがい</rt></ruby>へ<ruby>追放<rt>ついほう</rt></ruby>。", "流放國外。"],
+            ["提携", "ていけい", "聯手", "<ruby>他社<rt>たしゃ</rt></ruby>と<ruby>提携<rt>ていけい</rt></ruby>する。", "與其他公司合作。"],
+            ["定着", "ていちゃく", "紮根、普及", "<ruby>習慣<rt>しゅうかん</rt></ruby>が<ruby>定着<rt>ていちゃく</rt></ruby>する。", "習慣逐漸普及。"],
+            ["撤退", "てったい", "撤退", "<ruby>海外<rt>かいがい</rt></ruby>から<ruby>撤退<rt>てったい</rt></ruby>する。", "從海外撤退。"],
+            ["点検", "てんけん", "檢查", "<ruby>機械<rt>きかい</rt></ruby>を<ruby>点検<rt>てんけん</rt></ruby>する。", "檢查機器。"],
+            ["転向", "てんこう", "轉向", "<ruby>思想<rt>しそう</rt></ruby>の<ruby>転向<rt>てんこう</rt></ruby>。", "思想轉向。"],
+            ["伝説", "でんせつ", "傳說", "<ruby>伝説<rt>でんせつ</rt></ruby>の<ruby>勇者<rt>ゆうしゃ</rt></ruby>。", "傳說的勇者。"],
+            ["陶酔", "とうすい", "陶醉", "<ruby>音楽<rt>おんがく</rt></ruby>に<ruby>陶酔<rt>とうすい</rt></ruby>する。", "陶醉於音樂。"],
+            ["踏襲", "とうしゅう", "沿襲", "<ruby>前例<rt>ぜんれい</rt></ruby>を<ruby>踏襲<rt>とうしゅう</rt></ruby>する。", "沿襲前例。"],
+            ["統治", "とうち", "統治", "<ruby>国<rt>くに</rt></ruby>の<ruby>統治<rt>とうち</rt></ruby>。", "國家的統治。"],
+            ["督促", "とくそく", "催促", "<ruby>支払<rt>しはら</rt></ruby>いを<ruby>督促<rt>とくそく</rt></ruby>する。", "催促付款。"],
+            ["毒舌", "どくぜつ", "毒舌", "<ruby>毒舌<rt>どくぜつ</rt></ruby>を<ruby>振<rt>ふ</rt></ruby>るう。", "大發毒舌。"],
+            ["独創", "どくそう", "獨創", "<ruby>独創的<rt>どくそうてき</rt></ruby>な<ruby>作品<rt>さくひん</rt></ruby>。", "獨創的作品。"],
+            ["内密", "ないみつ", "保密、秘密", "<ruby>内密<rt>ないみつ</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>。", "保密的話題。"],
+            ["捏造", "ねつぞう", "捏造", "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>捏造<rt>ねつぞう</rt></ruby>する。", "捏造事實。"],
+            ["濃度", "のうど", "濃度", "<ruby>酸素<rt>さんそ</rt></ruby><ruby>濃度<rt>のうど</rt></ruby>。", "氧氣濃度。"],
+            ["破局", "はきょく", "破局", "<ruby>二人<rt>ふたり</rt></ruby>は<ruby>破局<rt>はきょく</rt></ruby>した。", "兩人破局了。"],
+            ["暴露", "ばくろ", "揭露", "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>暴露<rt>ばくろ</rt></ruby>する。", "揭露事實。"],
+            ["発覚", "はっかく", "敗露", "<ruby>罪<rt>つみ</rt></ruby>が<ruby>発覚<rt>はっかく</rt></ruby>した。", "罪行敗露了。"],
+            ["波紋", "はもん", "波紋", "<ruby>波紋<rt>はもん</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>ぶ。", "引起波瀾。"],
+            ["悲惨", "ひさん", "悲慘", "<ruby>悲惨<rt>ひさん</rt></ruby>な<ruby>光景<rt>こうけい</rt></ruby>。", "悲慘的景象。"],
+            ["肥大", "ひだい", "肥大", "<ruby>組織<rt>そしき</rt></ruby>が<ruby>肥大化<rt>ひだいか</rt></ruby>。", "組織肥大化。"],
+            ["非行", "ひこう", "不良行為", "<ruby>青少年<rt>せいしょうねん</rt></ruby>の<ruby>非行<rt>ひこう</rt></ruby>。", "青少年的不良行為。"],
+            ["秘策", "ひさく", "秘策", "<ruby>秘策<rt>ひさく</rt></ruby>を<ruby>練<rt>ね</rt></ruby>る。", "構思秘策。"],
+            ["避難", "ひなん", "避難", "<ruby>高台<rt>たかだい</rt></ruby>へ<ruby>避難<rt>ひなん</rt></ruby>する。", "往高處避難。"],
+            ["浮上", "ふじょう", "浮上", "<ruby>問題<rt>もんだい</rt></ruby>が<ruby>浮上<rt>ふじょう</rt></ruby>する。", "問題浮出水面。"],
+            ["腐敗", "ふはい", "腐敗", "<ruby>政治的<rt>せいじてき</rt></ruby><ruby>腐敗<rt>ふはい</rt></ruby>。", "政治腐敗。"],
+            ["不変", "ふへん", "不變", "<ruby>不変<rt>ふへん</rt></ruby>の<ruby>真理<rt>しんり</rt></ruby>。", "不變的真理。"],
+            ["憤慨", "ふんがい", "憤慨", "<ruby>不正<rt>ふせい</rt></ruby>に<ruby>憤慨<rt>ふんがい</rt></ruby>する。", "對不公感到憤慨。"],
+            ["紛争", "ふんそう", "紛爭", "<ruby>領土<rt>りょうど</rt></ruby><ruby>紛争<rt>ふんそう</rt></ruby>。", "領土爭端。"],
+            ["並行", "へいこう", "並行", "<ruby>作業<rt>さぎょう</rt></ruby>を<ruby>並行<rt>へいこう</rt></ruby>する。", "作業並行。"],
+            ["閉塞", "へいそく", "閉塞", "<ruby>閉塞感<rt>へいそくかん</rt></ruby>が<ruby>漂<rt>ただよ</rt></ruby>う。", "瀰漫著閉塞感。"],
+            ["平穏", "へいおん", "平穩", "<ruby>平穏<rt>へいおん</rt></ruby>な<ruby>暮<rt>く</rt></ruby>らし。", "平穩的生活。"],
+            ["変貌", "へんぼう", "面貌改變", "<ruby>街<rt>まち</rt></ruby>が<ruby>変貌<rt>へんぼう</rt></ruby>した。", "街道面貌改變了。"],
+            ["方策", "ほうさく", "方策", "<ruby>解決<rt>かいけつ</rt></ruby>の<ruby>方策<rt>ほうさく</rt></ruby>。", "解決的方策。"],
+            ["放逐", "ほうちく", "驅逐", "<ruby>国<rt>くに</rt></ruby>から<ruby>放逐<rt>ほうちく</rt></ruby>する。", "從國家驅逐。"],
+            ["没落", "ぼつらく", "沒落", "<ruby>貴族<rt>きぞく</rt></ruby>の<ruby>没落<rt>ぼつらく</rt></ruby>。", "貴族的沒落。"],
+            ["埋蔵", "まいぞう", "埋藏", "<ruby>金鉱<rt>きんこう</rt></ruby>を<ruby>埋蔵<rt>まいぞう</rt></ruby>する。", "埋藏金礦。"],
+            ["埋没", "まいぼつ", "埋沒", "<ruby>歴史<rt>れきし</rt></ruby>に<ruby>埋没<rt>まいぼつ</rt></ruby>する。", "埋沒於歷史中。"],
+            ["慢心", "まんしん", "驕傲", "<ruby>勝利<rt>しょうり</rt></ruby>に<ruby>慢心<rt>まんしん</rt></ruby>する。", "對勝利感到驕傲。"],
+            ["未踏", "みとう", "未踏", "<ruby>前人<rt>ぜんじん</rt></ruby><ruby>未踏<rt>みとう</rt></ruby>。", "前人未踏。"],
+            ["密輸", "みつゆ", "走私", "<ruby>金塊<rt>きんかい</rt></ruby>を<ruby>密輸<rt>みつゆ</rt></ruby>する。", "走私金塊。"],
+            ["盲信", "もうしん", "盲信", "<ruby>噂<rt>うわさ</rt></ruby>を<ruby>盲信<rt>もうしん</rt></ruby>する。", "盲信謠言。"],
+            ["門下", "もんか", "門下", "<ruby>師<rt>し</rt></ruby>の<ruby>門下<rt>もんか</rt></ruby>。", "師父的門下。"],
+            ["遺言", "ゆいごん", "遺言", "<ruby>遺言<rt>ゆいごん</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>す。", "留下遺言。"],
+            ["融通", "ゆうずう", "通融", "<ruby>融通<rt>ゆうずう</rt></ruby>を<ruby>利<rt>き</rt></ruby>かす。", "通融一下。"],
+            ["有望", "ゆうぼう", "有望", "<ruby>将来<rt>しょうらい</rt></ruby><ruby>有望<rt>ゆうぼう</rt></ruby>な。", "將來有希望的。"],
+            ["擁立", "ようりつ", "擁立", "<ruby>候補者<rt>こうほしゃ</rt></ruby>を<ruby>擁立<rt>ようりつ</rt></ruby>する。", "擁立候選人。"],
+            ["要請", "ようせい", "請求", "<ruby>救援<rt>きゅうえん</rt></ruby>を<ruby>要請<rt>ようせい</rt></ruby>する。", "請求救援。"],
+            ["予見", "よけん", "預見", "<ruby>事態<rt>じたい</rt></ruby>を<ruby>予見<rt>よけん</rt></ruby>する。", "預見事態。"],
+            ["余興", "よきょう", "餘興", "パーティーの<ruby>余興<rt>よきょう</rt></ruby>。", "派對的餘興節目。"],
+            ["抑圧", "よくあつ", "壓迫", "<ruby>民衆<rt>みんしゅう</rt></ruby>を<ruby>抑圧<rt>よくあつ</rt></ruby>する。", "壓迫民眾。"],
+            ["利潤", "りじゅん", "利潤", "<ruby>利潤<rt>りじゅん</rt></ruby>の<ruby>追求<rt>ついきゅう</rt></ruby>。", "追求利潤。"],
+            ["履行", "りこう", "履行", "<ruby>契約<rt>けいやく</rt></ruby>を<ruby>履行<rt>りこう</rt></ruby>する。", "履行合約。"],
+            ["輪郭", "りんかく", "輪廓", "<ruby>山<rt>やま</rt></ruby>の<ruby>輪郭<rt>りんかく</rt></ruby>。", "山的輪廓。"],
+            ["領域", "りょういき", "領域", "<ruby>未知<rt>みち</rt></ruby>の<ruby>領域<rt>りょういき</rt></ruby>。", "未知的領域。"],
+            ["露呈", "ろてい", "顯露", "<ruby>弱点<rt>じゃくてん</rt></ruby>が<ruby>露呈<rt>ろてい</rt></ruby>する。", "顯露弱點。"],
+            ["露出", "ろしゅつ", "露出", "<ruby>肌<rt>はだ</rt></ruby>の<ruby>露出<rt>ろしゅつ</rt></ruby>。", "肌膚的露出。"]
         ];
 
         // --- Core Logic ---
-        let masteredIds = JSON.parse(localStorage.getItem('n1_mastery_v2026_march') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n1_scores_v2026_march') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n1_mastery_final_v2026') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n1_scores_final_v2026') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -540,29 +497,30 @@
                         <td class="p-4 text-center">
                             <input type="checkbox" class="custom-checkbox text-center" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50">V${i+1}</td>
-                        <td class="p-4 text-center">
+                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50 text-center">V${i+1}</td>
+                        <td class="p-4 text-center text-center text-center">
                             <div class="japanese-text font-bold text-base text-slate-900 text-center">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text text-center">${v[1]}</div>
+                            <div class="text-[10px] text-slate-400 japanese-text text-center text-center">${v[1]}</div>
                         </td>
-                        <td class="p-4 text-center">
+                        <td class="p-4 text-center text-center text-center">
                             <span class="font-bold text-rose-700 text-center">${v[2]}</span>
                         </td>
-                        <td class="p-4 text-center">
-                            <p class="japanese-text text-slate-600 italic text-xs leading-relaxed text-center">${v[3]}</p>
+                        <td class="p-4">
+                            <p class="japanese-text text-slate-600 italic text-xs leading-relaxed text-center text-center text-center">${v[3]}</p>
+                            <p class="text-xs text-slate-400 text-center text-center">${v[4]}</p>
                         </td>
-                        <td class="p-4 text-center">
+                        <td class="p-4 text-center text-center text-center">
                             <div class="flex gap-4 items-center justify-center text-center">
-                                <div class="flex flex-col text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center">日</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center">
-                                        <div class="h-full bg-rose-500 text-center" style="width: ${scores.jpToZh * 10}%"></div>
+                                <div class="flex flex-col text-center text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">日</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
+                                        <div class="h-full bg-rose-500 text-center text-center" style="width: ${scores.jpToZh * 10}%"></div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center">中</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center">
-                                        <div class="h-full bg-emerald-500 text-center" style="width: ${scores.zhToJp * 10}%"></div>
+                                <div class="flex flex-col text-center text-center text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">中</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center text-center">
+                                        <div class="h-full bg-emerald-500 text-center text-center text-center" style="width: ${scores.zhToJp * 10}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -618,7 +576,7 @@
                 document.getElementById('fc-target').innerText = pick.v[0];
                 document.getElementById('fc-kana-display').innerText = pick.v[1] || "";
             }
-            document.getElementById('fc-example').innerText = pick.v[3];
+            document.getElementById('fc-example').innerHTML = `${pick.v[3]}<br><span class="text-sm text-slate-500 mt-2 block">${pick.v[4]}</span>`;
             updateScoreUI();
         }
 
@@ -661,8 +619,8 @@
         }
 
         function saveAndSync(id) {
-            localStorage.setItem('n1_mastery_v2026_march', JSON.stringify(masteredIds));
-            localStorage.setItem('n1_scores_v2026_march', JSON.stringify(vocabScores));
+            localStorage.setItem('n1_mastery_final_v2026', JSON.stringify(masteredIds));
+            localStorage.setItem('n1_scores_final_v2026', JSON.stringify(vocabScores));
             if (id) renderVocab(document.getElementById('search-box').value);
             else { renderGrammar(); renderVocab(); }
             updateProgress();
