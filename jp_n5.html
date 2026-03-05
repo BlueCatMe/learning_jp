@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRY! N5 日本語達陣 - 雙向振假名積分系統</title>
+    <title>Meow! N5 日本語達陣 - 終極全量學習系統</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -12,8 +12,10 @@
         ruby rt { font-size: 0.45em; color: #6366f1; padding-bottom: 0.1em; }
         .mastered { opacity: 0.35; background-color: #f8fafc !important; }
         .hide-mastered .is-mastered { display: none !important; }
-        .custom-checkbox { width: 1.2rem; height: 1.2rem; cursor: pointer; accent-color: #4f46e5; }
+        .custom-checkbox { width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: #4f46e5; }
         .tab-active { color: #4f46e5; border-bottom: 3px solid #4f46e5; }
+        .grammar-card { transition: all 0.2s; border-left: 5px solid transparent; }
+        .grammar-card:hover { border-left-color: #6366f1; }
         .sticky-controls { position: sticky; top: 0; z-index: 50; }
         #confirm-modal { display: none; }
         .reveal-info { display: none; }
@@ -22,34 +24,32 @@
         .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 pb-20">
+<body class="bg-slate-50 text-slate-800 pb-20 text-center">
 
-    <!-- Header -->
-    <header class="bg-indigo-700 text-white py-8 px-4 text-center">
-        <h1 class="text-3xl font-black mb-1 tracking-tight">TRY! N5 日本語達陣</h1>
-        <p class="text-indigo-100 opacity-90 text-sm font-medium">雙向積分學習卡 × 振假名標註系統</p>
+    <header class="bg-indigo-700 text-white py-8 px-4 text-center shadow-lg">
+        <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N5 日本語達陣</h1>
+        <p class="text-indigo-100 opacity-90 text-sm font-medium">入門基礎：全量單字庫 (200+) × 核心文法 (25) 雙向學習卡</p>
     </header>
 
-    <!-- Sticky Control Bar -->
-    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4 text-center">
             <div class="flex items-center gap-4">
                 <div class="flex flex-col">
-                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">總掌握進度</span>
+                    <span class="text-[10px] text-slate-500 font-bold uppercase tracking-wider text-center">總掌握進度</span>
                     <div class="flex items-center gap-2">
                         <div class="w-32 h-2 bg-slate-200 rounded-full overflow-hidden">
                             <div id="progress-bar" class="h-full bg-indigo-500 transition-all duration-500" style="width: 0%"></div>
                         </div>
-                        <span id="progress-text" class="text-xs font-bold text-indigo-700">0%</span>
+                        <span id="progress-text" class="text-sm font-bold text-indigo-700">0%</span>
                     </div>
                 </div>
             </div>
             
             <div class="flex items-center gap-2">
-                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2">
-                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握內容</span>
                 </button>
-                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2">
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-semibold transition flex items-center gap-2 shadow-sm">
                     <span>🔄</span> <span>重置進度</span>
                 </button>
             </div>
@@ -57,418 +57,349 @@
     </nav>
 
     <main class="container mx-auto px-4 py-8 max-w-6xl">
-        <!-- Tabs -->
-        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (25)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全單字庫</button>
-            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">智能學習卡</button>
+            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向學習卡</button>
         </div>
 
         <!-- Grammar Section -->
-        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <!-- JS Rendered -->
-        </div>
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6 text-center"></div>
 
         <!-- Vocab Section -->
         <div id="section-vocab" class="tab-content hidden">
             <div class="mb-6 relative">
-                <input type="text" id="search-box" placeholder="搜尋漢字、假名或中文意義..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition shadow-sm">
+                <input type="text" id="search-box" placeholder="搜尋漢字、假名或中文..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition shadow-sm">
                 <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
             </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200">
-                            <tr>
-                                <th class="p-4 w-16 text-center">掌握</th>
-                                <th class="p-4 w-1/4">單字 / 假名</th>
-                                <th class="p-4 w-1/5 text-indigo-700">中文意義</th>
-                                <th class="p-4">學習進度 (日譯中 / 中譯日)</th>
-                            </tr>
-                        </thead>
-                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm">
-                            <!-- JS Rendered -->
-                        </tbody>
-                    </table>
-                </div>
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center">
+                <table class="w-full text-left border-collapse text-center">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-center">
+                        <tr class="text-center">
+                            <th class="p-4 w-16 text-center">掌握</th>
+                            <th class="p-4 w-1/4 text-center">單字 / 假名</th>
+                            <th class="p-4 w-1/4 text-indigo-700 text-center">中文意義</th>
+                            <th class="p-4 text-center">積分 (日中/中日)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center"></tbody>
+                </table>
             </div>
         </div>
 
         <!-- Flashcard Section -->
-        <div id="section-flashcard" class="tab-content hidden">
-            <div class="max-w-lg mx-auto">
-                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-8 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all">
-                    
-                    <!-- Mode Header -->
-                    <div id="fc-mode-display" class="absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white">
-                        <span id="fc-mode-text">模式載入中</span>
-                        <div class="flex gap-1" id="fc-score-dots"></div>
-                    </div>
-
-                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
-                        <!-- Ruby Question -->
-                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center">載入中...</div>
-                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10"></div>
-                        
-                        <!-- Answer Block -->
-                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
-                            <div id="fc-target" class="text-3xl font-bold text-indigo-600 mb-2 japanese-text"></div>
-                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text"></div>
-                            <div class="bg-slate-50 p-5 rounded-3xl text-left border border-slate-200/50">
-                                <p class="text-[9px] font-black text-slate-400 uppercase mb-2">學習範例</p>
-                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
+        <div id="section-flashcard" class="tab-content hidden text-center">
+            <div class="max-w-lg mx-auto text-center">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[450px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all text-center">
+                    <div id="fc-mode-badge" class="absolute top-6 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-sm">模式</div>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center py-6 text-center">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-tight text-center">讀取中...</div>
+                        <div id="fc-hint" class="text-slate-400 text-sm h-6 mb-8 text-center"></div>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6 text-center">
+                            <div id="fc-target" class="text-3xl font-bold text-indigo-600 mb-2 japanese-text text-center"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-lg japanese-text mb-4 text-center"></div>
+                            <div class="bg-indigo-50/50 p-5 rounded-3xl text-left border border-indigo-100/50 text-center">
+                                <p class="text-[10px] font-bold text-indigo-400 uppercase mb-1 text-center">例句範本</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center"></p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Empty State -->
-                    <div id="fc-empty-state" class="hidden py-16">
-                        <div class="text-7xl mb-6">🏁</div>
-                        <h3 class="text-2xl font-black text-slate-900 mb-2">學習達成！</h3>
-                        <p class="text-slate-500 text-sm">目前沒有需要加強的雙向單字了。</p>
-                        <button onclick="switchTab('vocab')" class="mt-10 px-6 py-2 bg-indigo-50 text-indigo-600 rounded-full font-bold hover:bg-indigo-100 transition text-xs">查看全部單字</button>
+                    <div id="fc-empty-state" class="hidden py-16 text-center">
+                        <div class="text-7xl mb-6 text-center">🏆</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center">全方位掌握！</h3>
+                        <p class="text-slate-500 text-center">目前沒有需要練習的雙向單字囉。</p>
                     </div>
-
-                    <!-- Flashcard Controls -->
-                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
-                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
-                            <span class="text-2xl mb-1">🔄</span>
-                            <span class="text-[10px] font-black">再來</span>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 pt-8 text-center">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-transform active:scale-95 text-center">
+                            <span class="text-2xl mb-1 text-center">🔄</span><span class="text-[10px] font-black text-center">再來</span>
                         </button>
-                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-indigo-100">
-                            <span class="text-2xl mb-1">💡</span>
-                            <span class="text-[10px] font-black">答案</span>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-3xl transition-transform active:scale-95 shadow-lg shadow-indigo-200 text-center">
+                            <span class="text-2xl mb-1 text-center">💡</span><span class="text-[10px] font-black text-center">答案</span>
                         </button>
-                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-all active:scale-95">
-                            <span class="text-2xl mb-1">✅</span>
-                            <span class="text-[10px] font-black">掌握</span>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-transform active:scale-95 text-center">
+                            <span class="text-2xl mb-1 text-center text-center">✅</span><span class="text-[10px] font-black text-center">掌握</span>
                         </button>
                     </div>
                 </div>
-                <div id="fc-footer-info" class="text-center mt-6">
-                    <p class="text-[9px] text-slate-400 font-bold uppercase tracking-widest">當前項目累積積分: <span id="fc-current-score-text">0</span> / 10</p>
+                <div class="mt-8 flex justify-center items-center gap-6 text-center">
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-[9px] text-slate-400 font-bold uppercase mb-1 text-center">本次單字積分</span>
+                        <div class="flex gap-1 text-center" id="fc-score-dots"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Reset Confirmation Modal -->
-    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
-            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2">確定重置嗎？</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed">這將清除所有文法掌握記錄、單字雙向積分與標記。動作無法取消。</p>
-            <div class="flex flex-col gap-3">
-                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定全部重置</button>
-                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消</button>
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-sm w-full p-8 text-center text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-center">⚠️</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center">重置所有進度？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center">這將清除所有文法紀錄與單字積分。此動作無法復原。</p>
+            <div class="flex flex-col gap-3 text-center">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200 text-center">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center">取消返回</button>
             </div>
         </div>
     </div>
 
     <script>
-        // --- N5 核心文法 (25項) ---
         const grammarData = [
-            { id: 'g1', title: '～は～です', desc: '基本判斷句，表示身分或狀態。', ex: [{j:'私は学生です。', c:'我是學生。'}, {j:'これは本です。', c:'這是書。'}]},
-            { id: 'g2', title: '～を～ます', desc: '動作句，ます形表示禮貌。含三類動詞。', ex: [{t:'G1', j:'水を飲みます。', c:'喝水。'}, {t:'G2', j:'ご飯を食べます。', c:'吃飯。'}, {t:'G3', j:'勉強をします。', c:'學習。'}]},
+            { id: 'g1', title: '～は～です', desc: '基本判斷句，表示 A 是 B。', ex: [{j:'私は学生です。', c:'我是學生。'}, {j:'これは本です。', c:'這是書。'}]},
+            { id: 'g2', title: '～を～ます', desc: '動作句。ます形表示禮貌肯定。', ex: [{t:'G1', j:'水を飲みます。', c:'喝水。'}, {t:'G2', j:'パンを食べます。', c:'吃麵包。'}, {t:'G3', j:'勉強をします。', c:'學習。'}]},
             { id: 'g3', title: '～があります/います', desc: '表示存在。', ex: [{j:'机に本があります。', c:'桌上有書。'}, {j:'庭に猫がいます。', c:'院子裡有貓。'}]},
-            { id: 'g4', title: '～へ行きます/来ます/帰ります', desc: '表示移動方向。', ex: [{j:'日本へ行きます。', c:'去日本。'}, {j:'家へ帰ります。', c:'回家。'}]},
-            { id: 'g5', title: '～で（場所/工具）', desc: '動作發生地或採用的手段。', ex: [{j:'食堂で食べます。', c:'在食堂吃飯。'}, {j:'バスで行きます。', c:'搭巴士去。'}]},
-            { id: 'g6', title: '～から～まで', desc: '時間或空間起訖。', ex: [{j:'九時から五時まで働きます。', c:'從九點工作到五點。'}]},
+            { id: 'g4', title: '～へ行きます/来ます/帰ります', desc: '表示移動的方向。', ex: [{j:'日本へ行きます。', c:'去日本。'}, {j:'家へ帰ります。', c:'回家。'}]},
+            { id: 'g5', title: '～で（地點/工具）', desc: '表示動作發生地或手段。', ex: [{j:'食堂で食べます。', c:'在食堂吃飯。'}, {j:'箸で食べます。', c:'用筷子吃。'}]},
+            { id: 'g6', title: '～から～まで', desc: '表示起點終點。', ex: [{j:'九時から五時までです。', c:'從九點到五點。'}]},
             { id: 'g7', title: '～てください', desc: '表示請求。', ex: [{j:'ちょっと待ってください。', c:'請等一下。'}, {j:'ここを見てください。', c:'請看這裡。'}]},
-            { id: 'g8', title: '～ています', desc: '正在進行或持續狀態。', ex: [{j:'テレビを見ています。', c:'正在看電視。'}, {j:'雨が降っています。', c:'正在下雨。'}]},
-            { id: 'g9', title: '～ましょう', desc: '表示提議。', ex: [{j:'一緒に帰りましょう。', c:'一起回家吧。'}, {j:'休みましょう。', c:'休息吧。'}]},
-            { id: 'g10', title: '～たいです', desc: '表示願望。', ex: [{j:'日本へ行きたいです。', c:'想去日本。'}, {j:'お茶を飲みたいです。', c:'想喝茶。'}]},
-            { id: 'g11', title: '～ないでください', desc: '請求不要做某事。', ex: [{j:'写真を撮らないでください。', c:'請不要拍照。'}]},
-            { id: 'g12', title: '～たことがあります', desc: '過去經驗。', ex: [{j:'刺身を食べたことがあります。', c:'曾吃過生魚片。'}]},
-            { id: 'g13', title: '～たり～たりします', desc: '列舉不分順序的動作。', ex: [{j:'本を読んだり散歩したりします。', c:'又是看書又是散步。'}]},
-            { id: 'g14', title: '形容詞用法', desc: 'い與な形容詞修飾或結尾。', ex: [{j:'新しい本です。', c:'是新書。'}, {j:'静かな部屋です。', c:'是安靜的房間。'}]},
-            { id: 'g15', title: '比較句 (より/ほうが)', desc: '兩者比較。', ex: [{j:'肉より魚のほうが好きです。', c:'比起肉更喜歡魚。'}]},
-            { id: 'g16', title: '～てもいいです', desc: '表示許可。', ex: [{j:'座ってもいいですか。', c:'可以坐嗎？'}]},
-            { id: 'g17', title: '～てはいけません', desc: '表示禁止。', ex: [{j:'入ってはいけません。', c:'不可以進去。'}]},
+            { id: 'g8', title: '～ています', desc: '表示進行中或持續。', ex: [{j:'ご飯を食べています。', c:'正在吃飯。'}, {j:'雨が降っています。', c:'下著雨。'}]},
+            { id: 'g9', title: '～ましょう', desc: '表示提議。', ex: [{j:'帰りましょう。', c:'回家吧。'}]},
+            { id: 'g10', title: '～たいです', desc: '表示願望。', ex: [{j:'水を飲みたいです。', c:'想喝水。'}]},
+            { id: 'g11', title: '～ないでください', desc: '不要做某事。', ex: [{j:'写真を撮らないでください。', c:'不要拍照。'}]},
+            { id: 'g12', title: '～たことがあります', desc: '過去經驗。', ex: [{j:'日本へ行ったことがあります。', c:'去過日本。'}]},
+            { id: 'g13', title: '～たり～たりします', desc: '列舉動作。', ex: [{j:'本を讀んだり寝たりします。', c:'看書睡覺等。'}]},
+            { id: 'g14', title: '形容詞用法', desc: '修飾與描述。', ex: [{j:'新しい本です。', c:'是新書。'}, {j:'きれいな花です。', c:'漂亮的花。'}]},
+            { id: 'g15', title: '比較句', desc: 'A比B更...。', ex: [{j:'肉より魚のほうが好きです。', c:'比起肉更喜歡魚。'}]},
+            { id: 'g16', title: '～てもいいです', desc: '許可。', ex: [{j:'入ってもいいですか。', c:'可以進去嗎？'}]},
+            { id: 'g17', title: '～てはいけません', desc: '禁止。', ex: [{j:'入ってはいけません。', c:'不可進去。'}]},
             { id: 'g18', title: '～つもりです', desc: '意圖計畫。', ex: [{j:'行くつもりです。', c:'打算去。'}]},
             { id: 'g19', title: '～ことができます', desc: '能力。', ex: [{j:'泳ぐことができます。', c:'會游泳。'}]},
-            { id: 'g20', title: '～すぎます', desc: '程度過度。', ex: [{j:'食べすぎました。', c:'吃太多了。'}]},
-            { id: 'g21', title: '～とき（時）', desc: '時間點或情境。', ex: [{j:'暇なとき本を読みます。', c:'有空時看書。'}]},
-            { id: 'g22', title: '～前に / ～後で', desc: '動作先後。', ex: [{j:'寝る前に磨きます。', c:'睡前刷牙。'}]},
-            { id: 'g23', title: '～ので / ～から', desc: '原因理由。', ex: [{j:'雨なので行きません。', c:'因為雨而不去。'}]},
-            { id: 'g24', title: '～と言います', desc: '引用或思考。', ex: [{j:'彼は「おはよう」と言いました。', c:'他說了早安。'}]},
-            { id: 'g25', title: '～でしょう', desc: '推測。', ex: [{j:'明日は晴れでしょう。', c:'明天會放晴吧。'}]}
+            { id: 'g20', title: '～すぎます', desc: '過度。', ex: [{j:'飲みすぎました。', c:'喝太多了。'}]},
+            { id: 'g21', title: '～とき（時）', desc: '時候。', ex: [{j:'暇なとき本を読みます。', c:'有空時看書。'}]},
+            { id: 'g22', title: '～前に / ～後で', desc: '順序。', ex: [{j:'寝る前に磨きます。', c:'睡前刷牙。'}]},
+            { id: 'g23', title: '～ので / ～から', desc: '原因。', ex: [{j:'暑いから開けます。', c:'因為熱而開。'}]},
+            { id: 'g24', title: '～と言います', desc: '引用。', ex: [{j:'彼は「おはよう」と言った。', c:'他說了早安。'}]},
+            { id: 'g25', title: '～でしょう', desc: '推測。', ex: [{j:'雨でしょう。', c:'會下雨吧。'}]}
         ];
 
-        // --- 完整單字庫資料 (依 PDF 五十音排列) ---
         const rawVocab = [
             ["アイスクリーム", "", "冰淇淋", "暑いから、アイスクリームを食べましょう。"],
-            ["間", "あいだ", "之間,中間;間隔", "銀行と学校の間にあります。"],
-            ["会います", "あいます", "見面", "駅で友達に會います。"],
+            ["間", "あいだ", "之間,中間", "銀行と学校の間にあります。"],
+            ["会います", "あいます", "見面", "駅で友達に会います。"],
             ["青", "あお", "藍色", "青が好きです。"],
-            ["青い", "あおい", "藍的", "青い海がきれいです。"],
-            ["赤", "あか", "紅色", "赤が好きです。"],
-            ["赤い", "あかい", "紅的", "赤い鞄を買いました。"],
-            ["明るい", "あかるい", "開朗;明亮", "彼女は明るい性格です。"],
-            ["開けます", "あけます", "打開", "窓を開けてください。"],
-            ["あげます", "", "給,給予", "母に花をあげました。"],
+            ["明るい", "あかるい", "開朗", "彼女は明るい性格です。"],
             ["朝", "あさ", "早上", "朝、六時に起きます。"],
             ["あさって", "", "後天", "あさって、日本へ行きます。"],
-            ["足", "あし", "腳,腿", "足が痛いです。"],
             ["明日", "あした", "明天", "明日は雨でしょう。"],
-            ["あそこ", "", "那裡", "あそこに猫がいます。"],
             ["遊びます", "あそびます", "玩", "公園で遊びましょう。"],
-            ["温かい", "あたたかい", "溫暖,暖和", "今日は暖かいですね。"],
             ["新しい", "あたらしい", "新的", "新しい靴を買いました。"],
-            ["あちら", "", "那邊", "あちらが入り口です。"],
             ["暑い", "あつい", "熱", "今日はとても暑いですね。"],
-            ["兄", "あに", "哥哥(自稱)", "私の兄は学生です。"],
-            ["姉", "あね", "姊姊(自稱)", "姉は結婚しています。"],
-            ["あの", "", "那,那個", "あの人は誰ですか。"],
-            ["浴びます", "あびます", "沖(澡)", "シャワーを浴びます。"],
-            ["危ない", "あぶない", "危險", "危ないですから、注意してください。"],
-            ["あまり", "", "不太~ (接否定)", "お酒はあまり飲みません。"],
+            ["兄", "あに", "哥哥", "私の兄は学生です。"],
+            ["姉", "あね", "姊姊", "姉は結婚しています。"],
+            ["あまり", "", "不太", "お酒はあまり飲みません。"],
             ["雨", "あめ", "雨", "雨が降っています。"],
             ["洗います", "あらいます", "洗", "手を洗ってください。"],
-            ["あります", "", "有,在", "本があります。"],
-            ["歩きます", "あるきます", "走,走路", "駅まで歩きます。"],
-            ["アルバイト", "", "打工", "アルバイトをしています。"],
+            ["歩きます", "あるきます", "走路", "駅まで歩きます。"],
             ["いい", "", "好", "いい天気ですね。"],
-            ["言います", "いいます", "說", "先生は「おはよう」と言いました。"],
-            ["家", "いえ", "家", "家へ帰ります。"],
+            ["言います", "いいます", "說", "「おはよう」と言いました。"],
+            ["家", "いえ", "家", "家へ歸ります。"],
             ["行きます", "いきます", "去", "日本へ行きます。"],
-            ["いくつ", "", "幾個;幾歲", "いくつありますか。"],
-            ["いくら", "", "多少錢", "これはいくらですか。"],
-            ["医者", "いしゃ", "醫生", "医者になりたいです。"],
-            ["いす", "", "椅子", "いすに座ります。"],
-            ["忙しい", "いそがしい", "忙", "今日は忙しいです。"],
-            ["急ぎます", "いそぎます", "趕緊", "急いでください。"],
-            ["いたい", "", "疼", "おなかが痛いです。"],
-            ["一番", "いちばん", "最;第一", "一番好きです。"],
-            ["いつ", "", "什麼時候", "いつ来ますか。"],
-            ["一緒に", "いっしょに", "一起", "一緒に食べましょう。"],
+            ["醫者", "いしゃ", "醫生", "醫者になりたい。"],
+            ["忙しい", "いそがしい", "忙", "今日は忙しい。"],
+            ["いたい", "", "疼", "おなかが痛い。"],
+            ["一番", "いちばん", "最", "一番好きだ。"],
             ["いつも", "", "總是", "いつも本を読んでいます。"],
-            ["犬", "いぬ", "狗", "犬がいます。"],
-            ["今", "いま", "現在", "今は三時です。"],
-            ["います", "", "有,在(生物)", "子供がいます。"],
-            ["入口", "いりぐち", "入口", "入口はあそこです。"],
-            ["いります", "", "需要", "ビザがいります。"],
-            ["入れます", "いれます", "放入", "鞄に入れます。"],
-            ["色々", "いろいろ", "各種各樣", "色々あります。"],
-            ["上", "うえ", "上,上面", "机の上にあります。"],
-            ["うしろ", "", "後面", "後ろにいます。"],
-            ["歌", "うた", "歌", "歌を歌います。"],
-            ["うち", "", "家", "うちに帰ります。"],
-            ["生まれます", "うまれます", "出生", "台湾で生まれました。"],
-            ["海", "うみ", "海", "海で泳ぎます。"],
-            ["売ります", "うります", "賣", "花を売っています。"],
-            ["うるさい", "", "吵鬧", "外がうるさいです。"],
-            ["映画", "えいが", "電影", "映画を見ます。"],
-            ["英語", "えいご", "英語", "英語を勉強します。"],
-            ["駅", "えき", "車站", "駅で待ちます。"],
-            ["えんぴつ", "", "鉛筆", "えんぴつで書きます。"],
-            ["おいしい", "", "好吃", "とてもおいしいです。"],
-            ["お菓子", "おかし", "點心", "お菓子を食べます。"],
-            ["お金", "おかね", "錢", "お金がありません。"],
-            ["起きる", "おきる", "起床", "六時に起きます。"],
-            ["送る", "おくる", "寄送", "メールを送ります。"],
-            ["お酒", "おさけ", "酒", "お酒を飲みます。"],
-            ["遅い", "おそい", "慢;晚", "来るのが遅いです。"],
-            ["お茶", "おちゃ", "茶", "お茶を飲みましょう。"],
-            ["お弁当", "おべんとう", "便當", "お弁当を作ります。"],
-            ["重い", "おもい", "重的", "荷物が重いです。"],
-            ["おもしろい", "", "有趣", "この本はおもしろいです。"],
-            ["泳ぐ", "およぐ", "游泳", "プールで泳ぎます。"],
-            ["終わります", "おわります", "結束", "授業が終わりました。"],
-            ["音楽", "おんがく", "音樂", "音樂を聞きます。"],
-            ["会社", "かいしゃ", "公司", "会社で働きます。"],
-            ["買う", "かう", "買", "靴を買いました。"],
-            ["買い物", "かいもの", "購物", "買い物をします。"],
-            ["帰ります", "かえります", "回家", "家へ帰ります。"],
-            ["書く", "かく", "寫", "漢字を書きます。"],
-            ["学生", "がくせい", "學生", "私は学生です。"],
-            ["傘", "かさ", "傘", "傘を貸します。"],
-            ["家族", "かぞく", "家人", "家族は四人です。"],
-            ["学校", "がっこう", "學校", "学校へ行きます。"],
-            ["漢字", "かんじ", "漢字", "漢字を練習します。"],
-            ["聞く", "きく", "聽;問", "CDを聞きます。"],
-            ["切る", "きる", "切;剪", "紙を切ります。"],
-            ["綺麗", "きれい", "漂亮", "綺麗な花ですね。"],
-            ["去年", "きょねん", "去年", "去年、日本へ行きました。"],
-            ["銀行", "ぎんこう", "銀行", "銀行へ行きます。"],
-            ["空港", "くうこう", "機場", "空港は広いです。"],
-            ["薬", "くすり", "藥", "藥を飲みます。"],
-            ["果物", "くだもの", "水果", "果物が好きです。"],
-            ["靴", "くつ", "鞋子", "靴を履きます。"],
-            ["國", "くに", "國家", "國へ帰ります。"],
-            ["車", "くるま", "車", "車に乗ります。"],
-            ["黒い", "くろい", "黑的", "黑いペンです。"],
-            ["結婚", "けっこん", "結婚", "結婚しました。"],
+            ["犬", "いぬ", "狗", "犬がいる。"],
+            ["今", "いま", "現在", "今は三時だ。"],
+            ["入口", "いりぐち", "入口", "入口はあそこ。"],
+            ["入れます", "いれます", "放入", "鞄に入れる。"],
+            ["色々", "いろいろ", "各種", "色々ある。"],
+            ["上", "うえ", "上面", "机の上にある。"],
+            ["歌", "うた", "歌", "歌を歌う。"],
+            ["うち", "", "家", "うちに歸る。"],
+            ["海", "うみ", "海", "海で泳ぐ。"],
+            ["賣ります", "うります", "賣", "花を賣る。"],
+            ["うるさい", "", "吵鬧", "外がうるさい。"],
+            ["映画", "えいが", "電影", "映画を見る。"],
+            ["英語", "えいご", "英語", "英語を学ぶ。"],
+            ["駅", "えき", "車站", "駅で待つ。"],
+            ["おいしい", "", "好吃", "とてもおいしい。"],
+            ["お菓子", "おかし", "點心", "お菓子を食べる。"],
+            ["起きる", "おきる", "起床", "六時に起きる。"],
+            ["お酒", "おさけ", "酒", "お酒を飲む。"],
+            ["お茶", "おちゃ", "茶", "お茶を飲む。"],
+            ["重い", "おもい", "重", "荷物が重い。"],
+            ["泳ぐ", "およぐ", "游泳", "プールで泳ぐ。"],
+            ["會社", "かいしゃ", "公司", "會社で働く。"],
+            ["買う", "かう", "買", "靴を買う。"],
+            ["歸ります", "かえります", "回家", "家へ歸る。"],
+            ["書く", "かく", "寫", "漢字を書く。"],
+            ["學生", "がくせい", "學生", "私は學生だ。"],
+            ["學校", "がっこう", "學校", "學校へ行く。"],
+            ["漢字", "かんじ", "漢字", "漢字の練習。"],
+            ["聞く", "きく", "聽", "CDを聞く。"],
+            ["切る", "きる", "切", "紙を切る。"],
+            ["綺麗", "きれい", "漂亮", "綺麗な花。"],
+            ["去年", "きょねん", "去年", "去年、日本へ行った。"],
+            ["藥", "くすり", "藥", "藥を飲む。"],
+            ["果物", "くだもの", "水果", "果物が好き。"],
+            ["靴", "くつ", "鞋子", "靴を履く。"],
+            ["國", "くに", "國家", "國へ歸る。"],
+            ["黑い", "くろい", "黑", "黑いペン。"],
+            ["結婚", "けっこん", "結婚", "結婚した。"],
             ["元気", "げんき", "健康", "元気ですか。"],
-            ["公園", "こうえん", "公園", "公園を散步します。"],
-            ["御飯", "ごはん", "飯", "御飯を食べます。"],
-            ["財布", "さいふ", "錢包", "財布を忘れました。"],
-            ["魚", "さかな", "魚", "魚を食べます。"],
-            ["雑誌", "ざっし", "雜誌", "雜誌を読みます。"],
+            ["公園", "こうえん", "公園", "公園を散歩。"],
+            ["財布", "さいふ", "錢包", "財布を忘れた。"],
+            ["魚", "さかな", "魚", "魚を食べる。"],
             ["寒い", "さむい", "寒冷", "今日は寒い。"],
             ["仕事", "しごと", "工作", "仕事が忙しい。"],
-            ["辞書", "じしょ", "辭典", "辭書で調べます。"],
-            ["靜か", "しずか", "安靜", "靜かな部屋。"],
-            ["下", "した", "下面", "机の下です。"],
-            ["質問", "しつもん", "問題", "質問があります。"],
-            ["自転車", "じてんしゃ", "自行車", "自転車に乗る。"],
-            ["寫真", "しゃしん", "照片", "寫真を撮る。"],
-            ["宿題", "しゅくだい", "作業", "宿題をしました。"],
+            ["静か", "しずか", "安靜", "静かな部屋。"],
+            ["質問", "しつもん", "問題", "質問がある。"],
+            ["写真", "しゃしん", "照片", "写真を撮る。"],
+            ["宿題", "しゅくだい", "作業", "宿題をする。"],
             ["上手", "じょうず", "擅長", "テニスが上手。"],
-            ["食堂", "しょくどう", "食堂", "食堂で食べる。"],
-            ["新聞", "しんぶん", "報紙", "新聞を読みます。"],
-            ["親切", "しんせつ", "親切", "彼は親切です。"],
-            ["水泳", "すいえい", "游泳", "水泳が得意。"],
+            ["新聞", "しんぶん", "報紙", "新聞を讀。"],
+            ["親切", "しんせつ", "親切", "彼は親切。"],
             ["好き", "すき", "喜歡", "果物が好き。"],
             ["涼しい", "すずしい", "涼快", "今日は涼しい。"],
-            ["座る", "すわる", "坐", "ここに座ります。"],
-            ["背", "せ", "身高", "背が高い。"],
+            ["座る", "すわる", "坐", "ここに座る。"],
             ["先生", "せんせい", "老師", "先生、質問です。"],
-            ["洗濯", "せんたく", "洗衣服", "洗濯をする。"],
-            ["全部", "ぜんぶ", "全部", "全部食べました。"],
-            ["掃除", "そうじ", "打掃", "部屋を掃除する。"],
-            ["外", "そと", "外面", "外は雨です。"],
+            ["掃除", "そうじ", "打掃", "部屋を掃除。"],
             ["空", "そら", "天空", "空が青い。"],
-            ["大學", "だいがく", "大學", "大學に通う。"],
-            ["大好き", "だいすき", "非常喜歡", "お肉が大好き。"],
-            ["大切", "たいせつ", "重要", "命は大切です。"],
-            ["大変", "たいへん", "辛苦", "勉強は大変。"],
-            ["高い", "たかい", "高;貴", "値段が高い。"],
-            ["出す", "だす", "寄出", "手紙を出します。"],
-            ["建物", "たてもの", "建築物", "高い建物。"],
-            ["食べ物", "たべもの", "食物", "食べ物を買う。"],
-            ["誰", "だれ", "誰", "誰ですか。"],
-            ["誕生日", "たんじょうび", "生日", "誕生日はいつ？"],
-            ["地下鉄", "ちかてつ", "地鐵", "地下鉄で帰る。"],
-            ["地図", "ちず", "地圖", "地図を見る。"],
-            ["父", "ちち", "父親(自)", "父は五十二歳。"],
-            ["中國語", "ちゅうごくご", "中文", "中國語を話す。"],
-            ["使う", "つかう", "使用", "箸を使う。"],
-            ["疲れる", "つかれる", "疲勞", "仕事で疲れた。"],
-            ["着く", "つく", "到達", "六時に著く。"],
-            ["作る", "つくる", "製作", "料理を作る。"],
-            ["冷たい", "つめたい", "冰冷", "冷たい水。"],
-            ["強い", "つよい", "強大", "風が強い。"],
-            ["手", "て", "手", "手を洗う。"],
-            ["手紙", "てがみ", "信", "手紙を書く。"],
-            ["出口", "でぐち", "出口", "出口はあちら。"],
-            ["テスト", "", "測試", "明日テスト。"],
-            ["デパート", "", "百貨公司", "デパートで買う。"],
-            ["電視", "", "電視", "電視を見る。"],
-            ["天気", "てんき", "天氣", "いい天氣。"],
-            ["電話", "denwa", "電話", "電話をかける。"],
-            ["戸", "と", "門", "戸を開ける。"],
-            ["時々", "ときどき", "有時", "時々泳ぐ。"],
-            ["時計", "とけい", "鐘錶", "時計を見る。"],
-            ["哪", "", "哪裡", "どこにいますか。"],
-            ["圖書館", "としょかん", "圖書館", "圖書館へ。"],
-            ["哪個", "", "哪個", "どちらがいい？"],
-            ["非常", "", "非常", "とても暑い。"],
-            ["旁邊", "となり", "旁邊", "隣の部屋。"],
-            ["朋友", "ともだち", "朋友", "朋友と遊ぶ。"],
-            ["鳥", "とり", "鳥", "鳥が飛んでいる。"],
-            ["撮る", "とる", "拍照", "寫真を撮る。"],
-            ["哪個", "", "哪個", "どれがいい？"],
-            ["什麼樣的", "", "什麼樣的", "どんな本？"],
-            ["無", "ない", "無", "錢が無い。"],
-            ["習う", "ならう", "學習", "日語を習う。"],
-            ["什麼", "なに", "什麼", "何ですか。"],
-            ["名字", "なまえ", "名字", "名字を教えて。"],
-            ["賑やか", "にぎやか", "熱鬧", "街が賑やかだ。"],
-            ["西", "にし", "西", "西へ行こう。"],
+            ["スリッパ", "", "拖鞋", "スリッパを履いてください。"],
+            ["背", "せ", "身高", "背が高いですね。"],
+            ["生徒", "せいと", "學生", "このクラスには生徒が三十人います。"],
+            ["セーター", "", "毛衣", "冬はセーターを着ます。"],
+            ["石鹸", "せっけん", "肥皂", "石鹸で手を洗います。"],
+            ["狹い", "せまい", "狹窄的", "この部屋は少し狹いです。"],
+            ["ゼロ", "", "零", "ゼロから始めます。"],
+            ["千", "せん", "一千", "この本は千円です。"],
+            ["洗濯", "せんたく", "洗衣服", "今日は洗濯をします。"],
+            ["外", "そと", "外面", "外は雨が降っています。"],
+            ["そば", "", "旁邊", "私のそばにいてください。"],
+            ["大學", "だいがく", "大學", "大学へ通っています。"],
+            ["大使館", "たいしかん", "大使館", "大使館へ行きます。"],
+            ["大丈夫", "だいじょうぶ", "沒關係；放心", "大丈夫ですか。"],
+            ["台所", "だいどころ", "廚房", "台所で料理を作ります。"],
+            ["高い", "たかい", "高；貴", "高い山に登ります。"],
+            ["出す", "だす", "取出；寄出", "手紙を出しました。"],
+            ["立つ", "たつ", "站立", "ここに立ってください。"],
+            ["建物", "たてもの", "建築物", "古い建物があります。"],
+            ["楽しい", "たのしい", "快樂的", "旅行は楽しかったです. "],
+            ["頼む", "たのむ", "請求；託付", "仕事を頼みました。"],
+            ["煙草", "たばこ", "香菸", "煙草を吸わないでください。"],
+            ["食べ物", "たべもの", "食物", "日本の食べ物は美味しい。"],
+            ["卵", "たまご", "蛋", "卵を食べます。"],
+            ["誰", "だれ", "誰", "あの方は誰ですか。"],
+            ["誕生日", "たんじょうび", "生日", "誕生日はいつですか。"],
+            ["地下鉄", "ちかてつ", "地鐵", "地下鉄で帰ります。"],
+            ["地図", "ちず", "地圖", "地図を見てください。"],
+            ["使う", "つかう", "使用", "箸を使って食べます。"],
+            ["疲れる", "つかれる", "疲勞", "今日は疲れました。"],
+            ["着く", "つく", "抵達", "六時に駅に着きます。"],
+            ["作る", "つくる", "製作", "晩御飯を作ります。"],
+            ["机", "つくえ", "桌子", "机の上に本があります。"],
+            ["手", "て", "手", "手を洗ってください。"],
+            ["手紙", "てがみ", "信", "手紙を書きます。"],
+            ["出口", "でぐち", "出口", "出口はあちらです。"],
+            ["テスト", "", "考試", "明日テストがあります。"],
+            ["デパート", "", "百貨公司", "デパートで買います。"],
+            ["テレビ", "", "電視", "テレビを見ます。"],
+            ["天気", "てんき", "天氣", "いい天気ですね。"],
+            ["電気", "でんき", "電；燈", "電気を消してください。"],
+            ["電車", "でんしゃ", "電車", "電車に乗ります。"],
+            ["電話", "でんわ", "電話", "電話をかけます。"],
+            ["ドア", "", "門", "ドアを閉めてください。"],
+            ["トイレ", "", "廁所", "トイレはどこですか。"],
+            ["時々", "ときどき", "有時", "時々泳ぎます。"],
+            ["時計", "とけい", "鐘錶", "新しい時計です。"],
+            ["どこ", "", "哪裡", "どこにいますか。"],
+            ["ところ", "", "地方", "いいところですね。"],
+            ["図書館", "としょかん", "圖書館", "図書館へ行きます。"],
+            ["とても", "", "非常", "とても寒いです。"],
+            ["隣", "となり", "旁邊", "隣の家です。"],
+            ["飛ぶ", "トブ", "飛", "鳥が飛んでいます。"],
+            ["止まる", "とまる", "停止", "車が止まりました。"],
+            ["友達", "ともだち", "朋友", "友達と遊びます。"],
+            ["土曜日", "どようび", "週六", "土曜日は休みです。"],
+            ["鳥", "とり", "鳥", "鳥がいます。"],
+            ["取る", "とる", "拿", "塩を取ってください。"],
+            ["撮る", "とる", "攝影", "写真を撮ります。"],
+            ["中", "なか", "裡面", "鞄の中にあります。"],
+            ["長い", "ながい", "長的", "長い道です。"],
+            ["夏", "なつ", "夏天", "夏は暑いです。"],
+            ["夏休み", "なつやすみ", "暑假", "夏休みが楽しみです。"],
+            ["など", "", "等等", "りんごやバナナなど。"],
+            ["名前", "なまえ", "名字", "お名前は何ですか。"],
+            ["習う", "ならう", "學習", "ピアノを習っています。"],
+            ["並ぶ", "ならぶ", "排隊", "一列に並んでください。"],
+            ["なる", "", "變成", "春になりました。"],
+            ["肉", "にく", "肉", "肉を食べます。"],
+            ["西", "にし", "西", "西から太陽が沈む。"],
             ["日曜日", "にちようび", "週日", "日曜日は休み。"],
-            ["日本", "にほん", "日本", "日本へ行きたい。"],
-            ["荷物", "にもつ", "行李", "荷物が重い。"],
-            ["庭", "niwa", "院子", "院子裡有犬。"],
-            ["脫掉", "ぬぐ", "脫掉", "靴を脫ぎます。"],
-            ["貓", "ねこ", "貓", "貓が好き。"],
-            ["寢る", "ねる", "睡覺", "十一時に寢る。"],
-            ["登る", "のぼる", "爬", "山に登る。"],
-            ["飲む", "のむ", "喝", "水を飲む。"],
-            ["乗り物", "のりもの", "交通工具", "乗り物に乗る。"],
-            ["乗る", "のる", "搭乘", "巴士に乗る。"],
-            ["葉", "は", "葉子", "木の葉。"],
-            ["齒", "は", "牙齒", "齒を磨く。"],
-            ["箱", "はこ", "箱子", "箱に入れる。"],
-            ["橋", "はし", "橋", "橋を渡る。"],
-            ["開始", "はじまる", "開始", "授業が始まる。"],
-            ["走る", "はしる", "跑", "五キロ走る。"],
-            ["工作", "はたらく", "工作", "會社で働く。"],
-            ["花", "はな", "花", "花が咲く。"],
-            ["鼻", "はな", "鼻子", "鼻が高い。"],
-            ["話", "はなし", "談話", "おもしろい話。"],
-            ["母", "はは", "母親(自)", "母は優しい。"],
-            ["早", "はやい", "早", "朝が早い。"],
-            ["快", "はやい", "快", "速い。"],
-            ["春", "はる", "春天", "春が來た。"],
-            ["晴れ", "はれ", "晴天", "明日は晴れ。"],
-            ["晩御飯", "ばんごはん", "晚餐", "晩御飯を食べよう。"],
-            ["半分", "はんぶん", "一半", "半分に分ける。"],
-            ["東", "ひがし", "東", "東從日出。"],
-            ["飛行機", "ひこうき", "飛機", "飛行機に乗る。"],
-            ["左", "ひだり", "左", "左を見て。"],
-            ["人", "ひと", "人", "人が多い。"],
-            ["空閒", "ひま", "空閒", "暇な時。"],
-            ["醫院", "びょういん", "醫院", "醫院へ行く。"],
-            ["病気", "びょうき", "生病", "病気で休む。"],
-            ["晝御飯", "ひるごはん", "午餐", "晝御飯を食べる。"],
-            ["廣廣", "ひろい", "廣廣", "這個家是広い。"],
-            ["服", "ふく", "衣服", "服。"],
-            ["冬", "ふゆ", "冬天", "冬は寒い。"],
-            ["降る", "ふる", "下", "雪が降る。"],
-            ["舊的", "ふるい", "舊的", "古い本。"],
-            ["下手", "へた", "拙劣", "歌が下手だ。"],
-            ["房間", "へや", "房間", "自己的部屋。"],
-            ["學習", "べんきょう", "學習", "學習。"],
-            ["便利", "べんり", "方便", "便利。"],
-            ["帽子", "ぼうし", "帽子", "帽子をかぶる。"],
-            ["他", "ほか", "其他", "其他的人。"],
-            ["真正", "ほんとう", "真正", "本当的話。"],
-            ["每朝", "まいあさ", "每朝", "每朝散步。"],
-            ["每日", "まいにち", "每日", "每日勉強。"],
-            ["前", "まえ", "前", "駅の前。"],
-            ["待つ", "まつ", "等待", "友達を待つ。"],
-            ["筆直", "まっすぐ", "筆直", "まっすぐ行く。"],
-            ["窗", "まど", "窗戶", "窗を開ける。"],
-            ["短", "みじかい", "短", "足が短。"],
-            ["水", "みず", "水", "水。"],
-            ["店", "みぜ", "店", "お店へ。"],
-            ["見せる", "みせる", "展示", "地圖見せる。"],
-            ["道", "みち", "道路", "広い道。"],
-            ["三日", "みっか", "三日", "三日間休む。"],
-            ["耳", "みみ", "耳朵", "耳が痛い。"],
-            ["看", "みる", "看", "電視を見る。"],
-            ["難的", "むずかしい", "難的", "試験は難しい。"],
-            ["目", "め", "眼睛", "目が大きい。"],
-            ["眼鏡", "めがね", "眼鏡", "眼鏡。"],
-            ["已經", "もう", "已經", "もう食べた。"],
-            ["物", "もの", "東西", "物。"],
-            ["八百屋", "やおや", "蔬果店", "八百屋。"],
-            ["休み", "やすみ", "休息", "休息。"],
-            ["野菜", "やさい", "蔬菜", "野菜。"],
-            ["安い", "やすい", "便宜", "安い。"],
-            ["山", "やま", "山", "山。"],
-            ["夕方", "ゆうがた", "傍晚", "夕方。"],
-            ["有名", "ゆうめい", "有名", "有名な。"],
-            ["雪", "ゆき", "雪", "雪。"],
-            ["慢慢", "ゆっくり", "慢慢", "ゆっくり。"],
-            ["洋服", "ようふく", "西裝", "洋服。"],
-            ["橫", "よこ", "旁邊", "駅の橫。"],
-            ["呼ぶ", "よぶ", "叫喚", "計程車をよぶ。"],
-            ["閱讀", "よむ", "閱讀", "本を読む。"],
-            ["夜", "よる", "晚上", "夜。"],
-            ["來月", "らいげつ", "下月", "來月。"],
-            ["來週", "らいしゅう", "下週", "來週。"],
-            ["料理", "りょうり", "料理", "料理。"],
-            ["旅行", "りょこう", "旅行", "旅行。"],
-            ["忘記", "わすれる", "忘記", "名前を忘れた。"],
-            ["私", "わたし", "我", "私。"],
-            ["渡過", "わたる", "渡過", "道を渡る。"]
+            ["荷物", "にもつ", "行李", "荷物が届きました。"],
+            ["庭", "にわ", "院子", "庭に花が咲いています。"],
+            ["脫ぐ", "ぬぐ", "脫掉", "靴を脫いでください。"],
+            ["猫", "ねこ", "貓", "猫が好きです。"],
+            ["寢る", "ねる", "睡覺", "十一時に寢ます。"],
+            ["登る", "のぼる", "爬", "山に登ります。"],
+            ["飲み物", "のみもの", "飲料", "飲み物を買います。"],
+            ["飲む", "のむ", "喝", "水を飲みます。"],
+            ["乗る", "のる", "搭乘", "バスに乗ります。"],
+            ["歯", "は", "牙齒", "歯を磨きます。"],
+            ["パーティー", "", "派對", "パーティーに行きます。"],
+            ["はい", "", "是", "はい、そうです。"],
+            ["箱", "はこ", "箱子", "箱に入れます。"],
+            ["橋", "はし", "橋", "橋を渡ります。"],
+            ["始まる", "はじまる", "開始", "授業が始まります。"],
+            ["走る", "はしる", "跑", "公園を走ります。"],
+            ["働く", "はたらく", "工作", "毎日働きます。"],
+            ["鼻", "はな", "鼻子", "鼻が高いです。"],
+            ["話", "はなし", "故事", "話を聞いてください。"],
+            ["話す", "はなす", "說", "日本語で話します。"],
+            ["母", "はは", "母親(自己)", "母は優しいです。"],
+            ["早い", "はやい", "早", "朝が早いです。"],
+            ["速い", "はやい", "快", "走るのが速いです。"],
+            ["春", "はる", "春天", "春が来ました。"],
+            ["晴れ", "はれ", "晴天", "明日は晴れです。"],
+            ["晩御飯", "ばんごはん", "晚餐", "晩御飯を食べます。"],
+            ["半分", "はんぶん", "一半", "半分に分けます。"],
+            ["東", "ひがし", "東", "東から日が昇る。"],
+            ["引く", "ひく", "拉", "ドアを引いてください。"],
+            ["低い", "ひくい", "矮；低", "背が低いです。"],
+            ["飛行機", "ひこうき", "飛機", "飛行機に乗ります。"],
+            ["左", "ひだり", "左", "左を見てください。"],
+            ["人", "ひと", "人", "人が多いです。"],
+            ["暇", "ひま", "空閒", "暇な時に寝ます。"],
+            ["病院", "びょういん", "醫院", "病院へ行きます。"],
+            ["病気", "びょうき", "生病", "病気で休みます。"],
+            ["昼御飯", "ひるごはん", "午餐", "昼御飯を食べます。"],
+            ["広い", "ひろい", "寬廣", "広い部屋です。"],
+            ["服", "ふく", "衣服", "服を買います。"],
+            ["冬", "ふゆ", "冬天", "冬は寒いです。"],
+            ["降る", "ふる", "下(雨雪)", "雨が降っています。"],
+            ["古い", "ふるい", "舊的", "古い本です。"],
+            ["勉強", "べんきょう", "學習", "勉強が好きです。"],
+            ["便利", "べんり", "方便", "とても便利です。"],
+            ["帽子", "ぼうし", "帽子", "帽子をかぶります。"],
+            ["欲しい", "ほしい", "想要", "新しい靴が欲しい。"],
+            ["本", "ほん", "書", "本を読みます。"],
+            ["本当", "ほんとう", "真的", "本当の話です。"],
+            ["毎日", "まいにち", "每天", "毎日勉強します。"],
+            ["前", "まえ", "前", "駅の前です。"],
+            ["待つ", "まつ", "等待", "友達を待ちます。"],
+            ["窓", "まど", "窗戶", "窓を開けます。"],
+            ["水", "みず", "水", "水を飲みます。"],
+            ["見せる", "みせる", "展示", "写真を見せます。"],
+            ["道", "みち", "道路", "広い道です。"],
+            ["見る", "みる", "看", "テレビを見ます。"],
+            ["難しい", "むずかしい", "難的", "試験は難しいです。"],
+            ["目", "め", "眼睛", "目が大きいです。"],
+            ["眼鏡", "めがね", "眼鏡", "眼鏡をかけます。"],
+            ["休み", "やすみ", "休息", "明日は休みです。"],
+            ["野菜", "やさい", "蔬菜", "野菜を食べます。"],
+            ["安い", "やすい", "便宜", "これは安いです。"],
+            ["山", "やま", "山", "山に登ります。"],
+            ["有名", "ゆうめい", "有名", "有名な人です。"],
+            ["料理", "りょうり", "料理", "料理を作ります。"],
+            ["旅行", "りょこう", "旅行", "旅行に行きます。"],
+            ["忘れる", "わすれる", "忘記", "名前を忘れました。"],
+            ["私", "わたし", "我", "私は学生です。"],
+            ["渡る", "わたる", "渡過", "道を渡ります。"]
         ];
 
-        // --- 核心邏輯 ---
-        let masteredIds = JSON.parse(localStorage.getItem('n5_dual_mastered_v2') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n5_dual_scores_v2') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('meow_n5_mastered_final_v2') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('meow_n5_scores_final_v2') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -481,7 +412,7 @@
             document.getElementById('toggle-hide').addEventListener('click', () => {
                 hideMode = !hideMode;
                 document.body.classList.toggle('hide-mastered', hideMode);
-                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
+                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部內容" : "隱藏已掌握內容";
                 document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
             });
 
@@ -494,7 +425,6 @@
             });
         }
 
-        // 格式化振假名 (Ruby Tag)
         function formatRuby(word, kana) {
             if (!kana || word === kana) return word;
             return `<ruby>${word}<rt>${kana}</rt></ruby>`;
@@ -506,17 +436,20 @@
                 <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
-                            <span class="bg-indigo-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest">N5句型</span>
-                            <h3 class="text-xl font-bold text-slate-900 japanese-text">${g.title}</h3>
+                            <span class="bg-indigo-600 text-white text-[10px] px-2 py-1 rounded font-bold uppercase tracking-tighter">Grammar</span>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center">${g.title}</h3>
                         </div>
                         <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
                     </div>
-                    <p class="text-sm text-slate-600 mb-4 font-medium">${g.desc}</p>
+                    <p class="text-sm text-slate-600 mb-4 font-medium text-center">${g.desc}</p>
                     <div class="bg-slate-50 p-4 rounded-xl space-y-3">
                         ${g.ex.map(e => `
                             <div class="border-l-2 border-indigo-200 pl-3">
-                                <p class="japanese-text text-slate-800 text-base leading-relaxed">${e.j}</p>
-                                <p class="text-xs text-slate-500 mt-0.5">${e.c}</p>
+                                <div class="flex gap-2">
+                                    ${e.t ? `<span class="text-[9px] bg-indigo-100 text-indigo-700 h-fit px-1 rounded mt-1">${e.t}</span>` : ''}
+                                    <p class="japanese-text text-slate-800 text-base leading-relaxed text-center">${e.j}</p>
+                                </div>
+                                <p class="text-xs text-slate-500 mt-0.5 text-center">${e.c}</p>
                             </div>
                         `).join('')}
                     </div>
@@ -534,32 +467,31 @@
             
             container.innerHTML = filteredData.map((v, i) => {
                 const id = `v${i}`;
-                const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
-                const isMastered = masteredIds.includes(id);
+                const scores = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 return `
-                    <tr class="vocab-row transition-all hover:bg-slate-50 ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
+                    <tr class="vocab-row transition-all hover:bg-slate-50 ${masteredIds.includes(id) ? 'is-mastered mastered' : ''}" data-id="${id}">
                         <td class="p-4 text-center">
-                            <input type="checkbox" class="custom-checkbox" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
+                            <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(id) ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4">
-                            <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text">${v[1]}</div>
+                        <td class="p-4 text-center">
+                            <div class="japanese-text font-bold text-lg text-slate-900">${v[0]}</div>
+                            <div class="text-[11px] text-slate-400 japanese-text">${v[1]}</div>
                         </td>
-                        <td class="p-4">
+                        <td class="p-4 text-center">
                             <span class="font-bold text-indigo-700">${v[2]}</span>
                         </td>
-                        <td class="p-4">
-                            <div class="flex gap-4 items-center">
+                        <td class="p-4 text-center">
+                            <div class="flex gap-4 items-center justify-center">
                                 <div class="flex flex-col">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black">日譯中</span>
+                                    <span class="text-[9px] text-slate-400 uppercase font-black">日</span>
                                     <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
-                                        <div class="h-full bg-blue-500" style="width: ${score.jpToZh * 10}%"></div>
+                                        <div class="h-full bg-blue-500" style="width: ${scores.jpToZh * 10}%"></div>
                                     </div>
                                 </div>
                                 <div class="flex flex-col">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black">中譯日</span>
+                                    <span class="text-[9px] text-slate-400 uppercase font-black">中</span>
                                     <div class="w-12 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
-                                        <div class="h-full bg-amber-500" style="width: ${score.zhToJp * 10}%"></div>
+                                        <div class="h-full bg-amber-500" style="width: ${scores.zhToJp * 10}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -569,109 +501,79 @@
             }).join('');
         }
 
-        // --- 單字卡邏輯 ---
-        function getFCPool() {
-            let pool = [];
+        function loadNextFlashcard() {
+            const pool = [];
             rawVocab.forEach((v, i) => {
                 const id = `v${i}`;
-                const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
+                const scores = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 if (!masteredIds.includes(id)) {
-                    if (score.jpToZh < 10) pool.push({ v, id, mode: 'jpToZh' });
-                    if (score.zhToJp < 10) pool.push({ v, id, mode: 'zhToJp' });
+                    if (scores.jpToZh < 10) pool.push({ word: v, id: id, mode: 'jpToZh' });
+                    if (scores.zhToJp < 10) pool.push({ word: v, id: id, mode: 'zhToJp' });
                 }
             });
-            return pool;
-        }
 
-        function loadNextFC() {
-            const pool = getFCPool();
             if (pool.length === 0) {
                 document.getElementById('fc-main-display').classList.add('hidden');
                 document.getElementById('fc-controls').classList.add('hidden');
-                document.getElementById('fc-mode-display').classList.add('hidden');
                 document.getElementById('fc-empty-state').classList.remove('hidden');
-                document.getElementById('fc-footer-info').classList.add('hidden');
+                document.getElementById('fc-mode-badge').classList.add('hidden');
                 return;
             }
 
             document.getElementById('fc-main-display').classList.remove('hidden');
             document.getElementById('fc-controls').classList.remove('hidden');
-            document.getElementById('fc-mode-display').classList.remove('hidden');
             document.getElementById('fc-empty-state').classList.add('hidden');
-            document.getElementById('fc-footer-info').classList.remove('hidden');
+            document.getElementById('fc-mode-badge').classList.remove('hidden');
             document.getElementById('fc-answer-block').classList.remove('active');
 
-            const pick = pool[Math.floor(Math.random() * pool.length)];
-            currentFC = pick;
-            fcMode = pick.mode;
+            currentFC = pool[Math.floor(Math.random() * pool.length)];
+            fcMode = currentFC.mode;
 
-            const modeBadge = document.getElementById('fc-mode-display');
-            const qEl = document.getElementById('fc-question');
-            const hintEl = document.getElementById('fc-hint');
-            const targetEl = document.getElementById('fc-target');
-            const kanaEl = document.getElementById('fc-kana-display');
-
+            const badge = document.getElementById('fc-mode-badge');
             if (fcMode === 'jpToZh') {
-                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-blue-600 shadow-md transition-all";
-                document.getElementById('fc-mode-text').innerText = '日譯中挑戰';
-                // 日譯中顯示漢字加振假名
-                qEl.innerHTML = formatRuby(pick.v[0], pick.v[1]);
-                hintEl.innerText = "請回答中文解釋";
-                targetEl.innerText = pick.v[2];
-                kanaEl.innerText = ""; // 已在上面顯示
+                badge.innerText = '日譯中挑戰';
+                badge.className = 'absolute top-6 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-sm bg-blue-100 text-blue-700 text-center';
+                document.getElementById('fc-question').innerHTML = formatRuby(currentFC.word[0], currentFC.word[1]);
+                document.getElementById('fc-hint').innerText = "請回答中文解釋";
+                document.getElementById('fc-target').innerText = currentFC.word[2];
+                document.getElementById('fc-kana-display').innerText = "";
             } else {
-                modeBadge.className = "absolute top-0 left-0 w-full py-2 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-amber-500 shadow-md transition-all";
-                document.getElementById('fc-mode-text').innerText = '中譯日挑戰';
-                qEl.innerHTML = pick.v[2]; // 顯示中文
-                hintEl.innerText = "請回答日文單字與讀音";
-                targetEl.innerText = pick.v[0];
-                kanaEl.innerText = pick.v[1] || "";
+                badge.innerText = '中譯日挑戰';
+                badge.className = 'absolute top-6 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-sm bg-amber-100 text-amber-700 text-center';
+                document.getElementById('fc-question').innerText = currentFC.word[2];
+                document.getElementById('fc-hint').innerText = "請回答日文單字與讀音";
+                document.getElementById('fc-target').innerText = currentFC.word[0];
+                document.getElementById('fc-kana-display').innerText = currentFC.word[1] || "";
             }
-
-            document.getElementById('fc-example').innerText = pick.v[3];
-            updateScoreUI();
+            document.getElementById('fc-example').innerText = currentFC.word[3];
+            updateFCScores();
         }
 
-        function updateScoreUI() {
-            const scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
-            const currentVal = scores[fcMode];
-            document.getElementById('fc-current-score-text').innerText = currentVal;
-            
-            const dots = document.getElementById('fc-score-dots');
-            dots.innerHTML = "";
+        function updateFCScores() {
+            const score = (vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 })[fcMode];
+            const container = document.getElementById('fc-score-dots');
+            container.innerHTML = "";
             for (let i = 0; i < 10; i++) {
                 const dot = document.createElement('div');
-                dot.className = `w-1.5 h-1.5 rounded-full ${i < currentVal ? 'bg-white' : 'bg-white/30'}`;
-                dots.appendChild(dot);
+                dot.className = `w-2 h-2 rounded-full ${i < score ? (fcMode === 'jpToZh' ? 'bg-blue-500' : 'bg-amber-500') : 'bg-slate-200'}`;
+                container.appendChild(dot);
             }
         }
 
         function processFC(action) {
             if (!currentFC) return;
-            if (action === 'answer') {
-                document.getElementById('fc-answer-block').classList.add('active');
-                return;
-            }
+            if (action === 'answer') { document.getElementById('fc-answer-block').classList.add('active'); return; }
 
             let scores = vocabScores[currentFC.id] || { jpToZh: 0, zhToJp: 0 };
-            let val = scores[fcMode];
-
-            if (action === 'master') {
-                val = Math.min(10, val + 5);
-            } else if (action === 'again') {
-                val = Math.floor(val / 2);
-            }
-
-            scores[fcMode] = val;
+            if (action === 'master') scores[fcMode] = Math.min(10, scores[fcMode] + 5);
+            else if (action === 'again') scores[fcMode] = Math.floor(scores[fcMode] / 2);
+            
             vocabScores[currentFC.id] = scores;
-
-            // 檢查是否達成雙向掌握
             if (scores.jpToZh >= 10 && scores.zhToJp >= 10) {
                 if (!masteredIds.includes(currentFC.id)) masteredIds.push(currentFC.id);
             }
-
-            saveAndSync();
-            loadNextFC();
+            saveAndRefresh();
+            loadNextFlashcard();
         }
 
         function toggleMastered(id) {
@@ -682,34 +584,20 @@
                 masteredIds.push(id);
                 vocabScores[id] = { jpToZh: 10, zhToJp: 10 };
             }
-            saveAndSync(id);
+            saveAndRefresh(id);
         }
 
-        function saveAndSync(id) {
-            localStorage.setItem('n5_dual_mastered_v2', JSON.stringify(masteredIds));
-            localStorage.setItem('n5_dual_scores_v2', JSON.stringify(vocabScores));
-            
-            if (id) {
-                const el = document.querySelector(`.vocab-row[data-id="${id}"]`);
-                if (el) {
-                    const isM = masteredIds.includes(id);
-                    el.classList.toggle('is-mastered', isM);
-                    el.classList.toggle('mastered', isM);
-                    const cb = el.querySelector('input[type="checkbox"]');
-                    if (cb) cb.checked = isM;
-                }
-                renderVocab(document.getElementById('search-box').value);
-            } else {
-                renderGrammar();
-                renderVocab(document.getElementById('search-box').value);
-            }
+        function saveAndRefresh(id) {
+            localStorage.setItem('meow_n5_mastered_final_v2', JSON.stringify(masteredIds));
+            localStorage.setItem('meow_n5_scores_final_v2', JSON.stringify(vocabScores));
+            if (id) renderVocab(document.getElementById('search-box').value);
+            else { renderGrammar(); renderVocab(); }
             updateProgress();
         }
 
         function updateProgress() {
             const total = grammarData.length + rawVocab.length;
-            const current = masteredIds.length;
-            const percent = total > 0 ? Math.round((current / total) * 100) : 0;
+            const percent = total > 0 ? Math.round((masteredIds.length / total) * 100) : 0;
             document.getElementById('progress-bar').style.width = percent + '%';
             document.getElementById('progress-text').innerText = percent + '%';
         }
@@ -717,32 +605,16 @@
         function switchTab(type) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.getElementById(`section-${type}`).classList.remove('hidden');
-            
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('tab-active');
                 btn.classList.add('text-slate-400');
             });
-            
-            const activeBtn = document.getElementById(`tab-btn-${type}`);
-            activeBtn.classList.add('tab-active');
-            activeBtn.classList.remove('text-slate-400');
-
-            if (type === 'flashcard') loadNextFC();
+            document.getElementById(`tab-btn-${type}`).classList.add('tab-active');
+            if (type === 'flashcard') loadNextFlashcard();
         }
 
-        function closeModal() {
-            document.getElementById('confirm-modal').style.display = 'none';
-        }
-
-        function confirmReset() {
-            masteredIds = [];
-            vocabScores = {};
-            saveAndSync();
-            closeModal();
-            if (!document.getElementById('section-flashcard').classList.contains('hidden')) {
-                loadNextFC();
-            }
-        }
+        function closeModal() { document.getElementById('confirm-modal').style.display = 'none'; }
+        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndRefresh(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFlashcard(); }
 
         window.onload = init;
     </script>
