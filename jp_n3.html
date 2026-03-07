@@ -9,7 +9,7 @@
     <style>
         body { font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
         .japanese-text { font-family: 'Noto Sans JP', sans-serif; }
-        ruby rt { font-size: 0.5em; color: #059669; padding-bottom: 0.1em; }
+        ruby rt { font-size: 0.45em; color: #059669; padding-bottom: 0.1em; }
         .mastered { opacity: 0.35; background-color: #f0fdf4 !important; }
         .hide-mastered .is-mastered { display: none !important; }
         .custom-checkbox { width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: #059669; }
@@ -26,17 +26,17 @@
 </head>
 <body class="bg-slate-50 text-slate-800 pb-20 text-center">
 
-    <header class="bg-emerald-700 text-white py-8 px-4 text-center shadow-lg">
+    <header class="bg-emerald-800 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N3 日本語達陣</h1>
         <p class="text-emerald-100 opacity-90 text-sm font-medium">中級橋樑：全方位核心語彙與 60 項完整文法系統</p>
     </header>
 
     <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
-        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4 text-center">
-            <div class="flex items-center gap-4 text-center">
-                <div class="flex flex-col text-center">
-                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest text-center">N3 總掌握進度</span>
-                    <div class="flex items-center gap-2 text-center">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">N3 總掌握進度</span>
+                    <div class="flex items-center gap-2">
                         <div class="w-40 h-2 bg-slate-200 rounded-full overflow-hidden">
                             <div id="progress-bar" class="h-full bg-emerald-600 transition-all duration-500"></div>
                         </div>
@@ -45,10 +45,10 @@
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
-                    <span id="toggle-icon">👁️</span> <span id="toggle-label text-center">隱藏已掌握</span>
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
                 </button>
-                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
                     <span>🔄</span> <span>重置進度</span>
                 </button>
             </div>
@@ -56,85 +56,85 @@
     </nav>
 
     <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
-        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition text-center">核心文法 (G1-G60)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition text-center">全量單字庫 (去重版)</button>
-            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition text-center text-center">雙向智能學習卡</button>
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G60)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">雙向智能學習卡</button>
         </div>
 
         <!-- Grammar Section -->
-        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6 text-center text-center text-center"></div>
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
 
         <!-- Vocab Section -->
-        <div id="section-vocab" class="tab-content hidden text-center">
-            <div class="mb-6 relative text-center text-center">
-                <input type="text" id="search-box" placeholder="搜尋編號(V1)、單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition shadow-sm text-center">
-                <span class="absolute left-4 top-3.5 text-slate-400 text-center text-center">🔍</span>
+        <div id="section-vocab" class="tab-content hidden">
+            <div class="mb-6 relative">
+                <input type="text" id="search-box" placeholder="搜尋漢字、假名或中文意義..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition shadow-sm">
+                <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
             </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center text-center">
-                <div class="overflow-x-auto text-center">
-                    <table class="w-full text-left border-collapse text-center text-center">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-center text-center">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-center">
                             <tr>
-                                <th class="p-4 w-16 text-center text-center">掌握</th>
-                                <th class="p-4 w-20 text-center text-emerald-600 font-bold border-r text-center">編號</th>
-                                <th class="p-4 w-1/5 text-center text-center">單字 / 假名</th>
-                                <th class="p-4 w-1/5 text-emerald-700 text-center text-center text-center">中文意義</th>
-                                <th class="p-4 text-center text-center">實戰例句</th>
-                                <th class="p-4 w-24 text-center text-center text-center">雙向積分</th>
+                                <th class="p-4 w-16 text-center">掌握</th>
+                                <th class="p-4 w-20 text-center text-emerald-600 font-bold border-r">編號</th>
+                                <th class="p-4 w-1/5 text-center">單字 / 假名</th>
+                                <th class="p-4 w-1/5 text-emerald-700 text-center">中文意義</th>
+                                <th class="p-4 text-center">實戰例句</th>
+                                <th class="p-4 w-24 text-center">雙向積分</th>
                             </tr>
                         </thead>
-                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center text-center"></tbody>
+                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center"></tbody>
                     </table>
                 </div>
             </div>
         </div>
 
         <!-- Flashcard Section -->
-        <div id="section-flashcard" class="tab-content hidden text-center text-center text-center">
-            <div class="max-w-lg mx-auto text-center text-center">
-                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all text-center text-center text-center">
+        <div id="section-flashcard" class="tab-content hidden">
+            <div class="max-w-lg mx-auto text-center">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between relative overflow-hidden transition-all">
                     
                     <!-- Mode & Score Header -->
-                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all text-center text-center">
+                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all">
                         <div class="flex items-center gap-2">
                             <span id="fc-mode-text">模式載入中</span>
-                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold text-center">積分: <span id="fc-current-score-text">0</span> / 10</span>
+                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold">積分: <span id="fc-current-score-text">0</span> / 10</span>
                         </div>
                         <div class="flex gap-1" id="fc-score-dots"></div>
                     </div>
 
-                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8 text-center text-center text-center text-center">
-                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center text-center text-center text-center"></div>
-                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10 text-center text-center text-center text-center"></div>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center"></div>
+                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10"></div>
                         
                         <!-- Answer Block -->
-                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6 text-center text-center text-center text-center">
-                            <div id="fc-target" class="text-3xl font-bold text-emerald-600 mb-2 japanese-text text-center text-center text-center text-center"></div>
-                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center text-center text-center text-center"></div>
-                            <div class="bg-emerald-50 p-5 rounded-3xl text-left border border-emerald-100 text-center text-center text-center text-center text-center">
-                                <p class="text-[9px] font-black text-emerald-400 uppercase mb-2 text-center text-center text-center text-center">N3 實戰範本</p>
-                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center text-center text-center text-center"></p>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
+                            <div id="fc-target" class="text-3xl font-bold text-emerald-600 mb-2 japanese-text"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text"></div>
+                            <div class="bg-emerald-50 p-5 rounded-3xl text-left border border-emerald-100">
+                                <p class="text-[9px] font-black text-emerald-400 uppercase mb-2">N3 實戰範本</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="fc-empty-state" class="hidden py-16 text-center text-center text-center text-center">
-                        <div class="text-7xl mb-6 text-center text-center text-center text-center text-center">🏆</div>
-                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center text-center text-center text-center text-center">N3 挑戰全量達成</h3>
-                        <p class="text-slate-500 text-sm text-center text-center text-center text-center text-center">恭喜！您已熟悉目前清單內的所有真實單字。</p>
+                    <div id="fc-empty-state" class="hidden py-16">
+                        <div class="text-7xl mb-6">🏆</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">N3 挑戰全量達成</h3>
+                        <p class="text-slate-500 text-sm">恭喜！您已熟悉目前清單內的所有真實單字。</p>
                     </div>
 
                     <!-- Controls -->
-                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8 text-center text-center text-center text-center">
-                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95 text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center">🔄</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center">再來</span>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">🔄</span><span class="text-[10px] font-black">再來</span>
                         </button>
-                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-emerald-100 text-center text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center text-center">💡</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center text-center">答案</span>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-emerald-100">
+                            <span class="text-2xl mb-1">💡</span><span class="text-[10px] font-black">答案</span>
                         </button>
-                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-green-100 hover:bg-green-200 text-green-700 rounded-3xl transition-all active:scale-95 text-center text-center text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center text-center">✅</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center text-center">掌握</span>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-green-100 hover:bg-green-200 text-green-700 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">✅</span><span class="text-[10px] font-black">掌握</span>
                         </button>
                     </div>
                 </div>
@@ -143,85 +143,91 @@
     </main>
 
     <!-- Reset Modal -->
-    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center text-center text-center text-center text-center">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center text-center text-center text-center text-center text-center">
-            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-center text-center text-center text-center text-center text-center">🚫</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center text-center text-center text-center text-center text-center">重置 N3 進度？</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center text-center text-center text-center text-center text-center">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
-            <div class="flex flex-col gap-3 text-center text-center text-center text-center text-center">
-                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200 text-center text-center text-center text-center text-center">確定重置</button>
-                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center text-center text-center text-center text-center text-center">取消返回</button>
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">重置 N3 進度？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消返回</button>
             </div>
         </div>
     </div>
 
+    <footer class="bg-slate-900 text-slate-500 py-12 px-4 text-center">
+        <div class="container mx-auto text-sm">
+            <p class="mb-4">© 2026 Meow! 日本語達陣學習計畫 - N3 終極修正版</p>
+        </div>
+    </footer>
+
     <script>
-        // --- N3 核心文法 (完整補完 G1-G60 + 振假名標註) ---
+        // --- N3 核心文法 (完整 60 項) ---
         const grammarData = [
             { id: 'g1', title: '～うちに', desc: '趁著某個狀態還沒發生變化前，做某事。', ex: [{j: '<ruby>暗<rt>くら</rt></ruby>くならないうちに、<ruby>帰<rt>かえ</rt></ruby>りましょう。', c: '趁天還沒黑，回家吧。'}]},
             { id: 'g2', title: '～間に / ～間', desc: '在某個持續的期間內 / 期間中一直。', ex: [{j: '<ruby>留守<rt>るす</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>に、泥棒が入った。', c: '不在家期間，小偷闖進來了。'}]},
-            { id: 'g3', title: '～たところ', desc: '做了某事後，發現了結果。', ex: [{j: '先生に<ruby>聞<rt>き</rt></ruby>いたところ、<ruby>間違<rt>まちが</rt></ruby>いがわかった。', c: '問了老師後，發現了錯誤。'}]},
-            { id: 'g4', title: '～たとたん', desc: '剛一...就立刻...（驚訝感）。', ex: [{j: '<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けたとたん、<ruby>風<rt>かぜ</rt></ruby>が入ってきた。', c: '剛一開窗，風就吹進來了。'}]},
-            { id: 'g5', title: '～たびに', desc: '每當...就...。', ex: [{j: 'その<ruby>歌<rt>うた</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くたびに、子供のころを<ruby>思<rt>おも</rt></ruby>い出す。', c: '每當聽這首歌，就會想起小時候。'}]},
-            { id: 'g6', title: '～一方だ', desc: '傾向持續向一個方向發展（多用於負面）。', ex: [{j: '日本語の勉強は<ruby>難<rt>むずか</rt></ruby>しくなる一方だ。', c: '日文學習變得越來越難了。'}]},
-            { id: 'g7', title: '～つつある', desc: '正在持續變化中（正式）。', ex: [{j: '<ruby>景気<rt>けいき</rt></ruby>はよくなりつつある。', c: '景氣正漸漸好轉。'}]},
-            { id: 'g8', title: '～つつ', desc: '一邊...一邊...（正式）。', ex: [{j: '<ruby>将来<rt>しょうらい</rt></ruby>のことを<ruby>考<rt>かんが</rt></ruby>えつつ、<ruby>進路<rt>しんろ</rt></ruby>を決める。', c: '一邊思考未來，一邊決定出路。'}]},
-            { id: 'g9', title: '～切る / 切れる', desc: '完全做完、做到底。', ex: [{j: '長い距離を<ruby>走<rt>はし</rt></ruby>りきった。', c: '全程跑完了。'}]},
-            { id: 'g10', title: '～抜く', desc: '堅持到最後、非常...。', ex: [{j: '最後までやり<ruby>抜<rt>ぬ</rt></ruby>くことが大切だ。', c: '堅持做到底是很重要的。'}]},
-            { id: 'g11', title: '～がてら', desc: '在做主要目的時，順便做他事。', ex: [{j: '<ruby>散歩<rt>さんぽ</rt></ruby>がてら、本屋に寄った。', c: '散步時順便去了書店。'}]},
-            { id: 'g12', title: '～ついでに', desc: '順便（次要動作）。', ex: [{j: '<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>へ行くついでに、これも出して。', c: '去郵局時順便幫我寄這個。'}]},
-            { id: 'g13', title: '～おかげで', desc: '多虧了（好結果）。', ex: [{j: '<ruby>先生<rt>せんせい</rt></ruby>のおかげで合格できた。', c: '多虧老師我及格了。'}]},
-            { id: 'g14', title: '～せいで', desc: '都怪（壞結果）。', ex: [{j: 'バスが遅れたせいで遅刻した。', c: '都怪巴士遲到害我遲到。'}]},
-            { id: 'g15', title: '～わりに', desc: '與其相比卻（意外感）。', ex: [{j: '値段のわりに、料理が美味しい。', c: '與價格相比，這道菜很好吃。'}]},
-            { id: 'g16', title: '～くせに', desc: '明明...卻...（責難、輕蔑情緒）。', ex: [{j: '<ruby>知<rt>し</rt></ruby>っているくせに、<ruby>教<rt>おし</rt></ruby>えてくれない。', c: '明明知道卻不告訴我。'}]},
-            { id: 'g17', title: '～ばかりか / ～ばかりでなく', desc: '不僅...而且...（正式）。', ex: [{j: '日本語ばかりか、英語も話せる。', c: '不僅日語，連英語也會說。'}]},
-            { id: 'g18', title: '～にかけては', desc: '在某方面（能力卓越）。', ex: [{j: '<ruby>料理<rt>りょうり</rt></ruby>にかけては、彼の右に出る者はいない。', c: '在料理方面，沒人比得上他。'}]},
-            { id: 'g19', title: '～にわたって', desc: '歷經/遍及（時間或空間廣範圍）。', ex: [{j: '三日間にわたって、お祭りが開かれた。', c: '祭典持續舉辦了三天。'}]},
-            { id: 'g20', title: '～に際して / ～にあたって', desc: '在...之際（正式）。', ex: [{j: '<ruby>開店<rt>かいてん</rt></ruby>に際して、挨拶をする。', c: '在開店之際發表致詞。'}]},
-            { id: 'g21', title: '～に代わって', desc: '代替某人。', ex: [{j: '<ruby>父<rt>ちち</rt></ruby>に代わって、私が参加します。', c: '代替父親，由我參加。'}]},
-            { id: 'g22', title: '～を始め (として)', desc: '以...為首（列舉代表項目）。', ex: [{j: '東京を始め、多くの都市で。', c: '以東京為首，在許多城市。'}]},
-            { id: 'g23', title: '～から～にかけて', desc: '從...到...（模糊範圍）。', ex: [{j: '昨日から今日にかけて。', c: '從昨天到今天。'}]},
-            { id: 'g24', title: '～からといって', desc: '雖說是因為...（但也未必）。', ex: [{j: '高いからといって、良い物とは限らない。', c: '雖說很貴，但不見得就是好東西。'}]},
-            { id: 'g25', title: '～反面', desc: '一方面...另一方面（對比）。', ex: [{j: '便利な反面、危ない。', c: '便利的同時也很危險。'}]},
-            { id: 'g26', title: '～一方で', desc: '一方面...另一方面（正式並列）。', ex: [{j: '子供を育てる一方で、働いている。', c: '一邊育兒，一邊工作。'}]},
-            { id: 'g27', title: '～どころか', desc: '哪裡是...根本是...。', ex: [{j: '独身どころか、子供が三人いる。', c: '哪裡是單身，連小孩都有三個了。'}]},
-            { id: 'g28', title: '～とともに', desc: '隨著... / 與...一起。', ex: [{j: '時代とともに、変化する。', c: '隨著時代改變。'}]},
-            { id: 'g29', title: '～に伴って / ～に伴い', desc: '伴隨著（較大型的變化）。', ex: [{j: '人口の増加に伴って。', c: '伴隨著人口增加。'}]},
-            { id: 'g30', title: '～につれて', desc: '隨著...而發生變化。', ex: [{j: '日本語が上手になるにつれて。', c: '隨著日文變好。'}]},
-            { id: 'g31', title: '～に従って / ～に従い', desc: '隨著... / 遵從...。', ex: [{j: '指示に従って行動する。', c: '遵從指示行動。'}]},
-            { id: 'g32', title: '～たあげく', desc: '經過一番...最後還是（負面）。', ex: [{j: '悩んだあげく、やめた。', c: '煩惱了半天最後還是放棄了。'}]},
-            { id: 'g33', title: '～末に (すえに)', desc: '在經歷...之後的最終結果。', ex: [{j: '苦労した末に、成功した。', c: '辛苦過後終於成功了。'}]},
-            { id: 'g34', title: '～がたい', desc: '心裡上難以做到。', ex: [{j: '信じがたい事実だ。', c: '難以置信的事實。'}]},
-            { id: 'g35', title: '～かねない', desc: '有可能會發生（壞事）。', ex: [{j: '事故になりかねない。', c: '有可能會釀成事故。'}]},
-            { id: 'g36', title: '～かねる', desc: '難以做、不便做（婉拒）。', ex: [{j: '分かりかねます。', c: '這我恐怕難以明白。'}]},
-            { id: 'g37', title: '～ぬ', desc: '否定（書面正式）。', ex: [{j: '知らぬ存ぜぬ。', c: '一問三不知。'}]},
-            { id: 'g38', title: '～ざるを得ない', desc: '不得不、必須...。', ex: [{j: '中止せざるを得ない。', c: '不得不中止。'}]},
-            { id: 'g39', title: '～ことだ', desc: '應該、最好...。', ex: [{j: '休むことだ。', c: '你應該休息。'}]},
-            { id: 'g40', title: '～ものだ', desc: '常理/回憶/感嘆。', ex: [{j: '時間は早いものだ。', c: '時間過得真快啊。'}]},
-            { id: 'g41', title: '～わけだ', desc: '難怪/理所當然。', ex: [{j: '暑いわけだ。', c: '難怪熱。'}]},
-            { id: 'g42', title: '～わけではない', desc: '並非...。', ex: [{j: '嫌いなわけではない。', c: '並非討厭。'}]},
-            { id: 'g43', title: '～わけにはいかない', desc: '不能...（因道義常理）。', ex: [{j: '休むわけにはいかない。', c: '不能休息。'}]},
-            { id: 'g44', title: '～っけ', desc: '是不是...來著？(回憶確認)。', ex: [{j: '明日のテストは何時だっけ？', c: '明天的考試是幾點來著？'}]},
-            { id: 'g45', title: '～っこない', desc: '絕不會... (強烈否定)。', ex: [{j: '分かりっこないよ。', c: '絕不可能明白的。'}]},
-            { id: 'g46', title: '～たとえ～ても', desc: '即使...也。', ex: [{j: 'たとえ失敗しても、諦めない。', c: '即使失敗也不放棄。'}]},
-            { id: 'g47', title: '～さえ～ば', desc: '只要...就。', ex: [{j: 'お金さえあればいい。', c: '只要有錢就行。'}]},
-            { id: 'g48', title: '～も～ば～も', desc: '既...又...。', ex: [{j: '雨も降れば、風も吹く。', c: '既下雨又颳風。'}]},
-            { id: 'g49', title: '～ということだ', desc: '也就是說/據說。', ex: [{j: '合格したということだ。', c: '也就是說及格了。'}]},
-            { id: 'g50', title: '～に決まっている', desc: '一定是/肯定是。', ex: [{j: '無理に決まっている。', c: '肯定是沒辦法的。'}]},
-            { id: 'g51', title: '～に違いない', desc: '確信無疑。', ex: [{j: '彼が犯人に違いない。', c: '他一定是犯人。'}]},
-            { id: 'g52', title: '～みたいだ', desc: '好像...。', ex: [{j: '夢みたいだ。', c: '好像做夢一樣。'}]},
-            { id: 'g53', title: '～らしい', desc: '典型/據說。', ex: [{j: '女らしい格好。', c: '像女人的打扮。'}]},
-            { id: 'g54', title: '～っぽい', desc: '帶有...傾向/感覺。', ex: [{j: '子供っぽい。', c: '孩子氣。'}]},
-            { id: 'g55', title: '～ほど～ない', desc: '沒有比...更...。', ex: [{j: '彼ほど優しくない。', c: '沒有比他更溫柔的人。'}]},
-            { id: 'g56', title: '～くらい / ～ほど', desc: '程度，甚至...。', ex: [{j: '死ぬほど疲れた。', c: '累到要死了。'}]},
-            { id: 'g57', title: '～ばかり', desc: '淨是...。', ex: [{j: '食べてばかりだ。', c: '光吃而已。'}]},
-            { id: 'g58', title: '～など / ～なんか', desc: '之類的 (輕視或舉例)。', ex: [{j: '日本語なんか嫌いだ。', c: '最討厭日文之類的。'}]},
-            { id: 'g59', title: '～なんて', desc: '竟然... (驚訝)。', ex: [{j: '合格するなんて！', c: '竟然及格了！'}]},
-            { id: 'g60', title: '尊敬 / 謙譲語', desc: '中級進階敬語。', ex: [{j: '<ruby>先生<rt>せんせい</rt></ruby>、どちらへいらっしゃいますか。', c: '老師，您要去哪裡呢？'}]}
+            { id: 'g3', title: '～たところ', desc: '做了某事後，發現了某個結果。', ex: [{j: '先生に<ruby>聞<rt>き</rt></ruby>いたところ、<ruby>間違<rt>まちが</rt></ruby>いがわかった。', c: '問了老師後，發現了錯誤。'}]},
+            { id: 'g4', title: '～たとたん', desc: '剛一...就立刻...（帶有驚訝感）。', ex: [{j: '<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けたとたん、<ruby>風<rt>かぜ</rt></ruby>が入ってきた。', c: '剛一開窗，風就吹進來了。'}]},
+            { id: 'g5', title: '～たびに', desc: '每當...。', ex: [{j: 'その<ruby>歌<rt>うた</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くたびに、子供のころを<ruby>思<rt>おも</rt></ruby>い出す。', c: '每當聽這首歌，就會想起小時候。'}]},
+            { id: 'g6', title: '～最中に', desc: '正當...的最高潮時。', ex: [{j: '<ruby>会議<rt>かいぎ</rt></ruby>の<ruby>最中<rt>さいちゅう</rt></ruby>に<ruby>電話<rt>でんわ</rt></ruby>が鳴った。', c: '開會正進行到一半時電話響了。'}]},
+            { id: 'g7', title: '～から～にかけて', desc: '從...到...（表示模糊的時間或空間範圍）。', ex: [{j: '<ruby>昨日<rt>きのう</rt></ruby>から<ruby>今日<rt>きょう</rt></ruby>にかけて<ruby>大雪<rt>おおゆき</rt></ruby>が降った。', c: '從昨天到今天下了大雪。'}]},
+            { id: 'g8', title: '～を通して / を通じて', desc: '透過... / 在整個...期間。', ex: [{j: '友人を<ruby>通<rt>とお</rt></ruby>して彼と知り合った。', c: '透過朋友認識了他。'}]},
+            { id: 'g9', title: '～際（に）', desc: '...的時候（正式用語）。', ex: [{j: '<ruby>帰国<rt>きこく</rt></ruby>の際に<ruby>連絡<rt>れんらく</rt></ruby>してください。', c: '回國時請聯絡。'}]},
+            { id: 'g10', title: '～に際して / にあたって', desc: '在...之際（面臨重大事件前）。', ex: [{j: '<ruby>開店<rt>かいてん</rt></ruby>にあたって<ruby>挨拶<rt>あいさつ</rt></ruby>する。', c: '在開店之際致詞。'}]},
+            { id: 'g11', title: '～につれて', desc: '伴隨...（A發生改變，B也隨之改變）。', ex: [{j: '<ruby>年<rt>とし</rt></ruby>をとるにつれて、<ruby>体<rt>からだ</rt></ruby>が弱くなる。', c: '隨著年紀增長，身體變弱了。'}]},
+            { id: 'g12', title: '～に伴って / に伴い', desc: '伴隨著...（較大型的變化）。', ex: [{j: '人口の<ruby>増加<rt>ぞうか</rt></ruby>に伴って、問題が起きた。', c: '伴隨人口增加，產生了問題。'}]},
+            { id: 'g13', title: '～とともに', desc: '和...一起 / 隨著...。', ex: [{j: '<ruby>時代<rt>じだい</rt></ruby>とともに<ruby>変化<rt>へんか</rt></ruby>する。', c: '隨著時代改變。'}]},
+            { id: 'g14', title: '～に従って', desc: '遵從... / 隨著...。', ex: [{j: '<ruby>指示<rt>しじ</rt></ruby>に従って<ruby>行動<rt>こうどう</rt></ruby>する。', c: '遵從指示行動。'}]},
+            { id: 'g15', title: '～たあげく', desc: '經過一番...最後還是（常接負面結果）。', ex: [{j: '悩んだあげく、<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>辞<rt>や</rt></ruby>めた。', c: '煩惱了半天，最後還是辭職了。'}]},
+            { id: 'g16', title: '～すえに', desc: '在經歷...之後的最終結果。', ex: [{j: '苦労したすえに、<ruby>成功<rt>せいこう</rt></ruby>した。', c: '辛苦過後終於成功了。'}]},
+            { id: 'g17', title: '～一方だ', desc: '趨勢不斷向某一方向發展（多為負面）。', ex: [{j: '<ruby>病気<rt>びょうき</rt></ruby>は<ruby>悪<rt>わる</rt></ruby>くなる一方だ。', c: '病情不斷惡化。'}]},
+            { id: 'g18', title: '～つつある', desc: '正在持續變化中（正式）。', ex: [{j: '<ruby>景気<rt>けいき</rt></ruby>はよくなりつつある。', c: '景氣正漸漸好轉。'}]},
+            { id: 'g19', title: '～つつ', desc: '一邊...一邊...（等同ながら，較正式）。', ex: [{j: '<ruby>将来<rt>しょうらい</rt></ruby>を<ruby>考<rt>かんが</rt></ruby>えつつ<ruby>進路<rt>しんろ</rt></ruby>を決める。', c: '一邊思考未來一邊決定出路。'}]},
+            { id: 'g20', title: '～て以来', desc: '自從...以來就一直...。', ex: [{j: '<ruby>卒業<rt>そつぎょう</rt></ruby>して以来、彼に<ruby>会<rt>あ</rt></ruby>っていない。', c: '畢業以來就沒見過他了。'}]},
+            { id: 'g21', title: '～てはじめて', desc: '直到...才...。', ex: [{j: '<ruby>病気<rt>びょうき</rt></ruby>になってはじめて<ruby>健康<rt>けんこう</rt></ruby>の<ruby>大切<rt>たいせつ</rt></ruby>さを知った。', c: '直到生病才體會到健康的重要。'}]},
+            { id: 'g22', title: '～次第', desc: '一旦...就立即...。', ex: [{j: '<ruby>決<rt>き</rt></ruby>まり次第、<ruby>連絡<rt>れんらく</rt></ruby>します。', c: '一旦決定就聯絡。'}]},
+            { id: 'g23', title: '～てからでないと', desc: '如果不先...就不能...。', ex: [{j: '<ruby>宿題<rt>しゅくだい</rt></ruby>をしてからでないと<ruby>遊<rt>あそ</rt></ruby>べない。', c: '如果不先做完作業就不能玩。'}]},
+            { id: 'g24', title: '～てしかたがない', desc: '...得不得了。', ex: [{j: '<ruby>気<rt>き</rt></ruby>になってしかたがない。', c: '在意得不得了。'}]},
+            { id: 'g25', title: '～てたまらない', desc: '...得受不了。', ex: [{j: '<ruby>痛<rt>いた</rt></ruby>くてたまらない。', c: '痛得受不了。'}]},
+            { id: 'g26', title: '～てならない', desc: '非常... / 不禁...。', ex: [{j: '<ruby>残念<rt>ざんねん</rt></ruby>でならない。', c: '遺憾得不得了。'}]},
+            { id: 'g27', title: '～ないではいられない', desc: '忍不住...。', ex: [{j: '<ruby>笑<rt>わら</rt></ruby>わないではいられない。', c: '忍不住笑了。'}]},
+            { id: 'g28', title: '～ずにはいられない', desc: '忍不住...（書面語）。', ex: [{j: '<ruby>泣<rt>な</rt></ruby>かずにはいられない。', c: '忍不住哭了。'}]},
+            { id: 'g29', title: '～に決まっている', desc: '一定是... / 肯定是...。', ex: [{j: 'そんなの<ruby>無理<rt>むり</rt></ruby>に決まっている。', c: '那種事肯定是行不通的。'}]},
+            { id: 'g30', title: '～に違いない', desc: '確信無疑是...。', ex: [{j: '彼が<ruby>犯人<rt>はんにん</rt></ruby>に違いない。', c: '他一定是犯人。'}]},
+            { id: 'g31', title: '～に相違ない', desc: '一定...（非常正式）。', ex: [{j: '彼が<ruby>成功<rt>せいこう</rt></ruby>するに相違ない。', c: '他一定會成功。'}]},
+            { id: 'g32', title: '～はずがない', desc: '絕不可能...。', ex: [{j: '<ruby>知<rt>し</rt></ruby>っているはずがない。', c: '不可能知道。'}]},
+            { id: 'g33', title: '～わけがない', desc: '沒有理由... / 絕不可能。', ex: [{j: 'そんな<ruby>簡単<rt>かんたん</rt></ruby>なわけがない。', c: '不可能那麼簡單。'}]},
+            { id: 'g34', title: '～わけではない', desc: '並非...。', ex: [{j: '<ruby>嫌<rt>きら</rt></ruby>いなわけではない。', c: '並非討厭。'}]},
+            { id: 'g35', title: '～というわけではない', desc: '並不是說...。', ex: [{j: '<ruby>お金<rt>かね</rt></ruby>がないというわけではない。', c: '並不是說沒有錢。'}]},
+            { id: 'g36', title: '～とは限らない', desc: '未必... / 不一定...。', ex: [{j: '<ruby>高<rt>たか</rt></ruby>いからいいとは限らない。', c: '不一定貴的就比較好。'}]},
+            { id: 'g37', title: '～わけにはいかない', desc: '不能...（因道義常理）。', ex: [{j: '<ruby>休<rt>やす</rt></ruby>むわけにはいかない。', c: '不能休息。'}]},
+            { id: 'g38', title: '～ないわけにはいかない', desc: '不能不... / 必須...。', ex: [{j: '<ruby>行<rt>い</rt></ruby>かないわけにはいかない。', c: '不能不去。'}]},
+            { id: 'g39', title: '～ことだ', desc: '應該... / 最好...。', ex: [{j: '早く<ruby>寝<rt>ね</rt></ruby>ることだ。', c: '你最好早點睡。'}]},
+            { id: 'g40', title: '～べきだ', desc: '理應... / 應該...。', ex: [{j: '<ruby>約束<rt>やくそく</rt></ruby>は守るべきだ。', c: '理應遵守約定。'}]},
+            { id: 'g41', title: '～ものだ', desc: '常理 / 感嘆 / 回憶。', ex: [{j: '<ruby>時間<rt>じかん</rt></ruby>は早いものだ。', c: '時間過得真快啊。'}]},
+            { id: 'g42', title: '～ものではない', desc: '不應該...（常理禁止）。', ex: [{j: '<ruby>嘘<rt>うそ</rt></ruby>をつくものではない。', c: '不應該說謊。'}]},
+            { id: 'g43', title: '～というものだ', desc: '這才稱得上是...。', ex: [{j: 'それが<ruby>愛<rt>あい</rt></ruby>というものだ。', c: '那才是所謂的愛。'}]},
+            { id: 'g44', title: '～ということだ', desc: '據說 / 也就是說。', ex: [{j: '<ruby>合格<rt>ごうかく</rt></ruby>したということだ。', c: '也就是說及格了。'}]},
+            { id: 'g45', title: '～からといって', desc: '雖說是因為...。', ex: [{j: '<ruby>高<rt>たか</rt></ruby>いからといっていいとは限らない。', c: '雖說很貴，但不見得就好。'}]},
+            { id: 'g46', title: '～だけに', desc: '正因為...更顯得...。', ex: [{j: '<ruby>期待<rt>きたい</rt></ruby>していただけに<ruby>残念<rt>ざんねん</rt></ruby>だ。', c: '正因為期待過高，所以格外遺憾。'}]},
+            { id: 'g47', title: '～だけあって', desc: '正因為...所以...。', ex: [{j: '<ruby>高<rt>たか</rt></ruby>いだけあって美味しい。', c: '正因為貴所以好吃。'}]},
+            { id: 'g48', title: '～によって', desc: '因為... / 根據... / 被...。', ex: [{j: '<ruby>台風<rt>たいふう</rt></ruby>によって壊れた。', c: '因為颱風壞掉了。'}]},
+            { id: 'g49', title: '～につき', desc: '因為...（告示牌用語）。', ex: [{j: '<ruby>清掃中<rt>せいそうちゅう</rt></ruby>につき<ruby>使用禁止<rt>しようきんし</rt></ruby>。', c: '清掃中，禁止使用。'}]},
+            { id: 'g50', title: '～わりに（は）', desc: '與其相比卻（意外感）。', ex: [{j: '<ruby>値段<rt>ねだん</rt></ruby>のわりに美味しい。', c: '與價格相比很好吃。'}]},
+            { id: 'g51', title: '～にしては', desc: '就...而言卻（不符合預期）。', ex: [{j: '<ruby>子供<rt>こども</rt></ruby>にしては<ruby>上手<rt>じょうず</rt></ruby>だ。', c: '就小孩而言算很擅長了。'}]},
+            { id: 'g52', title: '～くせに', desc: '明明...卻...（責難）。', ex: [{j: '<ruby>知<rt>し</rt></ruby>っているくせに教えない。', c: '明明知道卻不說。'}]},
+            { id: 'g53', title: '～として（は）', desc: '作為...身分。', ex: [{j: '<ruby>留学生<rt>りゅうがくせい</rt></ruby>として日本へ行く。', c: '作為留學生去日本。'}]},
+            { id: 'g54', title: '～にとって', desc: '對...而言。', ex: [{j: '私にとって<ruby>大切<rt>たいせつ</rt></ruby>な本だ。', c: '對我而言很重要的書。'}]},
+            { id: 'g55', title: '～にしたら / にすれば', desc: '在...看來。', ex: [{j: '彼にしたら<ruby>迷惑<rt>めいわく</rt></ruby>だろう。', c: '在他看來應該很困擾吧。'}]},
+            { id: 'g56', title: '～おかげで', desc: '多虧了...。', ex: [{j: '先生のおかげで<ruby>合格<rt>ごうかく</rt></ruby>できた。', c: '多虧老師我及格了。'}]},
+            { id: 'g57', title: '～せいで', desc: '都怪...。', ex: [{j: '雨のせいで<ruby>遅<rt>おく</rt></ruby>れた。', c: '都怪下雨害我遲到。'}]},
+            { id: 'g58', title: '～反面', desc: '另一方面（對立特徵）。', ex: [{j: '<ruby>便利<rt>べんり</rt></ruby>な反面、危ない。', c: '便利的同時也很危險。'}]},
+            { id: 'g59', title: '～一方で', desc: '一方面...另一方面（並列對比）。', ex: [{j: '<ruby>子供<rt>こども</rt></ruby>を育てる一方で働く。', c: '一邊育兒一邊工作。'}]},
+            { id: 'g60', title: '尊敬 / 謙譲語', desc: '進階敬語。', ex: [{j: '先生、どちらへいらっしゃいますか。', c: '老師，您要去哪裡呢？'}]}
         ];
 
         // --- N3 真正去重核心單字庫 (5元素格式：單字, 假名, 中文, 日文例句, 中文例句) ---
-        const rawVocabUnique = [
+        const vocabData = [
             ["愛情", "あいじょう", "愛情", "<ruby>愛情<rt>あいじょう</rt></ruby>を<ruby>注<rt>そそ</rt></ruby>ぐ。", "傾注愛情。"],
             ["合図", "あいず", "信號、暗號", "<ruby>出発<rt>しゅっぱつ</rt></ruby>の<ruby>合図<rt>あいず</rt></ruby>をする。", "發出出發的信號。"],
             ["相手", "あいて", "對象、對手", "<ruby>相手<rt>あいて</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>を<ruby>聞<rt>き</rt></ruby>く。", "聽對方說話。"],
@@ -297,7 +303,7 @@
             ["飾り", "かざり", "裝飾", "<ruby>部屋<rt>へや</rt></ruby>の<ruby>飾<rt>かざ</rt></ruby>り。", "房間的裝飾。"],
             ["賢い", "かしこい", "聰明的", "<ruby>賢<rt>かしこ</rt></ruby>い<ruby>犬<rt>いぬ</rt></ruby>。", "聰明的狗。"],
             ["隠す", "かくす", "隱藏", "<ruby>秘密<rt>ひみつ</rt></ruby>を<ruby>隠<rt>かく</rt></ruby>す。", "隱藏秘密。"],
-            ["囲む", "かくむ", "包圍", "<ruby>火<rt>ひ</rt></ruby>を<ruby>囲<rt>かこ</rt></ruby>む。", "圍著火爐。"],
+            ["囲む", "かこむ", "包圍", "<ruby>火<rt>ひ</rt></ruby>を<ruby>囲<rt>かこ</rt></ruby>む。", "圍著火爐。"],
             ["片付ける", "かたづける", "整理", "<ruby>部屋<rt>へや</rt></ruby>を<ruby>片付<rt>かたづ</rt></ruby>ける。", "整理房間。"],
             ["偏る", "かたよる", "偏頗", "<ruby>栄養<rt>えいよう</rt></ruby>が<ruby>偏<rt>かたよ</rt></ruby>る。", "營養不均衡。"],
             ["価値", "かち", "價值", "<ruby>価値<rt>かち</rt></ruby>のある<ruby>本<rt>ほん</rt></ruby>。", "有價值的書。"],
@@ -426,15 +432,6 @@
             ["録音", "ろくおん", "錄音", "<ruby>声<rt>こえ</rt></ruby>を<ruby>録音<rt>ろくおん</rt></ruby>する。", "錄下聲音。"]
         ];
 
-        // Ensure unique
-        const uniquePoolMap = new Map();
-        rawVocabUnique.forEach(item => {
-            if (!uniquePoolMap.has(item[0])) {
-                uniquePoolMap.set(item[0], item);
-            }
-        });
-        const finalPool = Array.from(uniquePoolMap.values());
-
         // --- Core States ---
         let masteredIds = JSON.parse(localStorage.getItem('n3_dual_mastery_v2026_q2') || '[]');
         let vocabScores = JSON.parse(localStorage.getItem('n3_dual_scores_v2026_q2') || '{}');
@@ -475,17 +472,17 @@
                 <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
-                            <span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest text-center">G${idx+1}</span>
-                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center text-center">${g.title}</h3>
+                            <span class="bg-emerald-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest">G${idx+1}</span>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text">${g.title}</h3>
                         </div>
-                        <input type="checkbox" class="custom-checkbox text-center" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
+                        <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
                     </div>
-                    <p class="text-sm text-slate-600 mb-4 font-medium text-center text-center text-center">${g.desc}</p>
+                    <p class="text-sm text-slate-600 mb-4 font-medium">${g.desc}</p>
                     <div class="bg-slate-50 p-4 rounded-xl space-y-3">
                         ${g.ex.map(e => `
-                            <div class="border-l-2 border-emerald-200 pl-3">
-                                <p class="japanese-text text-slate-800 text-base leading-relaxed text-center text-center">${e.j}</p>
-                                <p class="text-xs text-slate-500 mt-0.5 text-center text-center">${e.c}</p>
+                            <div class="border-l-2 border-emerald-200 pl-3 text-left">
+                                <p class="japanese-text text-slate-800 text-base leading-relaxed">${e.j}</p>
+                                <p class="text-xs text-slate-500 mt-0.5">${e.c}</p>
                             </div>
                         `).join('')}
                     </div>
@@ -495,7 +492,7 @@
 
         function renderVocab(filter = "") {
             const container = document.getElementById('vocab-body');
-            const filteredData = finalPool.filter(v => 
+            const filteredData = vocabData.filter(v => 
                 v[0].toLowerCase().includes(filter.toLowerCase()) || 
                 v[1].toLowerCase().includes(filter.toLowerCase()) || 
                 v[2].toLowerCase().includes(filter.toLowerCase())
@@ -506,34 +503,34 @@
                 const scores = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 const isMastered = masteredIds.includes(id);
                 return `
-                    <tr class="vocab-row transition-all hover:bg-emerald-50 text-center ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
+                    <tr class="vocab-row transition-all hover:bg-emerald-50 ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
                         <td class="p-4 text-center">
-                            <input type="checkbox" class="custom-checkbox text-center" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
+                            <input type="checkbox" class="custom-checkbox" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50 text-center">V${i+1}</td>
-                        <td class="p-4 text-center text-center">
-                            <div class="japanese-text font-bold text-base text-slate-900 text-center">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text text-center text-center">${v[1]}</div>
+                        <td class="p-4 font-mono text-slate-400 text-xs border-r border-slate-50 text-center">V${i+1}</td>
+                        <td class="p-4 text-center">
+                            <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
+                            <div class="text-[10px] text-slate-400 japanese-text">${v[1]}</div>
                         </td>
-                        <td class="p-4 text-center text-center text-center">
-                            <span class="font-bold text-emerald-700 text-center">${v[2]}</span>
+                        <td class="p-4 text-center">
+                            <span class="font-bold text-emerald-700">${v[2]}</span>
                         </td>
                         <td class="p-4">
-                            <p class="japanese-text text-slate-700 italic text-sm leading-relaxed text-center text-center mb-1">${v[3]}</p>
-                            <p class="text-xs text-slate-500 text-center text-center">${v[4]}</p>
+                            <p class="japanese-text text-slate-700 italic text-sm leading-relaxed text-center mb-1">${v[3]}</p>
+                            <p class="text-xs text-slate-500 text-center">${v[4]}</p>
                         </td>
-                        <td class="p-4 text-center text-center">
-                            <div class="flex gap-4 items-center justify-center text-center">
-                                <div class="flex flex-col text-center text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">日</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
-                                        <div class="h-full bg-emerald-500 text-center text-center" style="width: ${scores.jpToZh * 10}%"></div>
+                        <td class="p-4">
+                            <div class="flex gap-4 items-center justify-center">
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black">日</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
+                                        <div class="h-full bg-emerald-500" style="width: ${scores.jpToZh * 10}%"></div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col text-center text-center text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center text-center">中</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center text-center">
-                                        <div class="h-full bg-teal-400 text-center text-center text-center" style="width: ${scores.zhToJp * 10}%"></div>
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black">中</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
+                                        <div class="h-full bg-teal-400" style="width: ${scores.zhToJp * 10}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -546,7 +543,7 @@
         // --- Flashcard Logic ---
         function loadNextFlashcard() {
             let pool = [];
-            finalPool.forEach((v, i) => {
+            vocabData.forEach((v, i) => {
                 const id = `n3fv${i}`;
                 const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 if (!masteredIds.includes(id)) {
@@ -642,7 +639,8 @@
         }
 
         function updateProgress() {
-            const total = grammarData.length + finalPool.length;
+            // 已正確統整變數，使用 grammarData 與 vocabData 計算
+            const total = grammarData.length + vocabData.length;
             const current = masteredIds.length;
             const percent = total > 0 ? Math.round((current / total) * 100) : 0;
             document.getElementById('progress-bar').style.width = percent + '%';
