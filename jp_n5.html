@@ -24,19 +24,19 @@
         .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 pb-20 text-center">
+<body class="bg-slate-50 text-slate-800 pb-20">
 
     <header class="bg-indigo-700 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N5 日本語達陣</h1>
         <p class="text-indigo-100 opacity-90 text-sm font-medium">入門基礎：全方位核心語彙與 25 項完整文法系統</p>
     </header>
 
-    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
-        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4 text-center">
-            <div class="flex items-center gap-4 text-center">
-                <div class="flex flex-col text-center">
-                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest text-center">N5 總掌握進度</span>
-                    <div class="flex items-center gap-2 text-center">
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">N5 總掌握進度</span>
+                    <div class="flex items-center gap-2">
                         <div class="w-40 h-2 bg-slate-200 rounded-full overflow-hidden">
                             <div id="progress-bar" class="h-full bg-indigo-600 transition-all duration-500"></div>
                         </div>
@@ -45,96 +45,96 @@
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
-                    <span id="toggle-icon">👁️</span> <span id="toggle-label text-center">隱藏已掌握</span>
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
                 </button>
-                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
                     <span>🔄</span> <span>重置進度</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
-        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition text-center">核心文法 (G1-G25)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition text-center">全量單字庫 (去重版)</button>
-            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition text-center text-center">雙向智能學習卡</button>
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G25)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向智能學習卡</button>
         </div>
 
         <!-- Grammar Section -->
-        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6 text-center text-center"></div>
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
 
         <!-- Vocab Section -->
-        <div id="section-vocab" class="tab-content hidden text-center">
-            <div class="mb-6 relative text-center text-center">
-                <input type="text" id="search-box" placeholder="搜尋編號(V1)、單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition shadow-sm text-center">
-                <span class="absolute left-4 top-3.5 text-slate-400 text-center">🔍</span>
+        <div id="section-vocab" class="tab-content hidden">
+            <div class="mb-6 relative">
+                <input type="text" id="search-box" placeholder="搜尋單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-indigo-500 outline-none transition shadow-sm">
+                <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
             </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center text-center">
-                <div class="overflow-x-auto text-center">
-                    <table class="w-full text-left border-collapse text-center">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-center text-center">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-center">
                             <tr>
                                 <th class="p-4 w-16 text-center">掌握</th>
-                                <th class="p-4 w-20 text-center text-indigo-600 font-bold border-r text-center">編號</th>
+                                <th class="p-4 w-20 text-center text-indigo-600 font-bold border-r">編號</th>
                                 <th class="p-4 w-1/5 text-center">單字 / 假名</th>
-                                <th class="p-4 w-1/5 text-indigo-700 text-center text-center">中文意義</th>
-                                <th class="p-4 text-center text-center">實戰例句</th>
-                                <th class="p-4 w-24 text-center text-center text-center">雙向積分</th>
+                                <th class="p-4 w-1/5 text-indigo-700 text-center">中文意義</th>
+                                <th class="p-4 text-center">實戰例句</th>
+                                <th class="p-4 w-24 text-center">雙向積分</th>
                             </tr>
                         </thead>
-                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center text-center"></tbody>
+                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm"></tbody>
                     </table>
                 </div>
             </div>
         </div>
 
         <!-- Flashcard Section -->
-        <div id="section-flashcard" class="tab-content hidden text-center text-center">
-            <div class="max-w-lg mx-auto text-center text-center">
-                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all text-center text-center text-center">
+        <div id="section-flashcard" class="tab-content hidden">
+            <div class="max-w-lg mx-auto">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between relative overflow-hidden transition-all text-center">
                     
                     <!-- Mode & Score Header -->
-                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all text-center text-center">
+                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all">
                         <div class="flex items-center gap-2">
                             <span id="fc-mode-text">模式載入中</span>
-                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold text-center">積分: <span id="fc-current-score-text">0</span> / 10</span>
+                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold">積分: <span id="fc-current-score-text">0</span> / 10</span>
                         </div>
                         <div class="flex gap-1" id="fc-score-dots"></div>
                     </div>
 
-                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8 text-center text-center text-center text-center">
-                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center text-center text-center text-center"></div>
-                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10 text-center text-center text-center text-center"></div>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center"></div>
+                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10"></div>
                         
                         <!-- Answer Block -->
-                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6 text-center text-center text-center text-center">
-                            <div id="fc-target" class="text-3xl font-bold text-indigo-600 mb-2 japanese-text text-center text-center text-center text-center"></div>
-                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center text-center text-center text-center"></div>
-                            <div class="bg-indigo-50 p-5 rounded-3xl text-left border border-indigo-100 text-center text-center text-center text-center text-center">
-                                <p class="text-[9px] font-black text-indigo-400 uppercase mb-2 text-center text-center text-center text-center">N5 實戰範本</p>
-                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center text-center text-center"></p>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
+                            <div id="fc-target" class="text-3xl font-bold text-indigo-600 mb-2 japanese-text"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text"></div>
+                            <div class="bg-indigo-50 p-5 rounded-3xl text-left border border-indigo-100">
+                                <p class="text-[9px] font-black text-indigo-400 uppercase mb-2">N5 實戰範本</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="fc-empty-state" class="hidden py-16 text-center text-center text-center text-center">
-                        <div class="text-7xl mb-6 text-center text-center text-center text-center text-center">🏆</div>
-                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center text-center text-center text-center text-center">N5 挑戰全量達成</h3>
-                        <p class="text-slate-500 text-sm text-center text-center text-center text-center text-center">恭喜！您已熟悉目前清單內的所有真實單字。</p>
+                    <div id="fc-empty-state" class="hidden py-16">
+                        <div class="text-7xl mb-6">🏆</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">N5 挑戰全量達成</h3>
+                        <p class="text-slate-500 text-sm">恭喜！您已熟悉目前清單內的所有真實單字。</p>
                     </div>
 
                     <!-- Controls -->
-                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8 text-center text-center text-center text-center">
-                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95 text-center text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center">🔄</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center">再來</span>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">🔄</span><span class="text-[10px] font-black">再來</span>
                         </button>
-                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-indigo-100 text-center text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center text-center">💡</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center text-center">答案</span>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-indigo-100">
+                            <span class="text-2xl mb-1">💡</span><span class="text-[10px] font-black">答案</span>
                         </button>
-                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-all active:scale-95 text-center text-center text-center text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center text-center text-center">✅</span><span class="text-[10px] font-black text-center text-center text-center text-center text-center text-center">掌握</span>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">✅</span><span class="text-[10px] font-black">掌握</span>
                         </button>
                     </div>
                 </div>
@@ -143,24 +143,24 @@
     </main>
 
     <!-- Reset Modal -->
-    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center text-center text-center text-center">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center text-center text-center text-center text-center">
-            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-center text-center text-center text-center text-center">🚫</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center text-center text-center text-center text-center">重置 N5 進度？</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center text-center text-center text-center text-center">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
-            <div class="flex flex-col gap-3 text-center text-center text-center text-center">
-                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200 text-center text-center text-center text-center">確定重置</button>
-                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center text-center text-center text-center text-center">取消返回</button>
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">重置 N5 進度？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消返回</button>
             </div>
         </div>
     </div>
 
     <script>
-        // --- N5 核心文法 (完整補完 G1-G25 + 振假名標註) ---
+        // --- N5 核心文法 (完整 25 項) ---
         const grammarData = [
             { id: 'g1', title: '～は～です', desc: '基本判斷句，表示身分或狀態。', ex: [{j: '<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。', c: '我是學生。'}, {j: 'これは<ruby>本<rt>ほん</rt></ruby>です。', c: '這是書。'}]},
             { id: 'g2', title: '～を～ます', desc: '動作句，ます形表示禮貌。含三類動詞。', ex: [{t: 'G1', j: '<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。', c: '喝水。'}, {t: 'G2', j: 'ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。', c: '吃飯。'}, {t: 'G3', j: '<ruby>勉強<rt>べんきょう</rt></ruby>をします。', c: '學習。'}]},
-            { id: 'g3', title: '～があります/います', desc: '表示存在。無生命用あります，生物用います。', ex: [{j: '<ruby>机<rt>つくえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります。', c: '桌上有書。'}, {j: '<ruby>庭<rt>にわ</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。', c: '院子裡有貓。'}]},
+            { id: 'g3', title: '～があります/います', desc: '表示存在。', ex: [{j: '<ruby>机<rt>つくえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります。', c: '桌上有書。'}, {j: '<ruby>庭<rt>にわ</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。', c: '院子裡有貓。'}]},
             { id: 'g4', title: '～へ行きます/来ます/帰ります', desc: '表示移動方向。', ex: [{j: '<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。', c: '去日本。'}, {j: '<ruby>家<rt>いえ</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>ります。', c: '回家。'}]},
             { id: 'g5', title: '～で（場所/工具）', desc: '動作發生地或採用的手段。', ex: [{j: '<ruby>食堂<rt>しょくどう</rt></ruby>で<ruby>食<rt>た</rt></ruby>べます。', c: '在食堂吃飯。'}, {j: 'バスで<ruby>行<rt>い</rt></ruby>きます。', c: '搭巴士去。'}]},
             { id: 'g6', title: '～から～まで', desc: '時間或空間起訖。', ex: [{j: '<ruby>九時<rt>くじ</rt></ruby>から<ruby>五時<rt>ごじ</rt></ruby>まで<ruby>働<rt>はたら</rt></ruby>きます。', c: '從九點工作到五點。'}]},
@@ -172,7 +172,7 @@
             { id: 'g12', title: '～たことがあります', desc: '過去經驗。', ex: [{j: '<ruby>刺身<rt>さしみ</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがあります。', c: '曾吃過生魚片。'}]},
             { id: 'g13', title: '～たり～たりします', desc: '列舉不分順序的動作。', ex: [{j: '<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んだり<ruby>散歩<rt>さんぽ</rt></ruby>したりします。', c: '又是看書又是散步。'}]},
             { id: 'g14', title: '形容詞用法', desc: 'い與な形容詞修飾或結尾。', ex: [{j: '<ruby>新<rt>あたら</rt></ruby>しい<ruby>本<rt>ほん</rt></ruby>です。', c: '是新書。'}, {j: '<ruby>静<rt>しず</rt></ruby>かな<ruby>部屋<rt>へや</rt></ruby>です。', c: '是安靜的房間。'}]},
-            { id: 'g15', title: '比較句', desc: 'A比B更...。', ex: [{j: '<ruby>肉<rt>にく</rt></ruby>より<ruby>魚<rt>さかな</rt></ruby>のほうが<ruby>好<rt>す</rt></ruby>きです。', c: '比起肉更喜歡魚。'}]},
+            { id: 'g15', title: '比較句 (より/ほうが)', desc: '兩者比較。', ex: [{j: '<ruby>肉<rt>にく</rt></ruby>より<ruby>魚<rt>さかな</rt></ruby>のほうが<ruby>好<rt>す</rt></ruby>きです。', c: '比起肉更喜歡魚。'}]},
             { id: 'g16', title: '～てもいいです', desc: '表示許可。', ex: [{j: '<ruby>座<rt>すわ</rt></ruby>ってもいいですか。', c: '可以坐嗎？'}]},
             { id: 'g17', title: '～てはいけません', desc: '表示禁止。', ex: [{j: '<ruby>入<rt>はい</rt></ruby>ってはいけません。', c: '不可以進去。'}]},
             { id: 'g18', title: '～つもりです', desc: '意圖計畫。', ex: [{j: '<ruby>行<rt>い</rt></ruby>くつもりです。', c: '打算去。'}]},
@@ -180,13 +180,13 @@
             { id: 'g20', title: '～すぎます', desc: '程度過度。', ex: [{j: '<ruby>食<rt>た</rt></ruby>べすぎました。', c: '吃太多了。'}]},
             { id: 'g21', title: '～とき（時）', desc: '時間點或情境。', ex: [{j: '<ruby>暇<rt>ひま</rt></ruby>なとき<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。', c: '有空時看書。'}]},
             { id: 'g22', title: '～前に / ～後で', desc: '動作先後。', ex: [{j: '<ruby>寝<rt>ね</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<ruby>磨<rt>みが</rt></ruby>きます。', c: '睡前刷牙。'}]},
-            { id: 'g23', title: '～ので / ～から', desc: '原因理由。', ex: [{j: '<ruby>雨<rt>あめ</rt></ruby>なので<ruby>行<rt>い</rt></ruby>きません。', c: '因為下雨所以不去。'}]},
+            { id: 'g23', title: '～ので / ～から', desc: '原因理由。', ex: [{j: '<ruby>雨<rt>あめ</rt></ruby>なので<ruby>行<rt>い</rt></ruby>きません。', c: '因為雨而不去。'}]},
             { id: 'g24', title: '～と言います', desc: '引用或思考。', ex: [{j: '<ruby>彼<rt>かれ</rt></ruby>は「おはよう」と<ruby>言<rt>い</rt></ruby>いました。', c: '他說了早安。'}]},
             { id: 'g25', title: '～でしょう', desc: '推測。', ex: [{j: '<ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れでしょう。', c: '明天會放晴吧。'}]}
         ];
 
-        // --- N5 真正無重複核心單字庫 (包含振假名與中文翻譯的 5 元素結構) ---
-        const rawVocab = [
+        // --- N5 全量無重複單字庫 (5元素結構：單字, 假名, 中文, 日文例句, 中文例句) ---
+        const vocabData = [
             ["アイスクリーム", "", "冰淇淋", "アイスクリームを<ruby>食<rt>た</rt></ruby>べましょう。", "我們來吃冰淇淋吧。"],
             ["間", "あいだ", "之間,中間", "<ruby>銀行<rt>ぎんこう</rt></ruby>と<ruby>学校<rt>がっこう</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>にあります。", "在銀行和學校之間。"],
             ["会います", "あいます", "見面", "<ruby>駅<rt>えき</rt></ruby>で<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会<rt>あ</rt></ruby>います。", "在車站跟朋友見面。"],
@@ -454,8 +454,8 @@
         ];
 
         // --- Core Logic ---
-        let masteredIds = JSON.parse(localStorage.getItem('n5_dual_mastery_fix_v2026') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n5_dual_scores_fix_v2026') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n5_dual_mastery_final_v3') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n5_dual_scores_final_v3') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -489,20 +489,20 @@
         function renderGrammar() {
             const container = document.getElementById('section-grammar');
             container.innerHTML = grammarData.map((g, idx) => `
-                <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 text-center ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
+                <div class="grammar-card bg-white p-6 rounded-2xl shadow-sm border border-slate-200 ${masteredIds.includes(g.id) ? 'is-mastered mastered' : ''}" data-id="${g.id}">
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
-                            <span class="bg-indigo-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest text-center text-center">G${idx+1}</span>
-                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center text-center">${g.title}</h3>
+                            <span class="bg-indigo-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest">G${idx+1}</span>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text">${g.title}</h3>
                         </div>
-                        <input type="checkbox" class="custom-checkbox text-center" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
+                        <input type="checkbox" class="custom-checkbox" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
                     </div>
-                    <p class="text-sm text-slate-600 mb-4 font-medium text-center text-center text-center text-center">${g.desc}</p>
+                    <p class="text-sm text-slate-600 mb-4 font-medium">${g.desc}</p>
                     <div class="bg-slate-50 p-4 rounded-xl space-y-3">
                         ${g.ex.map(e => `
                             <div class="border-l-2 border-indigo-200 pl-3">
-                                <p class="japanese-text text-slate-800 text-base leading-relaxed text-center text-center text-center">${e.j}</p>
-                                <p class="text-xs text-slate-500 mt-0.5 text-center text-center text-center">${e.c}</p>
+                                <p class="japanese-text text-slate-800 text-base leading-relaxed">${e.j}</p>
+                                <p class="text-xs text-slate-500 mt-0.5">${e.c}</p>
                             </div>
                         `).join('')}
                     </div>
@@ -512,7 +512,7 @@
 
         function renderVocab(filter = "") {
             const container = document.getElementById('vocab-body');
-            const filteredData = rawVocab.filter(v => 
+            const filteredData = vocabData.filter(v => 
                 v[0].toLowerCase().includes(filter.toLowerCase()) || 
                 v[1].toLowerCase().includes(filter.toLowerCase()) || 
                 v[2].toLowerCase().includes(filter.toLowerCase())
@@ -523,34 +523,34 @@
                 const scores = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 const isMastered = masteredIds.includes(id);
                 return `
-                    <tr class="vocab-row transition-all hover:bg-indigo-50 text-center ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
+                    <tr class="vocab-row transition-all hover:bg-indigo-50 ${isMastered ? 'is-mastered mastered' : ''}" data-id="${id}">
                         <td class="p-4 text-center">
-                            <input type="checkbox" class="custom-checkbox text-center" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
+                            <input type="checkbox" class="custom-checkbox" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50 text-center">V${i+1}</td>
-                        <td class="p-4 text-center text-center">
+                        <td class="p-4 font-mono text-slate-400 text-xs border-r border-slate-50 text-center">V${i+1}</td>
+                        <td class="p-4">
                             <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text text-center text-center">${v[1]}</div>
+                            <div class="text-[10px] text-slate-400 japanese-text">${v[1]}</div>
                         </td>
-                        <td class="p-4 text-center text-center text-center">
+                        <td class="p-4">
                             <span class="font-bold text-indigo-700">${v[2]}</span>
                         </td>
                         <td class="p-4">
-                            <p class="japanese-text text-slate-700 text-sm leading-relaxed text-center text-center mb-1">${v[3]}</p>
-                            <p class="text-xs text-slate-500 text-center text-center">${v[4]}</p>
+                            <p class="japanese-text text-slate-700 italic text-sm leading-relaxed mb-1">${v[3]}</p>
+                            <p class="text-xs text-slate-500">${v[4]}</p>
                         </td>
-                        <td class="p-4 text-center text-center">
+                        <td class="p-4">
                             <div class="flex gap-4 items-center justify-center">
                                 <div class="flex flex-col text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center">日</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
-                                        <div class="h-full bg-indigo-500 text-center" style="width: ${scores.jpToZh * 10}%"></div>
+                                    <span class="text-[8px] text-slate-400 uppercase font-black">日</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
+                                        <div class="h-full bg-indigo-500" style="width: ${scores.jpToZh * 10}%"></div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col text-center text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">中</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
-                                        <div class="h-full bg-blue-400 text-center text-center" style="width: ${scores.zhToJp * 10}%"></div>
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black">中</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5">
+                                        <div class="h-full bg-blue-400" style="width: ${scores.zhToJp * 10}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -563,7 +563,7 @@
         // --- Flashcard Logic ---
         function loadNextFC() {
             let pool = [];
-            rawVocab.forEach((v, i) => {
+            vocabData.forEach((v, i) => {
                 const id = `n5fv${i}`;
                 const score = vocabScores[id] || { jpToZh: 0, zhToJp: 0 };
                 if (!masteredIds.includes(id)) {
@@ -599,15 +599,13 @@
                 document.getElementById('fc-target').innerText = pick.v[2];
                 document.getElementById('fc-kana-display').innerText = "";
             } else {
-                header.className = "absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-indigo-400 shadow-md transition-all";
+                header.className = "absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white bg-blue-500 shadow-md transition-all";
                 document.getElementById('fc-mode-text').innerText = '中譯日挑戰';
                 document.getElementById('fc-question').innerText = pick.v[2];
                 document.getElementById('fc-hint').innerText = "請回答日文漢字與讀音";
                 document.getElementById('fc-target').innerText = pick.v[0];
                 document.getElementById('fc-kana-display').innerText = pick.v[1] || "";
             }
-            
-            // Insert Japanese ruby sentence and Chinese translation
             document.getElementById('fc-example').innerHTML = `${pick.v[3]}<br><span class="text-sm text-slate-500 mt-2 block">${pick.v[4]}</span>`;
             updateScoreUI();
         }
@@ -653,16 +651,15 @@
         }
 
         function saveAndRefresh(id) {
-            localStorage.setItem('n5_dual_mastery_fix_v2026', JSON.stringify(masteredIds));
-            localStorage.setItem('n5_dual_scores_fix_v2026', JSON.stringify(vocabScores));
+            localStorage.setItem('n5_dual_mastery_final_v3', JSON.stringify(masteredIds));
+            localStorage.setItem('n5_dual_scores_final_v3', JSON.stringify(vocabScores));
             if (id) renderVocab(document.getElementById('search-box').value);
             else { renderGrammar(); renderVocab(); }
             updateProgress();
         }
 
         function updateProgress() {
-            // Ensure grammarData and rawVocab are used correctly for progress
-            const total = grammarData.length + rawVocab.length;
+            const total = grammarData.length + vocabData.length;
             const current = masteredIds.length;
             const percent = total > 0 ? Math.round((current / total) * 100) : 0;
             document.getElementById('progress-bar').style.width = percent + '%';
