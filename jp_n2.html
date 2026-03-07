@@ -24,19 +24,19 @@
         .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 pb-20 text-center">
+<body class="bg-slate-50 text-slate-800 pb-20">
 
     <header class="bg-violet-900 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N2 日本語達陣</h1>
         <p class="text-violet-100 opacity-90 text-sm font-medium">中高級專業：全方位核心語彙與 80 項完整文法系統</p>
     </header>
 
-    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
-        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4 text-center">
-            <div class="flex items-center gap-4 text-center">
-                <div class="flex flex-col text-center">
-                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest text-center">N2 總掌握進度</span>
-                    <div class="flex items-center gap-2 text-center">
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">N2 總掌握進度</span>
+                    <div class="flex items-center gap-2">
                         <div class="w-40 h-2 bg-slate-200 rounded-full overflow-hidden">
                             <div id="progress-bar" class="h-full bg-violet-600 transition-all duration-500"></div>
                         </div>
@@ -45,96 +45,96 @@
                 </div>
             </div>
             <div class="flex items-center gap-2">
-                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
                     <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
                 </button>
-                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm text-center">
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
                     <span>🔄</span> <span>重置進度</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
-        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap text-center">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition text-center">核心文法 (G1-G80)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition text-center">全量單字庫 (去重版)</button>
-            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition text-center text-center">雙向智能學習卡</button>
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G80)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition">雙向智能學習卡</button>
         </div>
 
         <!-- Grammar Section -->
-        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6 text-center text-center"></div>
+        <div id="section-grammar" class="tab-content grid grid-cols-1 lg:grid-cols-2 gap-6"></div>
 
         <!-- Vocab Section -->
-        <div id="section-vocab" class="tab-content hidden text-center">
-            <div class="mb-6 relative text-center text-center">
-                <input type="text" id="search-box" placeholder="搜尋單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-violet-500 outline-none transition shadow-sm text-center">
-                <span class="absolute left-4 top-3.5 text-slate-400 text-center">🔍</span>
+        <div id="section-vocab" class="tab-content hidden">
+            <div class="mb-6 relative">
+                <input type="text" id="search-box" placeholder="搜尋單字、假名或意思..." class="w-full pl-11 pr-4 py-3 bg-white border border-slate-200 rounded-2xl text-sm focus:ring-2 focus:ring-violet-500 outline-none transition shadow-sm">
+                <span class="absolute left-4 top-3.5 text-slate-400">🔍</span>
             </div>
-            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden text-center text-center">
-                <div class="overflow-x-auto text-center">
-                    <table class="w-full text-left border-collapse text-center">
-                        <thead class="bg-slate-50 border-b border-slate-200 text-center text-center">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-50 border-b border-slate-200 text-center">
                             <tr>
-                                <th class="p-4 w-16 text-center">掌握</th>
-                                <th class="p-4 w-20 text-center text-violet-600 font-bold border-r">編號</th>
-                                <th class="p-4 w-1/5 text-center">單字 / 假名</th>
-                                <th class="p-4 w-1/5 text-violet-700 text-center">中文意義</th>
-                                <th class="p-4 text-center">實戰例句</th>
-                                <th class="p-4 w-24 text-center text-center">雙向積分</th>
+                                <th class="p-4 w-16">掌握</th>
+                                <th class="p-4 w-20 text-violet-600 font-bold border-r">編號</th>
+                                <th class="p-4 w-1/5">單字 / 假名</th>
+                                <th class="p-4 w-1/5 text-violet-700">中文意義</th>
+                                <th class="p-4 text-left">實戰例句</th>
+                                <th class="p-4 w-24">雙向積分</th>
                             </tr>
                         </thead>
-                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm text-center"></tbody>
+                        <tbody id="vocab-body" class="divide-y divide-slate-100 text-sm"></tbody>
                     </table>
                 </div>
             </div>
         </div>
 
         <!-- Flashcard Section -->
-        <div id="section-flashcard" class="tab-content hidden text-center">
-            <div class="max-w-lg mx-auto text-center">
-                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between text-center relative overflow-hidden transition-all text-center text-center">
+        <div id="section-flashcard" class="tab-content hidden">
+            <div class="max-w-lg mx-auto">
+                <div id="fc-container" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-200 p-10 min-h-[500px] flex flex-col items-center justify-between relative overflow-hidden transition-all text-center">
                     
                     <!-- Mode & Score Header -->
-                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all text-center">
+                    <div id="fc-header" class="absolute top-0 left-0 w-full py-3 px-6 flex justify-between items-center text-[10px] font-black uppercase tracking-widest text-white shadow-md transition-all">
                         <div class="flex items-center gap-2">
                             <span id="fc-mode-text">模式載入中</span>
-                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold text-center">積分: <span id="fc-current-score-text">0</span> / 10</span>
+                            <span class="bg-white/20 px-2 py-0.5 rounded text-[9px] font-bold">積分: <span id="fc-current-score-text">0</span> / 10</span>
                         </div>
                         <div class="flex gap-1" id="fc-score-dots"></div>
                     </div>
 
-                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8 text-center text-center text-center">
-                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center text-center text-center"></div>
-                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10 text-center text-center"></div>
+                    <div id="fc-main-display" class="w-full flex-grow flex flex-col items-center justify-center pt-8">
+                        <div id="fc-question" class="japanese-text text-5xl font-black text-slate-900 mb-2 leading-[1.5em] h-[2.5em] flex items-center justify-center"></div>
+                        <div id="fc-hint" class="text-slate-400 text-xs font-bold uppercase tracking-tighter h-4 mb-10"></div>
                         
                         <!-- Answer Block -->
-                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6 text-center text-center text-center">
-                            <div id="fc-target" class="text-3xl font-bold text-violet-600 mb-2 japanese-text text-center text-center"></div>
-                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text text-center text-center"></div>
-                            <div class="bg-violet-50 p-5 rounded-3xl text-left border border-violet-100 text-center text-center">
-                                <p class="text-[9px] font-black text-violet-400 uppercase mb-2 text-center text-center">N2 實戰範本</p>
-                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed text-center"></p>
+                        <div id="fc-answer-block" class="reveal-info w-full animate-fade-in border-t border-slate-100 pt-6">
+                            <div id="fc-target" class="text-3xl font-bold text-violet-600 mb-2 japanese-text"></div>
+                            <div id="fc-kana-display" class="text-slate-500 text-sm mb-6 japanese-text"></div>
+                            <div class="bg-violet-50 p-5 rounded-3xl text-left border border-violet-100">
+                                <p class="text-[9px] font-black text-violet-400 uppercase mb-2">N2 實戰範本</p>
+                                <p id="fc-example" class="japanese-text text-slate-700 text-base leading-relaxed"></p>
                             </div>
                         </div>
                     </div>
 
-                    <div id="fc-empty-state" class="hidden py-16 text-center text-center">
-                        <div class="text-7xl mb-6 text-center text-center text-center">🏁</div>
-                        <h3 class="text-2xl font-black text-slate-900 mb-2 text-center text-center">N2 挑戰全量達成</h3>
-                        <p class="text-slate-500 text-sm text-center text-center">恭喜！您已熟悉目前清單內的所有真實單字。</p>
+                    <div id="fc-empty-state" class="hidden py-16">
+                        <div class="text-7xl mb-6">🏆</div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-2">N2 挑戰全量達成</h3>
+                        <p class="text-slate-500 text-sm">恭喜！您已熟悉目前清單內的所有真實單字。</p>
                     </div>
 
                     <!-- Controls -->
-                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8 text-center text-center text-center">
-                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95 text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center">🔄</span><span class="text-[10px] font-black text-center text-center">再來</span>
+                    <div id="fc-controls" class="w-full grid grid-cols-3 gap-4 mt-8">
+                        <button onclick="processFC('again')" class="flex flex-col items-center py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">🔄</span><span class="text-[10px] font-black">再來</span>
                         </button>
-                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-violet-100 text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center">💡</span><span class="text-[10px] font-black text-center text-center text-center">答案</span>
+                        <button onclick="processFC('answer')" id="fc-btn-answer" class="flex flex-col items-center py-4 bg-violet-600 hover:bg-violet-700 text-white rounded-3xl transition-all active:scale-95 shadow-lg shadow-violet-100">
+                            <span class="text-2xl mb-1">💡</span><span class="text-[10px] font-black">答案</span>
                         </button>
-                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-all active:scale-95 text-center text-center">
-                            <span class="text-2xl mb-1 text-center text-center text-center text-center">✅</span><span class="text-[10px] font-black text-center text-center text-center">掌握</span>
+                        <button onclick="processFC('master')" class="flex flex-col items-center py-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-700 rounded-3xl transition-all active:scale-95">
+                            <span class="text-2xl mb-1">✅</span><span class="text-[10px] font-black">掌握</span>
                         </button>
                     </div>
                 </div>
@@ -143,14 +143,14 @@
     </main>
 
     <!-- Reset Modal -->
-    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center text-center">
-        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center text-center text-center">
-            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-center text-center">🚫</div>
-            <h3 class="text-2xl font-bold text-slate-900 mb-2 text-center text-center">重置 N2 進度？</h3>
-            <p class="text-slate-500 text-sm mb-8 leading-relaxed text-center text-center">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
-            <div class="flex flex-col gap-3 text-center text-center">
-                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200 text-center text-center">確定重置</button>
-                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition text-center text-center text-center">取消返回</button>
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 text-center">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">重置 N2 進度？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">這將清除所有掌握狀態與雙向積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消返回</button>
             </div>
         </div>
     </div>
@@ -305,7 +305,7 @@
             ["純粋", "じゅんすい", "純粹", "<ruby>純粋<rt>じゅんすい</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ち。", "純粹的心情。"],
             ["処遇", "しょぐう", "待遇", "<ruby>不当<rt>ふとう</rt></ruby>な<ruby>処遇<rt>しょぐう</rt></ruby>。", "不當的待遇。"],
             ["奨励", "しょうれい", "鼓勵", "<ruby>読書<rt>どくしょ</rt></ruby>を<ruby>奨励<rt>しょうれい</rt></ruby>する。", "鼓勵閱讀。"],
-            ["情熱", "じょうねつ", "熱情", "<ruby>仕事<rt>しごと</rt></ruby>に<ruby>情熱<rt>じょうねつ</rt></ruby>。", "對工作有熱情。"],
+            ["情熱", "じょうねつ", "熱情", "<ruby>仕事<rt>しごと</rt></ruby>に<ruby>情熱<rt>じょうねつ</rt></ruby>を持つ。", "對工作有熱情。"],
             ["信仰", "しんこう", "信仰", "<ruby>熱心<rt>ねっしん</rt></ruby>な<ruby>信仰<rt>しんこう</rt></ruby>。", "熱心的信仰。"],
             ["慎重", "しんちょう", "慎重", "<ruby>慎重<rt>しんちょう</rt></ruby>に<ruby>選<rt>えら</rt></ruby>ぶ。", "慎重選擇。"],
             ["推敲", "すいこう", "推敲", "<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>推敲<rt>すいこう</rt></ruby>する。", "推敲文章。"],
@@ -320,10 +320,12 @@
             ["妥当", "だとう", "妥當", "<ruby>妥当<rt>だとう</rt></ruby>な<ruby>判断<rt>はんだん</rt></ruby>。", "妥當的判斷。"],
             ["秩序", "ちつじょ", "秩序", "<ruby>社会<rt>しゃかい</rt></ruby>の<ruby>秩序<rt>ちつじょ</rt></ruby>。", "社會秩序。"],
             ["沈黙", "ちんもく", "沈默", "<ruby>長<rt>なが</rt></ruby>い<ruby>沈黙<rt>ちんもく</rt></ruby>。", "長久的沈默。"],
+            ["追放", "ついほう", "放逐", "<ruby>国外<rt>こくがい</rt></ruby>へ<ruby>追放<rt>ついほう</rt></ruby>。", "流放國外。"],
             ["提携", "ていけい", "聯手", "<ruby>他社<rt>たしゃ</rt></ruby>と<ruby>提携<rt>ていけい</rt></ruby>する。", "與其他公司合作。"],
             ["定着", "ていちゃく", "紮根、普及", "<ruby>習慣<rt>しゅうかん</rt></ruby>が<ruby>定着<rt>ていちゃく</rt></ruby>する。", "習慣逐漸普及。"],
             ["撤退", "てったい", "撤退", "<ruby>海外<rt>かいがい</rt></ruby>から<ruby>撤退<rt>てったい</rt></ruby>する。", "從海外撤退。"],
             ["点検", "てんけん", "檢查", "<ruby>機械<rt>きかい</rt></ruby>を<ruby>点検<rt>てんけん</rt></ruby>する。", "檢查機器。"],
+            ["転向", "てんこう", "轉向", "<ruby>思想<rt>しそう</rt></ruby>の<ruby>転向<rt>てんこう</rt></ruby>。", "思想轉向。"],
             ["伝説", "でんせつ", "傳說", "<ruby>伝説<rt>でんせつ</rt></ruby>の<ruby>勇者<rt>ゆうしゃ</rt></ruby>。", "傳說的勇者。"],
             ["陶酔", "とうすい", "陶醉", "<ruby>音楽<rt>おんがく</rt></ruby>に<ruby>陶酔<rt>とうすい</rt></ruby>する。", "陶醉於音樂。"],
             ["踏襲", "とうしゅう", "沿襲", "<ruby>前例<rt>ぜんれい</rt></ruby>を<ruby>踏襲<rt>とうしゅう</rt></ruby>する。", "沿襲前例。"],
@@ -348,14 +350,19 @@
             ["憤慨", "ふんがい", "憤慨", "<ruby>不正<rt>ふせい</rt></ruby>に<ruby>憤慨<rt>ふんがい</rt></ruby>する。", "對不公感到憤慨。"],
             ["紛争", "ふんそう", "紛爭", "<ruby>領土<rt>りょうど</rt></ruby><ruby>紛争<rt>ふんそう</rt></ruby>。", "領土爭端。"],
             ["並行", "へいこう", "並行", "<ruby>作業<rt>さぎょう</rt></ruby>を<ruby>並行<rt>へいこう</rt></ruby>する。", "作業並行。"],
+            ["閉塞", "へいそく", "閉塞", "<ruby>閉塞感<rt>へいそくかん</rt></ruby>が<ruby>漂<rt>ただよ</rt></ruby>う。", "瀰漫著閉塞感。"],
             ["平穏", "へいおん", "平穩", "<ruby>平穏<rt>へいおん</rt></ruby>な<ruby>暮<rt>く</rt></ruby>らし。", "平穩的生活。"],
             ["変貌", "へんぼう", "面貌改變", "<ruby>街<rt>まち</rt></ruby>が<ruby>変貌<rt>へんぼう</rt></ruby>した。", "街道面貌改變了。"],
             ["方策", "ほうさく", "方策", "<ruby>解決<rt>かいけつ</rt></ruby>の<ruby>方策<rt>ほうさく</rt></ruby>。", "解決的方策。"],
+            ["放逐", "ほうちく", "驅逐", "<ruby>国<rt>くに</rt></ruby>から<ruby>放逐<rt>ほうちく</rt></ruby>する。", "從國家驅逐。"],
             ["没落", "ぼつらく", "沒落", "<ruby>貴族<rt>きぞく</rt></ruby>の<ruby>没落<rt>ぼつらく</rt></ruby>。", "貴族的沒落。"],
             ["埋蔵", "まいぞう", "埋藏", "<ruby>金鉱<rt>きんこう</rt></ruby>を<ruby>埋蔵<rt>まいぞう</rt></ruby>する。", "埋藏金礦。"],
             ["埋没", "まいぼつ", "埋沒", "<ruby>歴史<rt>れきし</rt></ruby>に<ruby>埋没<rt>まいぼつ</rt></ruby>する。", "埋沒於歷史中。"],
+            ["慢心", "まんしん", "驕傲", "<ruby>勝利<rt>しょうり</rt></ruby>に<ruby>慢心<rt>まんしん</rt></ruby>する。", "對勝利感到驕傲。"],
+            ["未踏", "みとう", "未踏", "<ruby>前人<rt>ぜんじん</rt></ruby><ruby>未踏<rt>みとう</rt></ruby>。", "前人未踏。"],
             ["密輸", "みつゆ", "走私", "<ruby>金塊<rt>きんかい</rt></ruby>を<ruby>密輸<rt>みつゆ</rt></ruby>する。", "走私金塊。"],
             ["盲信", "もうしん", "盲信", "<ruby>噂<rt>うわさ</rt></ruby>を<ruby>盲信<rt>もうしん</rt></ruby>する。", "盲信謠言。"],
+            ["門下", "もんか", "門下", "<ruby>師<rt>し</rt></ruby>の<ruby>門下<rt>もんか</rt></ruby>。", "師父的門下。"],
             ["遺言", "ゆいごん", "遺言", "<ruby>遺言<rt>ゆいごん</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>す。", "留下遺言。"],
             ["融通", "ゆうずう", "通融", "<ruby>融通<rt>ゆうずう</rt></ruby>を<ruby>利<rt>き</rt></ruby>かす。", "通融一下。"],
             ["有望", "ゆうぼう", "有望", "<ruby>将来<rt>しょうらい</rt></ruby><ruby>有望<rt>ゆうぼう</rt></ruby>な。", "將來有希望的。"],
@@ -404,19 +411,7 @@
             ["均衡", "きんこう", "均衡", "<ruby>均衡<rt>きんこう</rt></ruby>を<ruby>保<rt>たも</rt></ruby>つ。", "保持均衡。"],
             ["吟味", "ぎんみ", "斟酌、仔細審查", "<ruby>素材<rt>そざい</rt></ruby>を<ruby>吟味<rt>ぎんみ</rt></ruby>する。", "仔細審查素材。"],
             ["愚痴", "ぐち", "牢騷", "<ruby>愚痴<rt>ぐち</rt></ruby>をこぼす。", "發牢騷。"],
-            ["駆使", "くし", "運用自如", "<ruby>語学力<rt>ごがくりょく</rt></ruby>を<ruby>駆使<rt>くし</rt></ruby>する。", "運用語文能力。"]
-        ];
-
-        // 確保達到充沛且完全不重複的高級詞彙
-        const uniquePoolMap = new Map();
-        rawVocab.forEach(item => {
-            if (!uniquePoolMap.has(item[0])) {
-                uniquePoolMap.set(item[0], item);
-            }
-        });
-        
-        // 為了確保單字庫達到 N2 實戰需求 (至少250+個)
-        const extendVocab = [
+            ["駆使", "くし", "運用自如", "<ruby>語学力<rt>ごがくりょく</rt></ruby>を<ruby>駆使<rt>くし</rt></ruby>する。", "運用語文能力。"],
             ["妥結", "だけつ", "妥協", "<ruby>交渉<rt>こうしょう</rt></ruby>が<ruby>妥結<rt>だけつ</rt></ruby>した。", "交涉妥協了。"],
             ["打破", "だは", "打破", "<ruby>現状<rt>げんじょう</rt></ruby>を<ruby>打破<rt>だは</rt></ruby>する。", "打破現狀。"],
             ["怠慢", "たいまん", "怠慢", "<ruby>職務<rt>しょくむ</rt></ruby><ruby>怠慢<rt>たいまん</rt></ruby>。", "職務怠慢。"],
@@ -427,7 +422,6 @@
             ["推測", "すいそく", "推測", "<ruby>原因<rt>げんいん</rt></ruby>を<ruby>推測<rt>すいそく</rt></ruby>する。", "推測原因。"],
             ["遂行", "すいこう", "遂行", "<ruby>任務<rt>にんむ</rt></ruby>を<ruby>遂行<rt>すいこう</rt></ruby>する。", "遂行任務。"],
             ["審査", "しんさ", "審查", "<ruby>書類<rt>しょるい</rt></ruby><ruby>審査<rt>しんさ</rt></ruby>。", "書面審查。"],
-            ["真実", "しんじつ", "真實", "<ruby>真実<rt>しんじつ</rt></ruby>を<ruby>語<rt>かた</rt></ruby>る。", "講述真實。"],
             ["迅速", "じんそく", "迅速", "<ruby>迅速<rt>じんそく</rt></ruby>な<ruby>対応<rt>たいおう</rt></ruby>。", "迅速的對應。"],
             ["振興", "しんこう", "振興", "<ruby>産業<rt>さんぎょう</rt></ruby>を<ruby>振興<rt>しんこう</rt></ruby>する。", "振興產業。"],
             ["充実", "じゅうじつ", "充實", "<ruby>充実<rt>じゅうじつ</rt></ruby>した<ruby>生活<rt>せいかつ</rt></ruby>。", "充實的生活。"],
@@ -439,21 +433,15 @@
             ["自立", "じりつ", "自立", "<ruby>経済的<rt>けいざいてき</rt></ruby>に<ruby>自立<rt>じりつ</rt></ruby>する。", "經濟獨立。"],
             ["視察", "しさつ", "視察", "<ruby>現地<rt>げんち</rt></ruby>を<ruby>視察<rt>しさつ</rt></ruby>する。", "視察當地。"],
             ["賛同", "さんどう", "贊同", "<ruby>意見<rt>いけん</rt></ruby>に<ruby>賛同<rt>さんどう</rt></ruby>する。", "贊同意見。"],
-            ["削減", "さくげん", "削減", "<ruby>経費<rt>けいひ</rt></ruby>を<ruby>削減<rt>さくげん</rt></ruby>する。", "削減經費。"],
-            ["孤立", "こりつ", "孤立", "<ruby>孤立<rt>こりつ</rt></ruby>した<ruby>村<rt>むら</rt></ruby>。", "孤立的村莊。"],
             ["考慮", "こうりょ", "考慮", "<ruby>事情<rt>じじょう</rt></ruby>を<ruby>考慮<rt>こうりょ</rt></ruby>する。", "考慮情況。"],
             ["高揚", "こうよう", "高揚", "<ruby>気分<rt>きぶん</rt></ruby>が<ruby>高揚<rt>こうよう</rt></ruby>する。", "情緒高昂。"],
             ["貢献", "こうけん", "貢獻", "<ruby>社会<rt>しゃかい</rt></ruby>に<ruby>貢献<rt>こうけん</rt></ruby>する。", "對社會貢獻。"],
             ["結束", "けっそく", "團結", "<ruby>チーム<rt>ちーむ</rt></ruby>が<ruby>結束<rt>けっそく</rt></ruby>する。", "隊伍團結。"],
-            ["決如", "けつじょ", "缺乏", "<ruby>責任感<rt>せきにんかん</rt></ruby>の<ruby>欠如<rt>けつじょ</rt></ruby>。", "缺乏責任感。"],
             ["激励", "げきれい", "激勵", "<ruby>選手<rt>せんしゅ</rt></ruby>を<ruby>激励<rt>げきれい</rt></ruby>する。", "激勵選手。"],
             ["見解", "けんかい", "見解", "<ruby>見解<rt>けんかい</rt></ruby>が<ruby>分<rt>わ</rt></ruby>かれる。", "見解分歧。"],
-            ["懸念", "けねん", "擔憂", "<ruby>安全性<rt>あんぜんせい</rt></ruby>を<ruby>懸念<rt>けねん</rt></ruby>する。", "擔憂安全性。"],
             ["傾向", "けいこう", "傾向", "<ruby>減少<rt>げんしょう</rt></ruby><ruby>傾向<rt>けいこう</rt></ruby>にある。", "有減少的傾向。"],
-            ["偶然", "ぐうぜん", "偶然", "<ruby>偶然<rt>ぐうぜん</rt></ruby>の<ruby>出会<rt>であ</rt></ruby>い。", "偶然的相遇。"],
             ["空白", "くうはく", "空白", "<ruby>記憶<rt>きおく</rt></ruby>の<ruby>空白<rt>くうはく</rt></ruby>。", "記憶的空白。"],
             ["究明", "きゅうめい", "查明", "<ruby>原因<rt>げんいん</rt></ruby>を<ruby>究明<rt>きゅうめい</rt></ruby>する。", "查明原因。"],
-            ["享受", "きょうじゅ", "享受", "<ruby>利益<rt>りえき</rt></ruby>を<ruby>享受<rt>きょうじゅ</rt></ruby>する。", "享受利益。"],
             ["起伏", "きふく", "起伏", "<ruby>感情<rt>かんじょう</rt></ruby>の<ruby>起伏<rt>きふく</rt></ruby>。", "感情的起伏。"],
             ["偽造", "ぎぞう", "偽造", "<ruby>文書<rt>ぶんしょ</rt></ruby>を<ruby>偽造<rt>ぎぞう</rt></ruby>する。", "偽造文書。"],
             ["寄与", "きよ", "貢獻", "<ruby>平和<rt>へいわ</rt></ruby>に<ruby>寄与<rt>きよ</rt></ruby>する。", "對和平做出貢獻。"],
@@ -463,23 +451,21 @@
             ["感染", "かんせん", "感染", "<ruby>ウイルス<rt>ういるす</rt></ruby>に<ruby>感染<rt>かんせん</rt></ruby>する。", "感染病毒。"],
             ["勘定", "かんじょう", "計算、結帳", "お<ruby>勘定<rt>かんじょう</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。", "麻煩結帳。"],
             ["歓喜", "かんき", "歡喜", "<ruby>歓喜<rt>かんき</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>をあげる。", "發出歡呼。"],
-            ["緩和", "かんわ", "緩和", "<ruby>緊張<rt>きんちょう</rt></ruby>が<ruby>緩和<rt>かんわ</rt></ruby>される。", "緊張緩和。"],
-            ["加味", "かみ", "考量、加入", "<ruby>条件<rt>じょうけん</rt></ruby>を<ruby>加味<rt>かみ</rt></ruby>する。", "將條件考慮進去。"],
-            ["確保", "かくほ", "確保", "<ruby>席<rt>せき</rt></ruby>を<ruby>確保<rt>かくほ</rt></ruby>する。", "確保座位。"],
             ["架空", "かくう", "架空、虛構", "<ruby>架空<rt>かくう</rt></ruby>の<ruby>人物<rt>じんぶつ</rt></ruby>。", "虛構的人物。"]
         ];
 
-        extendVocab.forEach(item => {
+        // 確保無重複
+        const uniquePoolMap = new Map();
+        rawVocab.forEach(item => {
             if (!uniquePoolMap.has(item[0])) {
                 uniquePoolMap.set(item[0], item);
             }
         });
-
         const vocabData = Array.from(uniquePoolMap.values());
 
         // --- Core Logic ---
-        let masteredIds = JSON.parse(localStorage.getItem('n2_dual_mastery_v2026') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n2_dual_scores_v2026') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n2_dual_mastery_final_v1') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n2_dual_scores_final_v1') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -517,16 +503,16 @@
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center gap-3">
                             <span class="bg-violet-600 text-white text-[9px] px-2 py-1 rounded font-black tracking-widest text-center">G${idx+1}</span>
-                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center text-center">${g.title}</h3>
+                            <h3 class="text-xl font-bold text-slate-900 japanese-text text-center">${g.title}</h3>
                         </div>
                         <input type="checkbox" class="custom-checkbox text-center" ${masteredIds.includes(g.id) ? 'checked' : ''} onchange="toggleMastered('${g.id}')">
                     </div>
-                    <p class="text-sm text-slate-600 mb-4 font-medium text-center text-center text-center text-center">${g.desc}</p>
+                    <p class="text-sm text-slate-600 mb-4 font-medium text-center">${g.desc}</p>
                     <div class="bg-slate-50 p-4 rounded-xl space-y-3">
                         ${g.ex.map(e => `
                             <div class="border-l-2 border-violet-200 pl-3">
-                                <p class="japanese-text text-slate-800 text-base leading-relaxed text-center text-center text-center">${e.j}</p>
-                                <p class="text-xs text-slate-500 mt-0.5 text-center text-center text-center">${e.c}</p>
+                                <p class="japanese-text text-slate-800 text-base leading-relaxed text-center">${e.j}</p>
+                                <p class="text-xs text-slate-500 mt-0.5 text-center">${e.c}</p>
                             </div>
                         `).join('')}
                     </div>
@@ -551,30 +537,30 @@
                         <td class="p-4 text-center">
                             <input type="checkbox" class="custom-checkbox text-center" ${isMastered ? 'checked' : ''} onchange="toggleMastered('${id}')">
                         </td>
-                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50 text-center">V${i+1}</td>
-                        <td class="p-4 text-center text-center">
+                        <td class="p-4 font-mono text-slate-400 text-xs text-center border-r border-slate-50">V${i+1}</td>
+                        <td class="p-4 text-center">
                             <div class="japanese-text font-bold text-base text-slate-900">${v[0]}</div>
-                            <div class="text-[10px] text-slate-400 japanese-text text-center text-center text-center text-center">${v[1]}</div>
+                            <div class="text-[10px] text-slate-400 japanese-text text-center">${v[1]}</div>
                         </td>
-                        <td class="p-4 text-center text-center text-center">
+                        <td class="p-4 text-center">
                             <span class="font-bold text-violet-700">${v[2]}</span>
                         </td>
-                        <td class="p-4">
-                            <p class="japanese-text text-slate-700 italic text-sm leading-relaxed text-center text-center mb-1">${v[3]}</p>
-                            <p class="text-xs text-slate-500 text-center text-center">${v[4]}</p>
+                        <td class="p-4 text-left">
+                            <p class="japanese-text text-slate-700 italic text-sm leading-relaxed mb-1">${v[3]}</p>
+                            <p class="text-xs text-slate-500">${v[4]}</p>
                         </td>
-                        <td class="p-4 text-center text-center">
+                        <td class="p-4 text-center">
                             <div class="flex gap-4 items-center justify-center text-center">
-                                <div class="flex flex-col text-center text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">日</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center">日</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center">
                                         <div class="h-full bg-violet-500" style="width: ${scores.jpToZh * 10}%"></div>
                                     </div>
                                 </div>
-                                <div class="flex flex-col text-center text-center">
-                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center text-center text-center">中</span>
-                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center text-center">
-                                        <div class="h-full bg-fuchsia-400 text-center text-center" style="width: ${scores.zhToJp * 10}%"></div>
+                                <div class="flex flex-col text-center">
+                                    <span class="text-[8px] text-slate-400 uppercase font-black text-center">中</span>
+                                    <div class="w-10 h-1 bg-slate-100 rounded-full overflow-hidden mt-0.5 text-center">
+                                        <div class="h-full bg-fuchsia-400 text-center" style="width: ${scores.zhToJp * 10}%"></div>
                                     </div>
                                 </div>
                             </div>
@@ -674,15 +660,14 @@
         }
 
         function saveAndRefresh(id) {
-            localStorage.setItem('n2_dual_mastery_v2026', JSON.stringify(masteredIds));
-            localStorage.setItem('n2_dual_scores_v2026', JSON.stringify(vocabScores));
+            localStorage.setItem('n2_dual_mastery_final_v1', JSON.stringify(masteredIds));
+            localStorage.setItem('n2_dual_scores_final_v1', JSON.stringify(vocabScores));
             if (id) renderVocab(document.getElementById('search-box').value);
             else { renderGrammar(); renderVocab(); }
             updateProgress();
         }
 
         function updateProgress() {
-            // Strictly use grammarList and vocabData to prevent ReferenceError
             const total = grammarList.length + vocabData.length;
             const current = masteredIds.length;
             const percent = total > 0 ? Math.round((current / total) * 100) : 0;
