@@ -653,8 +653,23 @@
         function saveAndRefresh(id) {
             localStorage.setItem('n5_dual_mastery_final_v3', JSON.stringify(masteredIds));
             localStorage.setItem('n5_dual_scores_final_v3', JSON.stringify(vocabScores));
-            if (id) renderVocab(document.getElementById('search-box').value);
-            else { renderGrammar(); renderVocab(); }
+            
+            if (id) {
+                // 動態即時更新對應的 DOM 元素狀態 (包含文法與單字)
+                const elements = document.querySelectorAll(`[data-id="${id}"]`);
+                elements.forEach(el => {
+                    const isM = masteredIds.includes(id);
+                    el.classList.toggle('is-mastered', isM);
+                    el.classList.toggle('mastered', isM);
+                    const cb = el.querySelector('input[type="checkbox"]');
+                    if (cb) cb.checked = isM;
+                });
+            } else {
+                // 完全重置時的整體重新渲染
+                renderGrammar();
+                renderVocab(document.getElementById('search-box').value);
+            }
+            
             updateProgress();
         }
 
