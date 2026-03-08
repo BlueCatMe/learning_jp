@@ -28,7 +28,7 @@
 
     <header class="bg-emerald-800 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N3 日本語達陣</h1>
-        <p class="text-emerald-100 opacity-90 text-sm font-medium">中級橋樑：全方位核心語彙與 60 項完整文法系統</p>
+        <p class="text-emerald-100 opacity-90 text-sm font-medium">中級橋樑：全方位核心語彙與 75 項完整文法系統</p>
     </header>
 
     <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm text-center">
@@ -57,7 +57,7 @@
 
     <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G60)</button>
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G75)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">全量單字庫 (去重版)</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">雙向智能學習卡</button>
         </div>
@@ -223,7 +223,22 @@
             { id: 'g57', title: '～せいで', desc: '都怪...。', ex: [{j: '雨のせいで<ruby>遅<rt>おく</rt></ruby>れた。', c: '都怪下雨害我遲到。'}]},
             { id: 'g58', title: '～反面', desc: '另一方面（對立特徵）。', ex: [{j: '<ruby>便利<rt>べんり</rt></ruby>な反面、危ない。', c: '便利的同時也很危險。'}]},
             { id: 'g59', title: '～一方で', desc: '一方面...另一方面（並列對比）。', ex: [{j: '<ruby>子供<rt>こども</rt></ruby>を育てる一方で働く。', c: '一邊育兒一邊工作。'}]},
-            { id: 'g60', title: '尊敬 / 謙譲語', desc: '進階敬語。', ex: [{j: '先生、どちらへいらっしゃいますか。', c: '老師，您要去哪裡呢？'}]}
+            { id: 'g60', title: '尊敬 / 謙譲語', desc: '進階敬語。', ex: [{j: '先生、どちらへいらっしゃいますか。', c: '老師，您要去哪裡呢？'}]},
+            { id: 'g61', title: 'あがる（上がる）', desc: '完成～、做好某事。', ex: [{"j": "<ruby>最近<rt>さいきん</rt></ruby>の<ruby>企画書<rt>きかくしょ</rt></ruby>が<ruby>出来上がっ<rt>できあがっ</rt></ruby>たので、どうぞご<ruby>覧<rt>らん</rt></ruby>ください。", "c": "最近的企劃書完成了，請看一下。"}] },
+            { id: 'g62', title: 'いつか', desc: '未來找機會、總有一天。', ex: [{"j": "わたしもいつか<ruby>一度<rt>いちど</rt></ruby><ruby>行<rt>い</rt></ruby>ってみたいなぁ。", "c": "真好啊！早晚我也要去一趟看看。"}] },
+            { id: 'g63', title: 'いつのまにか（いつの間にか）', desc: '不知不覺。', ex: [{"j": "<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んでいたら、いつのまにか<ruby>５時間<rt>ごじかん</rt></ruby>も<ruby>経<rt>た</rt></ruby>ってしまった。", "c": "一讀起書來，不知不覺過了５個小時。"}] },
+            { id: 'g64', title: '上に（うえに）', desc: '不僅～而且～。', ex: [{"j": "<ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>った<ruby>上<rt>うえ</rt></ruby>に<ruby>雨<rt>あめ</rt></ruby>に<ruby>降<rt>ふ</rt></ruby>られた。", "c": "迷了路而且又被雨淋。"}] },
+            { id: 'g65', title: 'おきに', desc: '每隔～（時間或距離）。', ex: [{"j": "バスは<ruby>20分<rt>にじゅっぷん</rt></ruby>おきに<ruby>発車<rt>はっしゃ</rt></ruby>する。", "c": "巴士每隔20分鐘發車。"}] },
+            { id: 'g66', title: '恐れがある（おそれがある）', desc: '有可能、恐怕（產生不良影響）。', ex: [{"j": "<ruby>台風<rt>たいふう</rt></ruby>がこの<ruby>地方<rt>ちほう</rt></ruby>に<ruby>来<rt>く</rt></ruby>る<ruby>恐<rt>おそ</rt></ruby>れがある。", "c": "颱風有可能來這個地區。"}] },
+            { id: 'g67', title: 'がかり（で）', desc: '花費～時間、人力或金錢。', ex: [{"j": "ピアノを<ruby>5人<rt>ごにん</rt></ruby>がかりでやっと<ruby>運<rt>はこ</rt></ruby>んだ。", "c": "5個人一起抬，才終於搬運了鋼琴。"}] },
+            { id: 'g68', title: 'がする', desc: '感到～、有某種感覺（聲音、氣味等）。', ex: [{"j": "<ruby>昨日<rt>きのう</rt></ruby>の<ruby>夜<rt>よる</rt></ruby>、<ruby>誰<rt>だれ</rt></ruby>もいない<ruby>部屋<rt>へや</rt></ruby>から<ruby>何<rt>なに</rt></ruby>か<ruby>音<rt>おと</rt></ruby>が<ruby>聞<rt>き</rt></ruby>こえた<ruby>気<rt>き</rt></ruby>がした。", "c": "昨天晚上，我感覺到從沒人的房間裡傳來某種聲音。"}] },
+            { id: 'g69', title: 'か何か（かなにか）', desc: '～之類的、～什麼的（不確定事物）。', ex: [{"j": "<ruby>冷<rt>つめ</rt></ruby>たいものか<ruby>何<rt>なに</rt></ruby>かに、<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がりませんか。", "c": "要喝些什麼冷的飲料嗎？"}] },
+            { id: 'g70', title: 'がる', desc: '感到～、覺得～（用於描述第三人稱的感受）。', ex: [{"j": "<ruby>妹<rt>いもうと</rt></ruby>は、<ruby>最初<rt>さいしょ</rt></ruby>は「<ruby>水泳教室<rt>すいえいきょうしつ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたくない」と<ruby>嫌<rt>いや</rt></ruby>がっていた。", "c": "妹妹一開始的時候說討厭去游泳教室。"}] },
+            { id: 'g71', title: 'きる・きれる・きれない', desc: '～完、完成～。', ex: [{"j": "お<ruby>小遣<rt>こづか</rt></ruby>いを<ruby>使<rt>つか</rt></ruby>いきってしまった。", "c": "把零用錢花光了。"}] },
+            { id: 'g72', title: 'くらい・ぐらい', desc: '大約～、～左右（或表示程度）。', ex: [{"j": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>50歳<rt>ごじゅうさい</rt></ruby>ぐらいです。", "c": "他大概50歲左右。"}] },
+            { id: 'g73', title: 'こそ', desc: '才是、正是（強調）。', ex: [{"j": "これこそ<ruby>本場<rt>ほんば</rt></ruby>の<ruby>日本料理<rt>にほんりょうり</rt></ruby>です。", "c": "這才是道地的日本料理。"}] },
+            { id: 'g74', title: 'ことか', desc: '多麼～啊（表示強烈的感嘆）。', ex: [{"j": "やっと<ruby>合格<rt>ごうかく</rt></ruby>して、どんなにうれしかったことか。", "c": "終於合格了，多麼高興啊。"}] },
+            { id: 'g75', title: 'ことから', desc: '因為～、從～來看。', ex: [{"j": "<ruby>大川橋<rt>おおかわばし</rt></ruby>はめがねのような<ruby>形<rt>かたち</rt></ruby>をしていることから、「めがね<ruby>橋<rt>ばし</rt></ruby>」とも<ruby>呼<rt>よ</rt></ruby>ばれている。", "c": "大川橋因為形狀像眼鏡，所以也被稱為「眼鏡橋」。"}] }
         ];
 
         // --- N3 真正去重核心單字庫 (5元素格式：單字, 假名, 中文, 日文例句, 中文例句) ---
