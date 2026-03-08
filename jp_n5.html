@@ -28,7 +28,7 @@
 
     <header class="bg-indigo-700 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N5 日本語達陣</h1>
-        <p class="text-indigo-100 opacity-90 text-sm font-medium">入門基礎：全方位核心語彙與 25 項完整文法系統</p>
+        <p class="text-indigo-100 opacity-90 text-sm font-medium">入門基礎：全方位核心語彙與 34 項完整文法系統</p>
     </header>
 
     <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -57,7 +57,7 @@
 
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G25)</button>
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G34)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全量單字庫 (去重版)</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向智能學習卡</button>
         </div>
@@ -182,7 +182,16 @@
             { id: 'g22', title: '～前に / ～後で', desc: '動作先後。', ex: [{j: '<ruby>寝<rt>ね</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<ruby>磨<rt>みが</rt></ruby>きます。', c: '睡前刷牙。'}]},
             { id: 'g23', title: '～ので / ～から', desc: '原因理由。', ex: [{j: '<ruby>雨<rt>あめ</rt></ruby>なので<ruby>行<rt>い</rt></ruby>きません。', c: '因為雨而不去。'}]},
             { id: 'g24', title: '～と言います', desc: '引用或思考。', ex: [{j: '<ruby>彼<rt>かれ</rt></ruby>は「おはよう」と<ruby>言<rt>い</rt></ruby>いました。', c: '他說了早安。'}]},
-            { id: 'g25', title: '～でしょう', desc: '推測。', ex: [{j: '<ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れでしょう。', c: '明天會放晴吧。'}]}
+            { id: 'g25', title: '～でしょう', desc: '推測。', ex: [{j: '<ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れでしょう。', c: '明天會放晴吧。'}]},
+            { id: 'g26', title: '～て、～て、～', desc: 'て形 (接續助詞)', ex: [{"j": "<ruby>朝<rt>あさ</rt></ruby><ruby>起<rt>お</rt></ruby>きて、ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べて、<ruby>会社<rt>かいしゃ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。", "c": "早上醒來，食飯然後上班。"}] },
+            { id: 'g27', title: '～てから', desc: '之後', ex: [{"j": "<ruby>食事<rt>しょくじ</rt></ruby>が<ruby>終<rt>お</rt></ruby>わってから、<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。", "c": "食飯之後去購物。"}] },
+            { id: 'g28', title: '～なければなりません', desc: '一定要', ex: [{"j": "<ruby>毎日<rt>まいにち</rt></ruby>たくさん<ruby>宿題<rt>しゅくだい</rt></ruby>をしなければなりません。", "c": "我每天一定要做很多作業。"}] },
+            { id: 'g29', title: '～なくても いいです', desc: '即使不~也沒關係', ex: [{"j": "<ruby>明日<rt>あした</rt></ruby>は<ruby>来<rt>こ</rt></ruby>なくてもいいです。<ruby>明後日<rt>あさって</rt></ruby><ruby>来<rt>き</rt></ruby>てください。", "c": "你明天即使不來也沒關係。請後天再來。"}] },
+            { id: 'g30', title: '～ことです', desc: '這個事情', ex: [{"j": "<ruby>私<rt>わたし</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>日本<rt>にほん</rt></ruby>のドラマを<ruby>見<rt>み</rt></ruby>ることです。", "c": "我的興趣是看日本電視劇。"}] },
+            { id: 'g31', title: '～と思います', desc: '我認為...', ex: [{"j": "<ruby>日本<rt>にほん</rt></ruby>はきれいで<ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>がおいしいところだと<ruby>思<rt>おも</rt></ruby>います。", "c": "我認為日本是一個美麗食物又美味的地方。"}] },
+            { id: 'g32', title: '～と～', desc: '就是', ex: [{"j": "この<ruby>道<rt>みち</rt></ruby>を<ruby>真<rt>ま</rt></ruby>っ<ruby>直<rt>す</rt></ruby>ぐ<ruby>行<rt>い</rt></ruby>って<ruby>右<rt>みぎ</rt></ruby>へ<ruby>曲<rt>ま</rt></ruby>がるとコンビニがあります。", "c": "這條路直走，然後右轉就是便利店。"}] },
+            { id: 'g33', title: 'たら', desc: '如果', ex: [{"j": "チャンスがあったら、<ruby>将来<rt>しょうらい</rt></ruby><ruby>日本<rt>にほん</rt></ruby>に<ruby>住<rt>す</rt></ruby>みたいです。", "c": "如果有機會，我將來想住在日本。"}] },
+            { id: 'g34', title: 'ても', desc: '就算', ex: [{"j": "<ruby>単語<rt>たんご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えてもすぐに<ruby>忘<rt>わす</rt></ruby>れます。", "c": "就算記住單詞也會立即忘記。"}] }
         ];
 
         // --- N5 全量無重複單字庫 (5元素結構：單字, 假名, 中文, 日文例句, 中文例句) ---
