@@ -28,7 +28,7 @@
 
     <header class="bg-indigo-900 text-white py-8 px-4 text-center shadow-lg">
         <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! N4 日本語達陣</h1>
-        <p class="text-indigo-100 opacity-90 text-sm font-medium">中級前期：全方位核心語彙與 60 項完整文法系統</p>
+        <p class="text-indigo-100 opacity-90 text-sm font-medium">中級前期：全方位核心語彙與 73 項完整文法系統</p>
     </header>
 
     <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
@@ -57,7 +57,7 @@
 
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
-            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G60)</button>
+            <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G73)</button>
             <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全量單字庫 (去重版)</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向智能學習卡</button>
         </div>
@@ -215,7 +215,20 @@
             { id: 'g57', title: '尊敬語 (抬高對方)', desc: '抬高對方。', ex: [{j: 'お帰りになります。', c: '（上司）回去了。'}]},
             { id: 'g58', title: '謙譲語 (貶抑自己)', desc: '貶抑自己。', ex: [{j: 'お持ちします。', c: '我幫您拿。'}]},
             { id: 'g59', title: 'させていただく', desc: '請求准許。', ex: [{j: '<ruby>見<rt>み</rt></ruby>させていただけませんか。', c: '能讓我看看嗎？'}]},
-            { id: 'g60', title: '特殊敬語動詞', desc: '拝見する、伺う等。', ex: [{j: '<ruby>拝見<rt>はいけん</rt></ruby>しました。', c: '我拜讀了。'}]}
+            { id: 'g60', title: '特殊敬語動詞', desc: '拝見する、伺う等。', ex: [{j: '<ruby>拝見<rt>はいけん</rt></ruby>しました。', c: '我拜讀了。'}]},
+            { id: 'g61', title: '～て（で）～', desc: '連接前後句子，表示原因和結果等等', ex: [{"j": "<ruby>家族<rt>かぞく</rt></ruby>に<ruby>会<rt>あ</rt></ruby>えなくて<ruby>寂<rt>さび</rt></ruby>しいです。", "c": "無法和家人見面，覺得很寂寞。"}, {"j": "<ruby>授業<rt>じゅぎょう</rt></ruby>に<ruby>遅<rt>おく</rt></ruby>れて、<ruby>先生<rt>せんせい</rt></ruby>に<ruby>叱<rt>しか</rt></ruby>られました。", "c": "因為上課遲到了，所以被老師責罵。"}, {"j": "<ruby>地震<rt>じしん</rt></ruby>でビルが<ruby>倒<rt>たお</rt></ruby>れました。", "c": "地震令大廈倒塌了。"}] },
+            { id: 'g62', title: 'ので～', desc: '因為…', ex: [{"j": "<ruby>用事<rt>ようじ</rt></ruby>があるので、お<ruby>先<rt>さき</rt></ruby>に<ruby>失礼<rt>しつれい</rt></ruby>します。", "c": "因為有事情要做，我先告辭了。"}] },
+            { id: 'g63', title: '～かどうか～', desc: '是否、是…還是（不）…', ex: [{"j": "<ruby>来年<rt>らいねん</rt></ruby>、<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>けるかどうか、まだわかりません。", "c": "現在還不知道明年是否能去旅行呢。"}] },
+            { id: 'g64', title: '～のに～ (目的、用法)', desc: '為了、用於', ex: [{"j": "このかばんは、パソコンを<ruby>入<rt>い</rt></ruby>れるのに、いいです。", "c": "這個手提袋用來放筆電剛剛好。"}] },
+            { id: 'g65', title: 'い形容詞く します / な形容詞・名詞に します', desc: '表示變化', ex: [{"j": "イメチェンで<ruby>髪<rt>かみ</rt></ruby>を<ruby>短<rt>みじか</rt></ruby>くします。", "c": "因為想改變形象，把頭髮剪短了。"}, {"j": "ダイエット<ruby>中<rt>ちゅう</rt></ruby>なので<ruby>食<rt>た</rt></ruby>べる<ruby>量<rt>りょう</rt></ruby>を<ruby>半分<rt>はんぶん</rt></ruby>にします。", "c": "因為正在減肥，所以把食量減半了。"}] },
+            { id: 'g66', title: '場合', desc: '情況、時候', ex: [{"j": "パスポートをなくした<ruby>場合<rt>ばあい</rt></ruby>は、すぐに<ruby>領事館<rt>りょうじかん</rt></ruby>に<ruby>連絡<rt>れんらく</rt></ruby>して<ruby>下<rt>くだ</rt></ruby>さい。", "c": "萬一遺失了護照，請立刻聯絡領事館。"}] },
+            { id: 'g67', title: '～のに～ (雖然)', desc: '雖然、但是', ex: [{"j": "<ruby>予約<rt>よやく</rt></ruby>したのに、その<ruby>予約<rt>よやく</rt></ruby>が<ruby>入<rt>はい</rt></ruby>っていませんでした。", "c": "雖然要求預約了，但是沒有成功預約到。"}] },
+            { id: 'g68', title: '～しか', desc: '只～(後接否定)', ex: [{"j": "100<ruby>円<rt>えん</rt></ruby>しかないので、ジュースが<ruby>買<rt>か</rt></ruby>えません。", "c": "因爲只有100日元，所以買不了果汁。"}] },
+            { id: 'g69', title: '～ています (習慣)', desc: '習慣性地反覆進行的行為', ex: [{"j": "<ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>ひ</rt></ruby>は<ruby>大抵<rt>たいてい</rt></ruby><ruby>日本<rt>にほん</rt></ruby>ドラマを<ruby>見<rt>み</rt></ruby>ています。", "c": "休息日通常在看日本電視劇。"}] },
+            { id: 'g70', title: 'まだ～ています', desc: '還…', ex: [{"j": "まだ<ruby>使<rt>つか</rt></ruby>っています。", "c": "還在使用中。"}] },
+            { id: 'g71', title: '～とか～', desc: '…啦…啦', ex: [{"j": "サッカーとか<ruby>水泳<rt>すいえい</rt></ruby>とか…。", "c": "足球啦游泳啦…"}] },
+            { id: 'g72', title: 'まだ～ていません', desc: '未～', ex: [{"j": "まだ<ruby>昼<rt>ひる</rt></ruby>ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べていません。", "c": "我還未食午飯。"}] },
+            { id: 'g73', title: '～ように します', desc: '表示長期習慣(盡量的)', ex: [{"j": "<ruby>何<rt>なに</rt></ruby>でも<ruby>食<rt>た</rt></ruby>べるようにしています。", "c": "我盡量習慣什麼都食。"}] }
         ];
 
         // --- N4 真正去重核心單字庫 (5元素結構，包含振假名例句) ---
