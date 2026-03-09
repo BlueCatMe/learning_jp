@@ -909,6 +909,7 @@
         const vocabData = Array.from(uniquePoolMap.values());
 
         // --- Core States ---
+        let listenersAttached = false;
         let masteredIds = JSON.parse(localStorage.getItem('n4_mastery_grammar') || '[]');
         let vocabScores = JSON.parse(localStorage.getItem('n4_mastery_vocabulary_scores') || '{}');
         let hideMode = false;
@@ -916,24 +917,31 @@
         let fcMode = 'jpToZh';
 
         function init() {
+            // 從 LocalStorage 重新載入數據
+            masteredIds = JSON.parse(localStorage.getItem('n4_mastery_grammar') || '[]');
+            vocabScores = JSON.parse(localStorage.getItem('n4_mastery_vocabulary_scores') || '{}');
+
             renderGrammar();
             renderVocab();
             updateProgress();
             
-            document.getElementById('toggle-hide').addEventListener('click', () => {
-                hideMode = !hideMode;
-                document.body.classList.toggle('hide-mastered', hideMode);
-                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
-                document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
-            });
+            if (!listenersAttached) {
+                document.getElementById('toggle-hide').addEventListener('click', () => {
+                    hideMode = !hideMode;
+                    document.body.classList.toggle('hide-mastered', hideMode);
+                    document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
+                    document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
+                });
 
-            document.getElementById('reset-progress').addEventListener('click', () => {
-                document.getElementById('confirm-modal').style.display = 'flex';
-            });
+                document.getElementById('reset-progress').addEventListener('click', () => {
+                    document.getElementById('confirm-modal').style.display = 'flex';
+                });
 
-            document.getElementById('search-box').addEventListener('input', (e) => {
-                renderVocab(e.target.value);
-            });
+                document.getElementById('search-box').addEventListener('input', (e) => {
+                    renderVocab(e.target.value);
+                });
+                listenersAttached = true;
+            }
         }
 
         function formatRuby(word, kana) {

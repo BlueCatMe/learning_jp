@@ -923,6 +923,7 @@
         ];
 
         // --- Core States ---
+        let listenersAttached = false;
         let masteredIds = JSON.parse(localStorage.getItem('n3_mastery_grammar') || '[]');
         let vocabScores = JSON.parse(localStorage.getItem('n3_mastery_vocabulary_scores') || '{}');
         let hideMode = false;
@@ -930,15 +931,22 @@
         let fcMode = 'jpToZh';
 
         function init() {
+            // 從 LocalStorage 重新載入數據
+            masteredIds = JSON.parse(localStorage.getItem('n3_mastery_grammar') || '[]');
+            vocabScores = JSON.parse(localStorage.getItem('n3_mastery_vocabulary_scores') || '{}');
+
             renderGrammar();
             renderVocab();
             updateProgress();
             
+            if (!listenersAttached) {
             document.getElementById('toggle-hide').addEventListener('click', () => {
                 hideMode = !hideMode;
                 document.body.classList.toggle('hide-mastered', hideMode);
                 document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
                 document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
+                listenersAttached = true;
+            }
             });
 
             document.getElementById('reset-progress').addEventListener('click', () => {
