@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow! 日本語達陣 - 漢字挑戰全攻略</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif; scroll-behavior: smooth; }
+        .japanese-text { font-family: 'Noto Sans JP', sans-serif; }
+        ruby rt { font-size: 0.5em; color: #059669; padding-bottom: 0.1em; }
+        .mastered { opacity: 0.35; background-color: #f8fafc !important; }
+        .hide-mastered .is-mastered { display: none !important; }
+        .custom-checkbox { width: 1.25rem; height: 1.25rem; cursor: pointer; accent-color: #059669; }
+        .tab-active { color: #059669; border-bottom: 3px solid #059669; }
+        .sticky-controls { position: sticky; top: 0; z-index: 50; }
+        #confirm-modal { display: none; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 pb-20">
+
+    <header class="bg-emerald-600 text-white py-8 px-4 text-center shadow-lg">
+        <h1 class="text-3xl font-black mb-1 tracking-tight">Meow! 漢字挑戰全攻略</h1>
+        <p class="text-emerald-100 opacity-90 text-sm font-medium">突破 N1-N5 漢字障礙：掌握字義、讀音與用法</p>
+    </header>
+
+    <nav class="sticky-controls bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 border border-slate-200 shadow-sm">🏠 首頁</a>
+                <div id="sync-wrapper" class="flex items-center gap-2">
+                    <button id="sync-progress" disabled class="bg-emerald-50 hover:bg-emerald-100 text-emerald-600 border border-emerald-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                        <span>☁️</span> <span id="sync-label">啟用雲端同步</span>
+                    </button>
+                    <button id="logout-btn" class="hidden text-slate-400 hover:text-red-500 text-[10px] font-bold transition uppercase tracking-tighter">登出</button>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">漢字掌握進度</span>
+                    <div class="flex items-center gap-2">
+                        <div class="w-40 h-2 bg-slate-200 rounded-full overflow-hidden">
+                            <div id="progress-bar" class="h-full bg-emerald-500 transition-all duration-500"></div>
+                        </div>
+                        <span id="progress-text" class="text-xs font-bold text-emerald-700">0%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button id="toggle-hide" class="bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span id="toggle-icon">👁️</span> <span id="toggle-label">隱藏已掌握</span>
+                </button>
+                <button id="reset-progress" class="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span>🔄</span> <span>重置進度</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 max-w-5xl">
+        <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
+            <button onclick="switchTab('n5')" id="tab-btn-n5" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">N5 漢字</button>
+            <button onclick="switchTab('n4')" id="tab-btn-n4" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">N4 漢字</button>
+            <button onclick="switchTab('n3')" id="tab-btn-n3" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">N3 漢字</button>
+            <button onclick="switchTab('n2')" id="tab-btn-n2" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">N2 漢字</button>
+            <button onclick="switchTab('n1')" id="tab-btn-n1" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">N1 漢字</button>
+            <button onclick="switchTab('fc')" id="tab-btn-fc" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition font-black">⚡ 漢字挑戰卡</button>
+        </div>
+
+        <div id="kanji-list-section" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-50 border-b border-slate-200 text-center">
+                        <tr>
+                            <th class="p-4 w-16 text-center">掌握</th>
+                            <th class="p-4 w-32 text-center text-emerald-700">漢字</th>
+                            <th class="p-4 w-1/4 text-center">中文意義</th>
+                            <th class="p-4 text-center">實戰例句</th>
+                        </tr>
+                    </thead>
+                    <tbody id="kanji-body" class="divide-y divide-slate-100 text-sm"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="section-flashcard" class="hidden animate-fade-in">
+            <div class="max-w-md mx-auto bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden">
+                <div class="bg-emerald-600 p-12 text-center text-white relative">
+                    <div id="fc-kanji" class="text-8xl font-black mb-4 japanese-text drop-shadow-lg"></div>
+                    <div id="fc-level-badge" class="absolute top-4 right-6 bg-white/20 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest"></div>
+                </div>
+                <div class="p-8">
+                    <div id="fc-feedback" class="hidden mb-8 animate-fade-in">
+                        <div class="bg-slate-50 rounded-2xl p-6 border border-slate-100 space-y-4">
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1">中文意義</p>
+                                <p id="fc-meaning" class="text-xl font-bold text-slate-800"></p>
+                            </div>
+                            <div>
+                                <p class="text-[10px] text-slate-400 uppercase font-black tracking-widest mb-1">例句用法</p>
+                                <p id="fc-example" class="text-sm text-slate-600 leading-relaxed japanese-text"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="fc-controls" class="flex flex-col gap-3">
+                        <button id="fc-answer-btn" onclick="showFCAnswer()" class="w-full py-4 bg-emerald-100 text-emerald-700 rounded-2xl font-black hover:bg-emerald-200 transition shadow-sm border border-emerald-200">查看答案</button>
+                        <div id="fc-result-btns" class="hidden grid grid-cols-2 gap-3 animate-fade-in">
+                            <button onclick="submitKanjiFC(false)" class="py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">再來 (不懂)</button>
+                            <button onclick="submitKanjiFC(true)" class="py-4 bg-emerald-600 text-white rounded-2xl font-black hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">掌握 (懂了)</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Reset Modal -->
+    <div id="confirm-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-sm w-full p-8 text-center">
+            <div class="w-20 h-20 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">🚫</div>
+            <h3 class="text-2xl font-bold text-slate-900 mb-2">重置漢字進度？</h3>
+            <p class="text-slate-500 text-sm mb-8 leading-relaxed">這將清除所有掌握狀態與積分。動作無法復原。</p>
+            <div class="flex flex-col gap-3">
+                <button onclick="confirmReset()" class="w-full py-4 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition shadow-lg shadow-red-200">確定重置</button>
+                <button onclick="closeModal()" class="w-full py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">取消返回</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const kanjiData = {
+            n5: [
+                { id: 'k5_1', kanji: '日', meaning: '日、太陽、天', example: '<ruby>日<rt>ひ</rt></ruby>が<ruby>昇<rt>のぼ</rt></ruby>る。 (太陽升起)', level: 'N5' },
+                { id: 'k5_2', kanji: '月', meaning: '月、月亮、月份', example: '<ruby>月<rt>つき</rt></ruby>がきれいですね。 (月色真美)', level: 'N5' },
+                { id: 'k5_3', kanji: '火', meaning: '火', example: '<ruby>火<rt>ひ</rt></ruby>を<ruby>付<rt>つ</rt></ruby>ける。 (點火)', level: 'N5' },
+                { id: 'k5_4', kanji: '水', meaning: '水', example: '<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (喝水)', level: 'N5' },
+                { id: 'k5_5', kanji: '木', meaning: '木、樹木', example: '<ruby>木<rt>き</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<ruby>休<rt>やす</rt></ruby>む。 (在樹下休息)', level: 'N5' }
+            ],
+            n4: [
+                { id: 'k4_1', kanji: '手', meaning: '手', example: '<ruby>手<rt>て</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>う。 (洗手)', level: 'N4' },
+                { id: 'k4_2', kanji: '足', meaning: '腳、足', example: '<ruby>足<rt>あし</rt></ruby>が<ruby>速<rt>はや</rt></ruby>い。 (腳程快)', level: 'N4' },
+                { id: 'k4_3', kanji: '心', meaning: '心、心臟、情感', example: '<ruby>心<rt>こころ</rt></ruby>が<ruby>温<rt>あたた</rt></ruby>まる。 (心頭一暖)', level: 'N4' }
+            ],
+            n3: [
+                { id: 'k3_1', kanji: '願', meaning: '願、請求', example: 'お<ruby>願<rt>ねが</rt></ruby>いします。 (拜託了)', level: 'N3' },
+                { id: 'k3_2', kanji: '幸', meaning: '幸、幸福', example: '<ruby>幸<rt>しあわ</rt></ruby>せな<ruby>生活<rt>せいかつ</rt></ruby>。 (幸福的生活)', level: 'N3' }
+            ],
+            n2: [
+                { id: 'k2_1', kanji: '標', meaning: '標、標準、目標', example: '<ruby>目標<rt>もくひょう</rt></ruby>を<ruby>立<rt>た</rt></ruby>てる。 (立下目標)', level: 'N2' }
+            ],
+            n1: [
+                { id: 'k1_1', kanji: '謹', meaning: '謹、慎重', example: '<ruby>謹<rt>つつし</rt></ruby>んでお<ruby>慶<rt>よろこ</rt></ruby>び申し上げます。 (謹致賀忱)', level: 'N1' }
+            ]
+        };
+
+        let masteredIds = [];
+        let kanjiScores = {};
+        let currentTab = 'n5';
+        let hideMastered = false;
+        let currentFCKanji = null;
+
+        function init() {
+            masteredIds = JSON.parse(localStorage.getItem('kanji_mastery') || '[]');
+            kanjiScores = JSON.parse(localStorage.getItem('kanji_scores') || '{}');
+            hideMastered = localStorage.getItem('learning_jp_hide_mastered') === 'true';
+            
+            updateHideUI();
+            renderKanji();
+            updateProgress();
+
+            document.getElementById('toggle-hide').onclick = () => {
+                hideMastered = !hideMastered;
+                localStorage.setItem('learning_jp_hide_mastered', hideMastered);
+                updateHideUI();
+            };
+
+            document.getElementById('reset-progress').onclick = () => {
+                document.getElementById('confirm-modal').style.display = 'flex';
+            };
+        }
+
+        function updateHideUI() {
+            document.body.classList.toggle('hide-mastered', hideMastered);
+            document.getElementById('toggle-label').innerText = hideMastered ? '顯示已掌握' : '隱藏已掌握';
+            document.getElementById('toggle-icon').innerText = hideMastered ? '👁️‍🗨️' : '👁️';
+        }
+
+        function renderKanji() {
+            const body = document.getElementById('kanji-body');
+            const data = kanjiData[currentTab];
+            if (!data) return;
+            
+            body.innerHTML = data.map(k => {
+                const isM = masteredIds.includes(k.id);
+                return `
+                    <tr class="grammar-card ${isM ? 'mastered is-mastered' : ''}" data-id="${k.id}">
+                        <td class="p-4 text-center">
+                            <input type="checkbox" class="custom-checkbox" ${isM ? 'checked' : ''} onclick="toggleMastered('${k.id}')">
+                        </td>
+                        <td class="p-4 text-center japanese-text font-black text-3xl text-emerald-700">${k.kanji}</td>
+                        <td class="p-4 text-center">
+                            <p class="font-bold text-slate-700">${k.meaning}</p>
+                            <span class="inline-block px-2 py-0.5 bg-slate-100 text-slate-400 text-[10px] rounded mt-1 font-black">${k.level}</span>
+                        </td>
+                        <td class="p-4 text-slate-600 japanese-text">${k.example}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function toggleMastered(id) {
+            const index = masteredIds.indexOf(id);
+            if (index > -1) {
+                masteredIds.splice(index, 1);
+            } else {
+                masteredIds.push(id);
+            }
+            saveAndRefresh(id);
+        }
+
+        function saveAndRefresh(id) {
+            localStorage.setItem('kanji_mastery', JSON.stringify(masteredIds));
+            localStorage.setItem('kanji_scores', JSON.stringify(kanjiScores));
+            localStorage.setItem('learning_jp_last_modified', Date.now());
+
+            if (id) {
+                const el = document.querySelector(`[data-id="${id}"]`);
+                if (el) {
+                    const isM = masteredIds.includes(id);
+                    el.classList.toggle('is-mastered', isM);
+                    el.classList.toggle('mastered', isM);
+                    const cb = el.querySelector('input[type="checkbox"]');
+                    if (cb) cb.checked = isM;
+                }
+            } else if (currentTab !== 'fc') {
+                renderKanji();
+            }
+
+            updateProgress();
+            if (window.triggerAutoSync) triggerAutoSync();
+        }
+
+        function updateProgress() {
+            const allKanji = Object.values(kanjiData).flat();
+            const total = allKanji.length;
+            const current = masteredIds.length;
+            const percent = total > 0 ? Math.round((current / total) * 100) : 0;
+            document.getElementById('progress-bar').style.width = percent + '%';
+            document.getElementById('progress-text').innerText = percent + '%';
+        }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-slate-400');
+            });
+            document.getElementById(`tab-btn-${tab}`).classList.add('tab-active');
+            
+            if (tab === 'fc') {
+                document.getElementById('kanji-list-section').classList.add('hidden');
+                document.getElementById('section-flashcard').classList.remove('hidden');
+                loadNextKanjiFC();
+            } else {
+                document.getElementById('kanji-list-section').classList.remove('hidden');
+                document.getElementById('section-flashcard').classList.add('hidden');
+                renderKanji();
+            }
+        }
+
+        function loadNextKanjiFC() {
+            const allUnmastered = Object.values(kanjiData).flat().filter(k => !masteredIds.includes(k.id));
+            if (allUnmastered.length === 0) {
+                document.getElementById('fc-kanji').innerText = '🎉';
+                document.getElementById('fc-meaning').innerText = '恭喜！所有漢字已掌握！';
+                document.getElementById('fc-example').innerText = '';
+                document.getElementById('fc-feedback').classList.remove('hidden');
+                document.getElementById('fc-controls').classList.add('hidden');
+                return;
+            }
+
+            currentFCKanji = allUnmastered[Math.floor(Math.random() * allUnmastered.length)];
+            document.getElementById('fc-kanji').innerText = currentFCKanji.kanji;
+            document.getElementById('fc-level-badge').innerText = currentFCKanji.level;
+            document.getElementById('fc-meaning').innerText = currentFCKanji.meaning;
+            document.getElementById('fc-example').innerHTML = currentFCKanji.example;
+            
+            document.getElementById('fc-feedback').classList.add('hidden');
+            document.getElementById('fc-answer-btn').classList.remove('hidden');
+            document.getElementById('fc-result-btns').classList.add('hidden');
+            document.getElementById('fc-controls').classList.remove('hidden');
+        }
+
+        function showFCAnswer() {
+            document.getElementById('fc-feedback').classList.remove('hidden');
+            document.getElementById('fc-answer-btn').classList.add('hidden');
+            document.getElementById('fc-result-btns').classList.remove('hidden');
+        }
+
+        function submitKanjiFC(isKnown) {
+            const id = currentFCKanji.id;
+            let score = kanjiScores[id] || 0;
+
+            if (isKnown) {
+                score += 5;
+            } else {
+                score = Math.floor(score / 2);
+            }
+
+            kanjiScores[id] = score;
+            if (score >= 10 && !masteredIds.includes(id)) {
+                masteredIds.push(id);
+            }
+            
+            saveAndRefresh();
+            loadNextKanjiFC();
+        }
+
+        function closeModal() { document.getElementById('confirm-modal').style.display = 'none'; }
+        function confirmReset() { masteredIds = []; kanjiScores = {}; saveAndRefresh(); closeModal(); }
+
+        window.onload = init;
+    </script>
+    <footer class="bg-slate-100 border-t border-slate-200 py-12 mt-20">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <p class="text-slate-400 text-xs italic">© 2026 Meow! 日本語達陣學習計畫</p>
+        </div>
+    </footer>
+    <script src="assets/js/sync-service.js"></script>
+</body>
+</html>
