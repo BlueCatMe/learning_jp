@@ -909,8 +909,8 @@
         const vocabData = Array.from(uniquePoolMap.values());
 
         // --- Core States ---
-        let masteredIds = JSON.parse(localStorage.getItem('n4_dual_mastery_v2026_q3') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n4_dual_scores_v2026_q3') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n4_mastery_grammar') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n4_mastery_vocabulary_scores') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -1108,8 +1108,8 @@
         }
 
         function saveAndRefresh(id) {
-            localStorage.setItem('n4_dual_mastery_v2026_q3', JSON.stringify(masteredIds));
-            localStorage.setItem('n4_dual_scores_v2026_q3', JSON.stringify(vocabScores));
+            localStorage.setItem('n4_mastery_grammar', JSON.stringify(masteredIds));
+            localStorage.setItem('n4_mastery_vocabulary_scores', JSON.stringify(vocabScores));
             
             if (id) {
                 // 動態即時更新對應的 DOM 元素狀態 (包含文法與單字)

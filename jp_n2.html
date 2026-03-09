@@ -504,8 +504,8 @@
         ];
 
         // --- Core Logic ---
-        let masteredIds = JSON.parse(localStorage.getItem('n2_dual_mastery_final_v1') || '[]');
-        let vocabScores = JSON.parse(localStorage.getItem('n2_dual_scores_final_v1') || '{}');
+        let masteredIds = JSON.parse(localStorage.getItem('n2_mastery_grammar') || '[]');
+        let vocabScores = JSON.parse(localStorage.getItem('n2_mastery_vocabulary_scores') || '{}');
         let hideMode = false;
         let currentFC = null;
         let fcMode = 'jpToZh';
@@ -699,8 +699,8 @@
         }
 
         function saveAndSync(id) {
-            localStorage.setItem('n2_dual_mastery_final_v1', JSON.stringify(masteredIds));
-            localStorage.setItem('n2_dual_scores_final_v1', JSON.stringify(vocabScores));
+            localStorage.setItem('n2_mastery_grammar', JSON.stringify(masteredIds));
+            localStorage.setItem('n2_mastery_vocabulary_scores', JSON.stringify(vocabScores));
             
             if (id) {
                 // 動態即時更新對應的 DOM 元素狀態 (包含文法與單字)

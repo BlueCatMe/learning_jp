@@ -17,11 +17,11 @@ let accessToken = null;
 
 // 定義所有級別的 LocalStorage 鍵值對應
 const STORAGE_MAP = {
-    n1: { mastery: 'n1_mastery_final_v2026', scores: 'n1_scores_final_v2026' },
-    n2: { mastery: 'n2_dual_mastery_final_v1', scores: 'n2_dual_scores_final_v1' },
-    n3: { mastery: 'n3_dual_mastery_v2026_q2', scores: 'n3_dual_scores_v2026_q2' },
-    n4: { mastery: 'n4_dual_mastery_v2026_q3', scores: 'n4_dual_scores_v2026_q3' },
-    n5: { mastery: 'n5_dual_mastery_final_v3', scores: 'n5_dual_scores_final_v3' }
+    n1: { mastery: 'n1_mastery_grammar', scores: 'n1_mastery_vocabulary_scores' },
+    n2: { mastery: 'n2_mastery_grammar', scores: 'n2_mastery_vocabulary_scores' },
+    n3: { mastery: 'n3_mastery_grammar', scores: 'n3_mastery_vocabulary_scores' },
+    n4: { mastery: 'n4_mastery_grammar', scores: 'n4_mastery_vocabulary_scores' },
+    n5: { mastery: 'n5_mastery_grammar', scores: 'n5_mastery_vocabulary_scores' }
 };
 
 /**
