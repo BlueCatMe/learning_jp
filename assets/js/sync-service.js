@@ -68,7 +68,11 @@ function checkInited() {
             accessToken = savedToken;
             gapi.client.setToken({ access_token: accessToken });
             updateSyncUI(true);
-            startSyncProcess(true);
+            // 只有在子頁面（非首頁）才載入時自動同步
+            const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+            if (!isIndex) {
+                startSyncProcess(true);
+            }
         } else {
             updateSyncUI(false);
         }
@@ -105,6 +109,10 @@ function handleLogout() {
  */
 function triggerAutoSync() {
     if (!accessToken || !gapiInited) return;
+
+    // 不在首頁自動同步
+    const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/');
+    if (isIndex) return;
 
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
