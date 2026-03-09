@@ -105,10 +105,10 @@ async function startSyncProcess(isAuto = false) {
         // 2. 準備本地數據
         const localData = packLocalData();
 
-        // 3. 合併數據 (Merge Logic)
+        // 3. 合併數據 (Last Write Wins Logic)
         const mergedData = mergeSyncData(localData, cloudData);
 
-        // 4. 更新本地
+        // 4. 更新本地 (如果雲端較新，或是剛合併完)
         unpackLocalData(mergedData);
 
         // 5. 上傳至雲端
@@ -120,9 +120,13 @@ async function startSyncProcess(isAuto = false) {
 
         showSyncStatus(isAuto ? '✅ 自動同步成功' : '✅ 同步成功', 'success');
 
-        // 只有在非自動同步或是數據有實質變動時才呼叫 init (避免無限循環)
-        // 這裡簡單化處理，如果是手動點擊才重新 init UI
-        if (!isAuto && window.init) window.init();
+        // 如果雲端數據較新且已套用至本地，則重新載入 UI
+        if (cloudData && cloudData.last_updated > localData.last_updated && window.init) {
+            window.init();
+        } else if (!isAuto && window.init) {
+            // 手動同步時一律重新載入
+            window.init();
+        }
     } catch (err) {
         console.error('Sync Error:', err);
         if (err.status === 401) {
@@ -135,38 +139,32 @@ async function startSyncProcess(isAuto = false) {
 }
 
 /**
- * 合併邏輯：
- * - Mastery List: 聯集 (Union)
- * - Scores: 取最大值 (Max)
+ * 合併邏輯：以最新更動時間 (last_updated) 為準。
+ * 解決勾選後取消 (uncheck) 無法同步的問題。
  */
 function mergeSyncData(local, cloud) {
     if (!cloud) return local;
-    const merged = { ...local };
+    
+    // 如果雲端資料是舊版格式（沒有 last_updated），則以本地為主或進行相容處理
+    if (!cloud.last_updated) return local;
 
-    for (const level in STORAGE_MAP) {
-        const cLevel = cloud[level] || { mastery: [], scores: {} };
-        const lLevel = local[level];
-
-        // Merge Mastery
-        merged[level].mastery = [...new Set([...lLevel.mastery, ...cLevel.mastery])];
-
-        // Merge Scores
-        for (const id in cLevel.scores) {
-            const cScore = cLevel.scores[id];
-            const lScore = lLevel.scores[id] || { jpToZh: 0, zhToJp: 0 };
-            merged[level].scores[id] = {
-                jpToZh: Math.max(lScore.jpToZh, cScore.jpToZh),
-                zhToJp: Math.max(lScore.zhToJp, cScore.zhToJp)
-            };
-        }
+    // 比較時間戳記，誰新就聽誰的
+    if (local.last_updated >= cloud.last_updated) {
+        console.log('Local data is newer or identical. Using local.');
+        return local;
+    } else {
+        console.log('Cloud data is newer. Using cloud.');
+        return cloud;
     }
-    return merged;
 }
 
 function packLocalData() {
-    const data = {};
+    const data = {
+        last_updated: parseInt(localStorage.getItem('learning_jp_last_modified') || '0'),
+        levels: {}
+    };
     for (const level in STORAGE_MAP) {
-        data[level] = {
+        data.levels[level] = {
             mastery: JSON.parse(localStorage.getItem(STORAGE_MAP[level].mastery) || '[]'),
             scores: JSON.parse(localStorage.getItem(STORAGE_MAP[level].scores) || '{}')
         };
@@ -175,10 +173,15 @@ function packLocalData() {
 }
 
 function unpackLocalData(data) {
+    if (!data || !data.levels) return;
+    
+    // 儲存時間戳記
+    localStorage.setItem('learning_jp_last_modified', data.last_updated.toString());
+    
     for (const level in STORAGE_MAP) {
-        if (data[level]) {
-            localStorage.setItem(STORAGE_MAP[level].mastery, JSON.stringify(data[level].mastery));
-            localStorage.setItem(STORAGE_MAP[level].scores, JSON.stringify(data[level].scores));
+        if (data.levels[level]) {
+            localStorage.setItem(STORAGE_MAP[level].mastery, JSON.stringify(data.levels[level].mastery));
+            localStorage.setItem(STORAGE_MAP[level].scores, JSON.stringify(data.levels[level].scores));
         }
     }
 }
@@ -226,12 +229,12 @@ function showSyncStatus(msg, type) {
     label.innerText = msg;
 
     if (type === 'success') {
-        const originalBg = btn.classList.contains('bg-white/20') ? 'bg-white/20' : 'bg-indigo-50';
-        const successBg = btn.classList.contains('bg-white/20') ? 'bg-green-500/50' : 'bg-green-600';
-
+        const isIndex = btn.classList.contains('bg-white/20');
+        const successBg = isIndex ? 'bg-green-500/50' : 'bg-green-600';
+        
         btn.classList.add(successBg);
         setTimeout(() => {
-            label.innerText = btn.id === 'sync-progress' && !btn.classList.contains('bg-white/20') ? '雲端同步' : '同步雲端進度';
+            label.innerText = isIndex ? '同步雲端進度' : '雲端同步';
             btn.classList.remove(successBg);
         }, 3000);
     }

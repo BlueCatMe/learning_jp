@@ -708,6 +708,7 @@
         function saveAndSync(id) {
             localStorage.setItem('n2_mastery_grammar', JSON.stringify(masteredIds));
             localStorage.setItem('n2_mastery_vocabulary_scores', JSON.stringify(vocabScores));
+            localStorage.setItem('learning_jp_last_modified', Date.now());
 
             if (id) {
                 // 動態即時更新對應的 DOM 元素狀態 (包含文法與單字)
