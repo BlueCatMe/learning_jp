@@ -60,7 +60,7 @@
     <main class="container mx-auto px-4 py-8 max-w-7xl text-center">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G75)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-emerald-600 transition">雙向智能學習卡</button>
         </div>
 
@@ -242,7 +242,7 @@
             { id: 'g75', title: 'ことから', desc: '因為～、從～來看。', ex: [{"j": "<ruby>大川橋<rt>おおかわばし</rt></ruby>はめがねのような<ruby>形<rt>かたち</rt></ruby>をしていることから、「めがね<ruby>橋<rt>ばし</rt></ruby>」とも<ruby>呼<rt>よ</rt></ruby>ばれている。", "c": "大川橋因為形狀像眼鏡，所以也被稱為「眼鏡橋」。"}] }
         ];
 
-        // --- N3 真正去重核心單字庫 (5元素格式：單字, 假名, 中文, 日文例句, 中文例句) ---
+        // --- N3 單字庫 (5元素格式：單字, 假名, 中文, 日文例句, 中文例句) ---
         const vocabData = [
             ["愛情", "あいじょう", "愛情", "<ruby>愛情<rt>あいじょう</rt></ruby>を<ruby>注<rt>そそ</rt></ruby>ぐ。", "傾注愛情。"],
             ["合図", "あいず", "信號、暗號", "<ruby>出発<rt>しゅっぱつ</rt></ruby>の<ruby>合図<rt>あいず</rt></ruby>をする。", "發出出發的信號。"],

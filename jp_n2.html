@@ -60,7 +60,7 @@
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G95)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition">單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-violet-600 transition">雙向智能學習卡</button>
         </div>
 
@@ -260,7 +260,7 @@
             { id: 'g95', title: 'ところが ( 句首 )', desc: '但是、然而', ex: [{"j": "うまくいくかだろうと<ruby>思<rt>おも</rt></ruby>っていた。ところが<ruby>失敗<rt>しっぱい</rt></ruby>してしまった。", "c": "我以為會進行得很順利，但是卻失敗了。"}] }
         ];
 
-        // --- N2 真正全量去重單字庫 (5元素格式) ---
+        // --- N2 單字庫 (5元素格式) ---
         const vocabData = [
             ["妥協", "だきょう", "妥協、讓步", "一切<ruby>妥協<rt>だきょう</rt></ruby>しない。", "絕對不妥協。"],
             ["克服", "こくふく", "克服、跨越", "<ruby>困難<rt>こんなん</rt></ruby>を<ruby>克服<rt>こくふく</rt></ruby>する。", "克服困難。"],

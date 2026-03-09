@@ -60,7 +60,7 @@
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G73)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向智能學習卡</button>
         </div>
 
@@ -236,7 +236,7 @@
             { id: 'g73', title: '～ように します', desc: '表示長期習慣(盡量的)', ex: [{"j": "<ruby>何<rt>なに</rt></ruby>でも<ruby>食<rt>た</rt></ruby>べるようにしています。", "c": "我盡量習慣什麼都食。"}] }
         ];
 
-        // --- N4 真正去重核心單字庫 (5元素結構，包含振假名例句) ---
+        // --- N4 單字庫 (5元素結構，包含振假名例句) ---
         const rawVocab = [
             ["案内", "あんない", "引導,帶路", "<ruby>町<rt>まち</rt></ruby>を<ruby>案内<rt>あんない</rt></ruby>します。", "為您導覽城鎮。"],
             ["受付", "うけつけ", "接待,受理", "<ruby>受付<rt>うけつけ</rt></ruby>は<ruby>一階<rt>いっかい</rt></ruby>にあります。", "接待處在一樓。"],

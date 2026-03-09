@@ -60,7 +60,7 @@
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (105)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition">單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-rose-600 transition">雙向智能學習卡</button>
         </div>
 
@@ -302,7 +302,7 @@
             { id: 'g135', title: 'Vずじまいだ', desc: '未能...就結束', ex: [{"j": "<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>観光地<rt>かんこうち</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くまで行ったのに、<ruby>忙<rt>いそが</rt></ruby>しくてどこへも<ruby>寄<rt>よ</rt></ruby>らずじまいだった。", "c": "去到著名觀光地點附近，但因太忙，未能順道到訪。"}] }
         ];
 
-        // --- N1 真正全量去重單字庫 (完全獨立無重複陣列) ---
+        // --- N1 單字庫 (完全獨立無重複陣列) ---
         const rawVocab = [
             ["妥協", "だきょう", "妥協、讓步", "一切<ruby>妥協<rt>だきょう</rt></ruby>しない。", "絕對不妥協。"],
             ["克服", "こくふく", "克服、跨越", "<ruby>困難<rt>こんなん</rt></ruby>を<ruby>克服<rt>こくふく</rt></ruby>する。", "克服困難。"],

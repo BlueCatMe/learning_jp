@@ -60,7 +60,7 @@
     <main class="container mx-auto px-4 py-8 max-w-7xl">
         <div class="flex border-b border-slate-200 mb-8 overflow-x-auto whitespace-nowrap">
             <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="tab-btn px-6 py-4 font-bold text-lg tab-active transition">核心文法 (G1-G34)</button>
-            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">全量單字庫 (去重版)</button>
+            <button onclick="switchTab('vocab')" id="tab-btn-vocab" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">單字庫</button>
             <button onclick="switchTab('flashcard')" id="tab-btn-flashcard" class="tab-btn px-6 py-4 font-bold text-lg text-slate-400 hover:text-indigo-600 transition">雙向智能學習卡</button>
         </div>
 
@@ -199,7 +199,7 @@
             { id: 'g34', title: 'ても', desc: '就算', ex: [{"j": "<ruby>単語<rt>たんご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>えてもすぐに<ruby>忘<rt>わす</rt></ruby>れます。", "c": "就算記住單詞也會立即忘記。"}] }
         ];
 
-        // --- N5 全量無重複單字庫 (5元素結構：單字, 假名, 中文, 日文例句, 中文例句) ---
+        // --- N5 單字庫 (5元素結構：單字, 假名, 中文, 日文例句, 中文例句) ---
         const vocabData = [
             ["アイスクリーム", "", "冰淇淋", "アイスクリームを<ruby>食<rt>た</rt></ruby>べましょう。", "我們來吃冰淇淋吧。"],
             ["間", "あいだ", "之間,中間", "<ruby>銀行<rt>ぎんこう</rt></ruby>と<ruby>学校<rt>がっこう</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>にあります。", "在銀行和學校之間。"],
