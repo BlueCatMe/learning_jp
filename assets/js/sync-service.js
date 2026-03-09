@@ -14,6 +14,7 @@ let gapiInited = false;
 let gisInited = false;
 let tokenClient;
 let accessToken = null;
+let debounceTimer;
 
 // 定義所有級別的 LocalStorage 鍵值對應
 const STORAGE_MAP = {
@@ -70,8 +71,22 @@ function checkInited() {
     }
 }
 
-async function startSyncProcess() {
-    showSyncStatus('⏳ 同步中...', 'loading');
+/**
+ * 觸發自動同步（帶有 3 秒 Debounce）
+ */
+function triggerAutoSync() {
+    if (!accessToken || !gapiInited) return;
+
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        startSyncProcess(true);
+    }, 3000);
+}
+
+async function startSyncProcess(isAuto = false) {
+    if (!isAuto) showSyncStatus('⏳ 同步中...', 'loading');
+    else showSyncStatus('⏳ 自動同步中...', 'loading');
+
     try {
         // 1. 尋找現有同步檔案
         let fileId = await findSyncFile();
@@ -101,14 +116,16 @@ async function startSyncProcess() {
             await createSyncFile(mergedData);
         }
 
-        showSyncStatus('✅ 同步成功', 'success');
-        // 重新載入當前頁面數據 (如果頁面有 init 函式)
-        if (window.init) window.init();
+        showSyncStatus(isAuto ? '✅ 自動同步成功' : '✅ 同步成功', 'success');
+
+        // 只有在非自動同步或是數據有實質變動時才呼叫 init (避免無限循環)
+        // 這裡簡單化處理，如果是手動點擊才重新 init UI
+        if (!isAuto && window.init) window.init();
     } catch (err) {
         console.error('Sync Error:', err);
         if (err.status === 401) {
-            // Token 過期，要求重新授權
-            tokenClient.requestAccessToken({ prompt: '' });
+            // Token 過期
+            if (!isAuto) tokenClient.requestAccessToken({ prompt: '' });
         } else {
             showSyncStatus('❌ 同步失敗', 'error');
         }
@@ -123,7 +140,7 @@ async function startSyncProcess() {
 function mergeSyncData(local, cloud) {
     if (!cloud) return local;
     const merged = { ...local };
-    
+
     for (const level in STORAGE_MAP) {
         const cLevel = cloud[level] || { mastery: [], scores: {} };
         const lLevel = local[level];
@@ -205,12 +222,15 @@ function showSyncStatus(msg, type) {
     if (!btn) return;
     const label = btn.querySelector('#sync-label') || btn;
     label.innerText = msg;
-    
+
     if (type === 'success') {
-        btn.classList.add('bg-green-600');
+        const originalBg = btn.classList.contains('bg-white/20') ? 'bg-white/20' : 'bg-indigo-50';
+        const successBg = btn.classList.contains('bg-white/20') ? 'bg-green-500/50' : 'bg-green-600';
+
+        btn.classList.add(successBg);
         setTimeout(() => {
-            label.innerText = '雲端同步';
-            btn.classList.remove('bg-green-600');
+            label.innerText = btn.id === 'sync-progress' && !btn.classList.contains('bg-white/20') ? '雲端同步' : '同步雲端進度';
+            btn.classList.remove(successBg);
         }, 3000);
     }
 }
@@ -233,7 +253,6 @@ function loadScript(src, callback) {
 
 // 初始化
 window.addEventListener('load', () => {
-    // 如果頁面上有 sync 按鈕，則初始化
     if (document.getElementById('sync-progress')) {
         initSyncService();
         document.getElementById('sync-progress').addEventListener('click', handleSyncClick);
