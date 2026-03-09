@@ -67,6 +67,8 @@ function checkInited() {
         if (savedToken) {
             accessToken = savedToken;
             gapi.client.setToken({ access_token: accessToken });
+            // 載入頁面時自動同步一次
+            startSyncProcess(true);
         }
     }
 }
