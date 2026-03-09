@@ -16,7 +16,6 @@ let tokenClient;
 let accessToken = null;
 let debounceTimer;
 
-// 定義所有級別的 LocalStorage 鍵值對應
 const STORAGE_MAP = {
     n1: { mastery: 'n1_mastery_grammar', scores: 'n1_mastery_vocabulary_scores' },
     n2: { mastery: 'n2_mastery_grammar', scores: 'n2_mastery_vocabulary_scores' },
@@ -50,6 +49,7 @@ function initSyncService() {
                 }
                 accessToken = resp.access_token;
                 localStorage.setItem('gdrive_sync_token', accessToken);
+                updateSyncUI(true);
                 startSyncProcess();
             },
         });
@@ -62,15 +62,42 @@ function checkInited() {
     if (gapiInited && gisInited) {
         const btn = document.getElementById('sync-progress');
         if (btn) btn.disabled = false;
-        // 如果已有 token，嘗試背景同步
+
         const savedToken = localStorage.getItem('gdrive_sync_token');
         if (savedToken) {
             accessToken = savedToken;
             gapi.client.setToken({ access_token: accessToken });
-            // 載入頁面時自動同步一次
+            updateSyncUI(true);
             startSyncProcess(true);
+        } else {
+            updateSyncUI(false);
         }
     }
+}
+
+/**
+ * 更新同步按鈕 UI 狀態
+ */
+function updateSyncUI(loggedIn) {
+    const label = document.getElementById('sync-label');
+    const logoutBtn = document.getElementById('logout-btn');
+    if (!label) return;
+
+    if (loggedIn) {
+        label.innerText = '雲端同步 (已啟用)';
+        if (logoutBtn) logoutBtn.classList.remove('hidden');
+    } else {
+        label.innerText = '啟用雲端同步';
+        if (logoutBtn) logoutBtn.classList.add('hidden');
+    }
+}
+
+function handleLogout() {
+    accessToken = null;
+    localStorage.removeItem('gdrive_sync_token');
+    // 可選擇是否要清除本地進度，這裡僅移除認證狀態
+    updateSyncUI(false);
+    showSyncStatus('已登出', 'success');
 }
 
 /**
@@ -86,11 +113,11 @@ function triggerAutoSync() {
 }
 
 async function startSyncProcess(isAuto = false) {
+    if (!accessToken) return;
     if (!isAuto) showSyncStatus('⏳ 同步中...', 'loading');
     else showSyncStatus('⏳ 自動同步中...', 'loading');
 
     try {
-        // 1. 尋找現有同步檔案
         let fileId = await findSyncFile();
         let cloudData = null;
 
@@ -102,16 +129,11 @@ async function startSyncProcess(isAuto = false) {
             cloudData = resp.result;
         }
 
-        // 2. 準備本地數據
         const localData = packLocalData();
-
-        // 3. 合併數據 (Last Write Wins Logic)
         const mergedData = mergeSyncData(localData, cloudData);
 
-        // 4. 更新本地 (如果雲端較新，或是剛合併完)
         unpackLocalData(mergedData);
 
-        // 5. 上傳至雲端
         if (fileId) {
             await updateSyncFile(fileId, mergedData);
         } else {
@@ -120,17 +142,14 @@ async function startSyncProcess(isAuto = false) {
 
         showSyncStatus(isAuto ? '✅ 自動同步成功' : '✅ 同步成功', 'success');
 
-        // 如果雲端數據較新且已套用至本地，則重新載入 UI
         if (cloudData && cloudData.last_updated > localData.last_updated && window.init) {
             window.init();
         } else if (!isAuto && window.init) {
-            // 手動同步時一律重新載入
             window.init();
         }
     } catch (err) {
         console.error('Sync Error:', err);
         if (err.status === 401) {
-            // Token 過期
             if (!isAuto) tokenClient.requestAccessToken({ prompt: '' });
         } else {
             showSyncStatus('❌ 同步失敗', 'error');
@@ -138,22 +157,13 @@ async function startSyncProcess(isAuto = false) {
     }
 }
 
-/**
- * 合併邏輯：以最新更動時間 (last_updated) 為準。
- * 解決勾選後取消 (uncheck) 無法同步的問題。
- */
 function mergeSyncData(local, cloud) {
     if (!cloud) return local;
-    
-    // 如果雲端資料是舊版格式（沒有 last_updated），則以本地為主或進行相容處理
     if (!cloud.last_updated) return local;
 
-    // 比較時間戳記，誰新就聽誰的
     if (local.last_updated >= cloud.last_updated) {
-        console.log('Local data is newer or identical. Using local.');
         return local;
     } else {
-        console.log('Cloud data is newer. Using cloud.');
         return cloud;
     }
 }
@@ -161,6 +171,7 @@ function mergeSyncData(local, cloud) {
 function packLocalData() {
     const data = {
         last_updated: parseInt(localStorage.getItem('learning_jp_last_modified') || '0'),
+        hide_mastered: localStorage.getItem('learning_jp_hide_mastered') === 'true',
         levels: {}
     };
     for (const level in STORAGE_MAP) {
@@ -173,15 +184,17 @@ function packLocalData() {
 }
 
 function unpackLocalData(data) {
-    if (!data || !data.levels) return;
-    
-    // 儲存時間戳記
-    localStorage.setItem('learning_jp_last_modified', data.last_updated.toString());
-    
-    for (const level in STORAGE_MAP) {
-        if (data.levels[level]) {
-            localStorage.setItem(STORAGE_MAP[level].mastery, JSON.stringify(data.levels[level].mastery));
-            localStorage.setItem(STORAGE_MAP[level].scores, JSON.stringify(data.levels[level].scores));
+    if (!data) return;
+
+    if (data.last_updated) localStorage.setItem('learning_jp_last_modified', data.last_updated.toString());
+    if (data.hide_mastered !== undefined) localStorage.setItem('learning_jp_hide_mastered', data.hide_mastered);
+
+    if (data.levels) {
+        for (const level in STORAGE_MAP) {
+            if (data.levels[level]) {
+                localStorage.setItem(STORAGE_MAP[level].mastery, JSON.stringify(data.levels[level].mastery));
+                localStorage.setItem(STORAGE_MAP[level].scores, JSON.stringify(data.levels[level].scores));
+            }
         }
     }
 }
@@ -224,17 +237,19 @@ async function updateSyncFile(fileId, data) {
 
 function showSyncStatus(msg, type) {
     const btn = document.getElementById('sync-progress');
-    if (!btn) return;
-    const label = btn.querySelector('#sync-label') || btn;
+    const label = document.getElementById('sync-label');
+    if (!btn || !label) return;
+
+    const oldText = label.innerText;
     label.innerText = msg;
 
     if (type === 'success') {
         const isIndex = btn.classList.contains('bg-white/20');
         const successBg = isIndex ? 'bg-green-500/50' : 'bg-green-600';
-        
+
         btn.classList.add(successBg);
         setTimeout(() => {
-            label.innerText = isIndex ? '同步雲端進度' : '雲端同步';
+            label.innerText = accessToken ? '雲端同步 (已啟用)' : '啟用雲端同步';
             btn.classList.remove(successBg);
         }, 3000);
     }
@@ -261,5 +276,10 @@ window.addEventListener('load', () => {
     if (document.getElementById('sync-progress')) {
         initSyncService();
         document.getElementById('sync-progress').addEventListener('click', handleSyncClick);
+        const logout = document.getElementById('logout-btn');
+        if (logout) logout.addEventListener('click', (e) => {
+            e.stopPropagation();
+            handleLogout();
+        });
     }
 });

@@ -35,7 +35,14 @@
         <div class="container mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
             <div class="flex items-center gap-4">
                 <a href="index.html" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 border border-slate-200 shadow-sm">🏠 首頁</a>
-                <button id="sync-progress" disabled class="bg-indigo-50 hover:bg-indigo-100 text-indigo-600 border border-indigo-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm"><span>☁️</span> <span id="sync-label">雲端同步</span></button>
+                
+            <div id="sync-wrapper" class="flex items-center gap-2">
+                <button id="sync-progress" disabled class="bg-indigo-50 hover:bg-indigo-100 text-indigo-600 border border-indigo-200 px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 shadow-sm">
+                    <span>☁️</span> <span id="sync-label">啟用雲端同步</span>
+                </button>
+                <button id="logout-btn" class="hidden text-slate-400 hover:text-red-500 text-[10px] font-bold transition uppercase tracking-tighter">登出</button>
+            </div>
+            
                 <div class="flex flex-col">
                     <span class="text-[9px] text-slate-400 font-black uppercase tracking-widest">N4 總掌握進度</span>
                     <div class="flex items-center gap-2">
@@ -916,6 +923,14 @@
 
         function init() {
             // 從 LocalStorage 重新載入數據
+            // 載入顯示偏好
+            hideMode = localStorage.getItem('learning_jp_hide_mastered') === 'true';
+            document.body.classList.toggle('hide-mastered', hideMode);
+            if (document.getElementById('toggle-label')) {
+                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
+                document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
+            }
+
             masteredIds = JSON.parse(localStorage.getItem('n4_mastery_grammar') || '[]');
             vocabScores = JSON.parse(localStorage.getItem('n4_mastery_vocabulary_scores') || '{}');
 
@@ -930,6 +945,10 @@
                     document.body.classList.toggle('hide-mastered', hideMode);
                     document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
                     document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
+                
+                    localStorage.setItem('learning_jp_hide_mastered', hideMode);
+                    localStorage.setItem('learning_jp_last_modified', Date.now());
+                    if (window.triggerAutoSync) triggerAutoSync();
                 });
 
                 document.getElementById('reset-progress').addEventListener('click', () => {
