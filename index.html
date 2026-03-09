@@ -27,6 +27,9 @@
             <p class="text-indigo-100 text-lg md:text-xl font-medium max-w-2xl mx-auto">
                 從日檢文法展開全方位學習，系統化掌握 N1 至 N5 核心能力。
             </p>
+            <button id="sync-progress" disabled class="mt-8 mx-auto bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-full text-sm font-bold transition flex items-center gap-2 backdrop-blur-sm border border-white/30">
+                <span>☁️</span> <span id="sync-label">同步雲端進度</span>
+            </button>
         </div>
     </header>
 
@@ -105,11 +108,9 @@
             </a>
 
         </div>
-    
-    
-
     </main>
-<footer class="bg-slate-100 border-t border-slate-200 py-12 mt-20">
+
+    <footer class="bg-slate-100 border-t border-slate-200 py-12 mt-20">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <div class="mb-6">
                 <a href="https://github.com/BlueCatMe/learning_jp" target="_blank" class="inline-flex items-center gap-2 text-slate-500 hover:text-indigo-600 transition font-medium">
@@ -124,5 +125,6 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/sync-service.js"></script>
 </body>
 </html>
