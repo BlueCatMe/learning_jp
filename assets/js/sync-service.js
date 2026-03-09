@@ -21,7 +21,8 @@ const STORAGE_MAP = {
     n2: { mastery: 'n2_mastery_grammar', scores: 'n2_mastery_vocabulary_scores' },
     n3: { mastery: 'n3_mastery_grammar', scores: 'n3_mastery_vocabulary_scores' },
     n4: { mastery: 'n4_mastery_grammar', scores: 'n4_mastery_vocabulary_scores' },
-    n5: { mastery: 'n5_mastery_grammar', scores: 'n5_mastery_vocabulary_scores' }
+    n5: { mastery: 'n5_mastery_grammar', scores: 'n5_mastery_vocabulary_scores' },
+    verbs: { mastery: 'verbs_mastery', scores: 'verbs_scores' }
 };
 
 /**
