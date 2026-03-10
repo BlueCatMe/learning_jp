@@ -952,26 +952,25 @@
             if (window.triggerAutoSync) triggerAutoSync();
 
             if (!listenersAttached) {
-            document.getElementById('toggle-hide').addEventListener('click', () => {
-                hideMode = !hideMode;
-                document.body.classList.toggle('hide-mastered', hideMode);
-                document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
-                document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
-                listenersAttached = true;
-            }
-            
+                document.getElementById('toggle-hide').addEventListener('click', () => {
+                    hideMode = !hideMode;
+                    document.body.classList.toggle('hide-mastered', hideMode);
+                    document.getElementById('toggle-label').innerText = hideMode ? "顯示全部" : "隱藏已掌握";
+                    document.getElementById('toggle-icon').innerText = hideMode ? "👁️‍🗨️" : "👁️";
                     localStorage.setItem('learning_jp_hide_mastered', hideMode);
                     localStorage.setItem('learning_jp_last_modified', Date.now());
                     if (window.triggerAutoSync) triggerAutoSync();
                 });
 
-            document.getElementById('reset-progress').addEventListener('click', () => {
-                document.getElementById('confirm-modal').style.display = 'flex';
-            });
+                document.getElementById('reset-progress').addEventListener('click', () => {
+                    document.getElementById('confirm-modal').style.display = 'flex';
+                });
 
-            document.getElementById('search-box').addEventListener('input', (e) => {
-                renderVocab(e.target.value);
-            });
+                document.getElementById('search-box').addEventListener('input', (e) => {
+                    renderVocab(e.target.value);
+                });
+                listenersAttached = true;
+            }
         }
 
         // Function to wrap word in ruby if kana is provided
