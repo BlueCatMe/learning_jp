@@ -710,7 +710,7 @@
             vocabScores[currentFC.id] = scores;
             if (scores.jpToZh >= 10 && scores.zhToJp >= 10) masteredIds.push(currentFC.id);
             saveAndSync();
-            loadNextFlashcard();
+            loadNextFC();
         }
 
         function toggleMastered(id) {
@@ -761,11 +761,11 @@
             document.getElementById(`section-${type}`).classList.remove('hidden');
             document.querySelectorAll('.tab-btn').forEach(btn => { btn.classList.remove('tab-active'); btn.classList.add('text-slate-400'); });
             document.getElementById(`tab-btn-${type}`).classList.add('tab-active');
-            if (type === 'flashcard') loadNextFlashcard();
+            if (type === 'flashcard') loadNextFC();
         }
 
         function closeModal() { document.getElementById('confirm-modal').style.display = 'none'; }
-        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndSync(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFlashcard(); }
+        function confirmReset() { masteredIds = []; vocabScores = {}; saveAndSync(); closeModal(); if (!document.getElementById('section-flashcard').classList.contains('hidden')) loadNextFC(); }
 
         window.onload = init;
     </script>
