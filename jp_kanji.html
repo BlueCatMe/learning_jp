@@ -8010,8 +8010,17 @@
         }
 
         function loadNextKanjiFC() {
-            const allUnmastered = Object.values(kanjiData).flat().filter(k => !masteredIds.includes(k.id));
-            if (allUnmastered.length === 0) {
+            const levels = ['n5', 'n4', 'n3', 'n2', 'n1'];
+            let pool = [];
+
+            // 循序漸進解鎖邏輯：從 N5 開始，直到累積至少 10 個未掌握漢字
+            for (const level of levels) {
+                const unmasteredInLevel = kanjiData[level].filter(k => !masteredIds.includes(k.id));
+                pool = pool.concat(unmasteredInLevel);
+                if (pool.length >= 10) break;
+            }
+
+            if (pool.length === 0) {
                 document.getElementById('fc-kanji').innerText = '🎉';
                 document.getElementById('fc-meaning').innerText = '恭喜！所有漢字已掌握！';
                 document.getElementById('fc-example').innerText = '';
@@ -8021,7 +8030,7 @@
                 return;
             }
 
-            currentFCKanji = allUnmastered[Math.floor(Math.random() * allUnmastered.length)];
+            currentFCKanji = pool[Math.floor(Math.random() * pool.length)];
             const score = kanjiScores[currentFCKanji.id] || 0;
             document.getElementById('fc-score').innerText = score;
 
@@ -8029,13 +8038,10 @@
             document.getElementById('fc-level-badge').innerText = currentFCKanji.level;
             document.getElementById('fc-meaning').innerText = currentFCKanji.meaning;
             document.getElementById('fc-example').innerHTML = currentFCKanji.example;
-            
+
             document.getElementById('fc-feedback').classList.add('hidden');
-            document.getElementById('fc-answer-btn').classList.remove('hidden');
-            document.getElementById('fc-result-btns').classList.add('hidden');
             document.getElementById('fc-controls').classList.remove('hidden');
         }
-
         function showFCAnswer() {
             document.getElementById('fc-feedback').classList.remove('hidden');
         }
