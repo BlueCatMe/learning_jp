@@ -85,6 +85,11 @@
         </div>
 
         <div id="section-flashcard" class="hidden animate-fade-in">
+            <div class="text-center mb-6">
+                <p class="text-emerald-600 font-bold bg-emerald-50 inline-block px-4 py-2 rounded-full border border-emerald-100 shadow-sm">
+                    ⚡ 當前漢字積分: <span id="fc-score">0</span> / 10
+                </p>
+            </div>
             <div class="max-w-md mx-auto bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden">
                 <div class="bg-emerald-600 p-12 text-center text-white relative">
                     <div id="fc-kanji" class="text-8xl font-black mb-4 japanese-text drop-shadow-lg"></div>
@@ -105,10 +110,10 @@
                     </div>
 
                     <div id="fc-controls" class="flex flex-col gap-3">
-                        <button id="fc-answer-btn" onclick="showFCAnswer()" class="w-full py-4 bg-emerald-100 text-emerald-700 rounded-2xl font-black hover:bg-emerald-200 transition shadow-sm border border-emerald-200">查看答案</button>
-                        <div id="fc-result-btns" class="hidden grid grid-cols-2 gap-3 animate-fade-in">
-                            <button onclick="submitKanjiFC(false)" class="py-4 bg-slate-100 text-slate-600 rounded-2xl font-bold hover:bg-slate-200 transition">再來 (不懂)</button>
-                            <button onclick="submitKanjiFC(true)" class="py-4 bg-emerald-600 text-white rounded-2xl font-black hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">掌握 (懂了)</button>
+                        <div class="grid grid-cols-3 gap-3">
+                            <button onclick="submitKanjiFC('retry')" class="py-4 bg-slate-100 text-slate-500 rounded-2xl font-bold hover:bg-red-50 hover:text-red-600 transition border border-slate-200 hover:border-red-200 shadow-sm">再來</button>
+                            <button id="fc-answer-btn" onclick="showFCAnswer()" class="py-4 bg-emerald-100 text-emerald-700 rounded-2xl font-black hover:bg-emerald-200 transition shadow-sm border border-emerald-200">答案</button>
+                            <button onclick="submitKanjiFC('mastered')" class="py-4 bg-emerald-600 text-white rounded-2xl font-black hover:bg-emerald-700 transition shadow-lg shadow-emerald-200">掌握</button>
                         </div>
                     </div>
                 </div>
@@ -7921,9 +7926,10 @@
             const body = document.getElementById('kanji-body');
             const data = kanjiData[currentTab];
             if (!data) return;
-            
+
             body.innerHTML = data.map(k => {
                 const isM = masteredIds.includes(k.id);
+                const score = kanjiScores[k.id] || 0;
                 return `
                     <tr class="grammar-card ${isM ? 'mastered is-mastered' : ''}" data-id="${k.id}">
                         <td class="p-4 text-center">
@@ -7932,7 +7938,10 @@
                         <td class="p-4 text-center japanese-text font-black text-3xl text-emerald-700">${k.kanji}</td>
                         <td class="p-4 text-center">
                             <p class="font-bold text-slate-700">${k.meaning}</p>
-                            <span class="inline-block px-2 py-0.5 bg-slate-100 text-slate-400 text-[10px] rounded mt-1 font-black">${k.level}</span>
+                            <div class="flex justify-center gap-1 mt-1">
+                                <span class="px-2 py-0.5 bg-slate-100 text-slate-400 text-[10px] rounded font-black">${k.level}</span>
+                                <span class="px-2 py-0.5 ${score > 0 ? 'bg-emerald-100 text-emerald-600' : 'bg-slate-100 text-slate-300'} text-[10px] rounded font-black">⚡ ${score}/10</span>
+                            </div>
                         </td>
                         <td class="p-4 text-slate-600 japanese-text">${k.example}</td>
                     </tr>
@@ -8008,10 +8017,14 @@
                 document.getElementById('fc-example').innerText = '';
                 document.getElementById('fc-feedback').classList.remove('hidden');
                 document.getElementById('fc-controls').classList.add('hidden');
+                document.getElementById('fc-score').innerText = '-';
                 return;
             }
 
             currentFCKanji = allUnmastered[Math.floor(Math.random() * allUnmastered.length)];
+            const score = kanjiScores[currentFCKanji.id] || 0;
+            document.getElementById('fc-score').innerText = score;
+
             document.getElementById('fc-kanji').innerText = currentFCKanji.kanji;
             document.getElementById('fc-level-badge').innerText = currentFCKanji.level;
             document.getElementById('fc-meaning').innerText = currentFCKanji.meaning;
@@ -8025,17 +8038,15 @@
 
         function showFCAnswer() {
             document.getElementById('fc-feedback').classList.remove('hidden');
-            document.getElementById('fc-answer-btn').classList.add('hidden');
-            document.getElementById('fc-result-btns').classList.remove('hidden');
         }
 
-        function submitKanjiFC(isKnown) {
+        function submitKanjiFC(action) {
             const id = currentFCKanji.id;
             let score = kanjiScores[id] || 0;
 
-            if (isKnown) {
+            if (action === 'mastered') {
                 score += 5;
-            } else {
+            } else if (action === 'retry') {
                 score = Math.floor(score / 2);
             }
 
