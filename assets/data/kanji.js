@@ -1,0 +1,7754 @@
+const kanjiData = {
+        "n5": [
+                {
+                        "id": "kn5_1",
+                        "kanji": "一",
+                        "meaning": "最,第一",
+                        "example": "<ruby>一番<rt>いちばん</rt></ruby><ruby>好<rt>す</rt></ruby>きです。 (最喜歡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_2",
+                        "kanji": "三",
+                        "meaning": "三天",
+                        "example": "<ruby>三日間<rt>みっかかん</rt></ruby><ruby>休<rt>やす</rt></ruby>みます。 (休息三天。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_3",
+                        "kanji": "上",
+                        "meaning": "上面",
+                        "example": "<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>にあります。 (在桌子上面。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_4",
+                        "kanji": "下",
+                        "meaning": "下",
+                        "example": "<ruby>机<rt>つくえ</rt></ruby>の<ruby>下<rt>した</rt></ruby>です。 (桌子下面。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_5",
+                        "kanji": "両",
+                        "meaning": "雙親",
+                        "example": "<ruby>両親<rt>りょうしん</rt></ruby>は元気（げんき）です。 (父母很健康。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_6",
+                        "kanji": "中",
+                        "meaning": "中文",
+                        "example": "<ruby>中国語<rt>ちゅうごくご</rt></ruby>を<ruby>話<rt>はな</rt></ruby>します。 (說中文。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_7",
+                        "kanji": "乗",
+                        "meaning": "搭乘",
+                        "example": "バスに<ruby>乗<rt>の</rt></ruby>ります。 (搭公車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_8",
+                        "kanji": "事",
+                        "meaning": "工作",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>が<ruby>忙<rt>いそが</rt></ruby>しいです。 (工作很忙。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_9",
+                        "kanji": "交",
+                        "meaning": "派出所",
+                        "example": "<ruby>交番<rt>こうばん</rt></ruby>はどこですか。 (派出所在哪裡？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_10",
+                        "kanji": "人",
+                        "meaning": "美國人",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>はアメリカ<ruby>人<rt>じん</rt></ruby>です。 (他是美國人。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_11",
+                        "kanji": "今",
+                        "meaning": "現在",
+                        "example": "<ruby>今<rt>いま</rt></ruby>は<ruby>三時<rt>さんじ</rt></ruby>です。 (現在是三點。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_12",
+                        "kanji": "仕",
+                        "meaning": "工作",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>が<ruby>忙<rt>いそが</rt></ruby>しいです。 (工作很忙。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_13",
+                        "kanji": "休",
+                        "meaning": "休息",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みです。 (今天休息。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_14",
+                        "kanji": "会",
+                        "meaning": "見面",
+                        "example": "<ruby>駅<rt>えき</rt></ruby>で<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会<rt>あ</rt></ruby>います。 (在車站跟朋友見面。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_15",
+                        "kanji": "何",
+                        "meaning": "什麼",
+                        "example": "これは何（なん）ですか。 (這是什麼？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_16",
+                        "kanji": "作",
+                        "meaning": "製作",
+                        "example": "<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。 (做菜。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_17",
+                        "kanji": "使",
+                        "meaning": "使用",
+                        "example": "<ruby>箸<rt>はし</rt></ruby>を<ruby>使<rt>つか</rt></ruby>います。 (使用筷子。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_18",
+                        "kanji": "便",
+                        "meaning": "方便",
+                        "example": "とても<ruby>便利<rt>べんり</rt></ruby>です。 (非常方便。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_19",
+                        "kanji": "傘",
+                        "meaning": "傘",
+                        "example": "<ruby>傘<rt>かさ</rt></ruby>を<ruby>差<rt>さ</rt></ruby>します。 (撐傘。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_20",
+                        "kanji": "働",
+                        "meaning": "工作",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>きます。 (在公司工作。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_21",
+                        "kanji": "元",
+                        "meaning": "健康,精神",
+                        "example": "お<ruby>元気<rt>げんき</rt></ruby>ですか。 (你好嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_22",
+                        "kanji": "兄",
+                        "meaning": "哥哥(自謙)",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>兄<rt>あに</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。 (我哥哥是學生。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_23",
+                        "kanji": "先",
+                        "meaning": "老師",
+                        "example": "<ruby>先生<rt>せんせい</rt></ruby>、<ruby>質問<rt>しつもん</rt></ruby>です。 (老師，我有問題。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_24",
+                        "kanji": "入",
+                        "meaning": "入口",
+                        "example": "<ruby>入口<rt>いりぐち</rt></ruby>はあそこです。 (入口在那裡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_25",
+                        "kanji": "全",
+                        "meaning": "全部",
+                        "example": "<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べました。 (全部吃完了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_26",
+                        "kanji": "八",
+                        "meaning": "蔬果店",
+                        "example": "<ruby>八百屋<rt>やおや</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去蔬果店。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_27",
+                        "kanji": "公",
+                        "meaning": "公園",
+                        "example": "<ruby>公園<rt>こうえん</rt></ruby>を<ruby>散歩<rt>さんぽ</rt></ruby>します。 (在公園散步。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_28",
+                        "kanji": "写",
+                        "meaning": "照片",
+                        "example": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。 (拍照。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_29",
+                        "kanji": "冬",
+                        "meaning": "冬天",
+                        "example": "<ruby>冬<rt>ふゆ</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>いです。 (冬天很冷。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_30",
+                        "kanji": "冷",
+                        "meaning": "冰冷",
+                        "example": "<ruby>冷<rt>つめ</rt></ruby>たい<ruby>水<rt>みず</rt></ruby>です。 (冰冷的水。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_31",
+                        "kanji": "出",
+                        "meaning": "取出,寄",
+                        "example": "<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>出<rt>だ</rt></ruby>します。 (寄信。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_32",
+                        "kanji": "分",
+                        "meaning": "一半",
+                        "example": "<ruby>半分<rt>はんぶん</rt></ruby>に<ruby>分<rt>わ</rt></ruby>けます。 (分成一半。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_33",
+                        "kanji": "切",
+                        "meaning": "切,剪",
+                        "example": "<ruby>紙<rt>かみ</rt></ruby>を<ruby>切<rt>き</rt></ruby>ります。 (剪紙。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_34",
+                        "kanji": "利",
+                        "meaning": "方便",
+                        "example": "とても<ruby>便利<rt>べんり</rt></ruby>です。 (非常方便。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_35",
+                        "kanji": "刺",
+                        "meaning": "刺身，生魚片",
+                        "example": "お<ruby>刺身<rt>さしみ</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。 (我想吃生魚片。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_36",
+                        "kanji": "前",
+                        "meaning": "名字",
+                        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。 (請告訴我名字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_37",
+                        "kanji": "勉",
+                        "meaning": "學習",
+                        "example": "<ruby>勉強<rt>べんきょう</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡學習。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_38",
+                        "kanji": "医",
+                        "meaning": "醫生",
+                        "example": "<ruby>医者<rt>いしゃ</rt></ruby>になりたいです。 (想當醫生。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_39",
+                        "kanji": "午",
+                        "meaning": "下午",
+                        "example": "<ruby>午後<rt>ごご</rt></ruby>から<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ります。 (下午開始會下雨。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_40",
+                        "kanji": "半",
+                        "meaning": "一半",
+                        "example": "<ruby>半分<rt>はんぶん</rt></ruby>に<ruby>分<rt>わ</rt></ruby>けます。 (分成一半。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_41",
+                        "kanji": "南",
+                        "meaning": "南方",
+                        "example": "<ruby>窓<rt>まど</rt></ruby>は<ruby>南<rt>みなみ</rt></ruby>を向（む）いています。 (窗戶朝南。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_42",
+                        "kanji": "危",
+                        "meaning": "危險",
+                        "example": "<ruby>危<rt>あぶ</rt></ruby>ないですから、<ruby>注意<rt>ちゅうい</rt></ruby>してください。 (因為很危險請注意。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_43",
+                        "kanji": "去",
+                        "meaning": "去年",
+                        "example": "<ruby>去年<rt>きょねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。 (去年去了日本。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_44",
+                        "kanji": "友",
+                        "meaning": "朋友",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>びます。 (跟朋友玩。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_45",
+                        "kanji": "口",
+                        "meaning": "入口",
+                        "example": "<ruby>入口<rt>いりぐち</rt></ruby>はあそこです。 (入口在那裡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_46",
+                        "kanji": "古",
+                        "meaning": "舊的",
+                        "example": "<ruby>古<rt>ふる</rt></ruby>い<ruby>本<rt>ほん</rt></ruby>です。 (是舊書。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_47",
+                        "kanji": "右",
+                        "meaning": "右邊",
+                        "example": "<ruby>右<rt>みぎ</rt></ruby>へ曲（ま）がってください。 (請右轉。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_48",
+                        "kanji": "名",
+                        "meaning": "名字",
+                        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。 (請告訴我名字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_49",
+                        "kanji": "味",
+                        "meaning": "好吃",
+                        "example": "とても<ruby>美味<rt>おい</rt></ruby>しいです。 (非常美味。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_50",
+                        "kanji": "呼",
+                        "meaning": "叫喚",
+                        "example": "タクシーを<ruby>呼<rt>よ</rt></ruby>びます。 (叫計程車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_51",
+                        "kanji": "咲",
+                        "meaning": "開（花）",
+                        "example": "<ruby>桜<rt>さくら</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>きました。 (櫻花開了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_52",
+                        "kanji": "問",
+                        "meaning": "問題",
+                        "example": "<ruby>質問<rt>しつもん</rt></ruby>があります。 (有問題。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_53",
+                        "kanji": "四",
+                        "meaning": "四",
+                        "example": "<ruby>四<rt>よ</rt></ruby>つ<ruby>買<rt>か</rt></ruby>いました。 (買了四個。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_54",
+                        "kanji": "図",
+                        "meaning": "地圖",
+                        "example": "<ruby>地図<rt>ちず</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。 (看地圖。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_55",
+                        "kanji": "国",
+                        "meaning": "國家",
+                        "example": "<ruby>国<rt>くに</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>ります。 (回國。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_56",
+                        "kanji": "園",
+                        "meaning": "公園",
+                        "example": "<ruby>公園<rt>こうえん</rt></ruby>を<ruby>散歩<rt>さんぽ</rt></ruby>します。 (在公園散步。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_57",
+                        "kanji": "土",
+                        "meaning": "星期六",
+                        "example": "<ruby>土曜日<rt>どようび</rt></ruby>に<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (星期六要去望電影。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_58",
+                        "kanji": "地",
+                        "meaning": "地鐵",
+                        "example": "<ruby>地下鉄<rt>ちかてつ</rt></ruby>で<ruby>帰<rt>かえ</rt></ruby>ります。 (搭地鐵回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_59",
+                        "kanji": "堂",
+                        "meaning": "食堂",
+                        "example": "<ruby>食堂<rt>しょくどう</rt></ruby>で<ruby>食<rt>た</rt></ruby>べます。 (在食堂吃飯。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_60",
+                        "kanji": "場",
+                        "meaning": "會場",
+                        "example": "<ruby>結婚式<rt>けっこんしき</rt></ruby>の<ruby>会場<rt>かいじょう</rt></ruby>はどこですか。 (結婚典禮的會場在哪裡？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_61",
+                        "kanji": "塩",
+                        "meaning": "鹽",
+                        "example": "<ruby>料理<rt>りょうり</rt></ruby>に<ruby>塩<rt>しお</rt></ruby>を<ruby>入<rt>い</rt></ruby>れます。 (在料理中放鹽。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_62",
+                        "kanji": "士",
+                        "meaning": "富士山",
+                        "example": "富士山（ふじさん）はきれいです。 (富士山很漂亮。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_63",
+                        "kanji": "売",
+                        "meaning": "賣",
+                        "example": "<ruby>花<rt>はな</rt></ruby>を<ruby>売<rt>う</rt></ruby>っています。 (在賣花。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_64",
+                        "kanji": "変",
+                        "meaning": "辛苦",
+                        "example": "<ruby>勉強<rt>べんきょう</rt></ruby>は<ruby>大変<rt>たいへん</rt></ruby>です。 (學習很辛苦。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_65",
+                        "kanji": "夕",
+                        "meaning": "傍晚",
+                        "example": "<ruby>夕方<rt>ゆうがた</rt></ruby><ruby>帰<rt>かえ</rt></ruby>ります。 (傍晚回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_66",
+                        "kanji": "外",
+                        "meaning": "外面",
+                        "example": "<ruby>外<rt>そと</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>です。 (外面下雨。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_67",
+                        "kanji": "多",
+                        "meaning": "多的",
+                        "example": "この<ruby>町<rt>まち</rt></ruby>は<ruby>人<rt>ひと</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いです。 (這個城市人很多。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_68",
+                        "kanji": "夜",
+                        "meaning": "晚上",
+                        "example": "<ruby>夜<rt>よる</rt></ruby>は<ruby>暗<rt>くら</rt></ruby>いです。 (晚上很暗。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_69",
+                        "kanji": "大",
+                        "meaning": "大學",
+                        "example": "<ruby>大学<rt>だいがく</rt></ruby>へ<ruby>通<rt>かよ</rt></ruby>います。 (上大學。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_70",
+                        "kanji": "天",
+                        "meaning": "天氣",
+                        "example": "いい<ruby>天気<rt>てんき</rt></ruby>です。 (天氣很好。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_71",
+                        "kanji": "夫",
+                        "meaning": "丈夫",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>夫<rt>おっと</rt></ruby>は<ruby>銀行員<rt>ぎんこういん</rt></ruby>です。 (我的丈夫是銀行員。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_72",
+                        "kanji": "奥",
+                        "meaning": "尊夫人",
+                        "example": "<ruby>奥<rt>おく</rt></ruby>さんはお<ruby>元気<rt>げんき</rt></ruby>ですか。 (尊夫人好嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_73",
+                        "kanji": "女",
+                        "meaning": "女人，女子",
+                        "example": "あの<ruby>女<rt>おんな</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>は<ruby>誰<rt>だれ</rt></ruby>ですか。 (那個女人是誰？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_74",
+                        "kanji": "好",
+                        "meaning": "喜歡",
+                        "example": "<ruby>果物<rt>くだもの</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡水果。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_75",
+                        "kanji": "妹",
+                        "meaning": "妹妹(自謙)",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>妹<rt>いもうと</rt></ruby>です。 (我的妹妹。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_76",
+                        "kanji": "姉",
+                        "meaning": "姊姊(自謙)",
+                        "example": "<ruby>姉<rt>あね</rt></ruby>は<ruby>結婚<rt>けっこん</rt></ruby>しています。 (我姊姊結婚了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_77",
+                        "kanji": "始",
+                        "meaning": "開始",
+                        "example": "<ruby>授業<rt>じゅぎょう</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まります。 (上課開始了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_78",
+                        "kanji": "婚",
+                        "meaning": "結婚",
+                        "example": "<ruby>結婚<rt>けっこん</rt></ruby>しました。 (結婚了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_79",
+                        "kanji": "嬉",
+                        "meaning": "高興",
+                        "example": "とても<ruby>嬉<rt>うれ</rt></ruby>しいです。 (非常高興。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_80",
+                        "kanji": "子",
+                        "meaning": "椅子",
+                        "example": "いすに<ruby>座<rt>すわ</rt></ruby>ります。 (坐在椅子上。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_81",
+                        "kanji": "字",
+                        "meaning": "漢字",
+                        "example": "<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>練習<rt>れんしゅう</rt></ruby>します。 (練習漢字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_82",
+                        "kanji": "学",
+                        "meaning": "學生",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>学生<rt>がくせい</rt></ruby>です。 (我是學生。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_83",
+                        "kanji": "安",
+                        "meaning": "便宜",
+                        "example": "これは<ruby>安<rt>やす</rt></ruby>いです。 (這個很便宜。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_84",
+                        "kanji": "客",
+                        "meaning": "客人，顧客",
+                        "example": "お<ruby>客<rt>きゃく</rt></ruby>さんが<ruby>来<rt>き</rt></ruby>ました。 (客人來了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_85",
+                        "kanji": "室",
+                        "meaning": "會議室",
+                        "example": "<ruby>会議室<rt>かいぎしつ</rt></ruby>はどこですか。 (會議室在哪裡？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_86",
+                        "kanji": "家",
+                        "meaning": "家",
+                        "example": "<ruby>家<rt>いえ</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>ります。 (回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_87",
+                        "kanji": "宿",
+                        "meaning": "作業",
+                        "example": "<ruby>宿題<rt>しゅくだい</rt></ruby>をしました。 (寫了作業。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_88",
+                        "kanji": "富",
+                        "meaning": "富士山",
+                        "example": "富士山（ふじさん）はきれいです。 (富士山很漂亮。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_89",
+                        "kanji": "寒",
+                        "meaning": "寒冷",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>いですね。 (今天很冷呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_90",
+                        "kanji": "寝",
+                        "meaning": "睡覺",
+                        "example": "<ruby>十一時<rt>じゅういちじ</rt></ruby>に<ruby>寝<rt>ね</rt></ruby>ます。 (十一點睡覺。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_91",
+                        "kanji": "少",
+                        "meaning": "一點點",
+                        "example": "<ruby>少<rt>すこ</rt></ruby>し<ruby>疲<rt>つか</rt></ruby>れた。 (有點累了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_92",
+                        "kanji": "屋",
+                        "meaning": "房間",
+                        "example": "<ruby>自分<rt>じぶん</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>です。 (自己的房間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_93",
+                        "kanji": "山",
+                        "meaning": "山",
+                        "example": "<ruby>山<rt>やま</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>ります。 (爬山。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_94",
+                        "kanji": "左",
+                        "meaning": "左",
+                        "example": "<ruby>左<rt>ひだり</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。 (請看左邊。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_95",
+                        "kanji": "布",
+                        "meaning": "錢包",
+                        "example": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。 (忘記帶錢包了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_96",
+                        "kanji": "帰",
+                        "meaning": "回家",
+                        "example": "<ruby>家<rt>いえ</rt></ruby>へ<ruby>帰<rt>かえ</rt></ruby>ります。 (回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_97",
+                        "kanji": "帽",
+                        "meaning": "帽子",
+                        "example": "<ruby>帽子<rt>ぼうし</rt></ruby>をかぶります。 (戴帽子。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_98",
+                        "kanji": "年",
+                        "meaning": "去年",
+                        "example": "<ruby>去年<rt>きょねん</rt></ruby>、<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きました。 (去年去了日本。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_99",
+                        "kanji": "広",
+                        "meaning": "寬廣",
+                        "example": "この<ruby>家<rt>いえ</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>いです。 (這個家很寬敞。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_100",
+                        "kanji": "店",
+                        "meaning": "店",
+                        "example": "お<ruby>店<rt>みせ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去店裡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_101",
+                        "kanji": "度",
+                        "meaning": "這次；下次",
+                        "example": "<ruby>今度<rt>こんど</rt></ruby>の<ruby>日曜<rt>にちよう</rt></ruby>日にパーティーがあります。 (下禮拜日有派對。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_102",
+                        "kanji": "座",
+                        "meaning": "坐",
+                        "example": "ここに<ruby>座<rt>すわ</rt></ruby>ります。 (坐在這裡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_103",
+                        "kanji": "庭",
+                        "meaning": "院子",
+                        "example": "<ruby>庭<rt>にわ</rt></ruby>に<ruby>犬<rt>いぬ</rt></ruby>がいます。 (院子裡有狗。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_104",
+                        "kanji": "建",
+                        "meaning": "建築物",
+                        "example": "<ruby>高<rt>たか</rt></ruby>い<ruby>建物<rt>たてもの</rt></ruby>です。 (是很高的建築物。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_105",
+                        "kanji": "弁",
+                        "meaning": "便當",
+                        "example": "お<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。 (做便當。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_106",
+                        "kanji": "弟",
+                        "meaning": "弟弟",
+                        "example": "<ruby>弟<rt>おとうと</rt></ruby>がいます。 (有弟弟。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_107",
+                        "kanji": "強",
+                        "meaning": "強大",
+                        "example": "<ruby>風<rt>かぜ</rt></ruby>が<ruby>強<rt>つよ</rt></ruby>いです。 (風很強。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_108",
+                        "kanji": "当",
+                        "meaning": "便當",
+                        "example": "お<ruby>弁当<rt>べんとう</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。 (做便當。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_109",
+                        "kanji": "待",
+                        "meaning": "等待",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>待<rt>ま</rt></ruby>ちます。 (等朋友。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_110",
+                        "kanji": "後",
+                        "meaning": "後面",
+                        "example": "<ruby>後<rt>うし</rt></ruby>ろにいます。 (在後面。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_111",
+                        "kanji": "御",
+                        "meaning": "晚餐",
+                        "example": "<ruby>晩御飯<rt>ばんごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べましょう。 (吃晚餐吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_112",
+                        "kanji": "心",
+                        "meaning": "擔心",
+                        "example": "<ruby>心配<rt>しんぱい</rt></ruby>しないでください。 (請不要擔心。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_113",
+                        "kanji": "忘",
+                        "meaning": "忘記",
+                        "example": "<ruby>名前<rt>なまえ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。 (忘記名字了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_114",
+                        "kanji": "忙",
+                        "meaning": "忙碌",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>忙<rt>いそが</rt></ruby>しいです。 (今天很忙。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_115",
+                        "kanji": "念",
+                        "meaning": "可惜，遺憾",
+                        "example": "それは<ruby>残念<rt>ざんねん</rt></ruby>ですね。 (那真是可惜呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_116",
+                        "kanji": "思",
+                        "meaning": "想，認為；覺得，感覺",
+                        "example": "そう<ruby>思<rt>おも</rt></ruby>います。 (我也這麼想。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_117",
+                        "kanji": "急",
+                        "meaning": "趕緊,著急",
+                        "example": "<ruby>急<rt>いそ</rt></ruby>いでください。 (請快一點。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_118",
+                        "kanji": "所",
+                        "meaning": "地方",
+                        "example": "<ruby>会<rt>あ</rt></ruby>う<ruby>場所<rt>ばしょ</rt></ruby>はどこですか。 (見面的地方在哪裡？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_119",
+                        "kanji": "手",
+                        "meaning": "擅長",
+                        "example": "テニスが<ruby>上手<rt>じょうず</rt></ruby>です。 (網球很拿手。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_120",
+                        "kanji": "持",
+                        "meaning": "拿，持有",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を持（も）ちましょうか。 (要我幫你拿行李嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_121",
+                        "kanji": "掃",
+                        "meaning": "掃除",
+                        "example": "<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>します。 (打掃房間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_122",
+                        "kanji": "撮",
+                        "meaning": "拍照",
+                        "example": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。 (拍照。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_123",
+                        "kanji": "散",
+                        "meaning": "散步",
+                        "example": "<ruby>公園<rt>こうえん</rt></ruby>を<ruby>散歩<rt>さんぽ</rt></ruby>するのが<ruby>好<rt>す</rt></ruby>きです。 (喜歡在公園散步。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_124",
+                        "kanji": "文",
+                        "meaning": "作文",
+                        "example": "日本<ruby>語<rt>ご</rt></ruby>で<ruby>作文<rt>さくぶん</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。 (用日文寫作文。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_125",
+                        "kanji": "料",
+                        "meaning": "料理",
+                        "example": "<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。 (做料理。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_126",
+                        "kanji": "新",
+                        "meaning": "新的",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>靴<rt>くつ</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。 (買了新鞋。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_127",
+                        "kanji": "方",
+                        "meaning": "傍晚",
+                        "example": "<ruby>夕方<rt>ゆうがた</rt></ruby><ruby>帰<rt>かえ</rt></ruby>ります。 (傍晚回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_128",
+                        "kanji": "旅",
+                        "meaning": "旅行",
+                        "example": "<ruby>旅行<rt>りょこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (去旅行。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_129",
+                        "kanji": "族",
+                        "meaning": "家人",
+                        "example": "<ruby>家族<rt>かぞく</rt></ruby>は<ruby>四人<rt>よにん</rt></ruby>です。 (家裡有四個人。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_130",
+                        "kanji": "日",
+                        "meaning": "明天",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>でしょう。 (明天大概會下雨吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_131",
+                        "kanji": "早",
+                        "meaning": "早",
+                        "example": "<ruby>朝<rt>あさ</rt></ruby>が<ruby>早<rt>はや</rt></ruby>いです。 (早上很早。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_132",
+                        "kanji": "明",
+                        "meaning": "開朗;明亮",
+                        "example": "<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>明<rt>あか</rt></ruby>るい<ruby>性格<rt>せいかく</rt></ruby>です。 (她性格很開朗。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_133",
+                        "kanji": "映",
+                        "meaning": "電影",
+                        "example": "<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。 (看電影。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_134",
+                        "kanji": "春",
+                        "meaning": "春天",
+                        "example": "<ruby>春<rt>はる</rt></ruby>が<ruby>来<rt>き</rt></ruby>ました。 (春天來了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_135",
+                        "kanji": "昼",
+                        "meaning": "午餐",
+                        "example": "<ruby>昼御飯<rt>ひるごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃午餐。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_136",
+                        "kanji": "時",
+                        "meaning": "有時",
+                        "example": "<ruby>時々<rt>ときどき</rt></ruby><ruby>泳<rt>およ</rt></ruby>ぎます。 (有時會游泳。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_137",
+                        "kanji": "晩",
+                        "meaning": "晚餐",
+                        "example": "<ruby>晩御飯<rt>ばんごはん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べましょう。 (吃晚餐吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_138",
+                        "kanji": "晴",
+                        "meaning": "晴天",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>は<ruby>晴<rt>は</rt></ruby>れです。 (明天是晴天。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_139",
+                        "kanji": "暇",
+                        "meaning": "空閒",
+                        "example": "<ruby>暇<rt>ひま</rt></ruby>な<ruby>時<rt>とき</rt></ruby>に<ruby>寝<rt>ね</rt></ruby>ます。 (有空的時候睡覺。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_140",
+                        "kanji": "暑",
+                        "meaning": "熱",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>はとても<ruby>暑<rt>あつ</rt></ruby>いですね。 (今天非常熱呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_141",
+                        "kanji": "曜",
+                        "meaning": "週日",
+                        "example": "<ruby>日曜日<rt>にちようび</rt></ruby>は<ruby>休<rt>やす</rt></ruby>みです。 (星期天休息。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_142",
+                        "kanji": "書",
+                        "meaning": "寫",
+                        "example": "<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>書<rt>か</rt></ruby>きます。 (寫漢字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_143",
+                        "kanji": "月",
+                        "meaning": "下個月",
+                        "example": "<ruby>来月<rt>らいげつ</rt></ruby><ruby>行<rt>い</rt></ruby>きます。 (下個月去。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_144",
+                        "kanji": "有",
+                        "meaning": "有名",
+                        "example": "<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>です。 (是有名的人。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_145",
+                        "kanji": "服",
+                        "meaning": "衣服",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>服<rt>ふく</rt></ruby>です。 (是新衣服。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_146",
+                        "kanji": "朝",
+                        "meaning": "早上",
+                        "example": "<ruby>朝<rt>あさ</rt></ruby>、<ruby>六時<rt>ろくじ</rt></ruby>に<ruby>起<rt>お</rt></ruby>きます。 (早上六點起床。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_147",
+                        "kanji": "木",
+                        "meaning": "星期四",
+                        "example": "<ruby>木曜日<rt>もくようび</rt></ruby>は休（やす）みです。 (星期四休息。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_148",
+                        "kanji": "本",
+                        "meaning": "日本",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたいです。 (想去日本。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_149",
+                        "kanji": "来",
+                        "meaning": "下個月",
+                        "example": "<ruby>来月<rt>らいげつ</rt></ruby><ruby>行<rt>い</rt></ruby>きます。 (下個月去。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_150",
+                        "kanji": "東",
+                        "meaning": "東",
+                        "example": "<ruby>東<rt>ひがし</rt></ruby>から<ruby>日<rt>ひ</rt></ruby>が<ruby>昇<rt>のぼ</rt></ruby>る。 (太陽從東邊升起。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_151",
+                        "kanji": "果",
+                        "meaning": "水果",
+                        "example": "<ruby>果物<rt>くだもの</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡水果。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_152",
+                        "kanji": "校",
+                        "meaning": "學校",
+                        "example": "<ruby>学校<rt>がっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去學校。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_153",
+                        "kanji": "桜",
+                        "meaning": "櫻花",
+                        "example": "お<ruby>花見<rt>はなみ</rt></ruby>に<ruby>行<rt>い</rt></ruby>きましょう。 (去賞櫻吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_154",
+                        "kanji": "椅",
+                        "meaning": "椅子",
+                        "example": "いすに<ruby>座<rt>すわ</rt></ruby>ります。 (坐在椅子上。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_155",
+                        "kanji": "楽",
+                        "meaning": "音樂",
+                        "example": "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。 (聽音樂。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_156",
+                        "kanji": "横",
+                        "meaning": "旁邊",
+                        "example": "<ruby>駅<rt>えき</rt></ruby>の<ruby>横<rt>よこ</rt></ruby>です。 (車站旁邊。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_157",
+                        "kanji": "橋",
+                        "meaning": "橋",
+                        "example": "<ruby>橋<rt>はし</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。 (過橋。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_158",
+                        "kanji": "機",
+                        "meaning": "飛機",
+                        "example": "<ruby>飛行機<rt>ひこうき</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。 (搭飛機。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_159",
+                        "kanji": "歌",
+                        "meaning": "歌",
+                        "example": "<ruby>歌<rt>うた</rt></ruby>を<ruby>歌<rt>うた</rt></ruby>います。 (唱歌。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_160",
+                        "kanji": "歩",
+                        "meaning": "走,步行",
+                        "example": "<ruby>駅<rt>えき</rt></ruby>まで<ruby>歩<rt>ある</rt></ruby>きます。 (走到車站。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_161",
+                        "kanji": "歯",
+                        "meaning": "牙齒",
+                        "example": "<ruby>歯<rt>は</rt></ruby>を<ruby>磨<rt>みが</rt></ruby>きます。 (刷牙。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_162",
+                        "kanji": "残",
+                        "meaning": "可惜，遺憾",
+                        "example": "それは<ruby>残念<rt>ざんねん</rt></ruby>ですね。 (那真是可惜呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_163",
+                        "kanji": "母",
+                        "meaning": "母親(自謙)",
+                        "example": "<ruby>母<rt>はは</rt></ruby>は<ruby>優<rt>やさ</rt></ruby>しいです。 (媽媽很溫柔。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_164",
+                        "kanji": "毎",
+                        "meaning": "每天早晨",
+                        "example": "<ruby>毎朝<rt>まいあさ</rt></ruby><ruby>散歩<rt>さんぽ</rt></ruby>します。 (每天早上散步。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_165",
+                        "kanji": "気",
+                        "meaning": "健康,精神",
+                        "example": "お<ruby>元気<rt>げんき</rt></ruby>ですか。 (你好嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_166",
+                        "kanji": "水",
+                        "meaning": "水",
+                        "example": "<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (喝水。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_167",
+                        "kanji": "泉",
+                        "meaning": "溫泉",
+                        "example": "<ruby>温泉<rt>おんせん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (去溫泉。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_168",
+                        "kanji": "泳",
+                        "meaning": "游泳",
+                        "example": "プールで<ruby>泳<rt>およ</rt></ruby>ぎます。 (在泳池游泳。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_169",
+                        "kanji": "洋",
+                        "meaning": "西裝;衣服",
+                        "example": "<ruby>洋服<rt>ようふく</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。 (買衣服。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_170",
+                        "kanji": "洗",
+                        "meaning": "洗",
+                        "example": "<ruby>手<rt>て</rt></ruby>を<ruby>洗<rt>あら</rt></ruby>ってください。 (請洗手。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_171",
+                        "kanji": "浴",
+                        "meaning": "沖(澡)",
+                        "example": "シャワーを<ruby>浴<rt>あ</rt></ruby>びます。 (沖澡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_172",
+                        "kanji": "海",
+                        "meaning": "海",
+                        "example": "<ruby>海<rt>うみ</rt></ruby>で<ruby>泳<rt>およ</rt></ruby>ぎます。 (在海裡游泳。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_173",
+                        "kanji": "涼",
+                        "meaning": "涼快",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>涼<rt>すず</rt></ruby>しいです。 (今天很涼快。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_174",
+                        "kanji": "渡",
+                        "meaning": "渡過",
+                        "example": "<ruby>道<rt>みち</rt></ruby>を<ruby>渡<rt>わた</rt></ruby>ります。 (過馬路。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_175",
+                        "kanji": "温",
+                        "meaning": "溫暖,暖和",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby>は<ruby>温<rt>あたた</rt></ruby>かいですね。 (今天很溫暖呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_176",
+                        "kanji": "港",
+                        "meaning": "機場",
+                        "example": "<ruby>空港<rt>くうこう</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>いです。 (機場很寬廣。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_177",
+                        "kanji": "漢",
+                        "meaning": "漢字",
+                        "example": "<ruby>漢字<rt>かんじ</rt></ruby>を<ruby>練習<rt>れんしゅう</rt></ruby>します。 (練習漢字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_178",
+                        "kanji": "濯",
+                        "meaning": "洗衣服",
+                        "example": "<ruby>洗濯<rt>せんたく</rt></ruby>をします。 (洗衣服。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_179",
+                        "kanji": "火",
+                        "meaning": "星期二，週二",
+                        "example": "<ruby>火曜日<rt>かようび</rt></ruby>に<ruby>会<rt>あ</rt></ruby>いましょう。 (星期二見面吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_180",
+                        "kanji": "父",
+                        "meaning": "令尊",
+                        "example": "お<ruby>父<rt>とう</rt></ruby>さんは<ruby>元気<rt>げんき</rt></ruby>ですか。 (令尊好嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_181",
+                        "kanji": "物",
+                        "meaning": "購物",
+                        "example": "<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>をします。 (去買東西。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_182",
+                        "kanji": "犬",
+                        "meaning": "狗",
+                        "example": "<ruby>犬<rt>いぬ</rt></ruby>がいます。 (有一隻狗。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_183",
+                        "kanji": "猫",
+                        "meaning": "貓",
+                        "example": "<ruby>猫<rt>ねこ</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡貓。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_184",
+                        "kanji": "球",
+                        "meaning": "棒球",
+                        "example": "<ruby>野球<rt>やきゅう</rt></ruby>をしましょう。 (來打棒球吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_185",
+                        "kanji": "理",
+                        "meaning": "料理",
+                        "example": "<ruby>料理<rt>りょうり</rt></ruby>を<ruby>作<rt>つく</rt></ruby>ります。 (做料理。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_186",
+                        "kanji": "生",
+                        "meaning": "出生",
+                        "example": "<ruby>台湾<rt>たいわん</rt></ruby>で<ruby>生<rt>う</rt></ruby>まれました。 (在台灣出生。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_187",
+                        "kanji": "由",
+                        "meaning": "自由地，隨意地",
+                        "example": "お<ruby>菓子<rt>かし</rt></ruby>はご<ruby>自由<rt>じゆう</rt></ruby>にどうぞ。 (請隨意享用點心。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_188",
+                        "kanji": "男",
+                        "meaning": "男孩",
+                        "example": "<ruby>元気<rt>げんき</rt></ruby>な<ruby>男<rt>おとこ</rt></ruby>の<ruby>子<rt>こ</rt></ruby>ですね。 (真是個活潑的男孩。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_189",
+                        "kanji": "町",
+                        "meaning": "城市，鎮",
+                        "example": "きれいな<ruby>町<rt>まち</rt></ruby>ですね。 (是個漂亮的城鎮呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_190",
+                        "kanji": "画",
+                        "meaning": "電影",
+                        "example": "<ruby>映画<rt>えいが</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。 (看電影。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_191",
+                        "kanji": "番",
+                        "meaning": "最,第一",
+                        "example": "<ruby>一番<rt>いちばん</rt></ruby><ruby>好<rt>す</rt></ruby>きです。 (最喜歡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_192",
+                        "kanji": "疲",
+                        "meaning": "疲勞",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>で<ruby>疲<rt>つか</rt></ruby>れました。 (工作累了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_193",
+                        "kanji": "病",
+                        "meaning": "醫院",
+                        "example": "<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去醫院。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_194",
+                        "kanji": "痛",
+                        "meaning": "疼痛",
+                        "example": "おなかが<ruby>痛<rt>いた</rt></ruby>いです。 (肚子痛。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_195",
+                        "kanji": "登",
+                        "meaning": "爬",
+                        "example": "<ruby>山<rt>やま</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>ります。 (爬山。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_196",
+                        "kanji": "白",
+                        "meaning": "有趣",
+                        "example": "この<ruby>本<rt>ほん</rt></ruby>は<ruby>面白<rt>おもしろ</rt></ruby>いです。 (這本書很有趣。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_197",
+                        "kanji": "百",
+                        "meaning": "蔬果店",
+                        "example": "<ruby>八百屋<rt>やおや</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去蔬果店。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_198",
+                        "kanji": "目",
+                        "meaning": "眼睛",
+                        "example": "<ruby>目<rt>め</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きいです。 (眼睛很大。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_199",
+                        "kanji": "真",
+                        "meaning": "照片",
+                        "example": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>撮<rt>と</rt></ruby>ります。 (拍照。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_200",
+                        "kanji": "眼",
+                        "meaning": "眼鏡",
+                        "example": "<ruby>眼鏡<rt>めがね</rt></ruby>をかけます。 (戴眼鏡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_201",
+                        "kanji": "着",
+                        "meaning": "到達",
+                        "example": "<ruby>六時<rt>ろくじ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>きます。 (六點到達。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_202",
+                        "kanji": "短",
+                        "meaning": "短",
+                        "example": "<ruby>足<rt>あし</rt></ruby>が<ruby>短<rt>みじか</rt></ruby>いです。 (腿很短。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_203",
+                        "kanji": "社",
+                        "meaning": "公司",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>きます。 (在公司工作。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_204",
+                        "kanji": "私",
+                        "meaning": "我",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>田中<rt>たなか</rt></ruby>です。 (我是田中。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_205",
+                        "kanji": "空",
+                        "meaning": "機場",
+                        "example": "<ruby>空港<rt>くうこう</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>いです。 (機場很寬廣。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_206",
+                        "kanji": "窓",
+                        "meaning": "窗戶",
+                        "example": "<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けます。 (開窗戶。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_207",
+                        "kanji": "筆",
+                        "meaning": "鉛筆",
+                        "example": "<ruby>鉛筆<rt>えんぴつ</rt></ruby>で<ruby>書<rt>か</rt></ruby>きます。 (用鉛筆寫。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_208",
+                        "kanji": "答",
+                        "meaning": "答案，回覆",
+                        "example": "<ruby>答<rt>こた</rt></ruby>えを<ruby>書<rt>か</rt></ruby>いてください。 (請寫下答案。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_209",
+                        "kanji": "箱",
+                        "meaning": "箱子",
+                        "example": "<ruby>箱<rt>はこ</rt></ruby>に<ruby>入<rt>い</rt></ruby>れます。 (放進箱子裡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_210",
+                        "kanji": "紅",
+                        "meaning": "紅茶",
+                        "example": "<ruby>紅茶<rt>こうちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (喝紅茶。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_211",
+                        "kanji": "紙",
+                        "meaning": "信",
+                        "example": "<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>書<rt>か</rt></ruby>きました。 (寫了信。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_212",
+                        "kanji": "終",
+                        "meaning": "結束",
+                        "example": "<ruby>授業<rt>じゅぎょう</rt></ruby>が<ruby>終<rt>お</rt></ruby>わりました。 (課結束了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_213",
+                        "kanji": "結",
+                        "meaning": "結婚",
+                        "example": "<ruby>結婚<rt>けっこん</rt></ruby>しました。 (結婚了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_214",
+                        "kanji": "綺",
+                        "meaning": "漂亮",
+                        "example": "<ruby>綺麗<rt>きれい</rt></ruby>な<ruby>花<rt>はな</rt></ruby>ですね。 (真是漂亮的花呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_215",
+                        "kanji": "緒",
+                        "meaning": "一起",
+                        "example": "<ruby>一緒<rt>いっしょ</rt></ruby>に<ruby>食<rt>た</rt></ruby>べましょう。 (一起吃吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_216",
+                        "kanji": "美",
+                        "meaning": "好吃",
+                        "example": "とても<ruby>美味<rt>おい</rt></ruby>しいです。 (非常美味。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_217",
+                        "kanji": "習",
+                        "meaning": "學習",
+                        "example": "<ruby>日本語<rt>にほんご</rt></ruby>を<ruby>習<rt>なら</rt></ruby>います。 (學習日語。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_218",
+                        "kanji": "者",
+                        "meaning": "醫生",
+                        "example": "<ruby>医者<rt>いしゃ</rt></ruby>になりたいです。 (想當醫生。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_219",
+                        "kanji": "耳",
+                        "meaning": "耳朵",
+                        "example": "<ruby>耳<rt>みみ</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。 (耳朵痛。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_220",
+                        "kanji": "聞",
+                        "meaning": "聽,問",
+                        "example": "CDを<ruby>聞<rt>き</rt></ruby>きます。 (聽CD。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_221",
+                        "kanji": "背",
+                        "meaning": "身高",
+                        "example": "<ruby>背<rt>せ</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。 (個子很高。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_222",
+                        "kanji": "脱",
+                        "meaning": "脫掉",
+                        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>脱<rt>ぬ</rt></ruby>ぎます。 (脫鞋。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_223",
+                        "kanji": "自",
+                        "meaning": "自行車",
+                        "example": "<ruby>自転車<rt>じてんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。 (騎腳踏車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_224",
+                        "kanji": "色",
+                        "meaning": "各種各樣",
+                        "example": "<ruby>色々<rt>いろいろ</rt></ruby>あります。 (有各種各樣的。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_225",
+                        "kanji": "花",
+                        "meaning": "花",
+                        "example": "<ruby>花<rt>はな</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>く。 (花開了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_226",
+                        "kanji": "英",
+                        "meaning": "英語",
+                        "example": "<ruby>英語<rt>えいご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。 (學習英語。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_227",
+                        "kanji": "茶",
+                        "meaning": "茶",
+                        "example": "お<ruby>茶<rt>ちゃ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みましょう。 (喝茶吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_228",
+                        "kanji": "荷",
+                        "meaning": "行李",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>重<rt>おも</rt></ruby>いです。 (行李很重。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_229",
+                        "kanji": "菓",
+                        "meaning": "點心",
+                        "example": "お<ruby>菓子<rt>かし</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃點心。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_230",
+                        "kanji": "菜",
+                        "meaning": "蔬菜",
+                        "example": "<ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃蔬菜。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_231",
+                        "kanji": "葉",
+                        "meaning": "語言；言辭；詞語",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>言葉<rt>ことば</rt></ruby>を<ruby>習<rt>なら</rt></ruby>いました。 (學習了新的單字。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_232",
+                        "kanji": "薬",
+                        "meaning": "藥",
+                        "example": "<ruby>薬<rt>くすり</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (吃藥。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_233",
+                        "kanji": "行",
+                        "meaning": "去",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去日本。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_234",
+                        "kanji": "西",
+                        "meaning": "西",
+                        "example": "<ruby>西<rt>にし</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (往西走。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_235",
+                        "kanji": "見",
+                        "meaning": "展示",
+                        "example": "<ruby>地図<rt>ちず</rt></ruby>を<ruby>見<rt>み</rt></ruby>せます。 (給你看地圖。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_236",
+                        "kanji": "親",
+                        "meaning": "親切",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>親切<rt>しんせつ</rt></ruby>です。 (他很親切。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_237",
+                        "kanji": "言",
+                        "meaning": "說,叫做",
+                        "example": "<ruby>先生<rt>せんせい</rt></ruby>は「おはよう」と<ruby>言<rt>い</rt></ruby>いました。 (老師說了「早安」。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_238",
+                        "kanji": "計",
+                        "meaning": "鐘錶",
+                        "example": "<ruby>時計<rt>とけい</rt></ruby>を<ruby>見<rt>み</rt></ruby>ます。 (看手錶。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_239",
+                        "kanji": "話",
+                        "meaning": "電話",
+                        "example": "<ruby>電話<rt>でんわ</rt></ruby>をかけます。 (打電話。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_240",
+                        "kanji": "誌",
+                        "meaning": "雜誌",
+                        "example": "<ruby>雑誌<rt>ざっし</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。 (看雜誌。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_241",
+                        "kanji": "誕",
+                        "meaning": "生日",
+                        "example": "<ruby>誕生日<rt>たんじょうび</rt></ruby>はいつですか。 (生日是什麼時候？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_242",
+                        "kanji": "語",
+                        "meaning": "英語",
+                        "example": "<ruby>英語<rt>えいご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>します。 (學習英語。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_243",
+                        "kanji": "読",
+                        "meaning": "閱讀",
+                        "example": "<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。 (讀書。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_244",
+                        "kanji": "誰",
+                        "meaning": "誰",
+                        "example": "<ruby>誰<rt>だれ</rt></ruby>ですか。 (是誰？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_245",
+                        "kanji": "議",
+                        "meaning": "會議",
+                        "example": "<ruby>今<rt>いま</rt></ruby>から<ruby>会議<rt>かいぎ</rt></ruby>があります。 (現在有會議。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_246",
+                        "kanji": "財",
+                        "meaning": "錢包",
+                        "example": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>忘<rt>わす</rt></ruby>れました。 (忘記帶錢包了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_247",
+                        "kanji": "買",
+                        "meaning": "買",
+                        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。 (買了鞋子。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_248",
+                        "kanji": "賑",
+                        "meaning": "熱鬧",
+                        "example": "<ruby>街<rt>まち</rt></ruby>が<ruby>賑<rt>にぎ</rt></ruby>やかだ。 (街道很熱鬧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_249",
+                        "kanji": "質",
+                        "meaning": "問題",
+                        "example": "<ruby>質問<rt>しつもん</rt></ruby>があります。 (有問題。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_250",
+                        "kanji": "赤",
+                        "meaning": "紅色",
+                        "example": "<ruby>赤<rt>あか</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡紅色。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_251",
+                        "kanji": "走",
+                        "meaning": "跑",
+                        "example": "<ruby>五<rt>ご</rt></ruby>キロ<ruby>走<rt>はし</rt></ruby>ります。 (跑五公里。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_252",
+                        "kanji": "起",
+                        "meaning": "起床",
+                        "example": "<ruby>六時<rt>ろくじ</rt></ruby>に<ruby>起<rt>お</rt></ruby>きます。 (六點起床。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_253",
+                        "kanji": "足",
+                        "meaning": "腳,腿",
+                        "example": "<ruby>足<rt>あし</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いです。 (腳很痛。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_254",
+                        "kanji": "身",
+                        "meaning": "刺身，生魚片",
+                        "example": "お<ruby>刺身<rt>さしみ</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたいです。 (我想吃生魚片。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_255",
+                        "kanji": "車",
+                        "meaning": "車",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。 (乘車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_256",
+                        "kanji": "転",
+                        "meaning": "自行車",
+                        "example": "<ruby>自転車<rt>じてんしゃ</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。 (騎腳踏車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_257",
+                        "kanji": "辞",
+                        "meaning": "辭典",
+                        "example": "<ruby>辞書<rt>じしょ</rt></ruby>で<ruby>調<rt>しら</rt></ruby>べます。 (用辭典查。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_258",
+                        "kanji": "辺",
+                        "meaning": "這一帶，這附近",
+                        "example": "この<ruby>辺<rt>へん</rt></ruby>に<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>はありますか。 (這附近有郵局嗎？)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_259",
+                        "kanji": "送",
+                        "meaning": "寄送",
+                        "example": "メールを<ruby>送<rt>おく</rt></ruby>ります。 (寄送電子郵件。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_260",
+                        "kanji": "速",
+                        "meaning": "快",
+                        "example": "<ruby>走<rt>はし</rt></ruby>るのが<ruby>速<rt>はや</rt></ruby>いです。 (跑得很快。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_261",
+                        "kanji": "週",
+                        "meaning": "下週",
+                        "example": "<ruby>来週<rt>らいしゅう</rt></ruby><ruby>会<rt>あ</rt></ruby>いましょう。 (下週見。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_262",
+                        "kanji": "遅",
+                        "meaning": "慢,晚",
+                        "example": "<ruby>来<rt>く</rt></ruby>るのが<ruby>遅<rt>おそ</rt></ruby>いです。 (來得很晚。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_263",
+                        "kanji": "遊",
+                        "meaning": "玩",
+                        "example": "<ruby>公園<rt>こうえん</rt></ruby>で<ruby>遊<rt>あそ</rt></ruby>びましょう。 (去公園玩吧。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_264",
+                        "kanji": "道",
+                        "meaning": "道路",
+                        "example": "<ruby>広<rt>ひろ</rt></ruby>い<ruby>道<rt>みち</rt></ruby>です。 (寬廣的道路。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_265",
+                        "kanji": "達",
+                        "meaning": "朋友",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>と<ruby>遊<rt>あそ</rt></ruby>びます。 (跟朋友玩。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_266",
+                        "kanji": "部",
+                        "meaning": "全部",
+                        "example": "<ruby>全部<rt>ぜんぶ</rt></ruby><ruby>食<rt>た</rt></ruby>べました。 (全部吃完了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_267",
+                        "kanji": "配",
+                        "meaning": "擔心",
+                        "example": "<ruby>心配<rt>しんぱい</rt></ruby>しないでください。 (請不要擔心。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_268",
+                        "kanji": "酒",
+                        "meaning": "酒",
+                        "example": "お<ruby>酒<rt>さけ</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (喝酒。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_269",
+                        "kanji": "重",
+                        "meaning": "重的",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>が<ruby>重<rt>おも</rt></ruby>いです。 (行李很重。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_270",
+                        "kanji": "野",
+                        "meaning": "蔬菜",
+                        "example": "<ruby>野菜<rt>やさい</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃蔬菜。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_271",
+                        "kanji": "金",
+                        "meaning": "錢",
+                        "example": "お<ruby>金<rt>かね</rt></ruby>がありません。 (沒有錢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_272",
+                        "kanji": "鉄",
+                        "meaning": "地鐵",
+                        "example": "<ruby>地下鉄<rt>ちかてつ</rt></ruby>で<ruby>帰<rt>かえ</rt></ruby>ります。 (搭地鐵回家。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_273",
+                        "kanji": "鉛",
+                        "meaning": "鉛筆",
+                        "example": "<ruby>鉛筆<rt>えんぴつ</rt></ruby>で<ruby>書<rt>か</rt></ruby>きます。 (用鉛筆寫。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_274",
+                        "kanji": "銀",
+                        "meaning": "銀行",
+                        "example": "<ruby>銀行<rt>ぎんこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去銀行。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_275",
+                        "kanji": "鏡",
+                        "meaning": "眼鏡",
+                        "example": "<ruby>眼鏡<rt>めがね</rt></ruby>をかけます。 (戴眼鏡。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_276",
+                        "kanji": "長",
+                        "meaning": "長的",
+                        "example": "<ruby>夏<rt>なつ</rt></ruby>は<ruby>日<rt>ひ</rt></ruby>が<ruby>長<rt>なが</rt></ruby>いです。 (夏天白天很長。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_277",
+                        "kanji": "開",
+                        "meaning": "打開",
+                        "example": "<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>けてください。 (請打開窗戶。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_278",
+                        "kanji": "間",
+                        "meaning": "之間,中間",
+                        "example": "<ruby>銀行<rt>ぎんこう</rt></ruby>と<ruby>学校<rt>がっこう</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>にあります。 (在銀行和學校之間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_279",
+                        "kanji": "降",
+                        "meaning": "下(車)",
+                        "example": "バスを<ruby>降<rt>お</rt></ruby>ります。 (下公車。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_280",
+                        "kanji": "院",
+                        "meaning": "醫院",
+                        "example": "<ruby>病院<rt>びょういん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去醫院。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_281",
+                        "kanji": "除",
+                        "meaning": "掃除",
+                        "example": "<ruby>部屋<rt>へや</rt></ruby>を<ruby>掃除<rt>そうじ</rt></ruby>します。 (打掃房間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_282",
+                        "kanji": "隣",
+                        "meaning": "旁邊",
+                        "example": "<ruby>隣<rt>となり</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>です。 (旁邊的房間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_283",
+                        "kanji": "雑",
+                        "meaning": "雜誌",
+                        "example": "<ruby>雑誌<rt>ざっし</rt></ruby>を<ruby>読<rt>よ</rt></ruby>みます。 (看雜誌。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_284",
+                        "kanji": "難",
+                        "meaning": "難的",
+                        "example": "<ruby>試験<rt>しけん</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しいです。 (考試很難。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_285",
+                        "kanji": "雨",
+                        "meaning": "雨",
+                        "example": "<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>っています。 (正在下雨。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_286",
+                        "kanji": "雪",
+                        "meaning": "雪",
+                        "example": "<ruby>雪<rt>ゆき</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ります。 (下雪了。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_287",
+                        "kanji": "電",
+                        "meaning": "電話",
+                        "example": "<ruby>電話<rt>でんわ</rt></ruby>をかけます。 (打電話。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_288",
+                        "kanji": "青",
+                        "meaning": "藍色",
+                        "example": "<ruby>青<rt>あお</rt></ruby>が<ruby>好<rt>す</rt></ruby>きです。 (喜歡藍色。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_289",
+                        "kanji": "静",
+                        "meaning": "安靜",
+                        "example": "<ruby>静<rt>しず</rt></ruby>かな<ruby>部屋<rt>へや</rt></ruby>です。 (安靜的房間。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_290",
+                        "kanji": "面",
+                        "meaning": "有趣",
+                        "example": "この<ruby>本<rt>ほん</rt></ruby>は<ruby>面白<rt>おもしろ</rt></ruby>いです。 (這本書很有趣。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_291",
+                        "kanji": "靴",
+                        "meaning": "鞋子",
+                        "example": "<ruby>靴<rt>くつ</rt></ruby>を<ruby>履<rt>は</rt></ruby>きます。 (穿鞋子。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_292",
+                        "kanji": "音",
+                        "meaning": "音樂",
+                        "example": "<ruby>音楽<rt>おんがく</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きます。 (聽音樂。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_293",
+                        "kanji": "頻",
+                        "meaning": "經常",
+                        "example": "よくこの店（みせ）に来（き）ます。 (經常來這家店。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_294",
+                        "kanji": "題",
+                        "meaning": "作業",
+                        "example": "<ruby>宿題<rt>しゅくだい</rt></ruby>をしました。 (寫了作業。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_295",
+                        "kanji": "飛",
+                        "meaning": "飛機",
+                        "example": "<ruby>飛行機<rt>ひこうき</rt></ruby>に<ruby>乗<rt>の</rt></ruby>ります。 (搭飛機。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_296",
+                        "kanji": "食",
+                        "meaning": "食堂",
+                        "example": "<ruby>食堂<rt>しょくどう</rt></ruby>で<ruby>食<rt>た</rt></ruby>べます。 (在食堂吃飯。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_297",
+                        "kanji": "飯",
+                        "meaning": "飯",
+                        "example": "ご<ruby>飯<rt>はん</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃飯。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_298",
+                        "kanji": "飲",
+                        "meaning": "喝",
+                        "example": "<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>みます。 (喝水。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_299",
+                        "kanji": "館",
+                        "meaning": "圖書館",
+                        "example": "<ruby>図書館<rt>としょかん</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きます。 (去圖書館。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_300",
+                        "kanji": "駅",
+                        "meaning": "車站",
+                        "example": "<ruby>駅<rt>えき</rt></ruby>で<ruby>待<rt>ま</rt></ruby>ちます。 (在車站等。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_301",
+                        "kanji": "高",
+                        "meaning": "高,貴",
+                        "example": "<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。 (價格很貴。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_302",
+                        "kanji": "魚",
+                        "meaning": "魚",
+                        "example": "<ruby>魚<rt>さかな</rt></ruby>を<ruby>食<rt>た</rt></ruby>べます。 (吃魚。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_303",
+                        "kanji": "鳥",
+                        "meaning": "鳥",
+                        "example": "<ruby>鳥<rt>とり</rt></ruby>が<ruby>飛<rt>と</rt></ruby>んでいます。 (鳥在飛。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_304",
+                        "kanji": "麗",
+                        "meaning": "漂亮",
+                        "example": "<ruby>綺麗<rt>きれい</rt></ruby>な<ruby>花<rt>はな</rt></ruby>ですね。 (真是漂亮的花呢。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_305",
+                        "kanji": "黒",
+                        "meaning": "黑的",
+                        "example": "<ruby>黒<rt>くろ</rt></ruby>いペンです。 (黑色的筆。)",
+                        "level": "N5"
+                },
+                {
+                        "id": "kn5_306",
+                        "kanji": "鼻",
+                        "meaning": "鼻子",
+                        "example": "<ruby>鼻<rt>はな</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。 (鼻子很高。)",
+                        "level": "N5"
+                }
+        ],
+        "n4": [
+                {
+                        "id": "kn4_1",
+                        "kanji": "丁",
+                        "meaning": "禮貌",
+                        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>を<ruby>使<rt>つか</rt></ruby>うようにしています。 (我盡量使用有禮貌的措辭。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_2",
+                        "kanji": "不",
+                        "meaning": "不便",
+                        "example": "ここは<ruby>不便<rt>ふべん</rt></ruby>な<ruby>所<rt>ところ</rt></ruby>です。 (這裡是很不方便的地方。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_3",
+                        "kanji": "世",
+                        "meaning": "世界",
+                        "example": "<ruby>世界<rt>せかい</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>いです。 (世界很廣闊。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_4",
+                        "kanji": "並",
+                        "meaning": "列隊",
+                        "example": "<ruby>店<rt>みせ</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>にたくさんの<ruby>人<rt>ひと</rt></ruby>が<ruby>並<rt>なら</rt></ruby>んでいます。 (店門前排了很多人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_5",
+                        "kanji": "久",
+                        "meaning": "久違地",
+                        "example": "<ruby>久しぶり<rt>ひさしぶり</rt></ruby>に<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会<rt>あ</rt></ruby>いました。 (好久沒見到朋友了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_6",
+                        "kanji": "乾",
+                        "meaning": "乾燥",
+                        "example": "<ruby>服<rt>ふく</rt></ruby>が<ruby>乾<rt>かわ</rt></ruby>いた。 (衣服乾了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_7",
+                        "kanji": "予",
+                        "meaning": "預約",
+                        "example": "ホテルの<ruby>予約<rt>よやく</rt></ruby>。 (預約飯店。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_8",
+                        "kanji": "介",
+                        "meaning": "介紹",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>します。 (介紹朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_9",
+                        "kanji": "付",
+                        "meaning": "接待,受理",
+                        "example": "<ruby>受付<rt>うけつけ</rt></ruby>は<ruby>一階<rt>いっかい</rt></ruby>にあります。 (接待處在一樓。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_10",
+                        "kanji": "代",
+                        "meaning": "代替",
+                        "example": "<ruby>父<rt>ちち</rt></ruby>の<ruby>代<rt>か</rt></ruby>わりに。 (代替父親。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_11",
+                        "kanji": "以",
+                        "meaning": "以下",
+                        "example": "７<ruby>歳<rt>さい</rt></ruby><ruby>以下<rt>いか</rt></ruby>の<ruby>子供<rt>こども</rt></ruby>は<ruby>無料<rt>むりょう</rt></ruby>です。 (7歲以下的小孩免費。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_12",
+                        "kanji": "仲",
+                        "meaning": "夥伴",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>大切<rt>たいせつ</rt></ruby>な<ruby>仕事<rt>しごと</rt></ruby>の<ruby>仲間<rt>なかま</rt></ruby>です。 (他是重要的工作夥伴。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_13",
+                        "kanji": "件",
+                        "meaning": "事件",
+                        "example": "<ruby>恐<rt>おそ</rt></ruby>ろしい<ruby>事件<rt>じけん</rt></ruby>。 (可怕的事件。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_14",
+                        "kanji": "伝",
+                        "meaning": "傳達，轉告",
+                        "example": "お<ruby>母<rt>かあ</rt></ruby>さんに「おめでとう」と<ruby>伝<rt>つた</rt></ruby>えてください。 (請向母親轉達「恭喜」。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_15",
+                        "kanji": "伺",
+                        "meaning": "拜訪、請問（謙遜）",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>、お<ruby>宅<rt>たく</rt></ruby>へ<ruby>伺<rt>うかが</rt></ruby>ってもいいですか。 (明天可以去拜訪您府上嗎？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_16",
+                        "kanji": "似",
+                        "meaning": "相像",
+                        "example": "<ruby>彼女<rt>かのじょ</rt></ruby>はお<ruby>母<rt>かあ</rt></ruby>さんにそっくり<ruby>似<rt>に</rt></ruby>ています。 (她和她母親長得一模一樣。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_17",
+                        "kanji": "低",
+                        "meaning": "低的",
+                        "example": "この<ruby>机<rt>つくえ</rt></ruby>はちょっと<ruby>低<rt>ひく</rt></ruby>すぎます。 (這張桌子有點太低了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_18",
+                        "kanji": "体",
+                        "meaning": "體育館",
+                        "example": "<ruby>体育館<rt>たいいくかん</rt></ruby>でバスケットボールをしました。 (在體育館打了籃球。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_19",
+                        "kanji": "価",
+                        "meaning": "物價",
+                        "example": "日本は<ruby>物価<rt>ぶっか</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いと<ruby>聞<rt>き</rt></ruby>きました。 (聽說日本物價很高。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_20",
+                        "kanji": "保",
+                        "meaning": "保險",
+                        "example": "<ruby>健康保険<rt>けんこうほけん</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る。 (加入健康保險。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_21",
+                        "kanji": "倒",
+                        "meaning": "推翻，弄倒；打敗，擊敗",
+                        "example": "<ruby>柔道<rt>じゅうどう</rt></ruby>で<ruby>相手<rt>あいて</rt></ruby>を<ruby>倒<rt>たお</rt></ruby>しました。 (用柔道擊敗了對手。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_22",
+                        "kanji": "候",
+                        "meaning": "氣候",
+                        "example": "<ruby>温暖<rt>おんだん</rt></ruby>な<ruby>気候<rt>きこう</rt></ruby>の<ruby>土地<rt>とち</rt></ruby>。 (氣候溫暖的土地。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_23",
+                        "kanji": "値",
+                        "meaning": "價格",
+                        "example": "このリンゴは<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>すぎます。 (這顆蘋果價格太高了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_24",
+                        "kanji": "健",
+                        "meaning": "健康",
+                        "example": "<ruby>健康<rt>けんこう</rt></ruby>が<ruby>一番大切<rt>いちばんたいせつ</rt></ruby>だ。 (健康是最重要的。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_25",
+                        "kanji": "偶",
+                        "meaning": "偶然",
+                        "example": "<ruby>偶然会<rt>ぐうぜんあ</rt></ruby>った。 (偶然相遇。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_26",
+                        "kanji": "備",
+                        "meaning": "準備",
+                        "example": "<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>をします。 (準備旅行。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_27",
+                        "kanji": "億",
+                        "meaning": "億",
+                        "example": "日本の<ruby>人口<rt>じんこう</rt></ruby>は１<ruby>億<rt>おく</rt></ruby>２<ruby>千万人<rt>せんまんにん</rt></ruby><ruby>以上<rt>いじょう</rt></ruby>です。 (日本的人口有1億2千萬人以上。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_28",
+                        "kanji": "優",
+                        "meaning": "冠軍",
+                        "example": "<ruby>大会<rt>たいかい</rt></ruby>で<ruby>優勝<rt>ゆうしょう</rt></ruby>する。 (在大會中獲得冠軍。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_29",
+                        "kanji": "免",
+                        "meaning": "執照",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>の<ruby>運転<rt>うんてん</rt></ruby><ruby>免許<rt>めんきょ</rt></ruby>を<ruby>取<rt>と</rt></ruby>りたいです。 (我想考汽車駕照。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_30",
+                        "kanji": "内",
+                        "meaning": "引導,帶路",
+                        "example": "<ruby>町<rt>まち</rt></ruby>を<ruby>案内<rt>あんない</rt></ruby>します。 (為您導覽城鎮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_31",
+                        "kanji": "初",
+                        "meaning": "最初",
+                        "example": "<ruby>最初<rt>さいしょ</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しかったです。 (一開始很難。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_32",
+                        "kanji": "別",
+                        "meaning": "特別",
+                        "example": "<ruby>特別<rt>とくべつ</rt></ruby>なプレゼント。 (特別的禮物。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_33",
+                        "kanji": "刻",
+                        "meaning": "遲到，晚點",
+                        "example": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>遅<rt>おく</rt></ruby>れて、<ruby>遅刻<rt>ちこく</rt></ruby>しました。 (因為電車遲到，所以我遲到了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_34",
+                        "kanji": "則",
+                        "meaning": "規則",
+                        "example": "<ruby>規則<rt>きそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>りましょう。 (遵守規則吧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_35",
+                        "kanji": "割",
+                        "meaning": "分裂",
+                        "example": "<ruby>卵<rt>たまご</rt></ruby>を<ruby>割<rt>わ</rt></ruby>ってボウルにいれます。 (打碎雞蛋放進碗裡。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_36",
+                        "kanji": "力",
+                        "meaning": "能力",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>仕事<rt>しごと</rt></ruby>の<ruby>能力<rt>のうりょく</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。 (他的工作能力很高。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_37",
+                        "kanji": "功",
+                        "meaning": "成功",
+                        "example": "<ruby>実験<rt>じっけん</rt></ruby>が<ruby>成功<rt>せいこう</rt></ruby>した。 (實驗成功了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_38",
+                        "kanji": "助",
+                        "meaning": "救助",
+                        "example": "<ruby>救助隊<rt>きゅうじょたい</rt></ruby>が<ruby>来<rt>き</rt></ruby>た。 (救助隊來了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_39",
+                        "kanji": "労",
+                        "meaning": "勞苦",
+                        "example": "<ruby>苦労<rt>くろう</rt></ruby>する。 (辛苦了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_40",
+                        "kanji": "動",
+                        "meaning": "動物",
+                        "example": "<ruby>動物園<rt>どうぶつえん</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (去動物園。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_41",
+                        "kanji": "務",
+                        "meaning": "公務員",
+                        "example": "<ruby>公務員<rt>こうむいん</rt></ruby>になる。 (成為公務員。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_42",
+                        "kanji": "勝",
+                        "meaning": "冠軍",
+                        "example": "<ruby>大会<rt>たいかい</rt></ruby>で<ruby>優勝<rt>ゆうしょう</rt></ruby>する。 (在大會中獲得冠軍。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_43",
+                        "kanji": "勤",
+                        "meaning": "調職",
+                        "example": "<ruby>大阪<rt>おおさか</rt></ruby>へ<ruby>転勤<rt>てんきん</rt></ruby>。 (調職到大阪。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_44",
+                        "kanji": "化",
+                        "meaning": "文化",
+                        "example": "<ruby>異文化<rt>いぶんか</rt></ruby>を<ruby>理解<rt>りかい</rt></ruby>する。 (理解異國文化。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_45",
+                        "kanji": "卒",
+                        "meaning": "畢業典禮",
+                        "example": "<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>大学<rt>だいがく</rt></ruby>の<ruby>卒業式<rt>そつぎょうしき</rt></ruby>があります。 (下週有大學的畢業典禮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_46",
+                        "kanji": "卓",
+                        "meaning": "乒乓球",
+                        "example": "<ruby>放課後<rt>ほうかご</rt></ruby>に<ruby>卓球<rt>たっきゅう</rt></ruby>をしました。 (放學後打了乒乓球。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_47",
+                        "kanji": "原",
+                        "meaning": "原因",
+                        "example": "<ruby>火事<rt>かじ</rt></ruby>の<ruby>原因<rt>げんいん</rt></ruby>。 (火災的原因。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_48",
+                        "kanji": "厳",
+                        "meaning": "嚴格",
+                        "example": "<ruby>厳<rt>きび</rt></ruby>しい<ruby>先生<rt>せんせい</rt></ruby>。 (嚴格的老師。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_49",
+                        "kanji": "反",
+                        "meaning": "反對",
+                        "example": "その<ruby>案<rt>あん</rt></ruby>に<ruby>反対<rt>はんたい</rt></ruby>します。 (我反對那個提案。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_50",
+                        "kanji": "取",
+                        "meaning": "拿，取",
+                        "example": "<ruby>棚<rt>たな</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>から<ruby>本<rt>ほん</rt></ruby>を<ruby>取<rt>と</rt></ruby>りました。 (從架子上拿了書。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_51",
+                        "kanji": "受",
+                        "meaning": "接待,受理",
+                        "example": "<ruby>受付<rt>うけつけ</rt></ruby>は<ruby>一階<rt>いっかい</rt></ruby>にあります。 (接待處在一樓。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_52",
+                        "kanji": "台",
+                        "meaning": "颱風",
+                        "example": "<ruby>台風<rt>たいふう</rt></ruby>のせいで、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まってしまいました。 (因為颱風的關係，電車停駛了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_53",
+                        "kanji": "叱",
+                        "meaning": "斥責",
+                        "example": "<ruby>母<rt>はは</rt></ruby>に<ruby>叱<rt>しか</rt></ruby>られる。 (被媽媽罵。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_54",
+                        "kanji": "史",
+                        "meaning": "歷史",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する。 (學習日本歷史。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_55",
+                        "kanji": "号",
+                        "meaning": "號碼",
+                        "example": "あなたの<ruby>電話<rt>でんわ</rt></ruby><ruby>番号<rt>ばんごう</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてください。 (請告訴我你的電話號碼。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_56",
+                        "kanji": "合",
+                        "meaning": "情況",
+                        "example": "<ruby>都合<rt>つごう</rt></ruby>がいい。 (方便/情況好。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_57",
+                        "kanji": "告",
+                        "meaning": "廣告",
+                        "example": "<ruby>新聞<rt>しんぶん</rt></ruby>の<ruby>広告<rt>こうこく</rt></ruby>。 (報紙的廣告。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_58",
+                        "kanji": "命",
+                        "meaning": "拚命",
+                        "example": "<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>する。 (拚命學習。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_59",
+                        "kanji": "和",
+                        "meaning": "和室",
+                        "example": "私の<ruby>家<rt>いえ</rt></ruby>には和室が２つあります。 (我家有兩間和室。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_60",
+                        "kanji": "品",
+                        "meaning": "ン。 夢；夢想",
+                        "example": "ユニクロ：日本の安 い衣料品 チェー (ン。 夢；夢想)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_61",
+                        "kanji": "員",
+                        "meaning": "公務員",
+                        "example": "<ruby>公務員<rt>こうむいん</rt></ruby>になる。 (成為公務員。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_62",
+                        "kanji": "喜",
+                        "meaning": "高興",
+                        "example": "プレゼントをあげたら、とても<ruby>喜<rt>よろこ</rt></ruby>んでくれました。 (送了禮物後，他非常高興。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_63",
+                        "kanji": "営",
+                        "meaning": "營業",
+                        "example": "この<ruby>店<rt>みせ</rt></ruby>は２４<ruby>時間<rt>じかん</rt></ruby><ruby>営業<rt>えいぎょう</rt></ruby>しています。 (這家店24小時營業。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_64",
+                        "kanji": "回",
+                        "meaning": "轉動",
+                        "example": "このつまみを<ruby>右<rt>みぎ</rt></ruby>に<ruby>回<rt>まわ</rt></ruby>してください。 (請將這個旋鈕向右轉。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_65",
+                        "kanji": "因",
+                        "meaning": "原因",
+                        "example": "<ruby>火事<rt>かじ</rt></ruby>の<ruby>原因<rt>げんいん</rt></ruby>。 (火災的原因。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_66",
+                        "kanji": "均",
+                        "meaning": "平均",
+                        "example": "<ruby>平均点<rt>へいきんてん</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>。 (計算平均分。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_67",
+                        "kanji": "報",
+                        "meaning": "天氣預報",
+                        "example": "<ruby>天気<rt>てんき</rt></ruby><ruby>予報<rt>よほう</rt></ruby>によると、<ruby>明日<rt>あした</rt></ruby>は<ruby>雨<rt>あめ</rt></ruby>だそうです。 (根據天氣預報，明天好像會下雨。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_68",
+                        "kanji": "境",
+                        "meaning": "環境",
+                        "example": "<ruby>環境<rt>かんきょう</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る<ruby>活動<rt>かつどう</rt></ruby>。 (保護環境的活動。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_69",
+                        "kanji": "増",
+                        "meaning": "增加",
+                        "example": "この<ruby>町<rt>まち</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えています。 (這個城市的的人口正在增加。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_70",
+                        "kanji": "壊",
+                        "meaning": "弄壞",
+                        "example": "おもちゃを<ruby>壊<rt>こわ</rt></ruby>す。 (弄壞玩具。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_71",
+                        "kanji": "夏",
+                        "meaning": "夏天",
+                        "example": "<ruby>夏<rt>なつ</rt></ruby>休みには<ruby>海<rt>うみ</rt></ruby>へ<ruby>行<rt>い</rt></ruby>きたいです。 (暑假想去海邊。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_72",
+                        "kanji": "夢",
+                        "meaning": "夢想",
+                        "example": "<ruby>将来<rt>しょうらい</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>は<ruby>医者<rt>いしゃ</rt></ruby>になることです。 (將來的夢想是當醫生。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_73",
+                        "kanji": "失",
+                        "meaning": "失敗",
+                        "example": "テストに<ruby>失敗<rt>しっぱい</rt></ruby>しました。 (考試失敗了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_74",
+                        "kanji": "嬢",
+                        "meaning": "令千金、小姐",
+                        "example": "<ruby>山田<rt>やまだ</rt></ruby>さんの<ruby>お嬢<rt>じょう</rt></ruby>さんはおいくつですか。 (山田先生的女兒幾歲了呢？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_75",
+                        "kanji": "季",
+                        "meaning": "季節",
+                        "example": "<ruby>好<rt>す</rt></ruby>きな<ruby>季節<rt>きせつ</rt></ruby>は<ruby>春<rt>はる</rt></ruby>です。 (喜歡的季節是春天。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_76",
+                        "kanji": "宅",
+                        "meaning": "府上、您家",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>、お<ruby>宅<rt>たく</rt></ruby>にいらっしゃいますか。 (明天您會在府上嗎？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_77",
+                        "kanji": "守",
+                        "meaning": "電話留言",
+                        "example": "<ruby>留守電<rt>るすでん</rt></ruby>にメッセージをいれておきました。 (在電話留言裡留了訊息。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_78",
+                        "kanji": "官",
+                        "meaning": "面試官",
+                        "example": "<ruby>面接官<rt>めんせつかん</rt></ruby>はとても<ruby>厳<rt>きび</rt></ruby>しそうでした。 (面試官看起來非常嚴格。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_79",
+                        "kanji": "定",
+                        "meaning": "計畫",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>の<ruby>予定<rt>よてい</rt></ruby>は？ (明天的計畫是？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_80",
+                        "kanji": "実",
+                        "meaning": "真相",
+                        "example": "<ruby>真実<rt>しんじつ</rt></ruby>を<ruby>明<rt>あ</rt></ruby>かす。 (揭開真相。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_81",
+                        "kanji": "害",
+                        "meaning": "被害",
+                        "example": "<ruby>大<rt>おお</rt></ruby>きな<ruby>被害<rt>ひがい</rt></ruby>が<ruby>出<rt>で</rt></ruby>た。 (出現了巨大的損害。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_82",
+                        "kanji": "寂",
+                        "meaning": "寂寞",
+                        "example": "<ruby>一人<rt>ひとり</rt></ruby>は<ruby>寂<rt>さび</rt></ruby>しい。 (一個人很寂寞。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_83",
+                        "kanji": "密",
+                        "meaning": "秘密",
+                        "example": "<ruby>秘密<rt>ひみつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。 (保守秘密。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_84",
+                        "kanji": "察",
+                        "meaning": "警察",
+                        "example": "<ruby>警察<rt>けいさつ</rt></ruby>に<ruby>届<rt>とど</rt></ruby>けます。 (向警察報案。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_85",
+                        "kanji": "寧",
+                        "meaning": "禮貌",
+                        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>を<ruby>使<rt>つか</rt></ruby>うようにしています。 (我盡量使用有禮貌的措辭。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_86",
+                        "kanji": "寮",
+                        "meaning": "宿舍",
+                        "example": "<ruby>大学<rt>だいがく</rt></ruby>の<ruby>寮<rt>りょう</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいます。 (住在大學宿舍裡。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_87",
+                        "kanji": "対",
+                        "meaning": "反對",
+                        "example": "その<ruby>案<rt>あん</rt></ruby>に<ruby>反対<rt>はんたい</rt></ruby>します。 (我反對那個提案。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_88",
+                        "kanji": "専",
+                        "meaning": "專門學校，專科學院",
+                        "example": "<ruby>高校<rt>こうこう</rt></ruby>を<ruby>卒業<rt>そつぎょう</rt></ruby>して、<ruby>専門学校<rt>せんもんがっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (高中畢業後，我要去讀專門學校。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_89",
+                        "kanji": "将",
+                        "meaning": "將來",
+                        "example": "<ruby>将来<rt>しょうらい</rt></ruby>の<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>語<rt>かた</rt></ruby>る。 (談論將來的夢想。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_90",
+                        "kanji": "就",
+                        "meaning": "就業",
+                        "example": "<ruby>就職活動<rt>しゅうしょくかつどう</rt></ruby>。 (求職活動。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_91",
+                        "kanji": "局",
+                        "meaning": "郵局",
+                        "example": "<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>へ<ruby>切手<rt>きって</rt></ruby>を<ruby>買<rt>か</rt></ruby>いに<ruby>行<rt>い</rt></ruby>きました。 (去郵局買了郵票。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_92",
+                        "kanji": "届",
+                        "meaning": "送達",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>友達<rt>ともだち</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>に<ruby>届<rt>とど</rt></ruby>けました。 (把行李送到朋友家了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_93",
+                        "kanji": "岸",
+                        "meaning": "海岸",
+                        "example": "<ruby>海岸<rt>かいがん</rt></ruby>を<ruby>散歩<rt>さんぽ</rt></ruby>する。 (在海岸散步。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_94",
+                        "kanji": "工",
+                        "meaning": "工廠",
+                        "example": "<ruby>工場<rt>こうじょう</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>いています。 (在工廠工作。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_95",
+                        "kanji": "市",
+                        "meaning": "都市",
+                        "example": "<ruby>大<rt>おお</rt></ruby>きな<ruby>都市<rt>とし</rt></ruby>に<ruby>住<rt>す</rt></ruby>む。 (住在大都市。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_96",
+                        "kanji": "師",
+                        "meaning": "護理師",
+                        "example": "<ruby>看護師<rt>かんごし</rt></ruby>を<ruby>目指<rt>めざ</rt></ruby>す。 (以成為護理師為目標。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_97",
+                        "kanji": "平",
+                        "meaning": "平均",
+                        "example": "<ruby>平均点<rt>へいきんてん</rt></ruby>を<ruby>計算<rt>けいさん</rt></ruby>。 (計算平均分。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_98",
+                        "kanji": "床",
+                        "meaning": "地板",
+                        "example": "<ruby>床<rt>ゆか</rt></ruby>にバッグを<ruby>置<rt>お</rt></ruby>かないでください。 (請不要把包包放在地板上。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_99",
+                        "kanji": "康",
+                        "meaning": "健康",
+                        "example": "<ruby>健康<rt>けんこう</rt></ruby>が<ruby>一番大切<rt>いちばんたいせつ</rt></ruby>だ。 (健康是最重要的。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_100",
+                        "kanji": "式",
+                        "meaning": "畢業典禮",
+                        "example": "<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>大学<rt>だいがく</rt></ruby>の<ruby>卒業式<rt>そつぎょうしき</rt></ruby>があります。 (下週有大學的畢業典禮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_101",
+                        "kanji": "引",
+                        "meaning": "抽屜",
+                        "example": "机の<ruby>引<rt>ひ</rt></ruby>き<ruby>出<rt>だ</rt></ruby>しに<ruby>鍵<rt>かぎ</rt></ruby>があります。 (抽屜裡有鑰匙。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_102",
+                        "kanji": "弱",
+                        "meaning": "弱",
+                        "example": "<ruby>風<rt>かぜ</rt></ruby>が<ruby>弱<rt>よわ</rt></ruby>くなってきました。 (風變弱了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_103",
+                        "kanji": "張",
+                        "meaning": "出差",
+                        "example": "<ruby>海外出張<rt>かいがいしゅっちょう</rt></ruby>。 (海外出差。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_104",
+                        "kanji": "形",
+                        "meaning": "娃娃",
+                        "example": "かわいい<ruby>人形<rt>にんぎょう</rt></ruby>を<ruby>買<rt>か</rt></ruby>いました。 (買了可愛的娃娃。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_105",
+                        "kanji": "役",
+                        "meaning": "有幫助",
+                        "example": "この<ruby>辞書<rt>じしょ</rt></ruby>はとても<ruby>役<rt>やく</rt></ruby>に<ruby>立<rt>た</rt></ruby>ちます。 (這本字典非常有幫助。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_106",
+                        "kanji": "律",
+                        "meaning": "法律",
+                        "example": "<ruby>法律<rt>ほうりつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る<ruby>義務<rt>ぎむ</rt></ruby>がある。 (有遵守法律的義務。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_107",
+                        "kanji": "復",
+                        "meaning": "複習",
+                        "example": "<ruby>今日<rt>きょう</rt></ruby><ruby>習<rt>なら</rt></ruby>ったことを<ruby>復習<rt>ふくしゅう</rt></ruby>してください。 (請複習今天學過的內容。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_108",
+                        "kanji": "必",
+                        "meaning": "必要",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>の<ruby>会議<rt>かいぎ</rt></ruby>にはこの<ruby>書類<rt>しょるい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。 (明天的會議需要這份文件。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_109",
+                        "kanji": "応",
+                        "meaning": "加油",
+                        "example": "みんなで<ruby>応援<rt>おうえん</rt></ruby>する。 (大家一起加油。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_110",
+                        "kanji": "怒",
+                        "meaning": "生氣",
+                        "example": "<ruby>先生<rt>せんせい</rt></ruby>が<ruby>怒<rt>おこ</rt></ruby>る。 (老師生氣了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_111",
+                        "kanji": "怖",
+                        "meaning": "害怕",
+                        "example": "<ruby>夜道<rt>よみち</rt></ruby>は<ruby>怖<rt>こわ</rt></ruby>い。 (夜路很可怕。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_112",
+                        "kanji": "性",
+                        "meaning": "性格",
+                        "example": "<ruby>明<rt>あか</rt></ruby>るい<ruby>性格<rt>せいかく</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>。 (性格開朗的人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_113",
+                        "kanji": "息",
+                        "meaning": "兒子",
+                        "example": "<ruby>息子<rt>むすこ</rt></ruby>は<ruby>来年<rt>らいねん</rt></ruby>、<ruby>小学生<rt>しょうがくせい</rt></ruby>になります。 (兒子明年要上小學了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_114",
+                        "kanji": "患",
+                        "meaning": "患者",
+                        "example": "<ruby>患者<rt>かんじゃ</rt></ruby>に<ruby>寄<rt>よ</rt></ruby>り<ruby>添<rt>そ</rt></ruby>う。 (陪伴患者。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_115",
+                        "kanji": "悪",
+                        "meaning": "視力不好",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>は<ruby>目<rt>め</rt></ruby>が<ruby>悪<rt>わる</rt></ruby>いので、メガネをかけています。 (因為我視力不好，所以戴著眼鏡。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_116",
+                        "kanji": "情",
+                        "meaning": "感情",
+                        "example": "<ruby>感情的<rt>かんじょうてき</rt></ruby>にならないで。 (請不要感情用事。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_117",
+                        "kanji": "意",
+                        "meaning": "注意",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>してください。 (請注意車輛。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_118",
+                        "kanji": "感",
+                        "meaning": "感情",
+                        "example": "<ruby>感情的<rt>かんじょうてき</rt></ruby>にならないで。 (請不要感情用事。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_119",
+                        "kanji": "慣",
+                        "meaning": "習慣",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>習慣<rt>しゅうかん</rt></ruby>を<ruby>学<rt>まな</rt></ruby>ぶ。 (學習日本的習慣。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_120",
+                        "kanji": "慮",
+                        "meaning": "客氣",
+                        "example": "<ruby>遠慮<rt>えんりょ</rt></ruby>しないで。 (請不要客氣。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_121",
+                        "kanji": "懸",
+                        "meaning": "拚命",
+                        "example": "<ruby>一生懸命<rt>いっしょうけんめい</rt></ruby><ruby>勉強<rt>べんきょう</rt></ruby>する。 (拚命學習。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_122",
+                        "kanji": "成",
+                        "meaning": "成功",
+                        "example": "<ruby>実験<rt>じっけん</rt></ruby>が<ruby>成功<rt>せいこう</rt></ruby>した。 (實驗成功了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_123",
+                        "kanji": "打",
+                        "meaning": "打、敲、發（電報）",
+                        "example": "<ruby>手紙<rt>てがみ</rt></ruby>を<ruby>打<rt>う</rt></ruby>つより、電話のほうが<ruby>早<rt>はや</rt></ruby>いです。 (比起寫信，打電話比較快。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_124",
+                        "kanji": "払",
+                        "meaning": "付（錢）",
+                        "example": "レジでお<ruby>金<rt>かね</rt></ruby>を<ruby>払<rt>はら</rt></ruby>いました。 (在收銀台付了錢。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_125",
+                        "kanji": "技",
+                        "meaning": "技術",
+                        "example": "<ruby>最新<rt>さいしん</rt></ruby>の<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>学<rt>まな</rt></ruby>ぶ。 (學習最新技術。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_126",
+                        "kanji": "折",
+                        "meaning": "折斷",
+                        "example": "<ruby>枝<rt>えだ</rt></ruby>を<ruby>折<rt>お</rt></ruby>る。 (折斷樹枝。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_127",
+                        "kanji": "抵",
+                        "meaning": "大概",
+                        "example": "<ruby>大抵<rt>たいてい</rt></ruby>は<ruby>知<rt>し</rt></ruby>っている。 (大概都知道。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_128",
+                        "kanji": "押",
+                        "meaning": "推、按、蓋章",
+                        "example": "このボタンを<ruby>押<rt>お</rt></ruby>すと、お<ruby>湯<rt>ゆ</rt></ruby>が<ruby>出<rt>で</rt></ruby>ます。 (按這個按鈕的話，會出熱水。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_129",
+                        "kanji": "招",
+                        "meaning": "招待",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>招待<rt>しょうたい</rt></ruby>する。 (招待朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_130",
+                        "kanji": "拶",
+                        "meaning": "問候",
+                        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>挨拶<rt>あいさつ</rt></ruby>。 (禮貌的問候。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_131",
+                        "kanji": "挨",
+                        "meaning": "問候",
+                        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>な<ruby>挨拶<rt>あいさつ</rt></ruby>。 (禮貌的問候。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_132",
+                        "kanji": "採",
+                        "meaning": "錄用",
+                        "example": "<ruby>新人<rt>しんじん</rt></ruby>を<ruby>採用<rt>さいよう</rt></ruby>。 (錄用新人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_133",
+                        "kanji": "探",
+                        "meaning": "尋找",
+                        "example": "<ruby>本<rt>ほん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>す。 (找書。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_134",
+                        "kanji": "接",
+                        "meaning": "面試",
+                        "example": "<ruby>面接<rt>めんせつ</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける。 (接受面試。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_135",
+                        "kanji": "援",
+                        "meaning": "加油",
+                        "example": "みんなで<ruby>応援<rt>おうえん</rt></ruby>する。 (大家一起加油。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_136",
+                        "kanji": "放",
+                        "meaning": "廣播",
+                        "example": "ラジオ<ruby>放送<rt>ほうそう</rt></ruby>を<ruby>聞<rt>き</rt></ruby>く。 (聽廣播。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_137",
+                        "kanji": "政",
+                        "meaning": "政治",
+                        "example": "<ruby>政治家<rt>せいじか</rt></ruby>になりたい。 (想當政治家。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_138",
+                        "kanji": "故",
+                        "meaning": "故障",
+                        "example": "パソコンが<ruby>故障<rt>こしょう</rt></ruby>しました。 (電腦故障了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_139",
+                        "kanji": "救",
+                        "meaning": "救助",
+                        "example": "<ruby>救助隊<rt>きゅうじょたい</rt></ruby>が<ruby>来<rt>き</rt></ruby>た。 (救助隊來了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_140",
+                        "kanji": "敗",
+                        "meaning": "失敗",
+                        "example": "テストに<ruby>失敗<rt>しっぱい</rt></ruby>しました。 (考試失敗了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_141",
+                        "kanji": "昆",
+                        "meaning": "昆蟲",
+                        "example": "<ruby>昆虫<rt>こんちゅう</rt></ruby>を<ruby>観察<rt>かんさつ</rt></ruby>する。 (觀察昆蟲。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_142",
+                        "kanji": "易",
+                        "meaning": "貿易",
+                        "example": "<ruby>父<rt>ちち</rt></ruby>は<ruby>貿易<rt>ぼうえき</rt></ruby><ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>いています。 (父親在貿易公司工作。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_143",
+                        "kanji": "昔",
+                        "meaning": "以前",
+                        "example": "<ruby>昔<rt>むかし</rt></ruby>、ここに<ruby>川<rt>かわ</rt></ruby>が流れていました。 (以前這裡有一條河流過。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_144",
+                        "kanji": "是",
+                        "meaning": "務必",
+                        "example": "<ruby>是非<rt>ぜひ</rt></ruby><ruby>来<rt>き</rt></ruby>て。 (務必過來。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_145",
+                        "kanji": "普",
+                        "meaning": "普通",
+                        "example": "これは<ruby>普通<rt>ふつう</rt></ruby>の<ruby>電車<rt>でんしゃ</rt></ruby>です。<ruby>特急<rt>とっきゅう</rt></ruby>ではありません。 (這是普通電車。不是特急。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_146",
+                        "kanji": "景",
+                        "meaning": "景色",
+                        "example": "<ruby>景色<rt>けしき</rt></ruby>がとてもきれいです。 (景色非常漂亮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_147",
+                        "kanji": "暮",
+                        "meaning": "生活",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>で<ruby>暮<rt>く</rt></ruby>らす。 (在日本生活。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_148",
+                        "kanji": "曲",
+                        "meaning": "拐彎",
+                        "example": "<ruby>次<rt>つぎ</rt></ruby>の<ruby>角<rt>かど</rt></ruby>を<ruby>左<rt>ひだり</rt></ruby>に<ruby>曲<rt>ま</rt></ruby>がってください。 (請在下一個轉角左轉。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_149",
+                        "kanji": "最",
+                        "meaning": "最近",
+                        "example": "<ruby>最近<rt>さいきん</rt></ruby><ruby>忙<rt>いそが</rt></ruby>しいです。 (最近很忙。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_150",
+                        "kanji": "期",
+                        "meaning": "期限",
+                        "example": "<ruby>期限<rt>きげん</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ってください。 (請遵守期限。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_151",
+                        "kanji": "束",
+                        "meaning": "約定",
+                        "example": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。 (遵守約定。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_152",
+                        "kanji": "条",
+                        "meaning": "條件",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>の<ruby>条件<rt>じょうけん</rt></ruby>。 (工作條件。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_153",
+                        "kanji": "枝",
+                        "meaning": "樹枝",
+                        "example": "<ruby>桜<rt>さくら</rt></ruby>の<ruby>枝<rt>えだ</rt></ruby>を<ruby>折<rt>お</rt></ruby>らないでください。 (請不要折斷櫻花樹枝。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_154",
+                        "kanji": "染",
+                        "meaning": "汙染",
+                        "example": "<ruby>空気<rt>くうき</rt></ruby>が<ruby>汚染<rt>おせん</rt></ruby>されている。 (空氣被汙染了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_155",
+                        "kanji": "柔",
+                        "meaning": "軟",
+                        "example": "このパンはとても<ruby>柔<rt>やわ</rt></ruby>らかいです。 (這個麵包非常軟。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_156",
+                        "kanji": "格",
+                        "meaning": "性格",
+                        "example": "<ruby>明<rt>あか</rt></ruby>るい<ruby>性格<rt>せいかく</rt></ruby>の<ruby>人<rt>ひと</rt></ruby>。 (性格開朗的人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_157",
+                        "kanji": "案",
+                        "meaning": "引導,帶路",
+                        "example": "<ruby>町<rt>まち</rt></ruby>を<ruby>案内<rt>あんない</rt></ruby>します。 (為您導覽城鎮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_158",
+                        "kanji": "械",
+                        "meaning": "機械",
+                        "example": "<ruby>機械<rt>きかい</rt></ruby>を<ruby>直<rt>なお</rt></ruby>します。 (修理機械。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_159",
+                        "kanji": "棒",
+                        "meaning": "小偷",
+                        "example": "<ruby>泥棒<rt>どろぼう</rt></ruby>が<ruby>入<rt>はい</rt></ruby>りました。 (小偷闖進來了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_160",
+                        "kanji": "植",
+                        "meaning": "植物",
+                        "example": "<ruby>珍<rt>めずら</rt></ruby>しい<ruby>植物<rt>しょくぶつ</rt></ruby>。 (珍奇的植物。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_161",
+                        "kanji": "業",
+                        "meaning": "加班",
+                        "example": "<ruby>残業<rt>ざんぎょう</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い。 (加班很多。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_162",
+                        "kanji": "様",
+                        "meaning": "各位",
+                        "example": "みなさま、こんにちは。 (各位，大家好。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_163",
+                        "kanji": "次",
+                        "meaning": "交往，來往，打交道 下一個，其次 開（燈）",
+                        "example": "付き合う つぎ 次の でんき （電気が）つく かいしゃ (交往，來往，打交道 下一個，其次 開（燈）)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_164",
+                        "kanji": "止",
+                        "meaning": "中止",
+                        "example": "<ruby>雨<rt>あめ</rt></ruby>でテニスの<ruby>試合<rt>しあい</rt></ruby>が<ruby>中止<rt>ちゅうし</rt></ruby>になりました。 (因為下雨，網球比賽中止了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_165",
+                        "kanji": "歴",
+                        "meaning": "歷史",
+                        "example": "<ruby>日本<rt>にほん</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>する。 (學習日本歷史。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_166",
+                        "kanji": "段",
+                        "meaning": "價格",
+                        "example": "このリンゴは<ruby>値段<rt>ねだん</rt></ruby>が<ruby>高<rt>たか</rt></ruby>すぎます。 (這顆蘋果價格太高了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_167",
+                        "kanji": "比",
+                        "meaning": "比較",
+                        "example": "<ruby>他<rt>ほか</rt></ruby>と<ruby>比<rt>くら</rt></ruby>べる。 (和其他的比較。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_168",
+                        "kanji": "汚",
+                        "meaning": "汙染",
+                        "example": "<ruby>空気<rt>くうき</rt></ruby>が<ruby>汚染<rt>おせん</rt></ruby>されている。 (空氣被汙染了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_169",
+                        "kanji": "決",
+                        "meaning": "決定",
+                        "example": "<ruby>予定<rt>よてい</rt></ruby>が<ruby>決<rt>き</rt></ruby>まる。 (行程決定了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_170",
+                        "kanji": "沸",
+                        "meaning": "燒開（水）",
+                        "example": "お<ruby>湯<rt>ゆ</rt></ruby>を<ruby>沸<rt>わ</rt></ruby>かしてください。 (請燒開水。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_171",
+                        "kanji": "治",
+                        "meaning": "政治",
+                        "example": "<ruby>政治家<rt>せいじか</rt></ruby>になりたい。 (想當政治家。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_172",
+                        "kanji": "泊",
+                        "meaning": "住，留宿",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>はホテルに<ruby>泊<rt>と</rt></ruby>まりました。 (昨天住在了飯店。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_173",
+                        "kanji": "法",
+                        "meaning": "法律",
+                        "example": "<ruby>法律<rt>ほうりつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る<ruby>義務<rt>ぎむ</rt></ruby>がある。 (有遵守法律的義務。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_174",
+                        "kanji": "泣",
+                        "meaning": "哭",
+                        "example": "<ruby>赤ちゃん<rt>あかちゃん</rt></ruby>が<ruby>泣<rt>な</rt></ruby>いています。 (嬰兒正在哭。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_175",
+                        "kanji": "泥",
+                        "meaning": "小偷",
+                        "example": "<ruby>泥棒<rt>どろぼう</rt></ruby>が<ruby>入<rt>はい</rt></ruby>りました。 (小偷闖進來了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_176",
+                        "kanji": "注",
+                        "meaning": "注意",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>に<ruby>注意<rt>ちゅうい</rt></ruby>してください。 (請注意車輛。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_177",
+                        "kanji": "洪",
+                        "meaning": "洪水",
+                        "example": "<ruby>大雨<rt>おおあめ</rt></ruby>で<ruby>洪水<rt>こうずい</rt></ruby>になった。 (因為大雨發生了洪水。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_178",
+                        "kanji": "派",
+                        "meaning": "花哨",
+                        "example": "その<ruby>服<rt>ふく</rt></ruby>はちょっと<ruby>派手<rt>はで</rt></ruby>すぎませんか。 (那件衣服會不會有點太花哨了？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_179",
+                        "kanji": "混",
+                        "meaning": "混合",
+                        "example": "卵をよく<ruby>混<rt>ま</rt></ruby>ぜてください。 (請將雞蛋充分攪拌。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_180",
+                        "kanji": "添",
+                        "meaning": "添加附件",
+                        "example": "<ruby>写真<rt>しゃしん</rt></ruby>を<ruby>添付<rt>てんぷ</rt></ruby>してメールを<ruby>送<rt>おく</rt></ruby>りました。 (附上照片寄了郵件。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_181",
+                        "kanji": "済",
+                        "meaning": "經濟",
+                        "example": "<ruby>経済<rt>けいざい</rt></ruby>のニュースを<ruby>見<rt>み</rt></ruby>る。 (看經濟新聞。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_182",
+                        "kanji": "測",
+                        "meaning": "測量",
+                        "example": "<ruby>熱<rt>ねつ</rt></ruby>を<ruby>測<rt>はか</rt></ruby>ってください。 (請量一下體溫。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_183",
+                        "kanji": "湖",
+                        "meaning": "湖",
+                        "example": "この<ruby>湖<rt>みずうみ</rt></ruby>はとてもきれいですね。 (這座湖非常漂亮呢。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_184",
+                        "kanji": "源",
+                        "meaning": "資源",
+                        "example": "<ruby>天然資源<rt>てんねんしげん</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>に。 (珍惜天然資源。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_185",
+                        "kanji": "準",
+                        "meaning": "準備",
+                        "example": "<ruby>旅行<rt>りょこう</rt></ruby>の<ruby>準備<rt>じゅんび</rt></ruby>をします。 (準備旅行。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_186",
+                        "kanji": "漱",
+                        "meaning": "夏目漱石",
+                        "example": "夏目漱石は<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>小説家<rt>しょうせつか</rt></ruby>です。 (夏目漱石是著名的小說家。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_187",
+                        "kanji": "点",
+                        "meaning": "～分",
+                        "example": "<ruby>テスト<rt>てすと</rt></ruby>で１００<ruby>点<rt>てん</rt></ruby>を<ruby>取<rt>と</rt></ruby>りました。 (考試拿了100分。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_188",
+                        "kanji": "無",
+                        "meaning": "勉強",
+                        "example": "そんなに<ruby>無理<rt>むり</rt></ruby>をしないでください。 (請不要那麼勉強自己。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_189",
+                        "kanji": "然",
+                        "meaning": "自然",
+                        "example": "<ruby>自然<rt>しぜん</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>にする。 (珍惜自然。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_190",
+                        "kanji": "焼",
+                        "meaning": "烤",
+                        "example": "<ruby>魚<rt>さかな</rt></ruby>を<ruby>焼<rt>や</rt></ruby>いて<ruby>食<rt>た</rt></ruby>べました。 (烤了魚來吃。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_191",
+                        "kanji": "熱",
+                        "meaning": "燙的、熱情的",
+                        "example": "<ruby>熱<rt>あつ</rt></ruby>いうちに<ruby>召<rt>め</rt></ruby>し<ruby>上<rt>あ</rt></ruby>がってください。 (請趁熱享用。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_192",
+                        "kanji": "燃",
+                        "meaning": "燃燒",
+                        "example": "これは<ruby>燃<rt>も</rt></ruby>えるゴミです。 (這是可燃垃圾。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_193",
+                        "kanji": "特",
+                        "meaning": "特別",
+                        "example": "<ruby>特別<rt>とくべつ</rt></ruby>なプレゼント。 (特別的禮物。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_194",
+                        "kanji": "犯",
+                        "meaning": "犯人",
+                        "example": "<ruby>犯人<rt>はんにん</rt></ruby>が<ruby>捕<rt>つか</rt></ruby>まった。 (犯人被抓到了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_195",
+                        "kanji": "状",
+                        "meaning": "症狀",
+                        "example": "<ruby>風邪<rt>かぜ</rt></ruby>の<ruby>症状<rt>しょうじょう</rt></ruby>がある。 (有感冒的症狀。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_196",
+                        "kanji": "環",
+                        "meaning": "環境",
+                        "example": "<ruby>環境<rt>かんきょう</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る<ruby>活動<rt>かつどう</rt></ruby>。 (保護環境的活動。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_197",
+                        "kanji": "甘",
+                        "meaning": "甜的",
+                        "example": "<ruby>甘<rt>あま</rt></ruby>いものを<ruby>食<rt>た</rt></ruby>べすぎると、<ruby>体<rt>からだ</rt></ruby>に<ruby>良<rt>よ</rt></ruby>くないですよ。 (甜食吃太多的話，對身體不好喔。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_198",
+                        "kanji": "産",
+                        "meaning": "伴手禮、土產",
+                        "example": "日本のお<ruby>土産<rt>みやげ</rt></ruby>を<ruby>買<rt>か</rt></ruby>ってきました。 (買了日本的伴手禮回來。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_199",
+                        "kanji": "用",
+                        "meaning": "錄用",
+                        "example": "<ruby>新人<rt>しんじん</rt></ruby>を<ruby>採用<rt>さいよう</rt></ruby>。 (錄用新人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_200",
+                        "kanji": "田",
+                        "meaning": "鄉下",
+                        "example": "<ruby>田舎<rt>いなか</rt></ruby>でのんびりする。 (在鄉下悠閒度日。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_201",
+                        "kanji": "申",
+                        "meaning": "申請 27",
+                        "example": "申 し込み (申請 27)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_202",
+                        "kanji": "界",
+                        "meaning": "世界",
+                        "example": "<ruby>世界<rt>せかい</rt></ruby>は<ruby>広<rt>ひろ</rt></ruby>いです。 (世界很廣闊。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_203",
+                        "kanji": "留",
+                        "meaning": "留學",
+                        "example": "<ruby>来年<rt>らいねん</rt></ruby>、日本に<ruby>留学<rt>りゅうがく</rt></ruby>するつもりです。 (明年打算去日本留學。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_204",
+                        "kanji": "症",
+                        "meaning": "症狀",
+                        "example": "<ruby>風邪<rt>かぜ</rt></ruby>の<ruby>症状<rt>しょうじょう</rt></ruby>がある。 (有感冒的症狀。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_205",
+                        "kanji": "療",
+                        "meaning": "治療",
+                        "example": "<ruby>治療<rt>ちりょう</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける。 (接受治療。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_206",
+                        "kanji": "発",
+                        "meaning": "發現",
+                        "example": "<ruby>新種<rt>しんしゅ</rt></ruby>を<ruby>発見<rt>はっけん</rt></ruby>しました。 (發現了新物種。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_207",
+                        "kanji": "皆",
+                        "meaning": "各位",
+                        "example": "みなさま、こんにちは。 (各位，大家好。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_208",
+                        "kanji": "監",
+                        "meaning": "教練、導演",
+                        "example": "<ruby>野球<rt>やきゅう</rt></ruby>チームの<ruby>監督<rt>かんとく</rt></ruby>。 (棒球隊的教練。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_209",
+                        "kanji": "直",
+                        "meaning": "修改（作文）",
+                        "example": "<ruby>先生<rt>せんせい</rt></ruby>に<ruby>作文<rt>さくぶん</rt></ruby>を<ruby>直<rt>なお</rt></ruby>してもらいました。 (請老師幫忙修改了作文。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_210",
+                        "kanji": "相",
+                        "meaning": "商量",
+                        "example": "<ruby>親<rt>おや</rt></ruby>に<ruby>相談<rt>そうだん</rt></ruby>します。 (和父母商量。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_211",
+                        "kanji": "看",
+                        "meaning": "護理師",
+                        "example": "<ruby>看護師<rt>かんごし</rt></ruby>を<ruby>目指<rt>めざ</rt></ruby>す。 (以成為護理師為目標。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_212",
+                        "kanji": "眠",
+                        "meaning": "想睡覺",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>はあまり<ruby>寝<rt>ね</rt></ruby>ていないので、<ruby>眠<rt>ねむ</rt></ruby>いです。 (因為昨天沒怎麼睡，所以很睏。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_213",
+                        "kanji": "督",
+                        "meaning": "教練、導演",
+                        "example": "<ruby>野球<rt>やきゅう</rt></ruby>チームの<ruby>監督<rt>かんとく</rt></ruby>。 (棒球隊的教練。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_214",
+                        "kanji": "石",
+                        "meaning": "夏目漱石",
+                        "example": "夏目漱石は<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>小説家<rt>しょうせつか</rt></ruby>です。 (夏目漱石是著名的小說家。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_215",
+                        "kanji": "破",
+                        "meaning": "撕破",
+                        "example": "ノートが<ruby>破<rt>やぶ</rt></ruby>れてしまいました。 (筆記本撕破了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_216",
+                        "kanji": "確",
+                        "meaning": "弄清楚，查明，確認",
+                        "example": "<ruby>予約<rt>よやく</rt></ruby>を<ruby>電話<rt>でんわ</rt></ruby>で<ruby>確<rt>たし</rt></ruby>かめました。 (打電話確認了預約。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_217",
+                        "kanji": "磨",
+                        "meaning": "刷",
+                        "example": "<ruby>寝<rt>ね</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<ruby>必<rt>かなら</rt></ruby>ず<ruby>歯<rt>は</rt></ruby>を<ruby>磨<rt>みが</rt></ruby>きます。 (睡前一定會刷牙。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_218",
+                        "kanji": "礼",
+                        "meaning": "謝禮",
+                        "example": "お<ruby>礼<rt>れい</rt></ruby>を<ruby>言<rt>い</rt></ruby>いに<ruby>来<rt>き</rt></ruby>ました。 (我是來道謝的。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_219",
+                        "kanji": "祈",
+                        "meaning": "祈禱",
+                        "example": "<ruby>合格<rt>ごうかく</rt></ruby>を<ruby>祈<rt>いの</rt></ruby>る。 (祈禱合格。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_220",
+                        "kanji": "祝",
+                        "meaning": "祝賀",
+                        "example": "<ruby>誕生日<rt>たんじょうび</rt></ruby>のお<ruby>祝<rt>いわ</rt></ruby>い。 (生日祝賀。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_221",
+                        "kanji": "祭",
+                        "meaning": "祭典、慶典",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>はお<ruby>祭<rt>まつ</rt></ruby>りだったので、とてもにぎやかでした。 (因為昨天是祭典，所以非常熱鬧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_222",
+                        "kanji": "秋",
+                        "meaning": "秋天",
+                        "example": "<ruby>秋<rt>あき</rt></ruby>になると、<ruby>木<rt>き</rt></ruby>の<ruby>葉<rt>は</rt></ruby>が<ruby>赤<rt>あか</rt></ruby>くなります。 (到了秋天，樹葉會變紅。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_223",
+                        "kanji": "科",
+                        "meaning": "科學",
+                        "example": "<ruby>科学<rt>かがく</rt></ruby>の<ruby>力<rt>ちから</rt></ruby>はすごい。 (科學的力量很厲害。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_224",
+                        "kanji": "秘",
+                        "meaning": "秘密",
+                        "example": "<ruby>秘密<rt>ひみつ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。 (保守秘密。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_225",
+                        "kanji": "移",
+                        "meaning": "移動、轉移、感染",
+                        "example": "<ruby>隣<rt>となり</rt></ruby>の<ruby>部屋<rt>へや</rt></ruby>に<ruby>移<rt>うつ</rt></ruby>りましょう。 (我們移到隔壁房間吧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_226",
+                        "kanji": "立",
+                        "meaning": "互相幫助 幫助，援助，協助，救助 現在，當前；馬上，立刻 乒乓球 卓球 建築物，房屋 建物 建造；創立，建立 立，豎，使…站立",
+                        "example": "助 け合う たす 助 ける いま ただ今 たっきゅう たてもの た 建てる た 立てる (互相幫助 幫助，援助，協助，救助 現在，當前；馬上，立刻 乒乓球 卓球 建築物，房屋 建物 建造；創立，建立 立，豎，使…站立)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_227",
+                        "kanji": "笑",
+                        "meaning": "笑",
+                        "example": "みんなで<ruby>楽<rt>たの</rt></ruby>しく<ruby>笑<rt>わら</rt></ruby>いましょう。 (大家一起開心地笑吧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_228",
+                        "kanji": "節",
+                        "meaning": "季節",
+                        "example": "<ruby>好<rt>す</rt></ruby>きな<ruby>季節<rt>きせつ</rt></ruby>は<ruby>春<rt>はる</rt></ruby>です。 (喜歡的季節是春天。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_229",
+                        "kanji": "築",
+                        "meaning": "",
+                        "example": "：イタリアの芸術家 、建築家、 ()",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_230",
+                        "kanji": "糸",
+                        "meaning": "線",
+                        "example": "この<ruby>糸<rt>いと</rt></ruby>はとても<ruby>強<rt>つよ</rt></ruby>いです。 (這條線非常結實。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_231",
+                        "kanji": "約",
+                        "meaning": "約定",
+                        "example": "<ruby>約束<rt>やくそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ります。 (遵守約定。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_232",
+                        "kanji": "納",
+                        "meaning": "納豆",
+                        "example": "<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがありますか。 (你吃過納豆嗎？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_233",
+                        "kanji": "紹",
+                        "meaning": "介紹",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>紹介<rt>しょうかい</rt></ruby>します。 (介紹朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_234",
+                        "kanji": "組",
+                        "meaning": "節目",
+                        "example": "テレビ<ruby>番組<rt>ばんぐみ</rt></ruby>を<ruby>見<rt>み</rt></ruby>る。 (看電視節目。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_235",
+                        "kanji": "経",
+                        "meaning": "經濟",
+                        "example": "<ruby>経済<rt>けいざい</rt></ruby>のニュースを<ruby>見<rt>み</rt></ruby>る。 (看經濟新聞。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_236",
+                        "kanji": "絡",
+                        "meaning": "聯絡",
+                        "example": "すぐに<ruby>連絡<rt>れんらく</rt></ruby>します。 (立刻聯絡。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_237",
+                        "kanji": "給",
+                        "meaning": "薪水",
+                        "example": "<ruby>給料<rt>きゅうりょう</rt></ruby>をもらう。 (領薪水。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_238",
+                        "kanji": "絶",
+                        "meaning": "絕對",
+                        "example": "<ruby>絶対<rt>ぜったい</rt></ruby>に<ruby>嘘<rt>うそ</rt></ruby>はつきません。 (絕對不會撒謊。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_239",
+                        "kanji": "続",
+                        "meaning": "繼續",
+                        "example": "<ruby>雨<rt>あめ</rt></ruby>が１<ruby>週間<rt>しゅうかん</rt></ruby><ruby>続<rt>つづ</rt></ruby>いています。 (雨已經下了一星期了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_240",
+                        "kanji": "線",
+                        "meaning": "設置された仕切り。 月臺安全門：設置在月臺處的安全阻 隔門。",
+                        "example": "ホームゲート：駅 ホームの線路 際 に (設置された仕切り。 月臺安全門：設置在月臺處的安全阻 隔門。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_241",
+                        "kanji": "練",
+                        "meaning": "練習",
+                        "example": "テニスの<ruby>練習<rt>れんしゅう</rt></ruby>をします。 (練習網球。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_242",
+                        "kanji": "義",
+                        "meaning": "講課",
+                        "example": "<ruby>大学<rt>だいがく</rt></ruby>の<ruby>講義<rt>こうぎ</rt></ruby>。 (大學的講課。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_243",
+                        "kanji": "翻",
+                        "meaning": "翻譯",
+                        "example": "<ruby>本<rt>ほん</rt></ruby>を<ruby>翻訳<rt>ほんやく</rt></ruby>する。 (翻譯書本。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_244",
+                        "kanji": "考",
+                        "meaning": "思考",
+                        "example": "よく<ruby>考<rt>かんが</rt></ruby>える。 (好好思考。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_245",
+                        "kanji": "職",
+                        "meaning": "離職",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>退職<rt>たいしょく</rt></ruby>。 (從公司離職。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_246",
+                        "kanji": "肉",
+                        "meaning": "肉",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>肉<rt>にく</rt></ruby>をたくさん<ruby>食<rt>た</rt></ruby>べました。 (昨天吃了好多肉。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_247",
+                        "kanji": "育",
+                        "meaning": "發育，成長，長大",
+                        "example": "<ruby>田舎<rt>いなか</rt></ruby>でゆっくり<ruby>育<rt>そだ</rt></ruby>ちました。 (在鄉下慢慢地長大。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_248",
+                        "kanji": "能",
+                        "meaning": "能力",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>仕事<rt>しごと</rt></ruby>の<ruby>能力<rt>のうりょく</rt></ruby>が<ruby>高<rt>たか</rt></ruby>いです。 (他的工作能力很高。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_249",
+                        "kanji": "腕",
+                        "meaning": "手臂",
+                        "example": "<ruby>腕<rt>うで</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い。 (手臂痛。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_250",
+                        "kanji": "興",
+                        "meaning": "興趣",
+                        "example": "<ruby>興味<rt>きょうみ</rt></ruby>があります。 (有興趣。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_251",
+                        "kanji": "舎",
+                        "meaning": "鄉下",
+                        "example": "<ruby>田舎<rt>いなか</rt></ruby>でのんびりする。 (在鄉下悠閒度日。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_252",
+                        "kanji": "舞",
+                        "meaning": "探病",
+                        "example": "お<ruby>見舞<rt>みま</rt></ruby>いに<ruby>行<rt>い</rt></ruby>く。 (去探病。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_253",
+                        "kanji": "良",
+                        "meaning": "好轉",
+                        "example": "<ruby>病気<rt>びょうき</rt></ruby>がだいぶ<ruby>良<rt>よく</rt></ruby>なりました。 (病情好轉了很多。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_254",
+                        "kanji": "芸",
+                        "meaning": "",
+                        "example": "：イタリアの芸術家 、建築家、 ()",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_255",
+                        "kanji": "若",
+                        "meaning": "年輕人",
+                        "example": "この<ruby>町<rt>まち</rt></ruby>には<ruby>若<rt>わか</rt></ruby>い<ruby>人<rt>ひと</rt></ruby>が<ruby>少<rt>すくな</rt></ruby>いです。 (這個鎮上的年輕人很少。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_256",
+                        "kanji": "苦",
+                        "meaning": "勞苦",
+                        "example": "<ruby>苦労<rt>くろう</rt></ruby>する。 (辛苦了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_257",
+                        "kanji": "落",
+                        "meaning": "弄丟、掉下",
+                        "example": "<ruby>財布<rt>さいふ</rt></ruby>を<ruby>落<rt>お</rt></ruby>としてしまいました。 (不小心弄丟了錢包。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_258",
+                        "kanji": "虫",
+                        "meaning": "昆蟲",
+                        "example": "<ruby>昆虫<rt>こんちゅう</rt></ruby>を<ruby>観察<rt>かんさつ</rt></ruby>する。 (觀察昆蟲。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_259",
+                        "kanji": "術",
+                        "meaning": "技術",
+                        "example": "<ruby>最新<rt>さいしん</rt></ruby>の<ruby>技術<rt>ぎじゅつ</rt></ruby>を<ruby>学<rt>まな</rt></ruby>ぶ。 (學習最新技術。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_260",
+                        "kanji": "衣",
+                        "meaning": "ン。 夢；夢想",
+                        "example": "ユニクロ：日本の安 い衣料品 チェー (ン。 夢；夢想)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_261",
+                        "kanji": "表",
+                        "meaning": "表面、正面",
+                        "example": "<ruby>表<rt>おもて</rt></ruby>に<ruby>人<rt>ひと</rt></ruby>が<ruby>大勢<rt>おおぜい</rt></ruby>います。 (外面有很多人。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_262",
+                        "kanji": "被",
+                        "meaning": "被害",
+                        "example": "<ruby>大<rt>おお</rt></ruby>きな<ruby>被害<rt>ひがい</rt></ruby>が<ruby>出<rt>で</rt></ruby>た。 (出現了巨大的損害。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_263",
+                        "kanji": "裏",
+                        "meaning": "背面、後面",
+                        "example": "プリントの<ruby>裏<rt>うら</rt></ruby>を<ruby>見<rt>み</rt></ruby>てください。 (請看講義的背面。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_264",
+                        "kanji": "複",
+                        "meaning": "複雜",
+                        "example": "<ruby>複雑<rt>ふくざつ</rt></ruby>な<ruby>問題<rt>もんだい</rt></ruby>。 (複雜的問題。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_265",
+                        "kanji": "要",
+                        "meaning": "必要",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>の<ruby>会議<rt>かいぎ</rt></ruby>にはこの<ruby>書類<rt>しょるい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>です。 (明天的會議需要這份文件。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_266",
+                        "kanji": "規",
+                        "meaning": "規則",
+                        "example": "<ruby>規則<rt>きそく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>りましょう。 (遵守規則吧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_267",
+                        "kanji": "解",
+                        "meaning": "解雇",
+                        "example": "<ruby>解雇<rt>かいこ</rt></ruby>される。 (被解雇。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_268",
+                        "kanji": "触",
+                        "meaning": "觸摸",
+                        "example": "<ruby>展示品<rt>てんじひん</rt></ruby>に<ruby>触<rt>さわ</rt></ruby>る。 (觸摸展示品。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_269",
+                        "kanji": "訪",
+                        "meaning": "拜訪",
+                        "example": "<ruby>明日<rt>あした</rt></ruby>、お<ruby>宅<rt>たく</rt></ruby>を<ruby>訪問<rt>ほうもん</rt></ruby>してもいいですか。 (明天可以去拜訪您府上嗎？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_270",
+                        "kanji": "許",
+                        "meaning": "執照",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>の<ruby>運転<rt>うんてん</rt></ruby><ruby>免許<rt>めんきょ</rt></ruby>を<ruby>取<rt>と</rt></ruby>りたいです。 (我想考汽車駕照。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_271",
+                        "kanji": "訳",
+                        "meaning": "翻譯",
+                        "example": "<ruby>本<rt>ほん</rt></ruby>を<ruby>翻訳<rt>ほんやく</rt></ruby>する。 (翻譯書本。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_272",
+                        "kanji": "誘",
+                        "meaning": "邀請",
+                        "example": "<ruby>友達<rt>ともだち</rt></ruby>を<ruby>誘<rt>さそ</rt></ruby>う。 (邀請朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_273",
+                        "kanji": "説",
+                        "meaning": "說明",
+                        "example": "<ruby>使<rt>つか</rt></ruby>い<ruby>方<rt>かた</rt></ruby>を<ruby>説明<rt>せつめい</rt></ruby>します。 (說明使用方法。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_274",
+                        "kanji": "調",
+                        "meaning": "情況，狀況",
+                        "example": "<ruby>体<rt>からだ</rt></ruby>の<ruby>調子<rt>ちょうし</rt></ruby>がいいです。 (身體狀況很好。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_275",
+                        "kanji": "談",
+                        "meaning": "商量",
+                        "example": "<ruby>親<rt>おや</rt></ruby>に<ruby>相談<rt>そうだん</rt></ruby>します。 (和父母商量。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_276",
+                        "kanji": "講",
+                        "meaning": "講課",
+                        "example": "<ruby>大学<rt>だいがく</rt></ruby>の<ruby>講義<rt>こうぎ</rt></ruby>。 (大學的講課。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_277",
+                        "kanji": "謝",
+                        "meaning": "道歉",
+                        "example": "すぐに<ruby>謝<rt>あやま</rt></ruby>る。 (立刻道歉。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_278",
+                        "kanji": "警",
+                        "meaning": "警察",
+                        "example": "<ruby>警察<rt>けいさつ</rt></ruby>に<ruby>届<rt>とど</rt></ruby>けます。 (向警察報案。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_279",
+                        "kanji": "護",
+                        "meaning": "護理師",
+                        "example": "<ruby>看護師<rt>かんごし</rt></ruby>を<ruby>目指<rt>めざ</rt></ruby>す。 (以成為護理師為目標。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_280",
+                        "kanji": "豆",
+                        "meaning": "納豆",
+                        "example": "<ruby>納豆<rt>なっとう</rt></ruby>を<ruby>食<rt>た</rt></ruby>べたことがありますか。 (你吃過納豆嗎？)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_281",
+                        "kanji": "負",
+                        "meaning": "輸",
+                        "example": "<ruby>試合<rt>しあい</rt></ruby>に<ruby>負<rt>ま</rt></ruby>けて、とても<ruby>悔<rt>くや</rt></ruby>しいです。 (輸了比賽，非常不甘心。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_282",
+                        "kanji": "貯",
+                        "meaning": "存款，儲蓄",
+                        "example": "<ruby>将来<rt>しょうらい</rt></ruby>のために<ruby>貯金<rt>ちょきん</rt></ruby>をしています。 (為了將來正在存錢。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_283",
+                        "kanji": "貿",
+                        "meaning": "貿易",
+                        "example": "<ruby>父<rt>ちち</rt></ruby>は<ruby>貿易<rt>ぼうえき</rt></ruby><ruby>会社<rt>かいしゃ</rt></ruby>で<ruby>働<rt>はたら</rt></ruby>いています。 (父親在貿易公司工作。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_284",
+                        "kanji": "資",
+                        "meaning": "資源",
+                        "example": "<ruby>天然資源<rt>てんねんしげん</rt></ruby>を<ruby>大切<rt>たいせつ</rt></ruby>に。 (珍惜天然資源。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_285",
+                        "kanji": "贈",
+                        "meaning": "禮物",
+                        "example": "お<ruby>祝<rt>いわ</rt></ruby>いに<ruby>贈<rt>おく</rt></ruby>り<ruby>物<rt>もの</rt></ruby>をしました。 (送了祝賀禮物。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_286",
+                        "kanji": "越",
+                        "meaning": "搬家",
+                        "example": "<ruby>来週<rt>らいしゅう</rt></ruby>、<ruby>隣<rt>となり</rt></ruby>の<ruby>町<rt>まち</rt></ruby>へ<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>します。 (下週要搬到隔壁鎮。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_287",
+                        "kanji": "趣",
+                        "meaning": "愛好",
+                        "example": "<ruby>私<rt>わたし</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>読書<rt>どくしょ</rt></ruby>です。 (我的愛好是閱讀。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_288",
+                        "kanji": "路",
+                        "meaning": "設置された仕切り。 月臺安全門：設置在月臺處的安全阻 隔門。",
+                        "example": "ホームゲート：駅 ホームの線路 際 に (設置された仕切り。 月臺安全門：設置在月臺處的安全阻 隔門。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_289",
+                        "kanji": "踊",
+                        "meaning": "跳舞",
+                        "example": "みんなで<ruby>楽<rt>たの</rt></ruby>しく<ruby>踊<rt>おど</rt></ruby>りましょう。 (大家一起開心地跳舞吧。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_290",
+                        "kanji": "踏",
+                        "meaning": "踩",
+                        "example": "<ruby>電車<rt>でんしゃ</rt></ruby>のなかで<ruby>足<rt>あし</rt></ruby>を<ruby>踏<rt>ふ</rt></ruby>まれてしまいました。 (在電車裡被踩到了腳。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_291",
+                        "kanji": "輩",
+                        "meaning": "前輩",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>先輩<rt>せんぱい</rt></ruby>に<ruby>仕事<rt>しごと</rt></ruby>を<ruby>教<rt>おし</rt></ruby>えてもらいました。 (公司的前輩教了我工作。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_292",
+                        "kanji": "輸",
+                        "meaning": "進口",
+                        "example": "<ruby>石油<rt>せきゆ</rt></ruby>を<ruby>輸入<rt>ゆにゅう</rt></ruby>する。 (進口石油。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_293",
+                        "kanji": "込",
+                        "meaning": "申請 27",
+                        "example": "申 し込み (申請 27)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_294",
+                        "kanji": "迎",
+                        "meaning": "迎接",
+                        "example": "駅まで<ruby>友達<rt>ともだち</rt></ruby>を<ruby>迎<rt>むか</rt></ruby>えに<ruby>行<rt>い</rt></ruby>きます。 (去車站接朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_295",
+                        "kanji": "近",
+                        "meaning": "最近",
+                        "example": "<ruby>最近<rt>さいきん</rt></ruby><ruby>忙<rt>いそが</rt></ruby>しいです。 (最近很忙。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_296",
+                        "kanji": "返",
+                        "meaning": "回覆",
+                        "example": "<ruby>早<rt>はや</rt></ruby>くお<ruby>返事<rt>へんじ</rt></ruby>をください。 (請儘快給我回覆。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_297",
+                        "kanji": "迷",
+                        "meaning": "猶豫",
+                        "example": "どのケーキにするか<ruby>迷<rt>まよ</rt></ruby>っています。 (正在猶豫要選哪一個蛋糕。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_298",
+                        "kanji": "退",
+                        "meaning": "離職",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>を<ruby>退職<rt>たいしょく</rt></ruby>。 (從公司離職。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_299",
+                        "kanji": "途",
+                        "meaning": "途中",
+                        "example": "<ruby>学校<rt>がっこう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く<ruby>途中<rt>とちゅう</rt></ruby>で、<ruby>友達<rt>ともだち</rt></ruby>に<ruby>会<rt>あ</rt></ruby>いました。 (在上學途中，遇到了朋友。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_300",
+                        "kanji": "通",
+                        "meaning": "口譯",
+                        "example": "<ruby>通訳<rt>つうやく</rt></ruby>になりたいです。 (想當口譯員。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_301",
+                        "kanji": "連",
+                        "meaning": "聯絡",
+                        "example": "すぐに<ruby>連絡<rt>れんらく</rt></ruby>します。 (立刻聯絡。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_302",
+                        "kanji": "運",
+                        "meaning": "運動",
+                        "example": "<ruby>毎日運動<rt>まいにちうんどう</rt></ruby>します。 (每天運動。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_303",
+                        "kanji": "違",
+                        "meaning": "錯誤",
+                        "example": "この<ruby>計算<rt>けいさん</rt></ruby>は<ruby>間違<rt>まちが</rt></ruby>いがありません。 (這個計算沒有錯誤。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_304",
+                        "kanji": "遠",
+                        "meaning": "客氣",
+                        "example": "<ruby>遠慮<rt>えんりょ</rt></ruby>しないで。 (請不要客氣。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_305",
+                        "kanji": "選",
+                        "meaning": "選手",
+                        "example": "<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>選手<rt>せんしゅ</rt></ruby>だ。 (是有名的選手。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_306",
+                        "kanji": "郊",
+                        "meaning": "郊外",
+                        "example": "<ruby>郊外<rt>こうがい</rt></ruby>の<ruby>静<rt>しず</rt></ruby>かな<ruby>家<rt>いえ</rt></ruby>。 (郊外安靜的房子。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_307",
+                        "kanji": "郵",
+                        "meaning": "郵局",
+                        "example": "<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>へ<ruby>切手<rt>きって</rt></ruby>を<ruby>買<rt>か</rt></ruby>いに<ruby>行<rt>い</rt></ruby>きました。 (去郵局買了郵票。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_308",
+                        "kanji": "都",
+                        "meaning": "都市",
+                        "example": "<ruby>大<rt>おお</rt></ruby>きな<ruby>都市<rt>とし</rt></ruby>に<ruby>住<rt>す</rt></ruby>む。 (住在大都市。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_309",
+                        "kanji": "量",
+                        "meaning": "數量",
+                        "example": "このレストランは<ruby>量<rt>りょう</rt></ruby>が<ruby>多<rt>おお</rt></ruby>いですね。 (這家餐廳的份量很多呢。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_310",
+                        "kanji": "釣",
+                        "meaning": "釣（魚）",
+                        "example": "<ruby>川<rt>かわ</rt></ruby>で<ruby>魚<rt>さかな</rt></ruby>を<ruby>釣<rt>つ</rt></ruby>りました。 (在河裡釣了魚。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_311",
+                        "kanji": "門",
+                        "meaning": "專門學校，專科學院",
+                        "example": "<ruby>高校<rt>こうこう</rt></ruby>を<ruby>卒業<rt>そつぎょう</rt></ruby>して、<ruby>専門学校<rt>せんもんがっこう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きます。 (高中畢業後，我要去讀專門學校。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_312",
+                        "kanji": "限",
+                        "meaning": "期限",
+                        "example": "<ruby>期限<rt>きげん</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ってください。 (請遵守期限。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_313",
+                        "kanji": "険",
+                        "meaning": "保險",
+                        "example": "<ruby>健康保険<rt>けんこうほけん</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る。 (加入健康保險。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_314",
+                        "kanji": "際",
+                        "meaning": "國際",
+                        "example": "<ruby>国際交流<rt>こくさいこうりゅう</rt></ruby>。 (國際交流。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_315",
+                        "kanji": "障",
+                        "meaning": "故障",
+                        "example": "パソコンが<ruby>故障<rt>こしょう</rt></ruby>しました。 (電腦故障了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_316",
+                        "kanji": "集",
+                        "meaning": "聚集、集合",
+                        "example": "１０<ruby>時<rt>じ</rt></ruby>に駅の<ruby>前<rt>まえ</rt></ruby>に<ruby>集<rt>あつ</rt></ruby>まってください。 (請在10點於車站前集合。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_317",
+                        "kanji": "雇",
+                        "meaning": "解雇",
+                        "example": "<ruby>解雇<rt>かいこ</rt></ruby>される。 (被解雇。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_318",
+                        "kanji": "震",
+                        "meaning": "地震",
+                        "example": "<ruby>地震<rt>じしん</rt></ruby>があった。 (發生了地震。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_319",
+                        "kanji": "非",
+                        "meaning": "務必",
+                        "example": "<ruby>是非<rt>ぜひ</rt></ruby><ruby>来<rt>き</rt></ruby>て。 (務必過來。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_320",
+                        "kanji": "頭",
+                        "meaning": "聰明",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>頭<rt>あたま</rt></ruby>がいいし、<ruby>親切<rt>しんせつ</rt></ruby>だし、とても人気があります。 (他既聰明又親切，非常受歡迎。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_321",
+                        "kanji": "頼",
+                        "meaning": "拜託，請求，委託",
+                        "example": "<ruby>田中<rt>たなか</rt></ruby>さんに<ruby>仕事<rt>しごと</rt></ruby>を<ruby>頼<rt>たの</rt></ruby>みました。 (拜託了田中先生做這項工作。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_322",
+                        "kanji": "風",
+                        "meaning": "颱風",
+                        "example": "<ruby>台風<rt>たいふう</rt></ruby>のせいで、<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まってしまいました。 (因為颱風的關係，電車停駛了。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_323",
+                        "kanji": "飾",
+                        "meaning": "裝飾",
+                        "example": "<ruby>花<rt>はな</rt></ruby>を<ruby>飾<rt>かざ</rt></ruby>る。 (裝飾花朵。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_324",
+                        "kanji": "駐",
+                        "meaning": "停車",
+                        "example": "ここは<ruby>駐車<rt>ちゅうしゃ</rt></ruby><ruby>禁止<rt>きんし</rt></ruby>です。 (這裡禁止停車。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_325",
+                        "kanji": "験",
+                        "meaning": "經驗",
+                        "example": "いい<ruby>経験<rt>けいけん</rt></ruby>になりました。 (成了很好的經驗。)",
+                        "level": "N4"
+                },
+                {
+                        "id": "kn4_326",
+                        "kanji": "驚",
+                        "meaning": "驚訝",
+                        "example": "ニュースに<ruby>驚<rt>おどろ</rt></ruby>く。 (對新聞感到驚訝。)",
+                        "level": "N4"
+                }
+        ],
+        "n3": [
+                {
+                        "id": "kn3_1",
+                        "kanji": "与",
+                        "meaning": "給予",
+                        "example": "<ruby>影響<rt>えいきょう</rt></ruby>を<ruby>与<rt>あた</rt></ruby>える。 (給予影響。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_2",
+                        "kanji": "丼",
+                        "meaning": "牛丼店",
+                        "example": "<ruby>安<rt>やす</rt></ruby>くて<ruby>速<rt>はや</rt></ruby>い<ruby>牛丼<rt>ぎゅうどん</rt></ruby><ruby>屋<rt>や</rt></ruby>によく行く。 (常去既便宜又快速的牛丼店。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_3",
+                        "kanji": "了",
+                        "meaning": "結束、完了",
+                        "example": "<ruby>試合<rt>しあい</rt></ruby>が<ruby>終了<rt>しゅうりょう</rt></ruby>した。 (比賽結束了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_4",
+                        "kanji": "争",
+                        "meaning": "爭奪、爭論",
+                        "example": "<ruby>優勝<rt>ゆうしょう</rt></ruby>を<ruby>争<rt>あらそ</rt></ruby>う。 (爭奪冠軍。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_5",
+                        "kanji": "互",
+                        "meaning": "互相",
+                        "example": "<ruby>互<rt>たが</rt></ruby>いに<ruby>助<rt>たす</rt></ruby>け<ruby>合<rt>あ</rt></ruby>う。 (互相幫助。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_6",
+                        "kanji": "五",
+                        "meaning": "開五分(指花開了一半)",
+                        "example": "<ruby>桜<rt>さくら</rt></ruby>がやっと<ruby>五分<rt>ごぶ</rt></ruby><ruby>咲<rt>ざ</rt></ruby>きになった。 (櫻花終於開了五分了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_7",
+                        "kanji": "任",
+                        "meaning": "繼任者、接班人",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>後任<rt>こうにん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>している。 (正在尋找他的繼任者。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_8",
+                        "kanji": "位",
+                        "meaning": "最後一名",
+                        "example": "<ruby>順位<rt>じゅんい</rt></ruby>が<ruby>最下位<rt>さいかい</rt></ruby>になってしまった。 (排名變成了最後一名。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_9",
+                        "kanji": "住",
+                        "meaning": "居民",
+                        "example": "<ruby>地域<rt>ちいき</rt></ruby>の<ruby>住民<rt>じゅうみん</rt></ruby>と<ruby>協力<rt>きょうりょく</rt></ruby>する。 (與當地的居民合作。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_10",
+                        "kanji": "余",
+                        "meaning": "剩餘",
+                        "example": "<ruby>時間<rt>じかん</rt></ruby>が<ruby>余<rt>あま</rt></ruby>る。 (時間有剩。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_11",
+                        "kanji": "係",
+                        "meaning": "關係",
+                        "example": "<ruby>人間<rt>にんげん</rt></ruby><ruby>関係<rt>かんけい</rt></ruby>。 (人際關係。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_12",
+                        "kanji": "信",
+                        "meaning": "自信",
+                        "example": "<ruby>自信<rt>じしん</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ。 (擁有自信。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_13",
+                        "kanji": "修",
+                        "meaning": "海外培訓",
+                        "example": "アメリカで<ruby>海外<rt>かいがい</rt></ruby><ruby>研修<rt>けんしゅう</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける。 (在美國接受海外培訓。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_14",
+                        "kanji": "個",
+                        "meaning": "個人",
+                        "example": "<ruby>個人<rt>こじん</rt></ruby>の<ruby>意見<rt>いけん</rt></ruby>。 (個人的意見。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_15",
+                        "kanji": "偉",
+                        "meaning": "偉大的",
+                        "example": "<ruby>偉大<rt>いだい</rt></ruby>な<ruby>発明<rt>はつめい</rt></ruby>。 (偉大的發明。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_16",
+                        "kanji": "偏",
+                        "meaning": "偏頗",
+                        "example": "<ruby>栄養<rt>えいよう</rt></ruby>が<ruby>偏<rt>かたよ</rt></ruby>る。 (營養不均衡。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_17",
+                        "kanji": "停",
+                        "meaning": "緊急煞車",
+                        "example": "<ruby>電車<rt>でんしゃ</rt></ruby>が<ruby>急<rt>きゅう</rt></ruby><ruby>停車<rt>ていしゃ</rt></ruby>して<ruby>驚<rt>おどろ</rt></ruby>いた。 (電車突然緊急煞車，嚇了我一跳。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_18",
+                        "kanji": "催",
+                        "meaning": "舉辦、召開",
+                        "example": "<ruby>会議<rt>かいぎ</rt></ruby>を<ruby>開催<rt>かいさい</rt></ruby>する。 (召開會議。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_19",
+                        "kanji": "傷",
+                        "meaning": "重傷",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>は<ruby>交通事故<rt>こうつうじこ</rt></ruby>で<ruby>重傷<rt>じゅうしょう</rt></ruby>を<ruby>負<rt>お</rt></ruby>った。 (他在交通事故中受了重傷。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_20",
+                        "kanji": "像",
+                        "meaning": "想像",
+                        "example": "<ruby>想像力<rt>そうぞうりょく</rt></ruby>が<ruby>豊<rt>ゆた</rt></ruby>かだ。 (想像力豐富。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_21",
+                        "kanji": "充",
+                        "meaning": "充電",
+                        "example": "スマホの<ruby>充電<rt>じゅうでん</rt></ruby>が<ruby>切<rt>き</rt></ruby>れそうだ。 (手機快沒電了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_22",
+                        "kanji": "光",
+                        "meaning": "觀光",
+                        "example": "<ruby>京都<rt>きょうと</rt></ruby>を<ruby>観光<rt>かんこう</rt></ruby>する。 (在京都觀光。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_23",
+                        "kanji": "児",
+                        "meaning": "育兒",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>と<ruby>育児<rt>いくじ</rt></ruby>を<ruby>両立<rt>りょうりつ</rt></ruby>させる。 (兼顧工作與育兒。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_24",
+                        "kanji": "共",
+                        "meaning": "共通",
+                        "example": "<ruby>共通<rt>きょうつう</rt></ruby>の<ruby>趣味<rt>しゅみ</rt></ruby>。 (共通的愛好。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_25",
+                        "kanji": "具",
+                        "meaning": "狀況、情形、健康狀況",
+                        "example": "<ruby>体<rt>からだ</rt></ruby>の<ruby>具合<rt>ぐあい</rt></ruby>がいかがですか。 (身體狀況如何？)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_26",
+                        "kanji": "円",
+                        "meaning": "折扣...日圓",
+                        "example": "この商品は100<ruby>円<rt>えん</rt></ruby><ruby>引<rt>び</rt></ruby>きです。 (這個商品折價100日圓。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_27",
+                        "kanji": "再",
+                        "meaning": "再度、再次",
+                        "example": "<ruby>再度<rt>さいど</rt></ruby><ruby>確認<rt>かくにん</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。 (請再次進行確認。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_28",
+                        "kanji": "冗",
+                        "meaning": "玩笑",
+                        "example": "それは<ruby>冗談<rt>じょうだん</rt></ruby>でしょう？ (那是開玩笑的吧？)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_29",
+                        "kanji": "刑",
+                        "meaning": "刑警",
+                        "example": "<ruby>刑事<rt>けいじ</rt></ruby>が<ruby>犯人<rt>はんにん</rt></ruby>を<ruby>追<rt>お</rt></ruby>う。 (刑警追捕犯人。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_30",
+                        "kanji": "判",
+                        "meaning": "審判、裁判",
+                        "example": "<ruby>事件<rt>じけん</rt></ruby>の<ruby>裁判<rt>さいばん</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる。 (事件的審判開始了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_31",
+                        "kanji": "到",
+                        "meaning": "到達",
+                        "example": "<ruby>空港<rt>くうこう</rt></ruby>に<ruby>到着<rt>とうちゃく</rt></ruby>する。 (抵達機場。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_32",
+                        "kanji": "制",
+                        "meaning": "限制",
+                        "example": "<ruby>速度<rt>そくど</rt></ruby><ruby>制限<rt>せいげん</rt></ruby>。 (速度限制。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_33",
+                        "kanji": "券",
+                        "meaning": "優惠券",
+                        "example": "クーポン<ruby>券<rt>けん</rt></ruby>を<ruby>使<rt>つか</rt></ruby>って<ruby>買<rt>か</rt></ruby>い<ruby>物<rt>もの</rt></ruby>をする。 (使用優惠券購物。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_34",
+                        "kanji": "削",
+                        "meaning": "削減",
+                        "example": "コスト<ruby>削減<rt>さくげん</rt></ruby>。 (削減成本。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_35",
+                        "kanji": "剣",
+                        "meaning": "認真",
+                        "example": "<ruby>真剣<rt>しんけん</rt></ruby>な<ruby>表情<rt>ひょうじょう</rt></ruby>。 (認真的表情。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_36",
+                        "kanji": "劇",
+                        "meaning": "戲劇",
+                        "example": "<ruby>大学<rt>だいがく</rt></ruby>で<ruby>演劇<rt>えんげき</rt></ruby>を<ruby>学<rt>まな</rt></ruby>んでいる。 (在大學學習戲劇。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_37",
+                        "kanji": "加",
+                        "meaning": "加工",
+                        "example": "この<ruby>肉<rt>にく</rt></ruby>は<ruby>加工<rt>かこう</rt></ruby>されている。 (這肉是加工過的。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_38",
+                        "kanji": "努",
+                        "meaning": "努力",
+                        "example": "<ruby>努力<rt>どりょく</rt></ruby>が<ruby>実<rt>みの</rt></ruby>る。 (努力有了結果。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_39",
+                        "kanji": "効",
+                        "meaning": "效果",
+                        "example": "<ruby>薬<rt>くすり</rt></ruby>の<ruby>効果<rt>こうか</rt></ruby>。 (藥的效果。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_40",
+                        "kanji": "募",
+                        "meaning": "應徵",
+                        "example": "<ruby>仕事<rt>しごと</rt></ruby>に<ruby>応募<rt>おうぼ</rt></ruby>する。 (應徵工作。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_41",
+                        "kanji": "勢",
+                        "meaning": "氣勢",
+                        "example": "<ruby>勢<rt>いきお</rt></ruby>いがいい。 (氣勢很好。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_42",
+                        "kanji": "区",
+                        "meaning": "區塊、區劃",
+                        "example": "<ruby>土地<rt>とち</rt></ruby>を<ruby>区画<rt>くかく</rt></ruby>整理する。 (進行土地重劃。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_43",
+                        "kanji": "十",
+                        "meaning": "充分的、足夠的",
+                        "example": "<ruby>準備<rt>じゅんび</rt></ruby>に<ruby>十分<rt>じゅうぶん</rt></ruby>な<ruby>時間<rt>じかん</rt></ruby>をかける。 (花充分的時間做準備。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_44",
+                        "kanji": "協",
+                        "meaning": "協助",
+                        "example": "みんなで<ruby>協力<rt>きょうりょく</rt></ruby>する。 (大家一起合作。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_45",
+                        "kanji": "占",
+                        "meaning": "占卜",
+                        "example": "<ruby>運勢<rt>うんせい</rt></ruby>を<ruby>占<rt>うらな</rt></ruby>う。 (占卜運勢。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_46",
+                        "kanji": "印",
+                        "meaning": "印象",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>第一<rt>だいいち</rt></ruby><ruby>印象<rt>いんしょう</rt></ruby>はとても<ruby>良<rt>よ</rt></ruby>かった。 (對他的第一印象非常好。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_47",
+                        "kanji": "参",
+                        "meaning": "參拜",
+                        "example": "<ruby>神社<rt>じんじゃ</rt></ruby>にお<ruby>参<rt>まい</rt></ruby>りする。 (去神社參拜。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_48",
+                        "kanji": "及",
+                        "meaning": "普及",
+                        "example": "ネットが<ruby>普及<rt>ふきゅう</rt></ruby>する。 (網路普及。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_49",
+                        "kanji": "収",
+                        "meaning": "收納、取得",
+                        "example": "<ruby>成功<rt>せいこう</rt></ruby>を<ruby>収<rt>おさ</rt></ruby>める。 (取得成功。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_50",
+                        "kanji": "叫",
+                        "meaning": "叫喊",
+                        "example": "<ruby>大声<rt>おおごえ</rt></ruby>で<ruby>叫<rt>さけ</rt></ruby>ぶ。 (大聲叫喊。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_51",
+                        "kanji": "可",
+                        "meaning": "許可",
+                        "example": "<ruby>親<rt>おや</rt></ruby>の<ruby>許可<rt>きょか</rt></ruby>。 (父母的許可。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_52",
+                        "kanji": "司",
+                        "meaning": "上司、主管",
+                        "example": "<ruby>上司<rt>じょうし</rt></ruby>に<ruby>報告<rt>ほうこく</rt></ruby>する。 (向上司報告。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_53",
+                        "kanji": "呆",
+                        "meaning": "驚呆、愕然",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>嘘<rt>うそ</rt></ruby>に<ruby>呆<rt>あき</rt></ruby>れる。 (對他的謊言感到愕然。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_54",
+                        "kanji": "商",
+                        "meaning": "商店街",
+                        "example": "この<ruby>商店<rt>しょうてん</rt></ruby><ruby>街<rt>がい</rt></ruby>はいつも<ruby>賑<rt>にぎ</rt></ruby>やかだ。 (這條商店街總是很熱鬧。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_55",
+                        "kanji": "団",
+                        "meaning": "劇團",
+                        "example": "<ruby>有名<rt>ゆうめい</rt></ruby>な<ruby>劇団<rt>げきだん</rt></ruby>の<ruby>舞台<rt>ぶたい</rt></ruby>を<ruby>観<rt>み</rt></ruby>る。 (看有名劇團的舞台表演。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_56",
+                        "kanji": "困",
+                        "meaning": "困難",
+                        "example": "<ruby>困難<rt>こんなん</rt></ruby>に<ruby>立<rt>た</rt></ruby>ち<ruby>向<rt>むか</rt></ruby>かう。 (面對困難。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_57",
+                        "kanji": "囲",
+                        "meaning": "包圍",
+                        "example": "<ruby>火<rt>ひ</rt></ruby>を<ruby>囲<rt>かこ</rt></ruby>む。 (圍著火爐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_58",
+                        "kanji": "圏",
+                        "meaning": "收不到訊號、範圍外",
+                        "example": "トンネルの<ruby>中<rt>なか</rt></ruby>は<ruby>圏外<rt>けんがい</rt></ruby>だ。 (隧道內收不到訊號。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_59",
+                        "kanji": "在",
+                        "meaning": "現在、目前",
+                        "example": "<ruby>現在<rt>げんざい</rt></ruby>、<ruby>調査<rt>ちょうさ</rt></ruby>を<ruby>行<rt>おこな</rt></ruby>っている。 (目前正在進行調查。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_60",
+                        "kanji": "坊",
+                        "meaning": "睡懶覺",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>夜更<rt>よふ</rt></ruby>かしをして、<ruby>今朝<rt>けさ</rt></ruby>は<ruby>朝寝坊<rt>あさねぼう</rt></ruby>した。 (昨天熬夜，今天早上睡過頭了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_61",
+                        "kanji": "型",
+                        "meaning": "大型",
+                        "example": "<ruby>大型<rt>おおがた</rt></ruby>の台風が<ruby>接近<rt>せっきん</rt></ruby>している。 (大型颱風正在接近。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_62",
+                        "kanji": "埋",
+                        "meaning": "填埋",
+                        "example": "<ruby>穴<rt>あな</rt></ruby>を<ruby>埋<rt>う</rt></ruby>める。 (填補洞。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_63",
+                        "kanji": "域",
+                        "meaning": "地區",
+                        "example": "<ruby>地域<rt>ちいき</rt></ruby>の<ruby>活動<rt>かつどう</rt></ruby>。 (地區的活動。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_64",
+                        "kanji": "声",
+                        "meaning": "大聲",
+                        "example": "<ruby>大声<rt>おおごえ</rt></ruby>で<ruby>叫<rt>さけ</rt></ruby>ぶ。 (大聲叫喊。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_65",
+                        "kanji": "奏",
+                        "meaning": "演奏",
+                        "example": "<ruby>ピアノ<rt>ぴあの</rt></ruby>の<ruby>演奏<rt>えんそう</rt></ruby>を<ruby>聴<rt>き</rt></ruby>く。 (聽鋼琴演奏。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_66",
+                        "kanji": "契",
+                        "meaning": "合約",
+                        "example": "<ruby>契約<rt>けいやく</rt></ruby>を<ruby>結<rt>むす</rt></ruby>ぶ。 (簽訂合約。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_67",
+                        "kanji": "奪",
+                        "meaning": "奪取",
+                        "example": "<ruby>命<rt>いのち</rt></ruby>を<ruby>奪<rt>うば</rt></ruby>う。 (奪走生命。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_68",
+                        "kanji": "委",
+                        "meaning": "委員",
+                        "example": "<ruby>学級<rt>がっきゅう</rt></ruby><ruby>委員<rt>いいん</rt></ruby>に<ruby>選<rt>えら</rt></ruby>ばれた。 (被選為班級委員。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_69",
+                        "kanji": "嫌",
+                        "meaning": "情緒",
+                        "example": "<ruby>機嫌<rt>きげん</rt></ruby>が<ruby>良<rt>よ</rt></ruby>い。 (心情好。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_70",
+                        "kanji": "存",
+                        "meaning": "共存",
+                        "example": "<ruby>自然<rt>しぜん</rt></ruby>と<ruby>共存<rt>きょうぞん</rt></ruby>する。 (與自然共存。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_71",
+                        "kanji": "宇",
+                        "meaning": "宇宙",
+                        "example": "<ruby>宇宙<rt>うちゅう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く。 (去宇宙。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_72",
+                        "kanji": "完",
+                        "meaning": "完成",
+                        "example": "<ruby>絵<rt>え</rt></ruby>が<ruby>完成<rt>かんせい</rt></ruby>した。 (畫完成了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_73",
+                        "kanji": "宙",
+                        "meaning": "宇宙",
+                        "example": "<ruby>宇宙<rt>うちゅう</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く。 (去宇宙。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_74",
+                        "kanji": "宛",
+                        "meaning": "收件人",
+                        "example": "<ruby>封筒<rt>ふうとう</rt></ruby>に<ruby>宛先<rt>あてさき</rt></ruby>を<ruby>書<rt>か</rt></ruby>く。 (在信封上寫收件人地址。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_75",
+                        "kanji": "容",
+                        "meaning": "內容",
+                        "example": "<ruby>話<rt>はなし</rt></ruby>の<ruby>内容<rt>ないよう</rt></ruby>。 (說話的內容。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_76",
+                        "kanji": "寄",
+                        "meaning": "捐款",
+                        "example": "<ruby>お金<rt>かね</rt></ruby>を<ruby>寄付<rt>きふ</rt></ruby>する。 (捐錢。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_77",
+                        "kanji": "寿",
+                        "meaning": "壽命",
+                        "example": "<ruby>平均<rt>へいきん</rt></ruby><ruby>寿命<rt>じゅみょう</rt></ruby>が<ruby>延<rt>の</rt></ruby>びている。 (平均壽命正在延長。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_78",
+                        "kanji": "尊",
+                        "meaning": "尊重",
+                        "example": "<ruby>個性<rt>こせい</rt></ruby>を<ruby>尊重<rt>そんちょう</rt></ruby>する。 (尊重個性。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_79",
+                        "kanji": "導",
+                        "meaning": "指導",
+                        "example": "<ruby>先生<rt>せんせい</rt></ruby>の<ruby>指導<rt>しどう</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける。 (接受老師的指導。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_80",
+                        "kanji": "小",
+                        "meaning": "麵粉",
+                        "example": "<ruby>小麦粉<rt>こむぎこ</rt></ruby>でパンを<ruby>作<rt>つく</rt></ruby>る。 (用麵粉做麵包。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_81",
+                        "kanji": "層",
+                        "meaning": "高樓大廈",
+                        "example": "<ruby>都会<rt>とかい</rt></ruby>には<ruby>高層<rt>こうそう</rt></ruby>ビルが<ruby>立<rt>た</rt></ruby>ち<ruby>並<rt>なら</rt></ruby>んでいる。 (都市裡高樓大廈林立。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_82",
+                        "kanji": "岩",
+                        "meaning": "岩石",
+                        "example": "<ruby>岩<rt>いわ</rt></ruby>に<ruby>登<rt>のぼ</rt></ruby>る。 (爬上岩石。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_83",
+                        "kanji": "巡",
+                        "meaning": "警察、巡警",
+                        "example": "<ruby>道<rt>みち</rt></ruby>を忘れたのでお<ruby>巡<rt>まわ</rt></ruby>りさんに<ruby>聞<rt>き</rt></ruby>いた。 (因為迷路了所以問了警察。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_84",
+                        "kanji": "巨",
+                        "meaning": "巨大",
+                        "example": "<ruby>巨大<rt>きょだい</rt></ruby>な<ruby>船<rt>ふね</rt></ruby>。 (巨大的船。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_85",
+                        "kanji": "差",
+                        "meaning": "差別",
+                        "example": "<ruby>差別<rt>さべつ</rt></ruby>をなくす。 (消除歧視。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_86",
+                        "kanji": "希",
+                        "meaning": "希望",
+                        "example": "<ruby>希望<rt>きぼう</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ。 (抱持希望。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_87",
+                        "kanji": "席",
+                        "meaning": "出席率",
+                        "example": "<ruby>授業<rt>じゅぎょう</rt></ruby>の<ruby>出席<rt>しゅっせき</rt></ruby><ruby>率<rt>りつ</rt></ruby>が<ruby>足<rt>た</rt></ruby>りない。 (課堂的出席率不夠。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_88",
+                        "kanji": "常",
+                        "meaning": "異常",
+                        "example": "<ruby>異常<rt>いじょう</rt></ruby>な<ruby>暑<rt>あつ</rt></ruby>さ。 (異常的炎熱。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_89",
+                        "kanji": "幅",
+                        "meaning": "大幅度",
+                        "example": "<ruby>大幅<rt>おおはば</rt></ruby>に<ruby>増<rt>ふ</rt></ruby>える。 (大幅增加。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_90",
+                        "kanji": "底",
+                        "meaning": "徹底",
+                        "example": "<ruby>徹底的<rt>てっていてき</rt></ruby>に<ruby>調査<rt>ちょうさ</rt></ruby>する。 (徹底調查。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_91",
+                        "kanji": "延",
+                        "meaning": "延長",
+                        "example": "<ruby>試合<rt>しあい</rt></ruby>が<ruby>延長<rt>えんちょう</rt></ruby>になった。 (比賽延長了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_92",
+                        "kanji": "影",
+                        "meaning": "影響",
+                        "example": "<ruby>親<rt>おや</rt></ruby>の<ruby>言動<rt>げんどう</rt></ruby>は<ruby>子供<rt>こども</rt></ruby>に<ruby>大<rt>おお</rt></ruby>きな<ruby>影響<rt>えいきょう</rt></ruby>を<ruby>与<rt>あた</rt></ruby>える。 (父母的言行對孩子有很大影響。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_93",
+                        "kanji": "得",
+                        "meaning": "得到",
+                        "example": "<ruby>知識<rt>ちしき</rt></ruby>を<ruby>得<rt>え</rt></ruby>る。 (獲得知識。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_94",
+                        "kanji": "徹",
+                        "meaning": "徹底",
+                        "example": "<ruby>徹底的<rt>てっていてき</rt></ruby>に<ruby>調査<rt>ちょうさ</rt></ruby>する。 (徹底調查。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_95",
+                        "kanji": "快",
+                        "meaning": "舒適的",
+                        "example": "<ruby>快適<rt>かいてき</rt></ruby>な<ruby>生活<rt>せいかつ</rt></ruby>を<ruby>送<rt>おく</rt></ruby>る。 (過著舒適的生活。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_96",
+                        "kanji": "怠",
+                        "meaning": "怠慢",
+                        "example": "<ruby>努力<rt>どりょく</rt></ruby>を<ruby>怠<rt>おこた</rt></ruby>る。 (怠慢了努力。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_97",
+                        "kanji": "恐",
+                        "meaning": "恐懼",
+                        "example": "<ruby>失敗<rt>しっぱい</rt></ruby>を<ruby>恐<rt>おそ</rt></ruby>れる。 (害怕失敗。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_98",
+                        "kanji": "恨",
+                        "meaning": "怨恨",
+                        "example": "<ruby>人<rt>ひと</rt></ruby>を<ruby>恨<rt>うら</rt></ruby>む。 (怨恨別人。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_99",
+                        "kanji": "悲",
+                        "meaning": "悲傷的",
+                        "example": "<ruby>悲<rt>かな</rt></ruby>しい<ruby>知<rt>し</rt></ruby>らせ。 (悲傷的消息。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_100",
+                        "kanji": "惜",
+                        "meaning": "可惜的",
+                        "example": "<ruby>惜<rt>お</rt></ruby>しい<ruby>試合<rt>しあい</rt></ruby>だった。 (很可惜的比賽。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_101",
+                        "kanji": "想",
+                        "meaning": "想像",
+                        "example": "<ruby>想像力<rt>そうぞうりょく</rt></ruby>が<ruby>豊<rt>ゆた</rt></ruby>かだ。 (想像力豐富。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_102",
+                        "kanji": "愛",
+                        "meaning": "愛情",
+                        "example": "<ruby>愛情<rt>あいじょう</rt></ruby>を<ruby>注<rt>そそ</rt></ruby>ぐ。 (傾注愛情。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_103",
+                        "kanji": "態",
+                        "meaning": "態度",
+                        "example": "<ruby>失礼<rt>しつれい</rt></ruby>な<ruby>態度<rt>たいど</rt></ruby>。 (失禮的態度。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_104",
+                        "kanji": "慌",
+                        "meaning": "慌張",
+                        "example": "<ruby>慌<rt>あわ</rt></ruby>てて<ruby>逃<rt>に</rt></ruby>げる。 (慌張逃跑。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_105",
+                        "kanji": "慢",
+                        "meaning": "忍耐",
+                        "example": "<ruby>痛<rt>いた</rt></ruby>みを<ruby>我慢<rt>がまん</rt></ruby>する。 (忍耐疼痛。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_106",
+                        "kanji": "憩",
+                        "meaning": "休息",
+                        "example": "<ruby>十分間<rt>じゅっぷんかん</rt></ruby><ruby>休憩<rt>きゅうけい</rt></ruby>する。 (休息十分鐘。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_107",
+                        "kanji": "憶",
+                        "meaning": "記憶",
+                        "example": "<ruby>記憶<rt>きおく</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る。 (留在記憶中。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_108",
+                        "kanji": "我",
+                        "meaning": "忍耐",
+                        "example": "<ruby>痛<rt>いた</rt></ruby>みを<ruby>我慢<rt>がまん</rt></ruby>する。 (忍耐疼痛。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_109",
+                        "kanji": "扱",
+                        "meaning": "對待、處理",
+                        "example": "<ruby>丁寧<rt>ていねい</rt></ruby>に<ruby>扱<rt>あつか</rt></ruby>う。 (小心處理。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_110",
+                        "kanji": "承",
+                        "meaning": "聽取、接受",
+                        "example": "ご<ruby>注文<rt>ちゅうもん</rt></ruby>を<ruby>承<rt>うけたまわ</rt></ruby>る。 (接受點餐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_111",
+                        "kanji": "把",
+                        "meaning": "掌握",
+                        "example": "<ruby>現状<rt>げんじょう</rt></ruby>を<ruby>把握<rt>はあく</rt></ruby>する。 (掌握現狀。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_112",
+                        "kanji": "抱",
+                        "meaning": "懷抱",
+                        "example": "<ruby>希望<rt>きぼう</rt></ruby>を<ruby>抱<rt>いだ</rt></ruby>く。 (懷抱希望。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_113",
+                        "kanji": "指",
+                        "meaning": "指示",
+                        "example": "<ruby>指示<rt>しじ</rt></ruby>に<ruby>従<rt>したが</rt></ruby>う。 (服從指示。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_114",
+                        "kanji": "掲",
+                        "meaning": "布告欄",
+                        "example": "掲示板の<ruby>案内<rt>あんない</rt></ruby>を<ruby>見<rt>み</rt></ruby>る。 (查看布告欄的通知。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_115",
+                        "kanji": "提",
+                        "meaning": "提案",
+                        "example": "<ruby>新案<rt>しんあん</rt></ruby>を<ruby>提案<rt>ていあん</rt></ruby>する。 (提出新方案。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_116",
+                        "kanji": "換",
+                        "meaning": "換氣",
+                        "example": "<ruby>部屋<rt>へや</rt></ruby>の<ruby>換気<rt>かんき</rt></ruby>。 (房間換氣。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_117",
+                        "kanji": "握",
+                        "meaning": "掌握",
+                        "example": "<ruby>現状<rt>げんじょう</rt></ruby>を<ruby>把握<rt>はあく</rt></ruby>する。 (掌握現狀。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_118",
+                        "kanji": "撃",
+                        "meaning": "開槍、射擊",
+                        "example": "<ruby>猟師<rt>りょうし</rt></ruby>が<ruby>鉄砲<rt>てっぽう</rt></ruby>を<ruby>撃<rt>う</rt></ruby>つ。 (獵人開槍。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_119",
+                        "kanji": "撲",
+                        "meaning": "相撲選手",
+                        "example": "<ruby>本物<rt>ほんもの</rt></ruby>のお<ruby>相撲<rt>すもう</rt></ruby>さんを<ruby>見<rt>み</rt></ruby>た。 (見到了真正的相撲選手。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_120",
+                        "kanji": "操",
+                        "meaning": "熱身運動、準備操",
+                        "example": "<ruby>泳<rt>およ</rt></ruby>ぐ<ruby>前<rt>まえ</rt></ruby>に<ruby>準備<rt>じゅんび</rt></ruby><ruby>体操<rt>たいそう</rt></ruby>をする。 (游泳前先做熱身運動。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_121",
+                        "kanji": "支",
+                        "meaning": "支援",
+                        "example": "<ruby>被災者<rt>ひさいしゃ</rt></ruby><ruby>支援<rt>しえん</rt></ruby>。 (支援受災者。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_122",
+                        "kanji": "改",
+                        "meaning": "改變、革新",
+                        "example": "<ruby>規則<rt>きそく</rt></ruby>を<ruby>改<rt>あらた</rt></ruby>める。 (修改規則。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_123",
+                        "kanji": "攻",
+                        "meaning": "攻擊",
+                        "example": "<ruby>敵<rt>てき</rt></ruby>の<ruby>攻撃<rt>こうげき</rt></ruby>を<ruby>防<rt>ふせ</rt></ruby>ぐ。 (防禦敵人的攻擊。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_124",
+                        "kanji": "教",
+                        "meaning": "教師",
+                        "example": "<ruby>将来<rt>しょうらい</rt></ruby>は<ruby>数学<rt>すうがく</rt></ruby>の<ruby>教師<rt>きょうし</rt></ruby>になりたい。 (將來想當數學老師。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_125",
+                        "kanji": "敬",
+                        "meaning": "尊敬",
+                        "example": "<ruby>老人<rt>ろうじん</rt></ruby>を<ruby>敬<rt>うやま</rt></ruby>う。 (尊敬老人。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_126",
+                        "kanji": "数",
+                        "meaning": "數數",
+                        "example": "リンゴを<ruby>数<rt>かぞ</rt></ruby>える。 (數蘋果。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_127",
+                        "kanji": "敷",
+                        "meaning": "鋪、墊",
+                        "example": "<ruby>床<rt>ゆか</rt></ruby>にカーペットを<ruby>敷<rt>し</rt></ruby>く。 (在地上鋪地毯。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_128",
+                        "kanji": "斜",
+                        "meaning": "斜面、坡面",
+                        "example": "<ruby>急<rt>きゅう</rt></ruby>な<ruby>斜面<rt>しゃめん</rt></ruby>を<ruby>登<rt>のぼ</rt></ruby>る。 (攀登陡峭的斜坡。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_129",
+                        "kanji": "断",
+                        "meaning": "診斷",
+                        "example": "<ruby>医師<rt>いし</rt></ruby>の<ruby>診断<rt>しんだん</rt></ruby>。 (醫師的診斷。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_130",
+                        "kanji": "施",
+                        "meaning": "設施",
+                        "example": "この<ruby>町<rt>まち</rt></ruby>は<ruby>公共<rt>こうきょう</rt></ruby><ruby>施設<rt>しせつ</rt></ruby>が<ruby>充実<rt>じゅうじつ</rt></ruby>している。 (這個城鎮的公共設施很完善。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_131",
+                        "kanji": "昨",
+                        "meaning": "去年",
+                        "example": "<ruby>昨年<rt>さくねん</rt></ruby>の<ruby>冬<rt>ふゆ</rt></ruby>はとても<ruby>寒<rt>さむ</rt></ruby>かった。 (去年的冬天非常冷。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_132",
+                        "kanji": "暖",
+                        "meaning": "溫暖的",
+                        "example": "この<ruby>地域<rt>ちいき</rt></ruby>は<ruby>温暖<rt>おんだん</rt></ruby>な<ruby>気候<rt>きこう</rt></ruby>だ。 (這個地區氣候溫暖。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_133",
+                        "kanji": "望",
+                        "meaning": "希望",
+                        "example": "<ruby>希望<rt>きぼう</rt></ruby>を<ruby>持<rt>も</rt></ruby>つ。 (抱持希望。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_134",
+                        "kanji": "未",
+                        "meaning": "未來",
+                        "example": "<ruby>明<rt>あか</rt></ruby>るい<ruby>未来<rt>みらい</rt></ruby>。 (光明的未來。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_135",
+                        "kanji": "末",
+                        "meaning": "期末",
+                        "example": "<ruby>来週<rt>らいしゅう</rt></ruby>から<ruby>期末<rt>きまつ</rt></ruby><ruby>試験<rt>しけん</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる。 (下週開始期末考。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_136",
+                        "kanji": "材",
+                        "meaning": "採訪、取材",
+                        "example": "<ruby>雑誌<rt>ざっし</rt></ruby>の<ruby>取材<rt>しゅざい</rt></ruby>を<ruby>受<rt>う</rt></ruby>ける。 (接受雜誌的採訪。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_137",
+                        "kanji": "板",
+                        "meaning": "布告欄",
+                        "example": "掲示板の<ruby>案内<rt>あんない</rt></ruby>を<ruby>見<rt>み</rt></ruby>る。 (查看布告欄的通知。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_138",
+                        "kanji": "枯",
+                        "meaning": "枯萎",
+                        "example": "<ruby>花<rt>はな</rt></ruby>が<ruby>枯<rt>か</rt></ruby>れる。 (花枯萎了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_139",
+                        "kanji": "栄",
+                        "meaning": "營養",
+                        "example": "<ruby>栄養<rt>えいよう</rt></ruby>のバランスを<ruby>考<rt>かんが</rt></ruby>えて<ruby>食事<rt>しょくじ</rt></ruby>をする。 (考慮營養均衡來進餐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_140",
+                        "kanji": "歓",
+                        "meaning": "歡迎",
+                        "example": "<ruby>心<rt>こころ</rt></ruby>から<ruby>歓迎<rt>かんげい</rt></ruby>する。 (打從心底歡迎。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_141",
+                        "kanji": "正",
+                        "meaning": "正直",
+                        "example": "<ruby>正直<rt>しょうじき</rt></ruby>に<ruby>話<rt>はな</rt></ruby>す。 (老實說。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_142",
+                        "kanji": "殺",
+                        "meaning": "殺人",
+                        "example": "<ruby>殺人<rt>さつじん</rt></ruby><ruby>事件<rt>じけん</rt></ruby>の<ruby>捜査<rt>そうさ</rt></ruby>が<ruby>続<rt>つづ</rt></ruby>いている。 (殺人事件的調查仍在進行。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_143",
+                        "kanji": "毒",
+                        "meaning": "食物中毒",
+                        "example": "<ruby>夏<rt>なつ</rt></ruby>は<ruby>食中毒<rt>しょくちゅうどく</rt></ruby>に<ruby>気<rt>き</rt></ruby>をつけてください。 (夏天請小心食物中毒。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_144",
+                        "kanji": "毛",
+                        "meaning": "毛毛蟲",
+                        "example": "<ruby>木<rt>き</rt></ruby>に毛虫がいた。 (樹上有毛毛蟲。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_145",
+                        "kanji": "民",
+                        "meaning": "國民",
+                        "example": "<ruby>国民<rt>こくみん</rt></ruby>の<ruby>義務<rt>ぎむ</rt></ruby>を<ruby>果<rt>は</rt></ruby>たす。 (履行國民的義務。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_146",
+                        "kanji": "求",
+                        "meaning": "徵才、招聘",
+                        "example": "<ruby>求人<rt>きゅうじん</rt></ruby><ruby>情報<rt>じょうほう</rt></ruby>をチェックする。 (查看徵才資訊。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_147",
+                        "kanji": "油",
+                        "meaning": "疏忽",
+                        "example": "<ruby>油断<rt>ゆだん</rt></ruby>は大<ruby>敵<rt>てき</rt></ruby>だ。 (疏忽是大敵。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_148",
+                        "kanji": "活",
+                        "meaning": "活潑",
+                        "example": "<ruby>活発<rt>かっぱつ</rt></ruby>な<ruby>議論<rt>ぎろん</rt></ruby>。 (熱烈的討論。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_149",
+                        "kanji": "流",
+                        "meaning": "交流",
+                        "example": "<ruby>国際<rt>こくさい</rt></ruby><ruby>交流<rt>こうりゅう</rt></ruby>。 (國際交流。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_150",
+                        "kanji": "浮",
+                        "meaning": "浮現",
+                        "example": "<ruby>空<rt>そら</rt></ruby>に<ruby>雲<rt>くも</rt></ruby>が<ruby>浮<rt>う</rt></ruby>かぶ。 (天空浮現雲朵。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_151",
+                        "kanji": "消",
+                        "meaning": "消除、解決",
+                        "example": "<ruby>不満<rt>ふまん</rt></ruby>を<ruby>解消<rt>かいしょう</rt></ruby>する。 (消除不滿。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_152",
+                        "kanji": "深",
+                        "meaning": "嚴重的、深刻的",
+                        "example": "<ruby>深刻<rt>しんこく</rt></ruby>な<ruby>経済<rt>けいざい</rt></ruby><ruby>問題<rt>もんだい</rt></ruby>に<ruby>直面<rt>ちょくめん</rt></ruby>する。 (面臨嚴重的經濟問題。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_153",
+                        "kanji": "清",
+                        "meaning": "清潔",
+                        "example": "<ruby>清潔<rt>せいけつ</rt></ruby>な<ruby>部屋<rt>へや</rt></ruby>。 (清潔的房間。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_154",
+                        "kanji": "渋",
+                        "meaning": "堵車、塞車",
+                        "example": "<ruby>事故<rt>じこ</rt></ruby>で<ruby>道路<rt>どうろ</rt></ruby>が<ruby>渋滞<rt>じゅうたい</rt></ruby>している。 (因為事故造成道路堵車。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_155",
+                        "kanji": "減",
+                        "meaning": "削減",
+                        "example": "コスト<ruby>削減<rt>さくげん</rt></ruby>。 (削減成本。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_156",
+                        "kanji": "湿",
+                        "meaning": "濕度",
+                        "example": "<ruby>湿度<rt>しつど</rt></ruby>が<ruby>高<rt>たか</rt></ruby>い。 (濕度很高。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_157",
+                        "kanji": "溢",
+                        "meaning": "溢出、充滿",
+                        "example": "<ruby>涙<rt>なみだ</rt></ruby>が<ruby>溢<rt>あふ</rt></ruby>れる。 (淚水奪眶而出。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_158",
+                        "kanji": "滅",
+                        "meaning": "滅絕",
+                        "example": "<ruby>恐竜<rt>きょうりゅう</rt></ruby>が<ruby>絶滅<rt>ぜつめつ</rt></ruby>する。 (恐龍滅絕。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_159",
+                        "kanji": "滞",
+                        "meaning": "堵車、塞車",
+                        "example": "<ruby>事故<rt>じこ</rt></ruby>で<ruby>道路<rt>どうろ</rt></ruby>が<ruby>渋滞<rt>じゅうたい</rt></ruby>している。 (因為事故造成道路堵車。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_160",
+                        "kanji": "漁",
+                        "meaning": "漁業",
+                        "example": "この<ruby>村<rt>むら</rt></ruby>は<ruby>漁業<rt>ぎょぎょう</rt></ruby>が<ruby>盛<rt>さか</rt></ruby>んだ。 (這個村子漁業發達。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_161",
+                        "kanji": "演",
+                        "meaning": "演技",
+                        "example": "<ruby>彼女<rt>かのじょ</rt></ruby>の<ruby>演技<rt>えんぎ</rt></ruby>はとても<ruby>自然<rt>しぜん</rt></ruby>だ。 (她的演技非常自然。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_162",
+                        "kanji": "潔",
+                        "meaning": "清潔",
+                        "example": "<ruby>清潔<rt>せいけつ</rt></ruby>な<ruby>部屋<rt>へや</rt></ruby>。 (清潔的房間。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_163",
+                        "kanji": "激",
+                        "meaning": "感激",
+                        "example": "<ruby>優<rt>やさ</rt></ruby>しさに<ruby>感激<rt>かんげき</rt></ruby>した。 (對溫柔感到感激。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_164",
+                        "kanji": "災",
+                        "meaning": "災害",
+                        "example": "<ruby>自然<rt>しぜん</rt></ruby><ruby>災害<rt>さいがい</rt></ruby>に<ruby>備<rt>そな</rt></ruby>える。 (防備自然災害。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_165",
+                        "kanji": "煙",
+                        "meaning": "禁菸",
+                        "example": "このエリアは<ruby>禁煙<rt>きんえん</rt></ruby>です。 (這個區域禁菸。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_166",
+                        "kanji": "燥",
+                        "meaning": "乾燥",
+                        "example": "<ruby>空気<rt>くうき</rt></ruby>が<ruby>乾燥<rt>かんそう</rt></ruby>する。 (空氣乾燥。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_167",
+                        "kanji": "片",
+                        "meaning": "整理",
+                        "example": "<ruby>部屋<rt>へや</rt></ruby>を<ruby>片付<rt>かたづ</rt></ruby>ける。 (整理房間。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_168",
+                        "kanji": "牛",
+                        "meaning": "牛丼店",
+                        "example": "<ruby>安<rt>やす</rt></ruby>くて<ruby>速<rt>はや</rt></ruby>い<ruby>牛丼<rt>ぎゅうどん</rt></ruby><ruby>屋<rt>や</rt></ruby>によく行く。 (常去既便宜又快速的牛丼店。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_169",
+                        "kanji": "玄",
+                        "meaning": "玄關、門口",
+                        "example": "<ruby>玄関<rt>げんかん</rt></ruby>で<ruby>靴<rt>くつ</rt></ruby>を<ruby>脱<rt>ぬ</rt></ruby>ぐ。 (在玄關脫鞋。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_170",
+                        "kanji": "率",
+                        "meaning": "支持率",
+                        "example": "<ruby>内閣<rt>ないかく</rt></ruby>の<ruby>支持<rt>しじ</rt></ruby><ruby>率<rt>りつ</rt></ruby>ががっている。 (內閣的支持率正在下降。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_171",
+                        "kanji": "現",
+                        "meaning": "出現",
+                        "example": "<ruby>太陽<rt>たいよう</rt></ruby>が<ruby>現<rt>あらわ</rt></ruby>れる。 (太陽出現了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_172",
+                        "kanji": "異",
+                        "meaning": "異常",
+                        "example": "<ruby>異常<rt>いじょう</rt></ruby>な<ruby>暑<rt>あつ</rt></ruby>さ。 (異常的炎熱。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_173",
+                        "kanji": "疑",
+                        "meaning": "懷疑",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>言葉<rt>ことば</rt></ruby>を<ruby>疑<rt>うたが</rt></ruby>う。 (懷疑他的話。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_174",
+                        "kanji": "的",
+                        "meaning": "目的",
+                        "example": "<ruby>目的<rt>もくてき</rt></ruby>を<ruby>果<rt>は</rt></ruby>たす。 (達成目的。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_175",
+                        "kanji": "盛",
+                        "meaning": "盛行的、繁榮的",
+                        "example": "この<ruby>国<rt>くに</rt></ruby>ではサッカーが<ruby>盛<rt>さかん</rt></ruby>だ。 (這個國家足球很盛行。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_176",
+                        "kanji": "知",
+                        "meaning": "知識",
+                        "example": "<ruby>豊富<rt>ほうふ</rt></ruby>な<ruby>知識<rt>ちしき</rt></ruby>。 (豐富的知識。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_177",
+                        "kanji": "研",
+                        "meaning": "研究",
+                        "example": "<ruby>癌<rt>がん</rt></ruby>の<ruby>研究<rt>けんきゅう</rt></ruby>。 (癌症的研究。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_178",
+                        "kanji": "示",
+                        "meaning": "指示",
+                        "example": "<ruby>指示<rt>しじ</rt></ruby>に<ruby>従<rt>したが</rt></ruby>う。 (服從指示。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_179",
+                        "kanji": "禁",
+                        "meaning": "禁菸",
+                        "example": "このエリアは<ruby>禁煙<rt>きんえん</rt></ruby>です。 (這個區域禁菸。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_180",
+                        "kanji": "税",
+                        "meaning": "消費稅",
+                        "example": "<ruby>消費<rt>しょうひ</rt></ruby><ruby>税<rt>ぜい</rt></ruby>が10％にがった。 (消費稅調高到了10%。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_181",
+                        "kanji": "種",
+                        "meaning": "機型、機種",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>機種<rt>きしゅ</rt></ruby>に<ruby>買<rt>か</rt></ruby>い<ruby>換<rt>か</rt></ruby>える。 (更換成新機型。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_182",
+                        "kanji": "稿",
+                        "meaning": "原稿",
+                        "example": "<ruby>原稿<rt>げんこう</rt></ruby>を<ruby>締切<rt>しめきり</rt></ruby>までに<ruby>書<rt>か</rt></ruby>く。 (在截止日期前寫好原稿。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_183",
+                        "kanji": "穏",
+                        "meaning": "穩重、平穩",
+                        "example": "<ruby>穏<rt>おだ</rt></ruby>やかな<ruby>性格<rt>せいかく</rt></ruby>。 (穩重的性格。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_184",
+                        "kanji": "穫",
+                        "meaning": "收穫、收成",
+                        "example": "<ruby>秋<rt>あき</rt></ruby>は<ruby>米<rt>こめ</rt></ruby>の<ruby>収穫<rt>しゅうかく</rt></ruby>の<ruby>時期<rt>じき</rt></ruby>だ。 (秋天是稻米收成的時期。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_185",
+                        "kanji": "究",
+                        "meaning": "研究",
+                        "example": "<ruby>癌<rt>がん</rt></ruby>の<ruby>研究<rt>けんきゅう</rt></ruby>。 (癌症的研究。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_186",
+                        "kanji": "突",
+                        "meaning": "衝突",
+                        "example": "<ruby>意見<rt>いけん</rt></ruby>の<ruby>衝突<rt>しょうとつ</rt></ruby>。 (意見衝突。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_187",
+                        "kanji": "競",
+                        "meaning": "賽跑",
+                        "example": "<ruby>運動会<rt>うんどうかい</rt></ruby>で<ruby>競走<rt>きょうそう</rt></ruby>する。 (在運動會上賽跑。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_188",
+                        "kanji": "等",
+                        "meaning": "平等",
+                        "example": "<ruby>男女<rt>だんじょ</rt></ruby><ruby>平等<rt>びょうどう</rt></ruby>。 (男女平等。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_189",
+                        "kanji": "策",
+                        "meaning": "政策",
+                        "example": "<ruby>政府<rt>せいふ</rt></ruby>が<ruby>新<rt>あたら</rt></ruby>しい<ruby>経済<rt>けいざい</rt></ruby><ruby>政策<rt>せいさく</rt></ruby>を<ruby>打<rt>う</rt></ruby>ち<ruby>出<rt>だ</rt></ruby>した。 (政府推出了新的經濟政策。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_190",
+                        "kanji": "算",
+                        "meaning": "計算",
+                        "example": "<ruby>計算<rt>けいさん</rt></ruby>が<ruby>早<rt>はや</rt></ruby>い。 (計算很快。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_191",
+                        "kanji": "管",
+                        "meaning": "管理",
+                        "example": "<ruby>健康<rt>けんこう</rt></ruby><ruby>管理<rt>かんり</rt></ruby>。 (健康管理。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_192",
+                        "kanji": "粉",
+                        "meaning": "花粉症",
+                        "example": "<ruby>春<rt>はる</rt></ruby>は<ruby>花粉<rt>かふん</rt></ruby><ruby>症<rt>しょう</rt></ruby>でつらい。 (春天因為花粉症很難受。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_193",
+                        "kanji": "粧",
+                        "meaning": "化妝品",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>化粧<rt>けしょう</rt></ruby><ruby>品<rt>ひん</rt></ruby>を<ruby>試<rt>ため</rt></ruby>す。 (嘗試新的化妝品。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_194",
+                        "kanji": "素",
+                        "meaning": "氧氣罐",
+                        "example": "<ruby>登山<rt>とざん</rt></ruby>のために<ruby>酸素<rt>さんそ</rt></ruby><ruby>缶<rt>かん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていく。 (為了登山帶著氧氣罐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_195",
+                        "kanji": "細",
+                        "meaning": "詳細",
+                        "example": "<ruby>詳細<rt>しょうさい</rt></ruby>な<ruby>説明<rt>せつめい</rt></ruby>。 (詳細的說明。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_196",
+                        "kanji": "統",
+                        "meaning": "傳統",
+                        "example": "<ruby>伝統<rt>でんとう</rt></ruby><ruby>文化<rt>ぶんか</rt></ruby>。 (傳統文化。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_197",
+                        "kanji": "絵",
+                        "meaning": "風景明信片",
+                        "example": "<ruby>旅行<rt>りょこう</rt></ruby><ruby>先<rt>さき</rt></ruby>から<ruby>絵<rt>え</rt></ruby>はがきを<ruby>送<rt>おく</rt></ruby>った。 (從旅行地寄了風景明信片。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_198",
+                        "kanji": "継",
+                        "meaning": "繼續、持續",
+                        "example": "<ruby>勉強<rt>べんきょう</rt></ruby>を<ruby>継続<rt>けいぞく</rt></ruby>することが大切だ。 (持續學習是很重要的。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_199",
+                        "kanji": "緊",
+                        "meaning": "緊急",
+                        "example": "<ruby>緊急<rt>きんきゅう</rt></ruby><ruby>事態<rt>じたい</rt></ruby>が<ruby>発生<rt>はっせい</rt></ruby>した。 (發生了緊急事態。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_200",
+                        "kanji": "編",
+                        "meaning": "編織",
+                        "example": "<ruby>冬<rt>ふゆ</rt></ruby>のためにセーターを<ruby>編<rt>あ</rt></ruby>む。 (為了冬天編織毛衣。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_201",
+                        "kanji": "缶",
+                        "meaning": "氧氣罐",
+                        "example": "<ruby>登山<rt>とざん</rt></ruby>のために<ruby>酸素<rt>さんそ</rt></ruby><ruby>缶<rt>かん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていく。 (為了登山帶著氧氣罐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_202",
+                        "kanji": "羨",
+                        "meaning": "羨慕的",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>が<ruby>羨<rt>うらや</rt></ruby>ましい。 (很羨慕他。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_203",
+                        "kanji": "胃",
+                        "meaning": "胃",
+                        "example": "<ruby>昨日<rt>きのう</rt></ruby>は<ruby>食<rt>た</rt></ruby>べすぎて<ruby>胃<rt>い</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い。 (昨天吃太多了，胃很痛。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_204",
+                        "kanji": "至",
+                        "meaning": "到達",
+                        "example": "<ruby>結論<rt>けつろん</rt></ruby>に<ruby>至<rt>いた</rt></ruby>る。 (得出結論。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_205",
+                        "kanji": "航",
+                        "meaning": "航空郵件、空運",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>航空便<rt>こうくうびん</rt></ruby>で<ruby>送<rt>おく</rt></ruby>る。 (用航空郵件寄送包裹。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_206",
+                        "kanji": "般",
+                        "meaning": "一般常識",
+                        "example": "それは<ruby>社会<rt>しゃかい</rt></ruby><ruby>人<rt>じん</rt></ruby>としての<ruby>一般<rt>いっぱん</rt></ruby><ruby>常識<rt>じょうしき</rt></ruby>だ。 (那是作為社會人士的一般常識。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_207",
+                        "kanji": "草",
+                        "meaning": "雜草",
+                        "example": "<ruby>庭<rt>にわ</rt></ruby>の<ruby>雑草<rt>ざっそう</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>く。 (拔掉院子裡的雜草。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_208",
+                        "kanji": "華",
+                        "meaning": "豪華的、奢華的",
+                        "example": "<ruby>豪華<rt>ごうか</rt></ruby>な<ruby>客船<rt>きゃくせん</rt></ruby>で<ruby>旅<rt>たび</rt></ruby>をする。 (搭乘豪華郵輪旅行。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_209",
+                        "kanji": "著",
+                        "meaning": "著名",
+                        "example": "<ruby>著名<rt>ちょめい</rt></ruby>な<ruby>作家<rt>さっか</rt></ruby>。 (著名的作家。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_210",
+                        "kanji": "薄",
+                        "meaning": "薄的、淡的",
+                        "example": "<ruby>味<rt>あじ</rt></ruby>が<ruby>薄<rt>うす</rt></ruby>い。 (味道很淡。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_211",
+                        "kanji": "街",
+                        "meaning": "商店街",
+                        "example": "この<ruby>商店<rt>しょうてん</rt></ruby><ruby>街<rt>がい</rt></ruby>はいつも<ruby>賑<rt>にぎ</rt></ruby>やかだ。 (這條商店街總是很熱鬧。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_212",
+                        "kanji": "衝",
+                        "meaning": "衝突",
+                        "example": "<ruby>意見<rt>いけん</rt></ruby>の<ruby>衝突<rt>しょうとつ</rt></ruby>。 (意見衝突。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_213",
+                        "kanji": "裁",
+                        "meaning": "審判、裁判",
+                        "example": "<ruby>事件<rt>じけん</rt></ruby>の<ruby>裁判<rt>さいばん</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる。 (事件的審判開始了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_214",
+                        "kanji": "装",
+                        "meaning": "裝修、改裝",
+                        "example": "<ruby>店<rt>みせ</rt></ruby>を<ruby>改装<rt>かいそう</rt></ruby>する。 (裝修店面。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_215",
+                        "kanji": "製",
+                        "meaning": "外國產、外國製",
+                        "example": "この<ruby>時計<rt>とけい</rt></ruby>は<ruby>外国<rt>がいこく</rt></ruby><ruby>製<rt>せい</rt></ruby>だ。 (這支手錶是外國製的。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_216",
+                        "kanji": "視",
+                        "meaning": "視野",
+                        "example": "<ruby>視野<rt>しや</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げる。 (開闊視野。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_217",
+                        "kanji": "覚",
+                        "meaning": "感覺",
+                        "example": "<ruby>寒<rt>さむ</rt></ruby>さで<ruby>感覚<rt>かんかく</rt></ruby>がない。 (冷到沒感覺。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_218",
+                        "kanji": "観",
+                        "meaning": "觀光",
+                        "example": "<ruby>京都<rt>きょうと</rt></ruby>を<ruby>観光<rt>かんこう</rt></ruby>する。 (在京都觀光。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_219",
+                        "kanji": "訓",
+                        "meaning": "訓練",
+                        "example": "<ruby>避難<rt>ひなん</rt></ruby><ruby>訓練<rt>くんれん</rt></ruby>。 (避難訓練。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_220",
+                        "kanji": "記",
+                        "meaning": "記憶",
+                        "example": "<ruby>記憶<rt>きおく</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る。 (留在記憶中。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_221",
+                        "kanji": "設",
+                        "meaning": "設施",
+                        "example": "この<ruby>町<rt>まち</rt></ruby>は<ruby>公共<rt>こうきょう</rt></ruby><ruby>施設<rt>しせつ</rt></ruby>が<ruby>充実<rt>じゅうじつ</rt></ruby>している。 (這個城鎮的公共設施很完善。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_222",
+                        "kanji": "訴",
+                        "meaning": "控訴",
+                        "example": "<ruby>裁判所<rt>さいばんしょ</rt></ruby>に<ruby>訴<rt>うった</rt></ruby>える。 (向法院控訴。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_223",
+                        "kanji": "診",
+                        "meaning": "診斷",
+                        "example": "<ruby>医師<rt>いし</rt></ruby>の<ruby>診断<rt>しんだん</rt></ruby>。 (醫師的診斷。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_224",
+                        "kanji": "証",
+                        "meaning": "證明",
+                        "example": "身分を<ruby>証明<rt>しょうめい</rt></ruby>するものを<ruby>持<rt>も</rt></ruby>っていますか。 (你有帶身分證明文件嗎？)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_225",
+                        "kanji": "詳",
+                        "meaning": "詳細",
+                        "example": "<ruby>詳細<rt>しょうさい</rt></ruby>な<ruby>説明<rt>せつめい</rt></ruby>。 (詳細的說明。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_226",
+                        "kanji": "認",
+                        "meaning": "確認",
+                        "example": "<ruby>予定<rt>よてい</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>する。 (確認行程。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_227",
+                        "kanji": "誤",
+                        "meaning": "誤解",
+                        "example": "それは<ruby>大<rt>おお</rt></ruby>きな<ruby>誤解<rt>ごかい</rt></ruby>だ。 (那是個很大的誤解。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_228",
+                        "kanji": "論",
+                        "meaning": "議論",
+                        "example": "<ruby>熱<rt>あつ</rt></ruby>い<ruby>議論<rt>ぎろん</rt></ruby>。 (熱烈的討論。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_229",
+                        "kanji": "諦",
+                        "meaning": "放棄",
+                        "example": "<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>諦<rt>あきら</rt></ruby>めない。 (不放棄夢想。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_230",
+                        "kanji": "識",
+                        "meaning": "意識",
+                        "example": "<ruby>意識<rt>いしき</rt></ruby>が<ruby>戻<rt>もど</rt></ruby>る。 (恢復意識。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_231",
+                        "kanji": "象",
+                        "meaning": "印象",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>の<ruby>第一<rt>だいいち</rt></ruby><ruby>印象<rt>いんしょう</rt></ruby>はとても<ruby>良<rt>よ</rt></ruby>かった。 (對他的第一印象非常好。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_232",
+                        "kanji": "豪",
+                        "meaning": "豪華的、奢華的",
+                        "example": "<ruby>豪華<rt>ごうか</rt></ruby>な<ruby>客船<rt>きゃくせん</rt></ruby>で<ruby>旅<rt>たび</rt></ruby>をする。 (搭乘豪華郵輪旅行。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_233",
+                        "kanji": "販",
+                        "meaning": "自動販賣機",
+                        "example": "<ruby>自動<rt>じどう</rt></ruby><ruby>販売<rt>はんばい</rt></ruby><ruby>機<rt>き</rt></ruby>で飲み物を<ruby>買<rt>か</rt></ruby>う。 (在自動販賣機買飲料。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_234",
+                        "kanji": "貴",
+                        "meaning": "貴重",
+                        "example": "<ruby>貴重<rt>きちょう</rt></ruby>な<ruby>経験<rt>けいけん</rt></ruby>。 (貴重的經驗。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_235",
+                        "kanji": "費",
+                        "meaning": "會費",
+                        "example": "<ruby>会費<rt>かいひ</rt></ruby>は3,000<ruby>円<rt>えん</rt></ruby>です。 (會費是3,000日圓。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_236",
+                        "kanji": "賞",
+                        "meaning": "獎品",
+                        "example": "コンテストで<ruby>豪華<rt>ごうか</rt></ruby>な<ruby>賞品<rt>しょうひん</rt></ruby>を<ruby>当<rt>あ</rt></ruby>てる。 (在比賽中贏得豪華獎品。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_237",
+                        "kanji": "賢",
+                        "meaning": "聰明的",
+                        "example": "<ruby>賢<rt>かしこ</rt></ruby>い<ruby>犬<rt>いぬ</rt></ruby>。 (聰明的狗。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_238",
+                        "kanji": "超",
+                        "meaning": "超過、超越",
+                        "example": "<ruby>人口<rt>じんこう</rt></ruby>が10<ruby>億<rt>おく</rt></ruby><ruby>人<rt>にん</rt></ruby>を<ruby>超<rt>こ</rt></ruby>える。 (人口超過十億人。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_239",
+                        "kanji": "距",
+                        "meaning": "距離",
+                        "example": "<ruby>距離<rt>きょり</rt></ruby>を<ruby>保<rt>たも</rt></ruby>つ。 (保持距離。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_240",
+                        "kanji": "跡",
+                        "meaning": "足跡，腳印",
+                        "example": "<ruby>砂浜<rt>すなはま</rt></ruby>に<ruby>自分<rt>じぶん</rt></ruby>の<ruby>足跡<rt>あしあと</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>っている。 (沙灘上留下了自己的腳印。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_241",
+                        "kanji": "躍",
+                        "meaning": "活躍",
+                        "example": "<ruby>世界<rt>せかい</rt></ruby>で<ruby>活躍<rt>かつやく</rt></ruby>する。 (在世界活躍。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_242",
+                        "kanji": "軽",
+                        "meaning": "輕的",
+                        "example": "<ruby>軽<rt>かる</rt></ruby>い<ruby>荷物<rt>にもつ</rt></ruby>。 (輕的行李。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_243",
+                        "kanji": "較",
+                        "meaning": "比較",
+                        "example": "<ruby>他社<rt>たしゃ</rt></ruby>と<ruby>比較<rt>ひかく</rt></ruby>する。 (與其他公司比較。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_244",
+                        "kanji": "輪",
+                        "meaning": "訂婚戒指",
+                        "example": "<ruby>彼<rt>かれ</rt></ruby>から<ruby>婚約<rt>こんやく</rt></ruby><ruby>指輪<rt>ゆびわ</rt></ruby>をもらった。 (收到了他送的訂婚戒指。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_245",
+                        "kanji": "農",
+                        "meaning": "市民農園",
+                        "example": "<ruby>市民<rt>しみん</rt></ruby><ruby>農園<rt>のうえん</rt></ruby>で<ruby>野菜<rt>やさい</rt></ruby>を<ruby>育<rt>そだ</rt></ruby>てる。 (在市民農園種菜。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_246",
+                        "kanji": "追",
+                        "meaning": "超過",
+                        "example": "<ruby>車<rt>くるま</rt></ruby>を<ruby>追<rt>お</rt></ruby>い<ruby>越<rt>こ</rt></ruby>す。 (超車。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_247",
+                        "kanji": "進",
+                        "meaning": "進步",
+                        "example": "<ruby>技術<rt>ぎじゅつ</rt></ruby>の<ruby>進歩<rt>しんぽ</rt></ruby>。 (技術的進步。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_248",
+                        "kanji": "過",
+                        "meaning": "經過",
+                        "example": "<ruby>事件<rt>じけん</rt></ruby>の<ruby>経過<rt>けいか</rt></ruby>を<ruby>報告<rt>ほうこく</rt></ruby>する。 (報告事件的經過。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_249",
+                        "kanji": "適",
+                        "meaning": "適切",
+                        "example": "<ruby>適切<rt>てきせつ</rt></ruby>な<ruby>判断<rt>はんだん</rt></ruby>。 (適切的判斷。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_250",
+                        "kanji": "郎",
+                        "meaning": "新郎",
+                        "example": "<ruby>新郎<rt>しんろう</rt></ruby>と<ruby>新婦<rt>しんぷ</rt></ruby>が<ruby>入場<rt>にゅうじょう</rt></ruby>する。 (新郎和新娘入場。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_251",
+                        "kanji": "郷",
+                        "meaning": "故鄉",
+                        "example": "<ruby>故郷<rt>こきょう</rt></ruby>の<ruby>料理<rt>りょうり</rt></ruby>が<ruby>懐<rt>なつ</rt></ruby>かしい。 (懷念家鄉的料理。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_252",
+                        "kanji": "酸",
+                        "meaning": "氧氣罐",
+                        "example": "<ruby>登山<rt>とざん</rt></ruby>のために<ruby>酸素<rt>さんそ</rt></ruby><ruby>缶<rt>かん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っていく。 (為了登山帶著氧氣罐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_253",
+                        "kanji": "里",
+                        "meaning": "里山(靠近村落的山林)",
+                        "example": "<ruby>里山<rt>さとやま</rt></ruby>の<ruby>自然<rt>しぜん</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る。 (守護里山的自然環境。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_254",
+                        "kanji": "録",
+                        "meaning": "錄音",
+                        "example": "<ruby>声<rt>こえ</rt></ruby>を<ruby>録音<rt>ろくおん</rt></ruby>する。 (錄下聲音。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_255",
+                        "kanji": "鍛",
+                        "meaning": "鍛鍊",
+                        "example": "<ruby>体<rt>からだ</rt></ruby>を<ruby>鍛<rt>きた</rt></ruby>える。 (鍛鍊身體。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_256",
+                        "kanji": "関",
+                        "meaning": "關係",
+                        "example": "<ruby>人間<rt>にんげん</rt></ruby><ruby>関係<rt>かんけい</rt></ruby>。 (人際關係。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_257",
+                        "kanji": "隠",
+                        "meaning": "隱藏",
+                        "example": "<ruby>秘密<rt>ひみつ</rt></ruby>を<ruby>隠<rt>かく</rt></ruby>す。 (隱藏秘密。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_258",
+                        "kanji": "離",
+                        "meaning": "距離",
+                        "example": "<ruby>距離<rt>きょり</rt></ruby>を<ruby>保<rt>たも</rt></ruby>つ。 (保持距離。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_259",
+                        "kanji": "韓",
+                        "meaning": "韓語",
+                        "example": "<ruby>韓国<rt>かんこく</rt></ruby><ruby>語<rt>ご</rt></ruby>を<ruby>勉強<rt>べんきょう</rt></ruby>し始めた。 (開始學習韓語。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_260",
+                        "kanji": "響",
+                        "meaning": "影響",
+                        "example": "<ruby>親<rt>おや</rt></ruby>の<ruby>言動<rt>げんどう</rt></ruby>は<ruby>子供<rt>こども</rt></ruby>に<ruby>大<rt>おお</rt></ruby>きな<ruby>影響<rt>えいきょう</rt></ruby>を<ruby>与<rt>あた</rt></ruby>える。 (父母的言行對孩子有很大影響。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_261",
+                        "kanji": "頂",
+                        "meaning": "領受(謙讓語)",
+                        "example": "お<ruby>土産<rt>みやげ</rt></ruby>を<ruby>頂<rt>いただ</rt></ruby>く。 (收下伴手禮。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_262",
+                        "kanji": "順",
+                        "meaning": "順利",
+                        "example": "<ruby>順調<rt>じゅんちょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>む。 (順利進行。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_263",
+                        "kanji": "預",
+                        "meaning": "代為保管",
+                        "example": "<ruby>荷物<rt>にもつ</rt></ruby>を<ruby>預<rt>あず</rt></ruby>かる。 (代為保管行李。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_264",
+                        "kanji": "類",
+                        "meaning": "人類",
+                        "example": "<ruby>人類<rt>じんるい</rt></ruby>の<ruby>歴史<rt>れきし</rt></ruby>を<ruby>研究<rt>けんきゅう</rt></ruby>する。 (研究人類的歷史。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_265",
+                        "kanji": "飼",
+                        "meaning": "飼養",
+                        "example": "<ruby>犬<rt>いぬ</rt></ruby>を<ruby>飼<rt>か</rt></ruby>っている。 (養了一隻狗。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_266",
+                        "kanji": "飽",
+                        "meaning": "厭倦",
+                        "example": "この<ruby>味<rt>あじ</rt></ruby>には<ruby>飽<rt>あ</rt></ruby>きた。 (對這個味道厭倦了。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_267",
+                        "kanji": "養",
+                        "meaning": "營養",
+                        "example": "<ruby>栄養<rt>えいよう</rt></ruby>のバランスを<ruby>考<rt>かんが</rt></ruby>えて<ruby>食事<rt>しょくじ</rt></ruby>をする。 (考慮營養均衡來進餐。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_268",
+                        "kanji": "騒",
+                        "meaning": "吵鬧、騷動",
+                        "example": "<ruby>宝<rt>たから</rt></ruby>くじが<ruby>当<rt>あ</rt></ruby>たって<ruby>大騒<rt>おおさわ</rt></ruby>ぎになった。 (因為中了彩券引起了大轟動。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_269",
+                        "kanji": "髪",
+                        "meaning": "髮型",
+                        "example": "<ruby>新<rt>あたら</rt></ruby>しい<ruby>髪型<rt>かみがた</rt></ruby>にした。 (換了新髮型。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_270",
+                        "kanji": "鮮",
+                        "meaning": "新鮮的",
+                        "example": "<ruby>新鮮<rt>しんせん</rt></ruby>な<ruby>魚<rt>さかな</rt></ruby>を<ruby>刺身<rt>さしみ</rt></ruby>にして<ruby>食<rt>た</rt></ruby>べる。 (將新鮮的魚做成生魚片吃。)",
+                        "level": "N3"
+                },
+                {
+                        "id": "kn3_271",
+                        "kanji": "麦",
+                        "meaning": "麵粉",
+                        "example": "<ruby>小麦粉<rt>こむぎこ</rt></ruby>でパンを<ruby>作<rt>つく</rt></ruby>る。 (用麵粉做麵包。)",
+                        "level": "N3"
+                }
+        ],
+        "n2": [
+                {
+                        "id": "kn2_1",
+                        "kanji": "丹",
+                        "meaning": "仔細、精心",
+                        "example": "<ruby>丹念<rt>たんねん</rt></ruby>に<ruby>調<rt>しら</rt></ruby>べる。 (仔細調查。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_2",
+                        "kanji": "仰",
+                        "meaning": "信仰",
+                        "example": "<ruby>熱心<rt>ねっしん</rt></ruby>な<ruby>信仰<rt>しんこう</rt></ruby>。 (熱心的信仰。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_3",
+                        "kanji": "伏",
+                        "meaning": "起伏",
+                        "example": "<ruby>感情<rt>かんじょう</rt></ruby>の<ruby>起伏<rt>きふく</rt></ruby>。 (感情的起伏。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_4",
+                        "kanji": "例",
+                        "meaning": "慣例",
+                        "example": "<ruby>業界<rt>ぎょうかい</rt></ruby>の<ruby>慣例<rt>かんれい</rt></ruby>。 (業界的慣例。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_5",
+                        "kanji": "促",
+                        "meaning": "促進",
+                        "example": "<ruby>販売<rt>はんばい</rt></ruby><ruby>促進<rt>そくしん</rt></ruby>活動。 (銷售促進活動。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_6",
+                        "kanji": "偽",
+                        "meaning": "偽造",
+                        "example": "<ruby>文書<rt>ぶんしょ</rt></ruby>を<ruby>偽造<rt>ぎぞう</rt></ruby>する。 (偽造文書。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_7",
+                        "kanji": "傾",
+                        "meaning": "傾向",
+                        "example": "<ruby>減少<rt>げんしょう</rt></ruby><ruby>傾向<rt>けいこう</rt></ruby>にある。 (有減少的傾向。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_8",
+                        "kanji": "兆",
+                        "meaning": "徵兆",
+                        "example": "<ruby>回復<rt>かいふく</rt></ruby>の<ruby>兆候<rt>ちょうこう</rt></ruby>がある。 (有恢復的徵兆。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_9",
+                        "kanji": "克",
+                        "meaning": "克服、跨越",
+                        "example": "<ruby>困難<rt>こんなん</rt></ruby>を<ruby>克服<rt>こくふく</rt></ruby>する。 (克服困難。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_10",
+                        "kanji": "凝",
+                        "meaning": "凝縮",
+                        "example": "エキスが<ruby>凝縮<rt>ぎょうしゅく</rt></ruby>される。 (精華凝縮。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_11",
+                        "kanji": "処",
+                        "meaning": "待遇",
+                        "example": "<ruby>不当<rt>ふとう</rt></ruby>な<ruby>処遇<rt>しょぐう</rt></ruby>。 (不當的待遇。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_12",
+                        "kanji": "刷",
+                        "meaning": "刷新、革新",
+                        "example": "<ruby>体制<rt>たいせい</rt></ruby><ruby>刷新<rt>さっしん</rt></ruby>。 (體制革新。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_13",
+                        "kanji": "創",
+                        "meaning": "獨創",
+                        "example": "<ruby>独創的<rt>どくそうてき</rt></ruby>な<ruby>作品<rt>さくひん</rt></ruby>。 (獨創的作品。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_14",
+                        "kanji": "励",
+                        "meaning": "鼓勵",
+                        "example": "<ruby>読書<rt>どくしょ</rt></ruby>を<ruby>奨励<rt>しょうれい</rt></ruby>する。 (鼓勵閱讀。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_15",
+                        "kanji": "勘",
+                        "meaning": "計算、結帳",
+                        "example": "お<ruby>勘定<rt>かんじょう</rt></ruby>をお<ruby>願<rt>ねが</rt></ruby>いします。 (麻煩結帳。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_16",
+                        "kanji": "勧",
+                        "meaning": "勸告",
+                        "example": "<ruby>避難<rt>ひなん</rt></ruby><ruby>勧告<rt>かんこく</rt></ruby>。 (避難勸告。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_17",
+                        "kanji": "即",
+                        "meaning": "立即",
+                        "example": "<ruby>即座<rt>そくざ</rt></ruby>に<ruby>回答<rt>かいとう</rt></ruby>する。 (立刻回答。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_18",
+                        "kanji": "同",
+                        "meaning": "贊同",
+                        "example": "<ruby>意見<rt>いけん</rt></ruby>に<ruby>賛同<rt>さんどう</rt></ruby>する。 (贊同意見。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_19",
+                        "kanji": "向",
+                        "meaning": "轉向",
+                        "example": "<ruby>思想<rt>しそう</rt></ruby>の<ruby>転向<rt>てんこう</rt></ruby>。 (思想轉向。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_20",
+                        "kanji": "吟",
+                        "meaning": "斟酌、仔細審查",
+                        "example": "<ruby>素材<rt>そざい</rt></ruby>を<ruby>吟味<rt>ぎんみ</rt></ruby>する。 (仔細審查素材。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_21",
+                        "kanji": "呈",
+                        "meaning": "顯露",
+                        "example": "<ruby>弱点<rt>じゃくてん</rt></ruby>が<ruby>露呈<rt>ろてい</rt></ruby>する。 (顯露弱點。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_22",
+                        "kanji": "唆",
+                        "meaning": "暗示、提示",
+                        "example": "<ruby>将来<rt>しょうらい</rt></ruby>を<ruby>示唆<rt>しさ</rt></ruby>する。 (暗示將來。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_23",
+                        "kanji": "善",
+                        "meaning": "改善",
+                        "example": "<ruby>生活<rt>せいかつ</rt></ruby><ruby>習慣<rt>しゅうかん</rt></ruby>を<ruby>改善<rt>かいぜん</rt></ruby>する<ruby>必要<rt>ひつよう</rt></ruby>がある。 (有必要改善生活習慣。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_24",
+                        "kanji": "固",
+                        "meaning": "執著",
+                        "example": "<ruby>自説<rt>じせつ</rt></ruby>に<ruby>固執<rt>こしつ</rt></ruby>する。 (堅持己見。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_25",
+                        "kanji": "圧",
+                        "meaning": "壓倒",
+                        "example": "<ruby>圧倒的<rt>あっとうてき</rt></ruby>な<ruby>強<rt>つよ</rt></ruby>さ。 (壓倒性的強大。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_26",
+                        "kanji": "執",
+                        "meaning": "執著",
+                        "example": "<ruby>過去<rt>かこ</rt></ruby>への<ruby>執着<rt>しゅうちゃく</rt></ruby>。 (對過去的執著。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_27",
+                        "kanji": "堅",
+                        "meaning": "堅實",
+                        "example": "<ruby>堅実<rt>けんじつ</rt></ruby>な<ruby>経営<rt>けいえい</rt></ruby>。 (穩健的經營。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_28",
+                        "kanji": "塞",
+                        "meaning": "閉塞",
+                        "example": "<ruby>閉塞感<rt>へいそくかん</rt></ruby>が<ruby>漂<rt>ただよ</rt></ruby>う。 (瀰漫著閉塞感。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_29",
+                        "kanji": "奨",
+                        "meaning": "鼓勵",
+                        "example": "<ruby>読書<rt>どくしょ</rt></ruby>を<ruby>奨励<rt>しょうれい</rt></ruby>する。 (鼓勵閱讀。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_30",
+                        "kanji": "妥",
+                        "meaning": "妥協、讓步",
+                        "example": "一切<ruby>妥協<rt>だきょう</rt></ruby>しない。 (絕對不妥協。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_31",
+                        "kanji": "妬",
+                        "meaning": "嫉妒",
+                        "example": "<ruby>他人<rt>たにん</rt></ruby>に<ruby>嫉妬<rt>しっと</rt></ruby>する。 (嫉妒別人。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_32",
+                        "kanji": "威",
+                        "meaning": "權威",
+                        "example": "<ruby>専門家<rt>せんもんか</rt></ruby>の<ruby>権威<rt>けんい</rt></ruby>。 (專家的權威。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_33",
+                        "kanji": "嫉",
+                        "meaning": "嫉妒",
+                        "example": "<ruby>他人<rt>たにん</rt></ruby>に<ruby>嫉妬<rt>しっと</rt></ruby>する。 (嫉妒別人。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_34",
+                        "kanji": "孤",
+                        "meaning": "孤立",
+                        "example": "<ruby>村<rt>むら</rt></ruby>が<ruby>孤立<rt>こりつ</rt></ruby>する。 (村莊被孤立。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_35",
+                        "kanji": "宣",
+                        "meaning": "宣傳",
+                        "example": "<ruby>新製品<rt>しんせいひん</rt></ruby>を<ruby>宣伝<rt>せんでん</rt></ruby>する。 (宣傳新產品。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_36",
+                        "kanji": "寛",
+                        "meaning": "寬容",
+                        "example": "<ruby>失敗<rt>しっぱい</rt></ruby>に<ruby>寛容<rt>かんよう</rt></ruby>だ。 (對失敗很寬容。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_37",
+                        "kanji": "審",
+                        "meaning": "審查",
+                        "example": "<ruby>書類<rt>しょるい</rt></ruby><ruby>審査<rt>しんさ</rt></ruby>。 (書面審查。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_38",
+                        "kanji": "屈",
+                        "meaning": "屈服",
+                        "example": "<ruby>暴力<rt>ぼうりょく</rt></ruby>に<ruby>屈服<rt>くっぷく</rt></ruby>しない。 (不向暴力屈服。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_39",
+                        "kanji": "属",
+                        "meaning": "從屬",
+                        "example": "<ruby>権力<rt>けんりょく</rt></ruby>に<ruby>従属<rt>じゅうぞく</rt></ruby>する。 (從屬於權力。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_40",
+                        "kanji": "履",
+                        "meaning": "履行",
+                        "example": "<ruby>契約<rt>けいやく</rt></ruby>を<ruby>履行<rt>りこう</rt></ruby>する。 (履行合約。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_41",
+                        "kanji": "峙",
+                        "meaning": "對峙",
+                        "example": "<ruby>敵<rt>てき</rt></ruby>と<ruby>対峙<rt>たいじ</rt></ruby>する。 (與敵人對峙。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_42",
+                        "kanji": "崇",
+                        "meaning": "崇拜",
+                        "example": "<ruby>英雄<rt>ゆうしゃ</rt></ruby>を<ruby>崇拝<rt>すうはい</rt></ruby>する。 (崇拜英雄。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_43",
+                        "kanji": "干",
+                        "meaning": "干涉",
+                        "example": "<ruby>内政<rt>ないせい</rt></ruby><ruby>干渉<rt>かんしょう</rt></ruby>。 (干涉內政。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_44",
+                        "kanji": "幹",
+                        "meaning": "幹部",
+                        "example": "<ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>幹部<rt>かんぶ</rt></ruby>。 (公司的幹部。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_45",
+                        "kanji": "序",
+                        "meaning": "秩序",
+                        "example": "<ruby>社会<rt>しゃかい</rt></ruby>の<ruby>秩序<rt>ちつじょ</rt></ruby>。 (社會秩序。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_46",
+                        "kanji": "廃",
+                        "meaning": "撤廢",
+                        "example": "<ruby>差別<rt>さべつ</rt></ruby><ruby>撤廃<rt>てっぱい</rt></ruby>。 (撤廢歧視。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_47",
+                        "kanji": "往",
+                        "meaning": "往返（往返於）",
+                        "example": "<ruby>東京<rt>とうきょう</rt></ruby>から<ruby>大阪<rt>おおさか</rt></ruby>まで<ruby>往復<rt>おうふく</rt></ruby>のチケットを<ruby>買<rt>か</rt></ruby>った。 (買了從東京到大阪的往返票。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_48",
+                        "kanji": "従",
+                        "meaning": "從屬",
+                        "example": "<ruby>権力<rt>けんりょく</rt></ruby>に<ruby>従属<rt>じゅうぞく</rt></ruby>する。 (從屬於權力。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_49",
+                        "kanji": "惑",
+                        "meaning": "疑惑",
+                        "example": "<ruby>疑惑<rt>ぎわく</rt></ruby>が<ruby>深<rt>ふか</rt></ruby>まる。 (疑惑加深。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_50",
+                        "kanji": "惨",
+                        "meaning": "悲慘",
+                        "example": "<ruby>悲惨<rt>ひさん</rt></ruby>な<ruby>光景<rt>こうけい</rt></ruby>。 (悲慘的景象。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_51",
+                        "kanji": "愁",
+                        "meaning": "鄉愁",
+                        "example": "<ruby>郷愁<rt>きょうしゅう</rt></ruby>にかられる。 (被鄉愁驅使。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_52",
+                        "kanji": "愕",
+                        "meaning": "驚愕",
+                        "example": "<ruby>驚愕<rt>きょうがく</rt></ruby>の<ruby>事実<rt>じじつ</rt></ruby>。 (驚人的事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_53",
+                        "kanji": "愚",
+                        "meaning": "牢騷",
+                        "example": "<ruby>愚痴<rt>ぐち</rt></ruby>をこぼす。 (發牢騷。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_54",
+                        "kanji": "慎",
+                        "meaning": "慎重",
+                        "example": "<ruby>慎重<rt>しんちょう</rt></ruby>に<ruby>選<rt>えら</rt></ruby>ぶ。 (慎重選擇。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_55",
+                        "kanji": "慨",
+                        "meaning": "憤慨",
+                        "example": "<ruby>不正<rt>ふせい</rt></ruby>に<ruby>憤慨<rt>ふんがい</rt></ruby>する。 (對不公感到憤慨。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_56",
+                        "kanji": "憤",
+                        "meaning": "憤慨",
+                        "example": "<ruby>不正<rt>ふせい</rt></ruby>に<ruby>憤慨<rt>ふんがい</rt></ruby>する。 (對不公感到憤慨。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_57",
+                        "kanji": "抑",
+                        "meaning": "抑制、控制",
+                        "example": "インフレを<ruby>抑制<rt>よくせい</rt></ruby>する。 (抑制通貨膨脹。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_58",
+                        "kanji": "拒",
+                        "meaning": "拒絕",
+                        "example": "<ruby>要求<rt>ようきゅう</rt></ruby>を<ruby>拒絶<rt>きょぜつ</rt></ruby>する。 (拒絕要求。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_59",
+                        "kanji": "拝",
+                        "meaning": "崇拜",
+                        "example": "<ruby>英雄<rt>ゆうしゃ</rt></ruby>を<ruby>崇拝<rt>すうはい</rt></ruby>する。 (崇拜英雄。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_60",
+                        "kanji": "拾",
+                        "meaning": "收拾",
+                        "example": "<ruby>事態<rt>じたい</rt></ruby>を<ruby>収拾<rt>しゅうしゅう</rt></ruby>する。 (收拾事態。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_61",
+                        "kanji": "振",
+                        "meaning": "振興",
+                        "example": "<ruby>産業<rt>さんぎょう</rt></ruby>を<ruby>振興<rt>しんこう</rt></ruby>する。 (振興產業。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_62",
+                        "kanji": "捏",
+                        "meaning": "捏造",
+                        "example": "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>捏造<rt>ねつぞう</rt></ruby>する。 (捏造事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_63",
+                        "kanji": "推",
+                        "meaning": "推敲",
+                        "example": "<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>推敲<rt>すいこう</rt></ruby>する。 (推敲文章。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_64",
+                        "kanji": "措",
+                        "meaning": "措施",
+                        "example": "<ruby>緊急<rt>きんきゅう</rt></ruby><ruby>措置<rt>そち</rt></ruby>。 (緊急措施。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_65",
+                        "kanji": "揚",
+                        "meaning": "高揚",
+                        "example": "<ruby>気分<rt>きぶん</rt></ruby>が<ruby>高揚<rt>こうよう</rt></ruby>する。 (情緒高昂。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_66",
+                        "kanji": "携",
+                        "meaning": "聯手",
+                        "example": "<ruby>他社<rt>たしゃ</rt></ruby>と<ruby>提携<rt>ていけい</rt></ruby>する。 (與其他公司合作。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_67",
+                        "kanji": "撤",
+                        "meaning": "撤廢",
+                        "example": "<ruby>差別<rt>さべつ</rt></ruby><ruby>撤廃<rt>てっぱい</rt></ruby>。 (撤廢歧視。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_68",
+                        "kanji": "擁",
+                        "meaning": "擁立",
+                        "example": "<ruby>候補者<rt>こうほしゃ</rt></ruby>を<ruby>擁立<rt>ようりつ</rt></ruby>する。 (擁立候選人。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_69",
+                        "kanji": "敢",
+                        "meaning": "果敢",
+                        "example": "<ruby>果敢<rt>かかん</rt></ruby>に<ruby>挑戦<rt>ちょうせん</rt></ruby>。 (果敢挑戰。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_70",
+                        "kanji": "敲",
+                        "meaning": "推敲",
+                        "example": "<ruby>文章<rt>ぶんしょう</rt></ruby>を<ruby>推敲<rt>すいこう</rt></ruby>する。 (推敲文章。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_71",
+                        "kanji": "斬",
+                        "meaning": "嶄新",
+                        "example": "<ruby>斬新<rt>ざんしん</rt></ruby>なアイデア。 (嶄新的點子。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_72",
+                        "kanji": "暴",
+                        "meaning": "揭露",
+                        "example": "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>暴露<rt>ばくろ</rt></ruby>する。 (揭露事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_73",
+                        "kanji": "架",
+                        "meaning": "架空、虛構",
+                        "example": "<ruby>架空<rt>かくう</rt></ruby>の<ruby>人物<rt>じんぶつ</rt></ruby>。 (虛構的人物。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_74",
+                        "kanji": "査",
+                        "meaning": "審查",
+                        "example": "<ruby>書類<rt>しょるい</rt></ruby><ruby>審査<rt>しんさ</rt></ruby>。 (書面審查。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_75",
+                        "kanji": "核",
+                        "meaning": "核心",
+                        "example": "<ruby>問題<rt>もんだい</rt></ruby>の<ruby>核心<rt>かくしん</rt></ruby>。 (問題的核心。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_76",
+                        "kanji": "棄",
+                        "meaning": "棄權",
+                        "example": "<ruby>試合<rt>しあい</rt></ruby>を<ruby>棄権<rt>きけん</rt></ruby>する。 (放棄比賽。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_77",
+                        "kanji": "検",
+                        "meaning": "檢查",
+                        "example": "<ruby>機械<rt>きかい</rt></ruby>を<ruby>点検<rt>てんけん</rt></ruby>する。 (檢查機器。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_78",
+                        "kanji": "概",
+                        "meaning": "概觀",
+                        "example": "<ruby>歴史<rt>れきし</rt></ruby>を<ruby>概観<rt>がいかん</rt></ruby>する。 (概觀歷史。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_79",
+                        "kanji": "模",
+                        "meaning": "摸索、找尋",
+                        "example": "<ruby>解決策<rt>かいけつさく</rt></ruby>を<ruby>模索<rt>もさく</rt></ruby>する。 (摸索解決方案。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_80",
+                        "kanji": "権",
+                        "meaning": "權威",
+                        "example": "<ruby>専門家<rt>せんもんか</rt></ruby>の<ruby>権威<rt>けんい</rt></ruby>。 (專家的權威。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_81",
+                        "kanji": "欲",
+                        "meaning": "意欲、幹勁",
+                        "example": "<ruby>学習<rt>がくしゅう</rt></ruby><ruby>意欲<rt>いよく</rt></ruby>が<ruby>高<rt>たか</rt></ruby>い。 (學習意願高。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_82",
+                        "kanji": "欺",
+                        "meaning": "欺騙",
+                        "example": "<ruby>欺瞞<rt>ぎまん</rt></ruby>に<ruby>満<rt>み</rt></ruby>ちた<ruby>言葉<rt>ことば</rt></ruby>。 (充滿欺騙的言語。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_83",
+                        "kanji": "汰",
+                        "meaning": "淘汰",
+                        "example": "<ruby>自然<rt>しぜん</rt></ruby><ruby>淘汰<rt>とうた</rt></ruby>。 (自然淘汰。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_84",
+                        "kanji": "沈",
+                        "meaning": "沈默",
+                        "example": "<ruby>長<rt>なが</rt></ruby>い<ruby>沈黙<rt>ちんもく</rt></ruby>。 (長久的沈默。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_85",
+                        "kanji": "没",
+                        "meaning": "沒落",
+                        "example": "<ruby>貴族<rt>きぞく</rt></ruby>の<ruby>没落<rt>ぼつらく</rt></ruby>。 (貴族的沒落。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_86",
+                        "kanji": "波",
+                        "meaning": "波紋",
+                        "example": "<ruby>波紋<rt>はもん</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>ぶ。 (引起波瀾。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_87",
+                        "kanji": "浸",
+                        "meaning": "滲透、普及",
+                        "example": "<ruby>制度<rt>せいど</rt></ruby>が<ruby>浸透<rt>しんとう</rt></ruby>する。 (制度逐漸普及。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_88",
+                        "kanji": "淘",
+                        "meaning": "淘汰",
+                        "example": "<ruby>自然<rt>しぜん</rt></ruby><ruby>淘汰<rt>とうた</rt></ruby>。 (自然淘汰。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_89",
+                        "kanji": "渉",
+                        "meaning": "干涉",
+                        "example": "<ruby>内政<rt>ないせい</rt></ruby><ruby>干渉<rt>かんしょう</rt></ruby>。 (干涉內政。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_90",
+                        "kanji": "滑",
+                        "meaning": "圓滑、順利",
+                        "example": "<ruby>円滑<rt>えんかつ</rt></ruby>に<ruby>進<rt>すす</rt></ruby>む。 (順利進行。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_91",
+                        "kanji": "潜",
+                        "meaning": "潛在",
+                        "example": "<ruby>潜在的<rt>せんざいてき</rt></ruby>な<ruby>能力<rt>のうりょく</rt></ruby>。 (潛在的能力。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_92",
+                        "kanji": "潤",
+                        "meaning": "利潤",
+                        "example": "<ruby>利潤<rt>りじゅん</rt></ruby>の<ruby>追求<rt>ついきゅう</rt></ruby>。 (追求利潤。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_93",
+                        "kanji": "濃",
+                        "meaning": "濃度",
+                        "example": "<ruby>酸素<rt>さんそ</rt></ruby><ruby>濃度<rt>のうど</rt></ruby>。 (氧氣濃度。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_94",
+                        "kanji": "濫",
+                        "meaning": "濫用",
+                        "example": "<ruby>権力<rt>けんりょく</rt></ruby><ruby>濫用<rt>らんよう</rt></ruby>。 (濫用權力。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_95",
+                        "kanji": "独",
+                        "meaning": "獨創",
+                        "example": "<ruby>独創的<rt>どくそうてき</rt></ruby>な<ruby>作品<rt>さくひん</rt></ruby>。 (獨創的作品。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_96",
+                        "kanji": "献",
+                        "meaning": "貢獻",
+                        "example": "<ruby>社会<rt>しゃかい</rt></ruby>に<ruby>貢献<rt>こうけん</rt></ruby>する。 (對社會貢獻。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_97",
+                        "kanji": "痴",
+                        "meaning": "牢騷",
+                        "example": "<ruby>愚痴<rt>ぐち</rt></ruby>をこぼす。 (發牢騷。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_98",
+                        "kanji": "癖",
+                        "meaning": "壞習慣",
+                        "example": "<ruby>悪癖<rt>あくへき</rt></ruby>を<ruby>直<rt>なお</rt></ruby>す。 (改掉壞習慣。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_99",
+                        "kanji": "發",
+                        "meaning": "發言",
+                        "example": "<ruby>会議<rt>かいぎ</rt></ruby>で<ruby>積極的<rt>せっきょくてき</rt></ruby>に<ruby>発言<rt>はつげん</rt></ruby>する。 (在會議上積極發言。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_100",
+                        "kanji": "盲",
+                        "meaning": "盲信",
+                        "example": "<ruby>噂<rt>うわさ</rt></ruby>を<ruby>盲信<rt>もうしん</rt></ruby>する。 (盲信謠言。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_101",
+                        "kanji": "睡",
+                        "meaning": "睡眠",
+                        "example": "<ruby>健康<rt>けんこう</rt></ruby>のために<ruby>十分<rt>じゅうぶん</rt></ruby>な<ruby>睡眠<rt>すいみん</rt></ruby>を<ruby>取<rt>と</rt></ruby>る。 (為了健康要保證充足的睡眠。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_102",
+                        "kanji": "瞞",
+                        "meaning": "欺騙",
+                        "example": "<ruby>欺瞞<rt>ぎまん</rt></ruby>に<ruby>満<rt>み</rt></ruby>ちた<ruby>言葉<rt>ことば</rt></ruby>。 (充滿欺騙的言語。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_103",
+                        "kanji": "秀",
+                        "meaning": "秀逸",
+                        "example": "<ruby>秀逸<rt>しゅういつ</rt></ruby>な<ruby>作品<rt>さくひん</rt></ruby>。 (優秀的作品。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_104",
+                        "kanji": "秩",
+                        "meaning": "秩序",
+                        "example": "<ruby>社会<rt>しゃかい</rt></ruby>の<ruby>秩序<rt>ちつじょ</rt></ruby>。 (社會秩序。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_105",
+                        "kanji": "稼",
+                        "meaning": "運作、開動",
+                        "example": "<ruby>工場<rt>こうじょう</rt></ruby>が<ruby>稼働<rt>かどう</rt></ruby>する。 (工廠運作。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_106",
+                        "kanji": "端",
+                        "meaning": "異端",
+                        "example": "<ruby>異端<rt>いたん</rt></ruby>の<ruby>思想<rt>しそう</rt></ruby>。 (異端的思想。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_107",
+                        "kanji": "範",
+                        "meaning": "規範",
+                        "example": "<ruby>社会<rt>しゃかい</rt></ruby>の<ruby>規範<rt>きはん</rt></ruby>。 (社會的規範。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_108",
+                        "kanji": "簡",
+                        "meaning": "簡素",
+                        "example": "<ruby>簡素<rt>かんそ</rt></ruby>な<ruby>生活<rt>せいかつ</rt></ruby>。 (簡樸的生活。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_109",
+                        "kanji": "粋",
+                        "meaning": "純粹",
+                        "example": "<ruby>純粋<rt>じゅんすい</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ち。 (純粹的心情。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_110",
+                        "kanji": "紋",
+                        "meaning": "波紋",
+                        "example": "<ruby>波紋<rt>はもん</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>ぶ。 (引起波瀾。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_111",
+                        "kanji": "純",
+                        "meaning": "純粹",
+                        "example": "<ruby>純粋<rt>じゅんすい</rt></ruby>な<ruby>気持<rt>きも</rt></ruby>ち。 (純粹的心情。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_112",
+                        "kanji": "紛",
+                        "meaning": "紛爭",
+                        "example": "<ruby>領土<rt>りょうど</rt></ruby><ruby>紛争<rt>ふんそう</rt></ruby>。 (領土爭端。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_113",
+                        "kanji": "索",
+                        "meaning": "摸索、找尋",
+                        "example": "<ruby>解決策<rt>かいけつさく</rt></ruby>を<ruby>模索<rt>もさく</rt></ruby>する。 (摸索解決方案。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_114",
+                        "kanji": "緩",
+                        "meaning": "緩和",
+                        "example": "<ruby>規制<rt>きせい</rt></ruby>が<ruby>緩和<rt>かんわ</rt></ruby>される。 (法規放寬。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_115",
+                        "kanji": "緻",
+                        "meaning": "緻密、嚴密",
+                        "example": "<ruby>緻密<rt>ちみつ</rt></ruby>な<ruby>計算<rt>けいさん</rt></ruby>。 (嚴密的計算。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_116",
+                        "kanji": "縁",
+                        "meaning": "因緣、糾葛",
+                        "example": "<ruby>深<rt>ふか</rt></ruby>い<ruby>因縁<rt>いんねん</rt></ruby>がある。 (有很深的因緣。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_117",
+                        "kanji": "縛",
+                        "meaning": "束縛",
+                        "example": "<ruby>自由<rt>じゆう</rt></ruby>を<ruby>束縛<rt>そくばく</rt></ruby>される。 (自由被束縛。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_118",
+                        "kanji": "縦",
+                        "meaning": "操縱",
+                        "example": "<ruby>飛行機<rt>ひこうき</rt></ruby>を<ruby>操縦<rt>そうじゅう</rt></ruby>する。 (操縱飛機。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_119",
+                        "kanji": "縮",
+                        "meaning": "凝縮",
+                        "example": "エキスが<ruby>凝縮<rt>ぎょうしゅく</rt></ruby>される。 (精華凝縮。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_120",
+                        "kanji": "置",
+                        "meaning": "措施",
+                        "example": "<ruby>緊急<rt>きんきゅう</rt></ruby><ruby>措置<rt>そち</rt></ruby>。 (緊急措施。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_121",
+                        "kanji": "老",
+                        "meaning": "男女老少",
+                        "example": "このアニメは<ruby>老若男女<rt>ろうにゃくなんにょ</rt></ruby>を<ruby>問<rt>と</rt></ruby>わず<ruby>人気<rt>にんき</rt></ruby>がある。 (這部動畫不分男女老少都很受歡迎。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_122",
+                        "kanji": "脆",
+                        "meaning": "脆弱",
+                        "example": "<ruby>地盤<rt>じばん</rt></ruby>が<ruby>脆弱<rt>ぜいじゃく</rt></ruby>だ。 (地基脆弱。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_123",
+                        "kanji": "腐",
+                        "meaning": "腐敗",
+                        "example": "<ruby>政治的<rt>せいじてき</rt></ruby><ruby>腐敗<rt>ふはい</rt></ruby>。 (政治腐敗。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_124",
+                        "kanji": "舌",
+                        "meaning": "毒舌",
+                        "example": "<ruby>毒舌<rt>どくぜつ</rt></ruby>を<ruby>振<rt>ふ</rt></ruby>るう。 (大發毒舌。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_125",
+                        "kanji": "蔵",
+                        "meaning": "埋藏",
+                        "example": "<ruby>金鉱<rt>きんこう</rt></ruby>を<ruby>埋蔵<rt>まいぞう</rt></ruby>する。 (埋藏金礦。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_126",
+                        "kanji": "蔽",
+                        "meaning": "隱蔽、隱瞞",
+                        "example": "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>隠蔽<rt>いんぺい</rt></ruby>する。 (隱瞞事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_127",
+                        "kanji": "虐",
+                        "meaning": "殘虐",
+                        "example": "<ruby>残虐<rt>ざんぎゃく</rt></ruby>な<ruby>行為<rt>こうい</rt></ruby>。 (殘忍的行為。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_128",
+                        "kanji": "虚",
+                        "meaning": "空虛",
+                        "example": "<ruby>空虚<rt>くうきょ</rt></ruby>な<ruby>言葉<rt>ことば</rt></ruby>。 (空虛的話語。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_129",
+                        "kanji": "融",
+                        "meaning": "通融",
+                        "example": "<ruby>融通<rt>ゆうずう</rt></ruby>を<ruby>利<rt>き</rt></ruby>かす。 (通融一下。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_130",
+                        "kanji": "衡",
+                        "meaning": "均衡",
+                        "example": "<ruby>均衡<rt>きんこう</rt></ruby>を<ruby>保<rt>たも</rt></ruby>つ。 (保持均衡。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_131",
+                        "kanji": "衰",
+                        "meaning": "衰退",
+                        "example": "<ruby>産業<rt>さんぎょう</rt></ruby>が<ruby>衰退<rt>すいたい</rt></ruby>する。 (產業衰退。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_132",
+                        "kanji": "襲",
+                        "meaning": "沿襲",
+                        "example": "<ruby>前例<rt>ぜんれい</rt></ruby>を<ruby>踏襲<rt>とうしゅう</rt></ruby>する。 (沿襲前例。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_133",
+                        "kanji": "該",
+                        "meaning": "符合、相當",
+                        "example": "<ruby>条件<rt>じょうけん</rt></ruby>に<ruby>該当<rt>がいとう</rt></ruby>する。 (符合條件。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_134",
+                        "kanji": "誇",
+                        "meaning": "炫耀",
+                        "example": "<ruby>力<rt>ちから</rt></ruby>を<ruby>誇示<rt>こじ</rt></ruby>する。 (炫耀力量。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_135",
+                        "kanji": "請",
+                        "meaning": "請求",
+                        "example": "<ruby>救援<rt>きゅうえん</rt></ruby>を<ruby>要請<rt>ようせい</rt></ruby>する。 (請求救援。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_136",
+                        "kanji": "貌",
+                        "meaning": "面貌改變",
+                        "example": "<ruby>街<rt>まち</rt></ruby>が<ruby>変貌<rt>へんぼう</rt></ruby>した。 (街道面貌改變了。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_137",
+                        "kanji": "貢",
+                        "meaning": "貢獻",
+                        "example": "<ruby>社会<rt>しゃかい</rt></ruby>に<ruby>貢献<rt>こうけん</rt></ruby>する。 (對社會貢獻。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_138",
+                        "kanji": "賛",
+                        "meaning": "贊同",
+                        "example": "<ruby>意見<rt>いけん</rt></ruby>に<ruby>賛同<rt>さんどう</rt></ruby>する。 (贊同意見。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_139",
+                        "kanji": "軌",
+                        "meaning": "軌道",
+                        "example": "<ruby>軌道<rt>きどう</rt></ruby>に<ruby>乗<rt>の</rt></ruby>る。 (步入軌道。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_140",
+                        "kanji": "迅",
+                        "meaning": "迅速",
+                        "example": "<ruby>迅速<rt>じんそく</rt></ruby>な<ruby>対応<rt>たいおう</rt></ruby>。 (迅速的對應。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_141",
+                        "kanji": "迫",
+                        "meaning": "壓迫",
+                        "example": "<ruby>胸<rt>むね</rt></ruby>を<ruby>圧迫<rt>あっぱく</rt></ruby>する。 (壓迫胸口。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_142",
+                        "kanji": "透",
+                        "meaning": "滲透、普及",
+                        "example": "<ruby>制度<rt>せいど</rt></ruby>が<ruby>浸透<rt>しんとう</rt></ruby>する。 (制度逐漸普及。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_143",
+                        "kanji": "逐",
+                        "meaning": "驅逐",
+                        "example": "<ruby>国<rt>くに</rt></ruby>から<ruby>放逐<rt>ほうちく</rt></ruby>する。 (從國家驅逐。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_144",
+                        "kanji": "造",
+                        "meaning": "捏造",
+                        "example": "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>捏造<rt>ねつぞう</rt></ruby>する。 (捏造事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_145",
+                        "kanji": "逸",
+                        "meaning": "秀逸",
+                        "example": "<ruby>秀逸<rt>しゅういつ</rt></ruby>な<ruby>作品<rt>さくひん</rt></ruby>。 (優秀的作品。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_146",
+                        "kanji": "遂",
+                        "meaning": "遂行",
+                        "example": "<ruby>任務<rt>にんむ</rt></ruby>を<ruby>遂行<rt>すいこう</rt></ruby>する。 (遂行任務。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_147",
+                        "kanji": "遇",
+                        "meaning": "待遇",
+                        "example": "<ruby>不当<rt>ふとう</rt></ruby>な<ruby>処遇<rt>しょぐう</rt></ruby>。 (不當的待遇。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_148",
+                        "kanji": "遍",
+                        "meaning": "普遍",
+                        "example": "<ruby>普遍的<rt>ふへんてき</rt></ruby>な<ruby>価値<rt>かち</rt></ruby>。 (普遍的價值。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_149",
+                        "kanji": "遮",
+                        "meaning": "遮斷",
+                        "example": "<ruby>道路<rt>どうろ</rt></ruby>を<ruby>遮断<rt>しゃだん</rt></ruby>する。 (阻斷道路。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_150",
+                        "kanji": "遵",
+                        "meaning": "遵守",
+                        "example": "<ruby>法令<rt>ほうれい</rt></ruby><ruby>遵守<rt>じゅんしゅ</rt></ruby>。 (遵守法令。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_151",
+                        "kanji": "遺",
+                        "meaning": "遺言",
+                        "example": "<ruby>遺言<rt>ゆいごん</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>す。 (留下遺言。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_152",
+                        "kanji": "避",
+                        "meaning": "迴避",
+                        "example": "<ruby>衝突<rt>しょうとつ</rt></ruby>を<ruby>回避<rt>かいひ</rt></ruby>する。 (迴避衝突。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_153",
+                        "kanji": "邁",
+                        "meaning": "邁進",
+                        "example": "<ruby>目標<rt>もくひょう</rt></ruby>に<ruby>邁進<rt>まいしん</rt></ruby>する。 (向目標邁進。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_154",
+                        "kanji": "郭",
+                        "meaning": "輪廓",
+                        "example": "<ruby>山<rt>やま</rt></ruby>の<ruby>輪郭<rt>りんかく</rt></ruby>。 (山的輪廓。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_155",
+                        "kanji": "酔",
+                        "meaning": "陶醉",
+                        "example": "<ruby>音楽<rt>おんがく</rt></ruby>に<ruby>陶酔<rt>とうすい</rt></ruby>する。 (陶醉於音樂。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_156",
+                        "kanji": "閉",
+                        "meaning": "閉塞",
+                        "example": "<ruby>閉塞感<rt>へいそくかん</rt></ruby>が<ruby>漂<rt>ただよ</rt></ruby>う。 (瀰漫著閉塞感。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_157",
+                        "kanji": "陶",
+                        "meaning": "陶醉",
+                        "example": "<ruby>音楽<rt>おんがく</rt></ruby>に<ruby>陶酔<rt>とうすい</rt></ruby>する。 (陶醉於音樂。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_158",
+                        "kanji": "露",
+                        "meaning": "揭露",
+                        "example": "<ruby>事実<rt>じじつ</rt></ruby>を<ruby>暴露<rt>ばくろ</rt></ruby>する。 (揭露事實。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_159",
+                        "kanji": "革",
+                        "meaning": "改革",
+                        "example": "<ruby>制度<rt>せいど</rt></ruby>の<ruby>改革<rt>かいかく</rt></ruby>。 (制度的改革。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_160",
+                        "kanji": "領",
+                        "meaning": "領域",
+                        "example": "<ruby>未知<rt>みち</rt></ruby>の<ruby>領域<rt>りょういき</rt></ruby>。 (未知的領域。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_161",
+                        "kanji": "駆",
+                        "meaning": "運用自如",
+                        "example": "<ruby>語学力<rt>ごがくりょく</rt></ruby>を<ruby>駆使<rt>くし</rt></ruby>する。 (運用語文能力。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_162",
+                        "kanji": "魅",
+                        "meaning": "魅力",
+                        "example": "彼女はとても<ruby>魅力<rt>みりょく</rt></ruby><ruby>的<rt>てき</rt></ruby>な<ruby>人<rt>ひと</rt></ruby>だ。 (她是一個非常有魅力的人。)",
+                        "level": "N2"
+                },
+                {
+                        "id": "kn2_163",
+                        "kanji": "黙",
+                        "meaning": "沈默",
+                        "example": "<ruby>長<rt>なが</rt></ruby>い<ruby>沈黙<rt>ちんもく</rt></ruby>。 (長久的沈默。)",
+                        "level": "N2"
+                }
+        ],
+        "n1": [
+                {
+                        "id": "kn1_1",
+                        "kanji": "丸",
+                        "meaning": "一致、團結",
+                        "example": "<ruby>未曾有<rt>みぞう</rt></ruby>の<ruby>危機<rt>きき</rt></ruby>を乗り越えるため、国民が<ruby>一丸<rt>いちがん</rt></ruby>となる。 (為了渡過前所未有的危機，國民團結一致。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_2",
+                        "kanji": "享",
+                        "meaning": "享受、領受",
+                        "example": "<ruby>自由<rt>じゆう</rt></ruby>を<ruby>享受<rt>きょうじゅ</rt></ruby>する。 (享受自由。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_3",
+                        "kanji": "借",
+                        "meaning": "借金、債務",
+                        "example": "<ruby>安易<rt>あんい</rt></ruby>な<ruby>借金<rt>しゃっきん</rt></ruby>は、人生を<ruby>破滅<rt>はめつ</rt></ruby>させる<ruby>恐<rt>おそ</rt></ruby>れがある。 (輕易的借債有毀掉人生的危險。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_4",
+                        "kanji": "典",
+                        "meaning": "慶典",
+                        "example": "この<ruby>祭典<rt>さいてん</rt></ruby>は、<ruby>地域<rt>ちいき</rt></ruby>の<ruby>伝統<rt>でんとう</rt></ruby>を<ruby>次世代<rt>じせだい</rt></ruby>に<ruby>継承<rt>けいしょう</rt></ruby>する<ruby>重要<rt>じゅうよう</rt></ruby>な<ruby>役割<rt>やくわり</rt></ruby>を<ruby>担<rt>にな</rt></ruby>っている。 (這場慶典肩負著將地域傳統傳承給下一代的重要角色。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_5",
+                        "kanji": "劣",
+                        "meaning": "卑劣",
+                        "example": "<ruby>卑劣<rt>ひれつ</rt></ruby>な<ruby>手段<rt>しゅだん</rt></ruby>。 (卑劣的手段。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_6",
+                        "kanji": "卑",
+                        "meaning": "卑劣",
+                        "example": "<ruby>卑劣<rt>ひれつ</rt></ruby>な<ruby>手段<rt>しゅだん</rt></ruby>。 (卑劣的手段。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_7",
+                        "kanji": "壮",
+                        "meaning": "壯大、宏偉",
+                        "example": "その<ruby>計画<rt>けいかく</rt></ruby>は<ruby>壮大<rt>そうだい</rt></ruby>すぎて、<ruby>実現<rt>じつげん</rt></ruby>には<ruby>多額<rt>たがく</rt></ruby>の<ruby>予算<rt>よさん</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>だ。 (那個計畫太過宏大，實現它需要巨額的預算。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_8",
+                        "kanji": "奇",
+                        "meaning": "好奇心",
+                        "example": "子供のような<ruby>旺盛<rt>おうせい</rt></ruby>な<ruby>好奇心<rt>こうきしん</rt></ruby>が、新しい発見の<ruby>一助<rt>いちじょ</rt></ruby>となる。 (如孩子般旺盛的好奇心會成為新發現的助力。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_9",
+                        "kanji": "如",
+                        "meaning": "欠缺、缺乏",
+                        "example": "<ruby>責任感<rt>せきにんかん</rt></ruby>の<ruby>欠如<rt>けつじょ</rt></ruby>。 (缺乏責任感。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_10",
+                        "kanji": "幕",
+                        "meaning": "開幕",
+                        "example": "<ruby>国際<rt>こくさい</rt></ruby><ruby>会議<rt>かいぎ</rt></ruby>が<ruby>華々<rt>はなばな</rt></ruby>しく<ruby>開幕<rt>かいまく</rt></ruby>し、<ruby>各国<rt>かっこく</rt></ruby>の<ruby>首脳<rt>しゅのう</rt></ruby>が<ruby>一堂<rt>いちどう</rt></ruby>に<ruby>会<rt>かい</rt></ruby>した。 (國際會議華麗地開幕，各國首腦齊聚一堂。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_11",
+                        "kanji": "担",
+                        "meaning": "負擔",
+                        "example": "<ruby>過度<rt>かど</rt></ruby>な<ruby>期待<rt>きたい</rt></ruby>は、<ruby>本人<rt>ほんにん</rt></ruby>にとって大きな<ruby>精神<rt>せいしん</rt></ruby>的<ruby>負担<rt>ふたん</rt></ruby>になりかねない。 (過度的期待可能會成為本人重大的精神負擔。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_12",
+                        "kanji": "拠",
+                        "meaning": "證據",
+                        "example": "<ruby>決定的<rt>けっていてき</rt></ruby>な<ruby>証拠<rt>しょうこ</rt></ruby>が<ruby>露呈<rt>ろてい</rt></ruby>し、被告はついに<ruby>罪<rt>つみ</rt></ruby>を<ruby>認め<rt>みとめ</rt></ruby>た。 (決定性的證據顯露出來，被告終於認罪了。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_13",
+                        "kanji": "撼",
+                        "meaning": "震撼",
+                        "example": "<ruby>世界<rt>せかい</rt></ruby>を<ruby>震撼<rt>しんかん</rt></ruby>。 (震撼世界。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_14",
+                        "kanji": "既",
+                        "meaning": "已知",
+                        "example": "<ruby>既知<rt>きち</rt></ruby>の<ruby>事実<rt>じじつ</rt></ruby>。 (已知的事實。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_15",
+                        "kanji": "昇",
+                        "meaning": "升職",
+                        "example": "<ruby>地道<rt>じみち</rt></ruby>な努力が<ruby>実<rt>みの</rt></ruby>を結び、ついに課長へ<ruby>昇進<rt>しょうしん</rt></ruby>した。 (踏實的努力結出了果實，終於晉升為課長。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_16",
+                        "kanji": "杯",
+                        "meaning": "慶功酒",
+                        "example": "<ruby>祝杯<rt>しゅくはい</rt></ruby>をあげる。 (舉杯慶祝。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_17",
+                        "kanji": "欠",
+                        "meaning": "欠缺、缺乏",
+                        "example": "<ruby>責任感<rt>せきにんかん</rt></ruby>の<ruby>欠如<rt>けつじょ</rt></ruby>。 (缺乏責任感。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_18",
+                        "kanji": "涯",
+                        "meaning": "生涯",
+                        "example": "彼はその<ruby>生涯<rt>しょうがい</rt></ruby>を<ruby>貧困<rt>ひんこん</rt></ruby><ruby>救済<rt>きゅうさい</rt></ruby>に<ruby>捧げた<rt>ささげた</rt></ruby>。 (他將他的一生都奉獻給了救濟貧困。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_19",
+                        "kanji": "焉",
+                        "meaning": "終焉",
+                        "example": "<ruby>時代<rt>じだい</rt></ruby>の<ruby>終焉<rt>しゅうえん</rt></ruby>。 (時代的終焉。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_20",
+                        "kanji": "焦",
+                        "meaning": "焦躁",
+                        "example": "<ruby>焦燥感<rt>しょうそうかん</rt></ruby>に駆られる。 (被焦躁感驅使。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_21",
+                        "kanji": "瑣",
+                        "meaning": "瑣細、瑣碎",
+                        "example": "<ruby>瑣末<rt>さまつ</rt></ruby>な<ruby>問題<rt>もんだい</rt></ruby>だ。 (是瑣碎的問題。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_22",
+                        "kanji": "盾",
+                        "meaning": "矛盾",
+                        "example": "彼の<ruby>言動<rt>げんどう</rt></ruby>には多くの<ruby>矛盾<rt>むじゅん</rt></ruby>があり、<ruby>信頼<rt>しんらい</rt></ruby>に<ruby>足<rt>た</rt></ruby>らない。 (他的言行中有很多矛盾，不值得信賴。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_23",
+                        "kanji": "矛",
+                        "meaning": "矛盾",
+                        "example": "彼の<ruby>言動<rt>げんどう</rt></ruby>には多くの<ruby>矛盾<rt>むじゅん</rt></ruby>があり、<ruby>信頼<rt>しんらい</rt></ruby>に<ruby>足<rt>た</rt></ruby>らない。 (他的言行中有很多矛盾，不值得信賴。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_24",
+                        "kanji": "礁",
+                        "meaning": "擱淺",
+                        "example": "<ruby>船<rt>ふね</rt></ruby>が<ruby>座礁<rt>ざしょう</rt></ruby>した。 (船擱淺了。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_25",
+                        "kanji": "糾",
+                        "meaning": "查明、弄清",
+                        "example": "<ruby>真相<rt>しんそう</rt></ruby><ruby>糾明<rt>きゅうめい</rt></ruby>。 (查明真相。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_26",
+                        "kanji": "緯",
+                        "meaning": "經緯、經過",
+                        "example": "どのような<ruby>経緯<rt>けいい</rt></ruby>でその<ruby>結論<rt>けつろん</rt></ruby>に<ruby>至<rt>いた</rt></ruby>ったのか、<ruby>詳細<rt>しょうさい</rt></ruby>に<ruby>報告<rt>ほうこく</rt></ruby>してください。 (請詳細報告是經過什麼樣的過程才得出那個結論的。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_27",
+                        "kanji": "績",
+                        "meaning": "業績、成就",
+                        "example": "<ruby>過去<rt>かこ</rt></ruby>の<ruby>輝<rt>かがや</rt></ruby>かしい<ruby>実績<rt>じっせき</rt></ruby>に<ruby>慢心<rt>まんしん</rt></ruby>することなく、<ruby>努力<rt>どりょく</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>ける。 (不因過去輝煌的成就而驕傲，繼續保持努力。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_28",
+                        "kanji": "繊",
+                        "meaning": "纖細、精緻",
+                        "example": "その<ruby>作家<rt>さっか</rt></ruby>は、人の<ruby>心<rt>こころ</rt></ruby>の<ruby>揺<rt>ゆ</rt></ruby>れを<ruby>繊細<rt>せんさい</rt></ruby>な<ruby>筆致<rt>ひっち</rt></ruby>で描き出す。 (那位作家以細緻的筆觸描繪出人心的波動。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_29",
+                        "kanji": "織",
+                        "meaning": "組織",
+                        "example": "<ruby>不祥事<rt>ふしょうじ</rt></ruby>を<ruby>防<rt>ふせ</rt></ruby>ぐには、<ruby>組織<rt>そしき</rt></ruby>の<ruby>隠蔽<rt>いんぺい</rt></ruby><ruby>体質<rt>たいしつ</rt></ruby>を<ruby>刷新<rt>さっしん</rt></ruby>する<ruby>必要<rt>ひつよう</rt></ruby>がある。 (為了防止醜聞，有必要革新組織的隱瞞體質。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_30",
+                        "kanji": "肥",
+                        "meaning": "肥大",
+                        "example": "<ruby>組織<rt>そしき</rt></ruby>が<ruby>肥大化<rt>ひだいか</rt></ruby>。 (組織肥大化。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_31",
+                        "kanji": "胆",
+                        "meaning": "大膽",
+                        "example": "彼はリスクを<ruby>恐<rt>おそ</rt></ruby>れず、<ruby>大胆<rt>だいたん</rt></ruby>な<ruby>戦略<rt>せんりゃく</rt></ruby>で市場を<ruby>席巻<rt>せっけん</rt></ruby>した。 (他不畏風險，以大膽的戰略席捲了市場。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_32",
+                        "kanji": "詐",
+                        "meaning": "詐欺",
+                        "example": "<ruby>卑劣<rt>ひれつ</rt></ruby>な<ruby>詐欺<rt>さぎ</rt></ruby>の<ruby>手口<rt>てぐち</rt></ruby>に<ruby>騙<rt>だま</rt></ruby>されないよう、<ruby>注意<rt>ちゅうい</rt></ruby>が<ruby>必要<rt>ひつよう</rt></ruby>だ。 (為了不被卑劣的詐欺手段欺騙，有必要保持警惕。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_33",
+                        "kanji": "評",
+                        "meaning": "評價",
+                        "example": "彼の<ruby>独創<rt>どくそう</rt></ruby>的な<ruby>研究<rt>けんきゅう</rt></ruby>は、<ruby>学会<rt>がっかい</rt></ruby>で<ruby>高<rt>たか</rt></ruby>く<ruby>評価<rt>ひょうか</rt></ruby>されている。 (他的獨創性研究在學術界獲得了極高的評價。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_34",
+                        "kanji": "諮",
+                        "meaning": "諮詢",
+                        "example": "<ruby>委員会<rt>いいんかい</rt></ruby>に<ruby>諮問<rt>しもん</rt></ruby>する。 (向委員會諮詢。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_35",
+                        "kanji": "譲",
+                        "meaning": "委派",
+                        "example": "<ruby>権限<rt>けんげん</rt></ruby><ruby>委譲<rt>いじょう</rt></ruby>。 (權限委派。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_36",
+                        "kanji": "鎖",
+                        "meaning": "封閉",
+                        "example": "<ruby>経営<rt>けいえい</rt></ruby><ruby>不振<rt>ふしん</rt></ruby>により、多くの<ruby>店舗<rt>てんぽ</rt></ruby>が<ruby>閉鎖<rt>へいさ</rt></ruby>を<ruby>余儀なくされた<rt>よぎなくされた</rt></ruby>。 (由於經營不振，許多店鋪被迫關閉。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_37",
+                        "kanji": "闘",
+                        "meaning": "奮鬥、健鬥",
+                        "example": "<ruby>圧倒<rt>あっとう</rt></ruby>的な<ruby>実力<rt>じつりょく</rt></ruby><ruby>差<rt>さ</rt></ruby>にもかかわらず、チームは<ruby>最後<rt>さいご</rt></ruby>まで<ruby>健闘<rt>けんとう</rt></ruby>した。 (儘管實力懸殊，團隊還是奮鬥到了最後。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_38",
+                        "kanji": "願",
+                        "meaning": "祈願",
+                        "example": "<ruby>震災<rt>しんさい</rt></ruby>からの<ruby>復興<rt>ふっこう</rt></ruby>と<ruby>犠牲<rt>ぎせい</rt></ruby>者の<ruby>安養<rt>あんよう</rt></ruby>を<ruby>心<rt>こころ</rt></ruby>から<ruby>祈願<rt>きがん</rt></ruby>する。 (衷心祈願從震災中復興以及犧牲者的安息。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_39",
+                        "kanji": "髄",
+                        "meaning": "精髓",
+                        "example": "<ruby>芸術<rt>げいじゅつ</rt></ruby>の<ruby>真髄<rt>しんずい</rt></ruby>。 (藝術的精髓。)",
+                        "level": "N1"
+                },
+                {
+                        "id": "kn1_40",
+                        "kanji": "鳴",
+                        "meaning": "悲鳴、尖叫",
+                        "example": "<ruby>突然<rt>とつぜん</rt></ruby>の<ruby>衝撃<rt>しょうげき</rt></ruby>に、会場は<ruby>悲鳴<rt>ひめい</rt></ruby>と<ruby>怒号<rt>どごう</rt></ruby>に包まれた。 (突如其來的衝擊使會場籠罩在尖叫與怒吼中。)",
+                        "level": "N1"
+                }
+        ]
+};
