@@ -152,6 +152,17 @@ class KanjiApp {
         }
     }
 
+    stripRuby(html) {
+        if (!html) return '';
+        // 1. 移除 <rt>...</rt> 及其內容
+        // 2. 移除 <ruby> 與 </ruby> 標籤
+        // 3. 移除末尾的中文翻譯（通常在全形或半形括號內）
+        return html.replace(/<rt>.*?<\/rt>/g, '')
+                   .replace(/<\/?ruby>/g, '')
+                   .replace(/[\(（].*?[\)）]/g, '')
+                   .trim();
+    }
+
     loadNextKanjiFC() {
         const levels = ['n5', 'n4', 'n3', 'n2', 'n1'];
         let pool = [];
@@ -166,6 +177,8 @@ class KanjiApp {
             if (this.fcKanji) this.fcKanji.innerText = '🎉';
             if (this.fcMeaning) this.fcMeaning.innerText = '恭喜！所有漢字已掌握！';
             if (this.fcExample) this.fcExample.innerText = '';
+            const fcHint = document.getElementById('fc-front-example');
+            if (fcHint) fcHint.innerText = '';
             if (this.fcFeedback) this.fcFeedback.classList.remove('hidden');
             if (this.fcControls) this.fcControls.classList.add('hidden');
             if (this.fcScore) this.fcScore.innerText = '-';
@@ -180,6 +193,12 @@ class KanjiApp {
         if (this.fcLevelBadge) this.fcLevelBadge.innerText = this.currentFCKanji.level;
         if (this.fcMeaning) this.fcMeaning.innerText = this.currentFCKanji.meaning;
         if (this.fcExample) this.fcExample.innerHTML = this.currentFCKanji.example;
+
+        // 在正面顯示例句，但移除拼音 (Ruby/RT)
+        const fcHint = document.getElementById('fc-front-example');
+        if (fcHint) {
+            fcHint.innerHTML = this.stripRuby(this.currentFCKanji.example);
+        }
 
         if (this.fcFeedback) this.fcFeedback.classList.add('hidden');
         if (this.fcControls) this.fcControls.classList.remove('hidden');
